@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cdoroj6ej46ql"
+path="res://.godot/imported/Mother 3 - 129 Even Drier Guys.ogg-6d1aaea95334ad030a26a84182ae1a8d.oggvorbisstr"
+
+[deps]
+
+source_file="res://trivia/audio/Mother 3 - 129 Even Drier Guys.ogg"
+dest_files=["res://.godot/imported/Mother 3 - 129 Even Drier Guys.ogg-6d1aaea95334ad030a26a84182ae1a8d.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
