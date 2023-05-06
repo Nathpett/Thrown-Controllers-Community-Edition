@@ -1,6 +1,8 @@
 # Thrown-Controllers-Community-Edition
 Gonna learn how to use github.  Let's see what happens
 
+progress video: https://www.youtube.com/watch?v=-66NJIJv6MQ
+
 I removed all MP3 and OGG from git, this will probably break the game when you try to run a scene with the removed music.  
 I decided not to host music here just in case because I'm paranoid.  Solution would be to find the right music to replace the ones removed, or just remove the reference to the music in the editor
 
