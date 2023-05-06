@@ -1,4 +1,7 @@
 res://default_env.tres
+res://game.gd
+res://screen_transitions/failure_transition.tscn
+res://screen_transitions/failure_transition.gd
 res://category/concrete_categories/devils_deal.tscn
 res://category/concrete_categories/multiple_choice.tscn
-res://category/concrete_categories/multiple_choice.gd
+res://screen_transitions/black_fade.tscn

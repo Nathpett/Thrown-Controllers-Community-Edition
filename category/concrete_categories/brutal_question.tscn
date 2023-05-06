@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource path="res://category/abstract_categories/simple_question.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/my_stuff/brutal_question.png" type="Texture2D" id=2]
+[ext_resource type="PackedScene" uid="uid://wed28fwnfbng" path="res://category/abstract_categories/simple_question.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://pphg5nvr1wgm" path="res://assets/img/brutal_question.png" id="2"]
 
 [node name="GameScene" instance=ExtResource( 1 )]
 

@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/39 Blown Up!.mp3-83ac2089853d23ef653a7aed3260
 
 [params]
 
-loop=true
-loop_offset=0
-bpm=0
+loop=false
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

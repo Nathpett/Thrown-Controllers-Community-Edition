@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccevrv4ux2r5g"]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="FontFile" path="res://panel_select/panel_font.tres" id="1"]
 [ext_resource type="Script" path="res://panel_select/numbered_panel.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://ndh6876vsopr" path="res://assets/my_stuff/spotlight.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://ndh6876vsopr" path="res://assets/img/spotlight.png" id="3"]
 
 [node name="NumberedPanel" type="Node2D"]
 script = ExtResource("2")

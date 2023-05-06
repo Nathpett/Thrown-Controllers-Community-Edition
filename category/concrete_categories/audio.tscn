@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhurstgr1umh7"]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="PackedScene" uid="uid://q2l4rfvc23gk" path="res://category/abstract_categories/audio_question.tscn" id="1"]
-[ext_resource type="Texture2D" uid="uid://cgboxl85r0toy" path="res://assets/my_stuff/audio.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cgboxl85r0toy" path="res://assets/img/audio.png" id="2"]
 [ext_resource type="PackedScene" uid="uid://ci83o2db0cdeo" path="res://screen_transitions/garage_door.tscn" id="3"]
 [ext_resource type="AudioStream" uid="uid://cdoroj6ej46ql" path="res://trivia/audio/Mother 3 - 129 Even Drier Guys.ogg" id="4_ww6pq"]
 

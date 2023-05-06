@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8b3kfusrtklp"]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="PackedScene" uid="uid://cij02g20d7tnh" path="res://category/abstract_categories/visual_question.tscn" id="1"]
-[ext_resource type="Texture2D" uid="uid://c184ckll5ci4f" path="res://assets/my_stuff/screenshot.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://c184ckll5ci4f" path="res://assets/img/screenshot.png" id="3"]
 
 [node name="GameScene" instance=ExtResource("1")]
 

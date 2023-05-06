@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6dfm0rspckpl"]
+[gd_scene load_steps=6 format=3 uid="uid://vno4us2effg4"]
 
 [ext_resource type="PackedScene" uid="uid://wed28fwnfbng" path="res://category/abstract_categories/simple_question.tscn" id="1_qe71y"]
 [ext_resource type="Script" path="res://category/concrete_categories/devils_deal.gd" id="2_i5ukk"]
-[ext_resource type="Texture2D" uid="uid://cogxonbpf4w4g" path="res://assets/my_stuff/devils_deal.png" id="2_meawi"]
-[ext_resource type="PackedScene" uid="uid://d1tw058t07h1x" path="res://category/dialogue.tscn" id="3_yf2cq"]
-[ext_resource type="Texture2D" uid="uid://c5u3vtc1eoyw4" path="res://assets/my_stuff/blinker.png" id="5_qbkxu"]
+[ext_resource type="PackedScene" path="res://category/dialogue.tscn" id="3_yf2cq"]
+[ext_resource type="Texture2D" uid="uid://cogxonbpf4w4g" path="res://assets/img/devils_deal.png" id="4_gkcg6"]
+[ext_resource type="Texture2D" uid="uid://c5u3vtc1eoyw4" path="res://assets/img/blinker.png" id="5_pmt5d"]
 
 [node name="GameScene" instance=ExtResource("1_qe71y")]
 script = ExtResource("2_i5ukk")
@@ -35,11 +35,11 @@ offset_right = 150.0
 ini_centerify = true
 
 [node name="CategoryTitle" parent="Control" index="5"]
-texture = ExtResource("2_meawi")
+texture = ExtResource("4_gkcg6")
 
 [node name="Blinker" type="Sprite2D" parent="." index="2"]
 position = Vector2(198, 253)
-texture = ExtResource("5_qbkxu")
+texture = ExtResource("5_pmt5d")
 
 [node name="NoDealPoint" type="Marker2D" parent="." index="3"]
 position = Vector2(250, 164)

@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://85vr666n7a6b"]
+
+[ext_resource type="Script" path="res://screen_transitions/failure_transition.gd" id="1_d3xyb"]
+[ext_resource type="AudioStream" uid="uid://b4mg0q2h3523a" path="res://assets/sound/music/39 Blown Up!.mp3" id="2_3t2yi"]
+[ext_resource type="FontFile" uid="uid://dngaukife7elg" path="res://assets/fonts/mmrock9/MMRock9.ttf" id="2_dyviw"]
+
+[sub_resource type="Gradient" id="Gradient_sn08b"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5ehtf"]
+gradient = SubResource("Gradient_sn08b")
+fill = 1
+fill_from = Vector2(0.491453, 0.495726)
+
+[node name="FailureTransition" type="Node"]
+script = ExtResource("1_d3xyb")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 0, 0, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_5ehtf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_dyviw")
+theme_override_font_sizes/font_size = 30
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3t2yi")
+bus = &"sfx"

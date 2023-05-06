@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://wtwchh0pmaw"]
+[gd_scene load_steps=6 format=3 uid="uid://h50itobdrqwb"]
 
 [ext_resource type="PackedScene" uid="uid://wed28fwnfbng" path="res://category/abstract_categories/simple_question.tscn" id="1"]
-[ext_resource type="Texture2D" uid="uid://dqy5kr7xce4rd" path="res://assets/my_stuff/multiple_choice.png" id="2"]
-[ext_resource type="PackedScene" uid="uid://d1tw058t07h1x" path="res://category/dialogue.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://category/dialogue.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://dqy5kr7xce4rd" path="res://assets/img/multiple_choice.png" id="3_nebp3"]
 [ext_resource type="Script" path="res://category/concrete_categories/multiple_choice.gd" id="4"]
 [ext_resource type="AudioStream" uid="uid://bkorpi2ryxftt" path="res://assets/sound/music/1-55. Summation Examination.mp3" id="5_etk0h"]
 
@@ -14,7 +14,7 @@ theme_override_font_sizes/normal_font_size = 11
 text = "sadasdasd"
 
 [node name="CategoryTitle" parent="Control" index="3"]
-texture = ExtResource("2")
+texture = ExtResource("3_nebp3")
 
 [node name="Answers" type="Control" parent="Control" index="4"]
 anchors_preset = 0

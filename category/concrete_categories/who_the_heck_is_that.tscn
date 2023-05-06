@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjr1bhw81q05v"]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="PackedScene" uid="uid://cij02g20d7tnh" path="res://category/abstract_categories/visual_question.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://dpf0pv7drnv8l" path="res://screen_transitions/black_fade.tscn" id="2"]
 [ext_resource type="Material" uid="uid://b6mjvqj2em1kv" path="res://resources/black.tres" id="3"]
-[ext_resource type="Texture2D" uid="uid://h48hn1cike58" path="res://assets/my_stuff/who_the_heck_is_that.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://h48hn1cike58" path="res://assets/img/who_the_heck_is_that.png" id="4"]
 
 [node name="GameScene" instance=ExtResource("1")]
 screen_transition = ExtResource("2")

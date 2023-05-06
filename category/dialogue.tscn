@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1tw058t07h1x"]
+[gd_scene load_steps=5 format=3]
 
-[ext_resource type="Texture2D" uid="uid://c3uh5bai2ciq3" path="res://assets/my_stuff/crummy_panel.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://c3uh5bai2ciq3" path="res://assets/img/crummy_panel.png" id="1"]
 [ext_resource type="FontFile" path="res://assets/fonts/roboto_1.tres" id="2"]
 [ext_resource type="Script" path="res://category/dialogue.gd" id="3"]
 [ext_resource type="RichTextEffect" uid="uid://cc7aun3ut5lp8" path="res://resources/hwave.tres" id="4_sthcu"]

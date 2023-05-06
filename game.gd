@@ -146,11 +146,9 @@ func _on_failure() -> void:
 	
 	current_contestant_score = 0
 	
-	var success_transition = load("res://screen_transitions/garage_door.tscn").instantiate()
-	success_transition.text = "GAME OVER!"
-	success_transition.trans_time = 0.4
-	success_transition.hold_time = 0.4
-	change_scene_to_file(load("res://name_please/name_please.tscn").instantiate(), success_transition)
+	var transition = load("res://screen_transitions/failure_transition.tscn").instantiate()
+	transition.text = "GAME OVER!"
+	change_scene_to_file(load("res://name_please/name_please.tscn").instantiate(), transition)
 
 
 func enter_devil_state() -> void:

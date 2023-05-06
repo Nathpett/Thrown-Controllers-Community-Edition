@@ -1,3 +1,8 @@
+Label
+ColorRect
+AudioStreamPlayer
+TextureRect
+ScreenTransition
 Marker2D
 Sprite2D
 Node2D
