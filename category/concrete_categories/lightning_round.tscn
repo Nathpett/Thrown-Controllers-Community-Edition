@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://cmldswdg7havs"]
+
+[ext_resource type="PackedScene" uid="uid://wed28fwnfbng" path="res://category/abstract_categories/simple_question.tscn" id="1"]
+[ext_resource type="Script" path="res://category/concrete_categories/lightning_round.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://ck5yfcqm7v31f" path="res://assets/my_stuff/lightning_round.png" id="3"]
+[ext_resource type="FontFile" path="res://assets/fonts/roboto_1.tres" id="4"]
+[ext_resource type="Texture2D" uid="uid://bthtxa1e3eh44" path="res://assets/my_stuff/box.png" id="5"]
+[ext_resource type="AudioStream" uid="uid://bll1w1ypl8s2u" path="res://assets/sound/free_sound/badoink__thunder.wav" id="6"]
+
+[node name="GameScene" instance=ExtResource("1")]
+script = ExtResource("2")
+
+[node name="CategoryTitle" parent="Control" index="3"]
+anchor_left = 0.25
+anchor_top = 0.075
+anchor_right = 0.75
+anchor_bottom = 0.473
+texture = ExtResource("3")
+
+[node name="LeftLabel" type="Label" parent="Control" index="4"]
+layout_mode = 0
+anchor_left = 0.05
+anchor_top = 0.17
+anchor_right = 0.25
+anchor_bottom = 0.45
+offset_top = -100.0
+offset_bottom = -100.0
+theme_override_fonts/font = ExtResource("4")
+text = "LEFT
+<-----"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="RightLabel" type="Label" parent="Control" index="5"]
+layout_mode = 0
+anchor_left = 0.75
+anchor_top = 0.17
+anchor_right = 0.95
+anchor_bottom = 0.45
+offset_top = -100.0
+offset_bottom = -100.0
+theme_override_fonts/font = ExtResource("4")
+text = "RIGHT
+----->"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ResultsHbox" type="HBoxContainer" parent="Control" index="6"]
+visible = false
+layout_mode = 0
+anchor_left = 0.04
+anchor_top = 0.6
+anchor_right = 0.96
+anchor_bottom = 0.96
+
+[node name="Box" type="TextureRect" parent="Control/ResultsHbox" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("5")
+stretch_mode = 4
+
+[node name="check-x" type="TextureRect" parent="Control/ResultsHbox/Box" index="0"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -220.0
+offset_bottom = -220.0
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Thunder" type="AudioStreamPlayer" parent="." index="1"]
+stream = ExtResource("6")
+bus = &"sfx"
+
+[editable path="Control/Dialogue"]

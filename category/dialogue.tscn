@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1tw058t07h1x"]
+
+[ext_resource type="Texture2D" uid="uid://c3uh5bai2ciq3" path="res://assets/my_stuff/crummy_panel.png" id="1"]
+[ext_resource type="FontFile" path="res://assets/fonts/roboto_1.tres" id="2"]
+[ext_resource type="Script" path="res://category/dialogue.gd" id="3"]
+[ext_resource type="RichTextEffect" uid="uid://cc7aun3ut5lp8" path="res://resources/hwave.tres" id="4_sthcu"]
+
+[node name="Dialogue" type="NinePatchRect"]
+texture = ExtResource("1")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+script = ExtResource("3")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("2")
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+custom_effects = [ExtResource("4_sthcu")]

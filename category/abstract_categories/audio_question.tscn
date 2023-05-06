@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://q2l4rfvc23gk"]
+
+[ext_resource type="PackedScene" uid="uid://wed28fwnfbng" path="res://category/abstract_categories/simple_question.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://dpf0pv7drnv8l" path="res://screen_transitions/black_fade.tscn" id="2"]
+[ext_resource type="Script" path="res://category/abstract_categories/audio_question.gd" id="3"]
+
+[node name="GameScene" instance=ExtResource("1")]
+script = ExtResource("3")
+screen_transition = ExtResource("2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="1"]
+volume_db = 24.0
+autoplay = true
+bus = &"music"
+
+[editable path="Control/Dialogue"]

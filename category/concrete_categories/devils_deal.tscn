@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6dfm0rspckpl"]
+
+[ext_resource type="PackedScene" uid="uid://wed28fwnfbng" path="res://category/abstract_categories/simple_question.tscn" id="1_qe71y"]
+[ext_resource type="Script" path="res://category/concrete_categories/devils_deal.gd" id="2_i5ukk"]
+[ext_resource type="Texture2D" uid="uid://cogxonbpf4w4g" path="res://assets/my_stuff/devils_deal.png" id="2_meawi"]
+[ext_resource type="PackedScene" uid="uid://d1tw058t07h1x" path="res://category/dialogue.tscn" id="3_yf2cq"]
+[ext_resource type="Texture2D" uid="uid://c5u3vtc1eoyw4" path="res://assets/my_stuff/blinker.png" id="5_qbkxu"]
+
+[node name="GameScene" instance=ExtResource("1_qe71y")]
+script = ExtResource("2_i5ukk")
+
+[node name="Label" parent="Control/Dialogue/MarginContainer" index="0"]
+text = "Sell your soul!  Sell your soul!!"
+
+[node name="Deal" parent="Control" index="3" instance=ExtResource("3_yf2cq")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.5
+anchor_right = 0.33
+anchor_bottom = 0.95
+offset_left = -150.0
+offset_right = -150.0
+ini_centerify = true
+
+[node name="NoDeal" parent="Control" index="4" instance=ExtResource("3_yf2cq")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.66
+anchor_top = 0.5
+anchor_right = 0.95
+anchor_bottom = 0.95
+offset_left = 150.0
+offset_right = 150.0
+ini_centerify = true
+
+[node name="CategoryTitle" parent="Control" index="5"]
+texture = ExtResource("2_meawi")
+
+[node name="Blinker" type="Sprite2D" parent="." index="2"]
+position = Vector2(198, 253)
+texture = ExtResource("5_qbkxu")
+
+[node name="NoDealPoint" type="Marker2D" parent="." index="3"]
+position = Vector2(250, 164)
+
+[node name="DealPoint" type="Marker2D" parent="." index="4"]
+position = Vector2(150, 164)
+scale = Vector2(-1, 1)
+
+[editable path="Control/Dialogue"]

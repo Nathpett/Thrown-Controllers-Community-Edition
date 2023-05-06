@@ -1,0 +1,11 @@
+Marker2D
+Sprite2D
+Node2D
+TextureButton
+Camera2D
+AudioStreamPlayer2D
+GPUParticles2D
+CPUParticles2D
+Node
+RichTextLabel
+TileMap

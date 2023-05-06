@@ -1,0 +1,7 @@
+[gd_resource type="FontFile" load_steps=2 format=2]
+
+[ext_resource path="res://assets/fonts/mmrock9/MMRock9.ttf" type="FontFile" id=1]
+
+[resource]
+size = 49
+font_data = ExtResource( 1 )

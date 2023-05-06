@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://x1yl3jwns50g"
+path="res://.godot/imported/vertical_curson_movement.wav-fb48cf4da43c9477e65618874c5e68b9.sample"
+
+[deps]
+
+source_file="res://assets/sound/menu sounds/vertical_curson_movement.wav"
+dest_files=["res://.godot/imported/vertical_curson_movement.wav-fb48cf4da43c9477e65618874c5e68b9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

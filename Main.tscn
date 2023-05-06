@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwvjrc2p4vudx"]
+
+[ext_resource type="PackedScene" uid="uid://y6m18hlv0u16" path="res://game.tscn" id="2"]
+[ext_resource type="Shader" path="res://avatar/soulless.gdshader" id="2_e6p75"]
+[ext_resource type="Texture2D" uid="uid://dynb1v3hfwm8i" path="res://icon.png" id="3_xud7x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xs60t"]
+shader = ExtResource("2_e6p75")
+shader_parameter/progress = 0.0
+shader_parameter/outline_color = null
+
+[node name="Main" type="Node"]
+
+[node name="ShaderCache" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ShaderCache"]
+material = SubResource("ShaderMaterial_xs60t")
+texture = ExtResource("3_xud7x")
+
+[node name="Game" parent="." instance=ExtResource("2")]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://di30eqww52bl1"]
+
+[ext_resource type="PackedScene" uid="uid://wed28fwnfbng" path="res://category/abstract_categories/simple_question.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://c0fvwycjpniqm" path="res://assets/my_stuff/leap_of_faith.png" id="2"]
+
+[node name="GameScene" instance=ExtResource("1")]
+
+[node name="Label" parent="Control/Dialogue/MarginContainer" index="0"]
+text = "choose a member of the audience to do a challenge for you!"
+
+[node name="CategoryTitle" parent="Control" index="3"]
+texture = ExtResource("2")
+
+[editable path="Control/Dialogue"]

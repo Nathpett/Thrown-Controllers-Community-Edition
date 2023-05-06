@@ -1,0 +1,10 @@
+to credit
+
+https://www.spriters-resource.com/snes/earthbound/sheet/37003/
+
+Font:
+megaman - https://www.dafont.com/mmrock9.font#:~:text=MMRock9%20is%20a%20monospaced%2C%20sans,years%20between%201987%20and%202012.
+earthbound - https://earthboundcentral.com/2012/12/an-accurate-earthbound-font/
+
+sound:
+glewlio (for menu bloop)

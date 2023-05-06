@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbj06u86tvhb6"]
+
+[ext_resource type="FontFile" path="res://assets/fonts/earthbound_font.tres" id="1"]
+
+[node name="Label" type="Label"]
+offset_right = 8.0
+offset_bottom = 13.0
+size_flags_horizontal = 3
+focus_mode = 2
+theme_override_fonts/font = ExtResource("1")
+text = "W"
+
+[connection signal="focus_entered" from="." to="." method="_on_Label_focus_entered"]

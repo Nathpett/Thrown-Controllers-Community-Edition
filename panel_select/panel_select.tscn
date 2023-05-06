@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="PackedScene" uid="uid://bt4f4wcpotw20" path="res://panel_select/score_header.tscn" id="1"]
+[ext_resource type="AudioStream" uid="uid://br556gtsgwmhb" path="res://assets/sound/music/20. Map BGM 2.mp3" id="2"]
+[ext_resource type="Script" path="res://panel_select/panel_select.gd" id="3"]
+[ext_resource type="AudioStream" uid="uid://c143lwvem2jlj" path="res://assets/sound/free_sound/spotlight_reidmangan.wav" id="4"]
+
+[node name="Node" type="Node"]
+script = ExtResource("3")
+trans_time = 1.0
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 1)
+
+[node name="PanelSelector" type="Control" parent="Control"]
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="Control/PanelSelector"]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 1)
+
+[node name="NumberedPanels" type="Control" parent="Control/PanelSelector"]
+anchors_preset = 0
+anchor_left = 0.5
+anchor_top = 0.75
+anchor_right = 0.5
+anchor_bottom = 0.75
+
+[node name="Header" parent="." instance=ExtResource("1")]
+
+[node name="HeaderTimer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+
+[node name="SpotLight" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4")
+volume_db = -8.789
+bus = &"sfx"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2")
+bus = &"music"

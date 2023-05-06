@@ -1,0 +1,27 @@
+simple questions:
+	Easy Question
+	Brutal Question
+	Solo Video Game Challenge
+	TheRunawayGuys Video Game Challenge
+	Audience Video Game challenge
+	Leap of Faith
+
+	Audio:
+		Audio
+		Dialogue
+
+	Image: 
+		Screenshot
+		Who the heck is that?
+	
+	Unique:
+		Multiple Choice
+		The Lightning Round
+
+Redirect: 
+	Pick your poison
+	Choose your destiny
+
+Unique:
+	The Devil's Deal
+	day at the races

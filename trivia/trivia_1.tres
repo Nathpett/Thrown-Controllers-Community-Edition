@@ -1,0 +1,70 @@
+[gd_resource type="Resource" script_class="trivia" load_steps=2 format=3 uid="uid://cbu63imca60tc"]
+
+[ext_resource type="Script" path="res://resources/trivia.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+easy_question = [{
+"answer": "4",
+"question": "What is 2+2?"
+}, {
+"answer": "I dunno lol",
+"question": "What does the sea saw?"
+}]
+brutal_question = [{
+"answer": "A reasonably large number I'm sure",
+"question": "what is the square root of 48509859038"
+}, {
+"answer": "BECAUSE!",
+"question": "WHY?"
+}]
+solo_video_game_challenge = [{
+"question": "play the game of life"
+}, {
+"question": "Katamari"
+}]
+TheRunawayGuys_video_game_challenge = [{
+"question": "oh"
+}, {
+"question": "TRG 2"
+}]
+audience_video_game_challenge = [{
+"question": "play a game"
+}, {
+"question": "huhuhuhuhuuu"
+}]
+leap_of_faith = [{
+"question": "do 10,000 pushups (one handed)"
+}]
+audio = [{
+"answer": "Mother 3",
+"path": "audio/Mother 3 - 129 Even Drier Guys.ogg",
+"question": "GBA game is fun to play?"
+}]
+dialogue = [{
+"answer": "Big D. Cat",
+"path": "dialogue/we better.wav",
+"question": "who funny voice man?"
+}]
+who_the_heck_is_that = [{
+"answer": "Billy Hatcher",
+"path": "who_the_heck_is_that/billy.png",
+"question": "little boy egg morning?"
+}]
+screenshot = [{
+"answer": "John Test",
+"path": "screenshot/bo.jpg",
+"question": "I hate this boy?"
+}]
+lightning_round = [{
+"left": "Mario Party",
+"questions": [["Bombs Away", true], ["Drummer duel", false], ["Airboarder", false], ["Bowl Over", true], ["Knock Block Tower", true]],
+"right": "Rhythm Heaven",
+"theme": "Is this the name of a mario party minigam or a rhythm heaven rhythm game?",
+"time_limit": 30
+}]
+multiple_choice = [{
+"answer": 2,
+"answers": ["this one!!", "wrong answer", "the correct answer", "not this one"],
+"question": "what is the correct answer testing how long this can get he he he he heh heh e heh h ehe he he hhe he he he heh heheh hehe he h?"
+}]

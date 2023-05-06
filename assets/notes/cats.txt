@@ -1,0 +1,29 @@
+Easy Question: A simple and easy video games trivia question, the contestant will have to answer correctly.
+
+Multiple Choice: A video games trivia question with four answer choices the contestant can choose.(Added during Magfest 2017 while Tricky question retired).
+
+Screenshot: A screenshot from a video game will show, and the contestant will have to answer what game the screenshot came from.(Added during Pax East 2013).
+
+Who the Heck is That?: A silhouette of a video game character will show, alongside the character's description. The contestant will have to answer who is this character.(Added during Pax East 2014).
+
+Dialogue: A voice clip from a video game will play, the contestant will have to answer what game the voice clip came from.(Added during Pax Prime 2014).
+
+Audio: A music, or a remix music from a video game will play, the contestant will have to answer what game the music came from.
+
+Solo Video Game Challenge: The contestant will have to beat a specific challenge involving playing video games. A common example is beating World 1-2 in Super Mario Bros. in 60 seconds.
+
+TheRunawayGuys Video Game Challenge: The contestant chooses one of the three TRG members, and will either try to complete a challenge set by them or compete against them in a video game.
+
+Audience Video Game Challenge: Emile will choose a random audience to play a video game against the contestant.
+
+The Lightning Round: TheRunawayGuys will ask five questions in the specific theme (i.e. Capcom or not) the contestant will have to answer at least three out of five questions correctly in 30 seconds.(Added during Magfest 2016).
+
+Leap of Faith: The contestant, or Emile, will choose an audience member to beat a challenge for the contestant. If the audience member wins the challenge, the contestant will get a point and the audience member will become a contestant as well.(Added during Magfest 2017).
+
+Choose Your Destiny: The contestant gets to choose one of five random categories, if the contestant chooses Brutal Question or TRG Video Game Challenge (if available) they will get two points instead of one.(Added during Pax West 2016).
+
+Pick Your Poison: The contestant gets to choose one of three video games challenges, then choose who will play against the contestant. (Either one of the three TRG members, or an audience member)(Added during Magfest 2018).
+
+The Devil's Deal: The contestant can choose to take this deal or not. If they do, all panels onward will worth double points. However, Easy Question and Multiple Choice will not present in the panels anymore, and the more point the contestant have, the higher chance they will get the Brutal Question.(Added during Magfest 2019).
+
+Brutal Question: The hardest category. It's a very hard video game trivia question usually about obscure facts or a jerk-ish question by TheRunawayGuys.

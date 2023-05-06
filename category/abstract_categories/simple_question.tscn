@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://wed28fwnfbng"]
+
+[ext_resource type="PackedScene" uid="uid://dwcgluun7w64p" path="res://category/abstract_categories/category.tscn" id="1"]
+[ext_resource type="Script" path="res://category/abstract_categories/simple_question.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://d1tw058t07h1x" path="res://category/dialogue.tscn" id="3"]
+
+[node name="GameScene" instance=ExtResource("1")]
+script = ExtResource("2")
+
+[node name="ColorRect" parent="Control" index="0"]
+layout_mode = 1
+anchors_preset = 15
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dialogue" parent="Control" index="2" instance=ExtResource("3")]
+layout_mode = 0
+anchor_left = 0.04
+anchor_top = 0.5
+anchor_right = 0.96
+anchor_bottom = 0.96
+
+[node name="Music" type="AudioStreamPlayer2D" parent="." index="1"]
+
+[editable path="Control/Dialogue"]

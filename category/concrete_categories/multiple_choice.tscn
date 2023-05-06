@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://wtwchh0pmaw"]
+
+[ext_resource type="PackedScene" uid="uid://wed28fwnfbng" path="res://category/abstract_categories/simple_question.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://dqy5kr7xce4rd" path="res://assets/my_stuff/multiple_choice.png" id="2"]
+[ext_resource type="PackedScene" uid="uid://d1tw058t07h1x" path="res://category/dialogue.tscn" id="3"]
+[ext_resource type="Script" path="res://category/concrete_categories/multiple_choice.gd" id="4"]
+[ext_resource type="AudioStream" uid="uid://bkorpi2ryxftt" path="res://assets/sound/music/1-55. Summation Examination.mp3" id="5_etk0h"]
+
+[node name="GameScene" instance=ExtResource("1")]
+script = ExtResource("4")
+
+[node name="Label" parent="Control/Dialogue/MarginContainer" index="0"]
+theme_override_font_sizes/normal_font_size = 11
+text = "sadasdasd"
+
+[node name="CategoryTitle" parent="Control" index="3"]
+texture = ExtResource("2")
+
+[node name="Answers" type="Control" parent="Control" index="4"]
+anchors_preset = 0
+anchor_top = 0.3
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="A1" parent="Control/Answers" index="0" instance=ExtResource("3")]
+layout_mode = 0
+anchor_left = 0.33
+anchor_top = 0.05
+anchor_right = 0.66
+anchor_bottom = 0.5
+offset_top = -150.0
+offset_bottom = -150.0
+ini_centerify = true
+
+[node name="A2" parent="Control/Answers" index="1" instance=ExtResource("3")]
+layout_mode = 0
+anchor_left = 0.66
+anchor_top = 0.3
+anchor_right = 1.0
+anchor_bottom = 0.75
+offset_left = 150.0
+offset_right = 150.0
+ini_centerify = true
+
+[node name="A3" parent="Control/Answers" index="2" instance=ExtResource("3")]
+layout_mode = 0
+anchor_top = 0.3
+anchor_right = 0.33
+anchor_bottom = 0.75
+offset_left = -150.0
+offset_right = -150.0
+ini_centerify = true
+
+[node name="A4" parent="Control/Answers" index="3" instance=ExtResource("3")]
+layout_mode = 0
+anchor_left = 0.33
+anchor_top = 0.55
+anchor_right = 0.66
+anchor_bottom = 1.0
+offset_top = 100.0
+offset_bottom = 100.0
+ini_centerify = true
+
+[node name="Music" parent="." index="1"]
+stream = ExtResource("5_etk0h")
+
+[editable path="Control/Dialogue"]
+[editable path="Control/Answers/A1"]

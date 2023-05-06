@@ -1,0 +1,6 @@
+[gd_resource type="RichTextEffect" script_class="Hwave" load_steps=2 format=3 uid="uid://cc7aun3ut5lp8"]
+
+[ext_resource type="Script" path="res://resources/hwave.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
