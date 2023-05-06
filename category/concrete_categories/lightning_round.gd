@@ -97,9 +97,9 @@ func conclude_lightning_round() -> void:
 	for child in results_hbox.get_children():
 		# set to correct texture
 		if correct_arr[i]:
-			child.get_child(0).texture = load("res://assets/my_stuff/check.png")
+			child.get_child(0).texture = load("res://assets/img/check.png")
 		else:
-			child.get_child(0).texture = load("res://assets/my_stuff/x.png")
+			child.get_child(0).texture = load("res://assets/img/x.png")
 		i += 1
 	
 	var tween = create_tween()
