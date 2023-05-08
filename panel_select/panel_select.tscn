@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://cpw0ilwfx0p43"]
 
 [ext_resource type="PackedScene" uid="uid://bt4f4wcpotw20" path="res://panel_select/score_header.tscn" id="1"]
 [ext_resource type="AudioStream" uid="uid://br556gtsgwmhb" path="res://assets/sound/music/20. Map BGM 2.mp3" id="2"]

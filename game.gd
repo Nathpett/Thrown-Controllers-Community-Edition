@@ -1,32 +1,20 @@
 class_name Game
 extends Node
 
+enum Mode {DEBUG, RANDOM}
 # TODO GET MUSIC ON LIST, IMPLEMENT TO MAKE MORE LIVELY
-const CATEGORIES: Array[String] = ["easy_question", 
-						"solo_video_game_challenge", 
-						"brutal_question", 
-						"TheRunawayGuys_video_game_challenge", 
-						"audience_video_game_challenge",
-						"leap_of_faith",
-						"audio",
-						"dialogue",
-						"who_the_heck_is_that",
-						"screenshot",
-						"lightning_round",
-						"multiple_choice",
-						"devils_deal"]
 
 
 @export var trivia: Resource
+@export var mode: Mode
 
 var current_scene: GameScene
 var black_fade_transition = preload("res://screen_transitions/black_fade.tscn")
 
 var leaderboard: Dictionary
 
-var panel_categories: Array[String]
-var devil_categories: Array[String]
 var panels: Dictionary
+var category_queue: Array = []
 var trivia_indexes = {} # track indexes of trivia we've popped from
 
 # current game state
@@ -45,16 +33,37 @@ func _ready() -> void:
 	current_scene.game = self
 	current_scene.enable()
 	
-	panel_categories = CATEGORIES.duplicate()
-	devil_categories = CATEGORIES.duplicate()
-	devil_categories.erase("easy_question")
-	devil_categories.erase("brutal_qeustion")
-	devil_categories.erase("multiple_choice")
-	
 	panels = {}
-	# default to all categories for now
-	for i in range(1, len(CATEGORIES) + 1):
-		panels[i] = CATEGORIES[i - 1]
+	
+	match mode:
+		Mode.DEBUG:
+			# default to all categories for debugging
+			var i = 1
+			for cat in Trivia.CATEGORIES.keys():
+				panels[i] = cat
+				i += 1
+		Mode.RANDOM:
+			populate_normal()
+
+
+func populate_normal() -> void:
+	for i in range(1, 11):
+		if category_queue.is_empty():
+			category_queue = Array(Trivia.CATEGORIES.keys())
+			category_queue.shuffle()
+		panels[i] = category_queue.pop_back()
+
+
+func populate_devil() -> void:
+	for i in range(1, 11):
+		
+		if category_queue.is_empty():
+			category_queue = Array(Trivia.CATEGORIES.keys())
+			for cat in category_queue.duplicate():
+				if Trivia.is_not_devil(cat):
+					category_queue.erase(cat)
+			category_queue.shuffle()
+		panels[i] = category_queue.pop_back()
 
 
 func change_scene_to_file(new_scene, transition = null) -> void:
@@ -126,7 +135,7 @@ func _on_devil_deal(outcome) -> void:
 	transition.text = "DEAL!" if outcome else "NO DEAL!"
 	transition.trans_time = 0.4
 	transition.hold_time = 0.4
-	change_scene_to_file(load("res://panel_select/panel_select.tscn").instantiate(), transition)
+	return_to_panel_select(transition)
 
 
 func _on_success() -> void:
@@ -135,7 +144,7 @@ func _on_success() -> void:
 	success_transition.text = "SUCCESS!"
 	success_transition.trans_time = 0.4
 	success_transition.hold_time = 0.4
-	change_scene_to_file(load("res://panel_select/panel_select.tscn").instantiate(), success_transition)
+	return_to_panel_select(success_transition)
 
 
 func _on_failure() -> void:
@@ -147,17 +156,31 @@ func _on_failure() -> void:
 	current_contestant_score = 0
 	
 	var transition = load("res://screen_transitions/failure_transition.tscn").instantiate()
-	transition.text = "GAME OVER!"
 	change_scene_to_file(load("res://name_please/name_please.tscn").instantiate(), transition)
 
 
 func enter_devil_state() -> void:
 	devil_state = true
-	point_gain = 2 # ALSO TO REPLACE ALL GAME PANELS
+	point_gain = 2
+	category_queue = []
+	panels = {}
+	populate_devil()
 	avatar.fast_soulless()
 
 
 func exit_devil_state() -> void:
 	devil_state = false
 	point_gain = 1
+	category_queue = []
+	panels = {}
+	populate_normal()
 	avatar.souledded()
+
+
+func return_to_panel_select(transition) -> void:
+	if devil_state:
+		# TODO Replace a non-brutal question with a brutal question to meet expected brutal ratio... min(0.5, score / 10) brutal questions over non brutals will be the score over 10 until a max of 0.5
+		pass
+	
+	change_scene_to_file(load("res://panel_select/panel_select.tscn").instantiate(), transition)
+	

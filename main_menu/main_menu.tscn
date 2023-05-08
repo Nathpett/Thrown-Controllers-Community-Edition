@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=10 format=3 uid="uid://dmcfoopmdw7up"]
 
 [ext_resource type="RichTextEffect" uid="uid://cc7aun3ut5lp8" path="res://resources/hwave.tres" id="1"]
 [ext_resource type="FontFile" uid="uid://c2gd8hkr74cwe" path="res://assets/fonts/megaman_font.tres" id="2"]

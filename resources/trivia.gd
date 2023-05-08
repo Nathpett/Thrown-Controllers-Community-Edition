@@ -1,5 +1,23 @@
-class_name trivia
+class_name Trivia
 extends Resource
+
+enum {NO_DEVIL} 
+
+const CATEGORIES: Dictionary = {
+						"easy_question": {NO_DEVIL: true}, 
+						"solo_video_game_challenge": {}, 
+						"brutal_question": {NO_DEVIL: true}, 
+						"TheRunawayGuys_video_game_challenge": {}, 
+						"audience_video_game_challenge": {},
+						"leap_of_faith": {},
+						"audio": {},
+						"dialogue": {},
+						"who_the_heck_is_that": {},
+						"screenshot": {},
+						"lightning_round": {},
+						"multiple_choice": {NO_DEVIL: true},
+						"devils_deal": {NO_DEVIL: true}}
+
 
 # simple questions
 @export var easy_question = [{"question": "What is 2+2?", "answer": "4"}, 
@@ -45,3 +63,8 @@ extends Resource
 
 
 @export var devils_deal = 0
+
+
+
+static func is_not_devil(cat) -> bool:
+	return CATEGORIES[cat].get(NO_DEVIL, false)

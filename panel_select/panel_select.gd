@@ -62,7 +62,7 @@ func get_title() -> String:
 
 func _opening_animation():
 	var ani_tween = create_tween()
-	var ani_time = 1 # TODO BACK TO 2 SOME TIME
+	var ani_time = 1 
 	
 	wheel_angle = 0
 	wheel_radius = 5.0

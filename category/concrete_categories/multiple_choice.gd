@@ -97,7 +97,6 @@ func complx_progress() -> void:
 			tween.parallel().tween_property(child, "offset_bottom", 450, t_time)
 	tween.chain().tween_callback($Control/Answers.get_children()[answer_indx].push_wave)
 	
-	# TODO HERE WAH WAH THEME   TEST
 	tween.chain().tween_interval(3.0)
 	
 	await tween.finished
