@@ -1,13 +1,18 @@
 class_name Trivia
 extends Resource
 
-enum {NO_DEVIL} 
+enum {
+	NO_DEVIL,   # Category won't appear in the devil state
+	NO_DESTINY, # Category won't appear as option in Chooses Your Destiny
+	NO_TRIVIA,  # Category does not need or have any trivia data
+	DESTINY_VALUE, # points awarded if chosen and completed in choose your destiny.  Default is 1.
+	} 
 
 const CATEGORIES: Dictionary = {
 						"easy_question": {NO_DEVIL: true}, 
 						"solo_video_game_challenge": {}, 
-						"brutal_question": {NO_DEVIL: true}, 
-						"TheRunawayGuys_video_game_challenge": {}, 
+						"brutal_question": {DESTINY_VALUE: 2}, 
+						"TheRunawayGuys_video_game_challenge": {DESTINY_VALUE: 2}, 
 						"audience_video_game_challenge": {},
 						"leap_of_faith": {},
 						"audio": {},
@@ -16,7 +21,9 @@ const CATEGORIES: Dictionary = {
 						"screenshot": {},
 						"lightning_round": {},
 						"multiple_choice": {NO_DEVIL: true},
-						"devils_deal": {NO_DEVIL: true}}
+						"devils_deal": {NO_DEVIL: true, NO_DESTINY: true, NO_TRIVIA: true},
+						"choose_your_destiny": {NO_DESTINY: true, NO_TRIVIA: true},
+						}
 
 
 # simple questions
@@ -61,10 +68,20 @@ const CATEGORIES: Dictionary = {
 ]
 
 
-
 @export var devils_deal = 0
+@export var choose_your_destiny = 0
 
 
+# will category show up in devil state
+static func is_devil(cat) -> bool:
+	return !CATEGORIES[cat].get(NO_DEVIL, false)
 
-static func is_not_devil(cat) -> bool:
-	return CATEGORIES[cat].get(NO_DEVIL, false)
+# will category show up in choose your destiny
+static func is_destiny(cat) -> bool:
+	return !CATEGORIES[cat].get(NO_DESTINY, false)
+
+static func has_trivia_data(cat) -> bool:
+	return !CATEGORIES[cat].get(NO_TRIVIA, false)
+
+static func get_destiny_value(cat) -> int:
+	return CATEGORIES[cat].get(DESTINY_VALUE, 1)

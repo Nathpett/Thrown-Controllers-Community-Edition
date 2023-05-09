@@ -32,3 +32,7 @@ func player_success() -> void:
 
 func player_failure() -> void:
 	pass
+
+
+func show_answer() -> void:
+	pass

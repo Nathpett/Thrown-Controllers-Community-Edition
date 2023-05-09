@@ -60,7 +60,7 @@ func populate_devil() -> void:
 		if category_queue.is_empty():
 			category_queue = Array(Trivia.CATEGORIES.keys())
 			for cat in category_queue.duplicate():
-				if Trivia.is_not_devil(cat):
+				if !Trivia.is_devil(cat):
 					category_queue.erase(cat)
 			category_queue.shuffle()
 		panels[i] = category_queue.pop_back()
@@ -93,7 +93,7 @@ func push_current_to_leaderboard() -> void:
 
 
 func pop_trivia_data(_category_type: String):
-	if _category_type == "devils_deal":
+	if !Trivia.has_trivia_data(_category_type):
 		return null
 	
 	var indx = trivia_indexes.get(_category_type, 0)
@@ -179,8 +179,32 @@ func exit_devil_state() -> void:
 
 func return_to_panel_select(transition) -> void:
 	if devil_state:
-		# TODO Replace a non-brutal question with a brutal question to meet expected brutal ratio... min(0.5, score / 10) brutal questions over non brutals will be the score over 10 until a max of 0.5
-		pass
-	
+		enforce_devil_composition()
 	change_scene_to_file(load("res://panel_select/panel_select.tscn").instantiate(), transition)
+
+
+func enforce_devil_composition() -> void:
+	#  Replace a non-brutal question with a brutal question to meet expected brutal ratio... min(0.5, score / 10) brutal questions over non brutals will be the score over 10 until a max of 0.5
+	
+	# first let's make a list of all indexes where there are no brutal categories
+	var non_brutal_keys: Array = []
+	for k in panels:
+		if panels[k] != "brutal_question":
+			non_brutal_keys.append(k)
+	non_brutal_keys.shuffle()
+	
+	# replace random non-brutal questions with brutal questions until we hit dest ratio
+	while true:
+		var dest_brutal_ratio: float = min(0.5, current_contestant_score / 10.0)
+		var actual_brutal_ratio: float = panels.values().count("brutal_question") / float(panels.keys().size())
+		
+		if actual_brutal_ratio < dest_brutal_ratio:
+			# set a random non-brutal to brutal
+			var key = non_brutal_keys.pop_back()
+			panels[key] = "brutal_question"
+		else:
+			print(dest_brutal_ratio)
+			print(panels.values())
+			return
+	
 	
