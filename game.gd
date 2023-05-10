@@ -21,7 +21,8 @@ var trivia_indexes = {} # track indexes of trivia we've popped from
 var current_contestant_name: String = ""
 var current_contestant_score: int = 0
 var devil_state = false
-var point_gain = 1
+var point_gain: int = 1
+var temp_point_gain: int = 0 # set by choose your destiny
 
 @onready var avatar = $Avatar
 @onready var transitions = $Transitions
@@ -103,6 +104,11 @@ func pop_trivia_data(_category_type: String):
 	return trivia_data
 
 
+func play_category(category) -> void:
+	var category_path = "res://category/concrete_categories/%s.tscn" % [category]
+	change_scene_to_file(load(category_path).instantiate())
+
+
 func is_contestant_name_available(_name) -> bool:
 	return !leaderboard.has(_name)
 
@@ -120,11 +126,7 @@ func _connect_game_scene(gs):
 func _on_play_selected_panel(selected_panel) -> void:
 	# remove selecte panel from panels
 	panels.erase(selected_panel.number)
-	
-#	var category = panel_categories[selected_panel.number - 1]
-	var category_path = "res://category/concrete_categories/%s.tscn" % [selected_panel.category]
-	
-	change_scene_to_file(load(category_path).instantiate())
+	play_category(selected_panel.category)
 
 
 func _on_devil_deal(outcome) -> void:
@@ -139,7 +141,8 @@ func _on_devil_deal(outcome) -> void:
 
 
 func _on_success() -> void:
-	current_contestant_score += point_gain
+	current_contestant_score += max(point_gain, temp_point_gain)
+	temp_point_gain = 0
 	var success_transition = load("res://screen_transitions/garage_door.tscn").instantiate()
 	success_transition.text = "SUCCESS!"
 	success_transition.trans_time = 0.4
@@ -206,5 +209,4 @@ func enforce_devil_composition() -> void:
 			print(dest_brutal_ratio)
 			print(panels.values())
 			return
-	
-	
+

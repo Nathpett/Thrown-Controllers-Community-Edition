@@ -1,7 +1,6 @@
 res://default_env.tres
-res://category/concrete_categories/choose_your_destiny.tscn
-res://avatar/soulless.gdshader
 res://category/concrete_categories/devils_deal.tscn
+res://avatar/soulless.gdshader
 res://category/concrete_categories/multiple_choice.tscn
 res://screen_transitions/failure_transition.tscn
 res://screen_transitions/black_fade.tscn
@@ -10,7 +9,4 @@ res://main_menu/main_menu.tscn
 res://Main.tscn
 res://game.tscn
 res://panel_select/panel_select.tscn
-res://resources/trivia.gd
-res://game.gd
-res://category/concrete_categories/chooose_your_destiny.gd
-res://category/abstract_categories/complex_question.gd
+res://category/concrete_categories/choose_your_destiny.tscn

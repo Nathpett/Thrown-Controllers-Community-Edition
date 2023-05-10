@@ -23,10 +23,9 @@ func initiate_questions() -> void:
 
 
 func complx_progress() -> void:
-	if idx_select == 0:
-		return
-	
-	pass
+	var cat_selected = pool[idx_select]
+	game.temp_point_gain = Trivia.get_destiny_value(cat_selected)
+	game.play_category(cat_selected)
 
 
 func up() -> void:
