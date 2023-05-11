@@ -9,7 +9,9 @@ var correct_ct: int = 0
 @onready var check_box = $Control/ResultsHbox/Box
 
 
-func ready_trivia(trivia_data) -> void:
+func ready_trivia() -> void:
+	var trivia_data = game.pop_trivia_data(get_category_type())
+	
 	dialogue.show_text(trivia_data["theme"])
 	time_limit = trivia_data.get("time_limit", 0)
 	questions = trivia_data["questions"]

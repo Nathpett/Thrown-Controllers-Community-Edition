@@ -1,10 +1,11 @@
+Sprite2D
+Control
 Label
 ColorRect
 AudioStreamPlayer
 TextureRect
 ScreenTransition
 Marker2D
-Sprite2D
 Node2D
 TextureButton
 Camera2D

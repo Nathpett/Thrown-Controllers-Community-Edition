@@ -1,7 +1,7 @@
 class_name Game
 extends Node
 
-enum Mode {DEBUG, RANDOM}
+enum Mode {DEBUG, RANDOM, JUST_ONE}
 # TODO GET MUSIC ON LIST, IMPLEMENT TO MAKE MORE LIVELY
 
 
@@ -45,6 +45,9 @@ func _ready() -> void:
 				i += 1
 		Mode.RANDOM:
 			populate_normal()
+		Mode.JUST_ONE:
+			for i in range(1, 11):
+				panels[i] = "pick_your_poison"
 
 
 func populate_normal() -> void:
@@ -97,11 +100,15 @@ func pop_trivia_data(_category_type: String):
 	if !Trivia.has_trivia_data(_category_type):
 		return null
 	
-	var indx = trivia_indexes.get(_category_type, 0)
-	var trivia_data = trivia.get(_category_type)[indx]
+	#var indx = trivia_indexes.get(_category_type, 0)
+	var trivia_data = trivia.get(_category_type).pop_front()
 	
-	trivia_indexes[_category_type] = (indx + 1) % len(trivia.get(_category_type)) # just modulo so that we'll return something.  User will just have to provide enough questions to prevent this, atleast we wont crash if we run out of questions lol
+	#trivia_indexes[_category_type] = (indx + 1) % len(trivia.get(_category_type)) # just modulo so that we'll return something.  User will just have to provide enough questions to prevent this, atleast we wont crash if we run out of questions lol
 	return trivia_data
+
+
+func deposit_trivia_data(_category_type: String, data):
+	trivia[_category_type].insert(0, data)
 
 
 func play_category(category) -> void:

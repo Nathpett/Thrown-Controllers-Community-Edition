@@ -12,7 +12,9 @@ var selected_answer
 @onready var a4 = $Control/Answers/A4
 
 
-func ready_trivia(trivia_data) -> void:
+func ready_trivia() -> void:
+	var trivia_data = game.pop_trivia_data(get_category_type())
+	
 	answers = trivia_data["answers"]
 	answer_indx = trivia_data["answer"]
 	question = trivia_data["question"]

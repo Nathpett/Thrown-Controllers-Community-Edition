@@ -13,8 +13,7 @@ var path: String
 func _ready() -> void:
 	super._ready()
 	if game:
-		var trivia_data = game.pop_trivia_data(get_category_type())
-		ready_trivia(trivia_data)
+		ready_trivia()
 
 
 func _input(event: InputEvent) -> void:
@@ -72,7 +71,8 @@ func is_double_tap(action:String) -> bool:
 	return cooldown_timers.has(action)
 
 
-func ready_trivia(trivia_data):
+func ready_trivia():
+	var trivia_data = game.pop_trivia_data(get_category_type())
 	if trivia_data:
 		question = trivia_data["question"]
 		answer = trivia_data.get("answer", trivia_data["question"])

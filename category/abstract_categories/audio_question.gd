@@ -1,8 +1,8 @@
 class_name AudioQuestion
 extends SimpleQuestion
 
-func ready_trivia(trivia_data) -> void:
-	super.ready_trivia(trivia_data)
+func ready_trivia() -> void:
+	super.ready_trivia()
 	$AudioStreamPlayer.stream = load("res://trivia/" + path)
 
 

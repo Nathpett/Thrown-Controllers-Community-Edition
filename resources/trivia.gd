@@ -23,6 +23,7 @@ const CATEGORIES: Dictionary = {
 						"multiple_choice": {NO_DEVIL: true},
 						"devils_deal": {NO_DEVIL: true, NO_DESTINY: true, NO_TRIVIA: true},
 						"choose_your_destiny": {NO_DESTINY: true, NO_TRIVIA: true},
+						"pick_your_poison": {NO_DESTINY: true},
 						}
 
 
@@ -65,6 +66,16 @@ const CATEGORIES: Dictionary = {
 							"answers": ["this one!!", "wrong answer", "the correct answer", "not this one"],
 							"answer": 2
 							}
+]
+
+# a little unique, as it is popped three times instead of once per trivia --- and the two unused challenges are put back in!
+@export var pick_your_poison = [
+							{"game": "Spelunky 2", "challenge": "1 v 1 Arena"},
+							{"game": "Spelunky 3", "challenge": "2 v 2 Arena"},
+							{"game": "Spelunky 4", "challenge": "3 v 3 Arena"},
+							{"game": "Spelunky 5", "challenge": "4 v 4 Arena"},
+							{"game": "Spelunky 6", "challenge": "5 v 5 Arena"},
+							{"game": "Spelunky 7", "challenge": "6 v 6 Arena"},
 ]
 
 
