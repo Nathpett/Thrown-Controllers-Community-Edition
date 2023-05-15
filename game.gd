@@ -3,7 +3,7 @@ extends Node
 
 enum Mode {DEBUG, RANDOM, JUST_ONE}
 # TODO GET MUSIC ON LIST, IMPLEMENT TO MAKE MORE LIVELY
-
+# TODO NEXT Reroll categories that have been exhausted, and prevent them from appearing again.
 
 @export var trivia: Resource
 @export var mode: Mode
@@ -15,7 +15,6 @@ var leaderboard: Dictionary
 
 var panels: Dictionary
 var category_queue: Array = []
-var trivia_indexes = {} # track indexes of trivia we've popped from
 
 # current game state
 var current_contestant_name: String = ""
@@ -44,30 +43,35 @@ func _ready() -> void:
 				panels[i] = cat
 				i += 1
 		Mode.RANDOM:
-			populate_normal()
+			populate_singlefile(10)
 		Mode.JUST_ONE:
 			for i in range(1, 11):
-				panels[i] = "pick_your_poison"
+				panels[i] = "brutal_question"
 
 
-func populate_normal() -> void:
-	for i in range(1, 11):
-		if category_queue.is_empty():
-			category_queue = Array(Trivia.CATEGORIES.keys())
-			category_queue.shuffle()
-		panels[i] = category_queue.pop_back()
+func populate_singlefile(quant) -> void:
+	for i in range(1, quant + 1):
+		panels[i] = pop_category_queue()
 
 
-func populate_devil() -> void:
-	for i in range(1, 11):
-		
-		if category_queue.is_empty():
-			category_queue = Array(Trivia.CATEGORIES.keys())
-			for cat in category_queue.duplicate():
-				if !Trivia.is_devil(cat):
-					category_queue.erase(cat)
-			category_queue.shuffle()
-		panels[i] = category_queue.pop_back()
+func pop_category_queue() -> String:
+	if category_queue.is_empty():
+		category_queue = new_category_queue()
+		category_queue.shuffle()
+	return category_queue.pop_front()
+
+
+func new_category_queue() -> Array:
+	var new_queue = Array(Trivia.CATEGORIES.keys())
+	for cat in trivia.exhausted_categories:
+		new_queue.erase(cat)
+	
+	if devil_state:
+		for cat in new_queue.duplicate():
+			if !Trivia.is_devil(cat):
+				new_queue.erase(cat)
+	
+	return new_queue
 
 
 func change_scene_to_file(new_scene, transition = null) -> void:
@@ -102,6 +106,8 @@ func pop_trivia_data(_category_type: String):
 	
 	#var indx = trivia_indexes.get(_category_type, 0)
 	var trivia_data = trivia.get(_category_type).pop_front()
+	if !len(trivia[_category_type]):
+		_exhaust_category(_category_type)
 	
 	#trivia_indexes[_category_type] = (indx + 1) % len(trivia.get(_category_type)) # just modulo so that we'll return something.  User will just have to provide enough questions to prevent this, atleast we wont crash if we run out of questions lol
 	return trivia_data
@@ -118,6 +124,26 @@ func play_category(category) -> void:
 
 func is_contestant_name_available(_name) -> bool:
 	return !leaderboard.has(_name)
+
+
+func _exhaust_category(cat: String) -> void:
+	trivia.exhausted_categories.append(cat)
+	while cat in category_queue:
+		category_queue.erase(cat)
+	
+	for n in panels:
+		var p_cat = panels[n]
+		if p_cat == cat:
+			panels[n] = pop_category_queue()
+	
+	# exhaust anyone dependant on this category (e.g., if brutal questions exhausted, exhaust devil deal)
+	var dependants = Trivia.get_dependants(cat)
+	for dependant in dependants:
+		_exhaust_category(dependant)
+	
+	# TODO IF BRUTAL QUESTIONS EXHAUSTED, LET KNOW AND REVOKE DEVIL STATE
+	
+	print("%s exhausted" % [cat])
 
 
 # just connect it to everything lol whatever man...
@@ -172,18 +198,14 @@ func _on_failure() -> void:
 func enter_devil_state() -> void:
 	devil_state = true
 	point_gain = 2
-	category_queue = []
-	panels = {}
-	populate_devil()
+	refresh_cats()
 	avatar.fast_soulless()
 
 
 func exit_devil_state() -> void:
 	devil_state = false
 	point_gain = 1
-	category_queue = []
-	panels = {}
-	populate_normal()
+	refresh_cats()
 	avatar.souledded()
 
 
@@ -191,6 +213,12 @@ func return_to_panel_select(transition) -> void:
 	if devil_state:
 		enforce_devil_composition()
 	change_scene_to_file(load("res://panel_select/panel_select.tscn").instantiate(), transition)
+
+
+func refresh_cats() -> void:
+	category_queue = []
+	panels = {}
+	populate_singlefile(10)
 
 
 func enforce_devil_composition() -> void:

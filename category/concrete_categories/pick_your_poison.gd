@@ -10,9 +10,11 @@ func ready_trivia() -> void:
 	
 	for i in range(3):
 		var trivia_data = game.pop_trivia_data(get_category_type())
-		withdrawn_callenges.append(trivia_data)
-	
-	
+		if trivia_data: 
+			withdrawn_callenges.append(trivia_data)
+		else:
+			$Control2.get_child(i).queue_free()
+
 
 func initiate_questions() -> void:
 	var tween = create_tween()

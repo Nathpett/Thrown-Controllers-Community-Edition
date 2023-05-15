@@ -6,12 +6,13 @@ enum {
 	NO_DESTINY, # Category won't appear as option in Chooses Your Destiny
 	NO_TRIVIA,  # Category does not need or have any trivia data
 	DESTINY_VALUE, # points awarded if chosen and completed in choose your destiny.  Default is 1.
+	DEPENDANTS, # category is dependant on another category, and will be removed if that category is exhausted (e.g. devil deal will be removed if no brutal questions)
 	} 
 
 const CATEGORIES: Dictionary = {
 						"easy_question": {NO_DEVIL: true}, 
 						"solo_video_game_challenge": {}, 
-						"brutal_question": {DESTINY_VALUE: 2}, 
+						"brutal_question": {DESTINY_VALUE: 2, DEPENDANTS:["devils_deal"]}, 
 						"TheRunawayGuys_video_game_challenge": {DESTINY_VALUE: 2}, 
 						"audience_video_game_challenge": {},
 						"leap_of_faith": {},
@@ -25,7 +26,6 @@ const CATEGORIES: Dictionary = {
 						"choose_your_destiny": {NO_DESTINY: true, NO_TRIVIA: true},
 						"pick_your_poison": {NO_DESTINY: true},
 						}
-
 
 # simple questions
 @export var easy_question = [{"question": "What is 2+2?", "answer": "4"}, 
@@ -73,15 +73,16 @@ const CATEGORIES: Dictionary = {
 							{"game": "Spelunky 2", "challenge": "1 v 1 Arena"},
 							{"game": "Spelunky 3", "challenge": "2 v 2 Arena"},
 							{"game": "Spelunky 4", "challenge": "3 v 3 Arena"},
-							{"game": "Spelunky 5", "challenge": "4 v 4 Arena"},
-							{"game": "Spelunky 6", "challenge": "5 v 5 Arena"},
-							{"game": "Spelunky 7", "challenge": "6 v 6 Arena"},
+#							{"game": "Spelunky 5", "challenge": "4 v 4 Arena"},
+#							{"game": "Spelunky 6", "challenge": "5 v 5 Arena"},
+#							{"game": "Spelunky 7", "challenge": "6 v 6 Arena"},
 ]
-
 
 @export var devils_deal = 0
 @export var choose_your_destiny = 0
 
+
+var exhausted_categories: Array = []
 
 # will category show up in devil state
 static func is_devil(cat) -> bool:
@@ -96,3 +97,6 @@ static func has_trivia_data(cat) -> bool:
 
 static func get_destiny_value(cat) -> int:
 	return CATEGORIES[cat].get(DESTINY_VALUE, 1)
+
+static func get_dependants(cat) -> Array:
+	return CATEGORIES[cat].get(DEPENDANTS, [])
