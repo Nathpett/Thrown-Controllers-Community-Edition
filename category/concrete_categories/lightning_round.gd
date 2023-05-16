@@ -106,7 +106,15 @@ func conclude_lightning_round() -> void:
 	
 	var tween = create_tween()
 	var t_time = 0.5
-	var interval_time = 0.2
+	var interval_times = []
+	for j in range(len(correct_arr)):
+		interval_times.append(0.2)
+	
+	# now make the last four intervals twice as long as the last for that dramatic drop baby!
+	# but make the very last one interval time again
+	for j in range(min(len(correct_arr), 4)):
+		interval_times[-j] = 1 # TODO HERE!
+	
 	
 	i = 0
 	for child in results_hbox.get_children():
@@ -115,7 +123,7 @@ func conclude_lightning_round() -> void:
 		tween.tween_property(child.get_child(0), "offset_top", 0, t_time).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 		tween.parallel().tween_property(child.get_child(0), "offset_bottom", 0, t_time).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 		tween.chain().tween_callback($Thunder.play)
-		tween.tween_interval(i * interval_time)
+		tween.tween_interval(i * 0.2)
 		
 		i += 1 + 5 * i / len(correct_arr) # this does a dramatic drop with 5 quesitions, but with 10 it could get agonizing, TODO SCALE SOMEHOW HERE SOME DAY!
 	tween.connect("finished", Callable(self, "_on_tween_all_completed"))

@@ -3,7 +3,6 @@ extends Node
 
 enum Mode {DEBUG, RANDOM, JUST_ONE}
 # TODO GET MUSIC ON LIST, IMPLEMENT TO MAKE MORE LIVELY
-# TODO NEXT Reroll categories that have been exhausted, and prevent them from appearing again.
 
 @export var trivia: Resource
 @export var mode: Mode
@@ -22,6 +21,8 @@ var current_contestant_score: int = 0
 var devil_state = false
 var point_gain: int = 1
 var temp_point_gain: int = 0 # set by choose your destiny
+
+var msgbox: MessageBox
 
 @onready var avatar = $Avatar
 @onready var transitions = $Transitions
@@ -94,6 +95,8 @@ func change_scene_to_file(new_scene, transition = null) -> void:
 	# wait until transition is complete to actually allow input
 	await transition.tree_exited
 	current_scene.enable()
+	
+	_show_message()
 
 
 func push_current_to_leaderboard() -> void:
@@ -140,10 +143,6 @@ func _exhaust_category(cat: String) -> void:
 	var dependants = Trivia.get_dependants(cat)
 	for dependant in dependants:
 		_exhaust_category(dependant)
-	
-	# TODO IF BRUTAL QUESTIONS EXHAUSTED, LET KNOW AND REVOKE DEVIL STATE
-	
-	print("%s exhausted" % [cat])
 
 
 # just connect it to everything lol whatever man...
@@ -186,7 +185,7 @@ func _on_success() -> void:
 func _on_failure() -> void:
 	if devil_state: 
 		exit_devil_state()
-	
+		
 	push_current_to_leaderboard()
 	
 	current_contestant_score = 0
@@ -211,7 +210,15 @@ func exit_devil_state() -> void:
 
 func return_to_panel_select(transition) -> void:
 	if devil_state:
-		enforce_devil_composition()
+		
+		if trivia.exhausted_categories.has("devils_deal"):
+			#exit devil state if devils_deal is exhausted
+			_queue_user_message("All brutal questions have been used, \n the contestant's soul has been refunded.")
+			exit_devil_state()
+		else:
+			enforce_devil_composition()
+		
+		
 	change_scene_to_file(load("res://panel_select/panel_select.tscn").instantiate(), transition)
 
 
@@ -245,3 +252,14 @@ func enforce_devil_composition() -> void:
 			print(panels.values())
 			return
 
+
+func _queue_user_message(message: String) -> void:
+	msgbox = load("res://panel_select/msg_box.tscn").instantiate()
+	msgbox.text = message
+	msgbox.visible = false
+	add_child(msgbox)
+
+
+func _show_message() -> void:
+	if is_instance_valid(msgbox):
+		msgbox.visible = true

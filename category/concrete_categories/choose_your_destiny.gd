@@ -7,14 +7,8 @@ func initiate_questions() -> void:
 	# get 5 random questions given game state
 	# questions cannot have NO_DESTINY token set to true
 	# if in devil state, questions cannot have NO_DEVIL TOKENS set to true
-	pool = Trivia.CATEGORIES.keys()
-	
-	pool = pool.filter(Callable(Trivia, "is_destiny"))
-	
-	
-	if game.devil_state:
-		pool = pool.filter(Callable(Trivia, "is_devil"))
-	
+	pool = game.new_category_queue() # will already be curated list of categorys that may show up already
+	pool = pool.filter(Callable(Trivia, "is_destiny")) # but we have to filter out non-destiny-s
 	pool.shuffle()
 	pool = pool.slice(0, 5)
 	

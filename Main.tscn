@@ -18,4 +18,3 @@ material = SubResource("ShaderMaterial_xs60t")
 texture = ExtResource("3_xud7x")
 
 [node name="Game" parent="." instance=ExtResource("2")]
-mode = 2

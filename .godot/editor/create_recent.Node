@@ -1,6 +1,7 @@
+Panel
+Label
 Sprite2D
 Control
-Label
 ColorRect
 AudioStreamPlayer
 TextureRect

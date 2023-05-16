@@ -1,7 +1,12 @@
 res://default_env.tres
-res://category/concrete_categories/devils_deal.tscn
-res://avatar/soulless.gdshader
-res://category/concrete_categories/pick_your_poison.tscn
 res://Main.tscn
-res://resources/trivia.gd
+res://avatar/soulless.gdshader
 res://game.gd
+res://resources/trivia.gd
+res://category/concrete_categories/devils_deal.tscn
+res://panel_select/msg_box.tscn
+res://game.tscn
+res://panel_select/msg_box.gd
+res://trivia/trivia_1.tres
+res://category/concrete_categories/choose_your_destiny.tscn
+res://category/concrete_categories/choose_your_destiny.gd

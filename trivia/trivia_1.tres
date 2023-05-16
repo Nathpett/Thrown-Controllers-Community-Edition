@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="trivia" load_steps=2 format=3 uid="uid://cbu63imca60tc"]
+[gd_resource type="Resource" script_class="Trivia" load_steps=2 format=3 uid="uid://cbu63imca60tc"]
 
 [ext_resource type="Script" path="res://resources/trivia.gd" id="1"]
 
@@ -14,9 +14,6 @@ easy_question = [{
 brutal_question = [{
 "answer": "A reasonably large number I'm sure",
 "question": "what is the square root of 48509859038"
-}, {
-"answer": "BECAUSE!",
-"question": "WHY?"
 }]
 solo_video_game_challenge = [{
 "question": "play the game of life"
@@ -68,4 +65,15 @@ multiple_choice = [{
 "answers": ["this one!!", "wrong answer", "the correct answer", "not this one"],
 "question": "what is the correct answer testing how long this can get he he he he heh heh e heh h ehe he he hhe he he he heh heheh hehe he h?"
 }]
+pick_your_poison = [{
+"challenge": "1 v 1 Arena",
+"game": "Spelunky 2"
+}, {
+"challenge": "2 v 2 Arena",
+"game": "Spelunky 3"
+}, {
+"challenge": "3 v 3 Arena",
+"game": "Spelunky 4"
+}]
 devils_deal = 0
+choose_your_destiny = 0

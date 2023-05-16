@@ -31,7 +31,9 @@ const CATEGORIES: Dictionary = {
 @export var easy_question = [{"question": "What is 2+2?", "answer": "4"}, 
 							{"question": "What does the sea saw?", "answer": "I dunno lol"}]
 @export var brutal_question = [{"question": "what is the square root of 48509859038", 
-								"answer": "A reasonably large number I'm sure"}, {"question": "WHY?", "answer": "BECAUSE!"}]
+								"answer": "A reasonably large number I'm sure"}, 
+								#{"question": "WHY?", "answer": "BECAUSE!"},
+								]
 @export var solo_video_game_challenge = [{"question": "play the game of life"}, {"question": "Katamari"}]
 @export var TheRunawayGuys_video_game_challenge = [{"question": "oh"}, {"question": "TRG 2"}]
 @export var audience_video_game_challenge = [{"question": "play a game"}, {"question": "huhuhuhuhuuu"}]
