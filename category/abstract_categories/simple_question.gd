@@ -121,4 +121,4 @@ func _on_double_tap_timeout() -> void:
 		if !cooldown_timers[action].time_left:
 			cooldown_timers[action].queue_free()
 			cooldown_timers.erase(action)
-		
+

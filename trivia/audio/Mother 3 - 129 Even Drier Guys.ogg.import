@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Mother 3 - 129 Even Drier Guys.ogg-6d1aaea953
 [params]
 
 loop=true
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

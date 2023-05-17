@@ -8,9 +8,4 @@
 script = ExtResource("3")
 screen_transition = ExtResource("2")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="1"]
-volume_db = 24.0
-autoplay = true
-bus = &"music"
-
 [editable path="Control/Dialogue"]

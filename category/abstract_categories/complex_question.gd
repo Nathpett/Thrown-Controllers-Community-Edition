@@ -1,9 +1,12 @@
 class_name ComplexQuestion
 extends SimpleQuestion
 
+@export var manual_validation: bool = false
+
 var question_started: bool = false
 var question_over: bool = false
 # parent to lightning round and multiple choice, just some things those two will have in common that I felt needed abstraction
+
 func progress() -> void:
 	if dialogue.is_printing():
 		dialogue.show_all()
@@ -25,13 +28,14 @@ func complx_progress() -> void:
 	pass
 
 
-# override parent's method to nullifiy them?? nate what sort of sins are you cooking up?
 func player_success() -> void:
-	pass
+	if manual_validation:
+		super.player_success()
 
 
 func player_failure() -> void:
-	pass
+	if manual_validation:
+		super.player_failure()
 
 
 func show_answer() -> void:

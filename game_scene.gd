@@ -25,6 +25,15 @@ func disable() -> void:
 	scene_disabled = true
 
 
+func music_fade_off() -> void:
+	var music = get_node("Music")
+	if !is_instance_valid(music):
+		return
+	
+	var tween = create_tween()
+	tween.tween_property(music, "volume_db", -80, 2)
+	
+
 func get_title() -> String:
 	return "GAMESCENE!!"
 

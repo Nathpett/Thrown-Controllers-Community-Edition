@@ -1,13 +1,13 @@
 2a60927148abd1d33b818b535e306557
-::res://::1684199639
+::res://::1684293464
 default_bus_layout.tres::AudioBusLayout::-1::1682347191::0::1::::<><>::
-default_env.tres::Environment::6807410154984247636::1684199826::0::1::::<><>::
-game.gd::GDScript::-1::1684199780::0::1::::Game<>Node<>::
-game.tscn::PackedScene::1749304736856400155::1684199639::0::1::::<><>::res://game.gd<>uid://bqnc3edh82klo<>uid://cbu63imca60tc
-game_scene.gd::GDScript::-1::1682347191::0::1::::GameScene<>Node<>::
+default_env.tres::Environment::6807410154984247636::1684288491::0::1::::<><>::
+game.gd::GDScript::-1::1684287376::0::1::::Game<>Node<>::
+game.tscn::PackedScene::1749304736856400155::1684288490::0::1::::<><>::res://game.gd<>uid://bqnc3edh82klo<>uid://cbu63imca60tc
+game_scene.gd::GDScript::-1::1684287360::0::1::::GameScene<>Node<>::
 global.gd::GDScript::-1::1682347191::0::1::::<>Node<>::
 icon.png::CompressedTexture2D::8870739503399637242::1678584902::1682347311::1::::<><>::
-Main.tscn::PackedScene::8747345502860105573::1684199639::0::1::::<><>::uid://y6m18hlv0u16<>res://avatar/soulless.gdshader<>uid://dynb1v3hfwm8i
+Main.tscn::PackedScene::8747345502860105573::1684288490::0::1::::<><>::uid://y6m18hlv0u16<>res://avatar/soulless.gdshader<>uid://dynb1v3hfwm8i
 README.md::TextFile::-1::1683406499::0::1::::<><>::
 to credit.txt::TextFile::-1::1679114061::0::1::::<><>::
 ::res://assets/::1683354676
@@ -69,7 +69,7 @@ cat hier.txt::TextFile::-1::1681605197::0::1::::<><>::
 cats.txt::TextFile::-1::1679886114::0::1::::<><>::
 music list.txt::TextFile::-1::1678890380::0::1::::<><>::
 ::res://assets/sound/::1683349618
-::res://assets/sound/free_sound/::1682829788
+::res://assets/sound/free_sound/::1684287926
 540280__badoink__quantum-ether.wav::AudioStreamWAV::3355405534875141248::1682829781::1682829788::1::::<><>::
 badoink__thunder.wav::AudioStreamWAV::3182825451663910154::1682087044::1682347312::1::::<><>::
 glewlio_bloop.wav::AudioStreamWAV::3638052639013538563::1679113140::1682347312::1::::<><>::
@@ -97,39 +97,39 @@ SNES - EarthBound Mother 2 - Nesss Mom & Tracy.png::CompressedTexture2D::4410602
 SNES - EarthBound Mother 2 - NPCs People.png::CompressedTexture2D::3348449714323904792::1679264267::1682347311::1::::<><>::
 SNES - EarthBound Mother 2 - The Runaway Five.png::CompressedTexture2D::3157456175003504515::1678806643::1682347311::1::::<><>::
 ::res://assets/tilesets/::1682349523
-::res://avatar/::1684198655
+::res://avatar/::1684286646
 avatar.gd::GDScript::-1::1682898499::0::1::::Avatar<>Node2D<>::
 avatar.tscn::PackedScene::3536450744010300340::1682898984::0::1::::<><>::uid://bnyaqic2y6lem<>res://avatar/avatar.gd<>res://avatar/soulless.gdshader<>uid://bn2nblabtlw85
-soulless.gdshader::Shader::-1::1684198655::0::1::::<><>::
+soulless.gdshader::Shader::-1::1684286646::0::1::::<><>::
 ::res://category/::1683354676
 dialogue.gd::GDScript::-1::1682897594::0::1::::<>NinePatchRect<>::
 dialogue.tscn::PackedScene::-1::1683354676::0::1::::<><>::uid://c3uh5bai2ciq3<>res://assets/fonts/roboto_1.tres<>res://category/dialogue.gd<>uid://cc7aun3ut5lp8
-::res://category/abstract_categories/::1683817991
-audio_question.gd::GDScript::-1::1683816504::0::1::::AudioQuestion<>SimpleQuestion<>::
-audio_question.tscn::PackedScene::1179480274090690078::1682809246::0::1::::<><>::uid://wed28fwnfbng<>uid://dpf0pv7drnv8l<>res://category/abstract_categories/audio_question.gd
+::res://category/abstract_categories/::1684288491
+audio_question.gd::GDScript::-1::1684287542::0::1::::AudioQuestion<>SimpleQuestion<>::
+audio_question.tscn::PackedScene::1179480274090690078::1684288491::0::1::::<><>::uid://wed28fwnfbng<>uid://dpf0pv7drnv8l<>res://category/abstract_categories/audio_question.gd
 category.gd::GDScript::-1::1682897594::0::1::::Category<>GameScene<>::
 category.tscn::PackedScene::8707930394311103797::1682662095::0::1::::<><>::res://category/abstract_categories/category.gd<>uid://ci83o2db0cdeo<>uid://bt4f4wcpotw20
-complex_question.gd::GDScript::-1::1683650144::0::1::::ComplexQuestion<>SimpleQuestion<>::
-simple_question.gd::GDScript::-1::1683817991::0::1::::SimpleQuestion<>Category<>::
+complex_question.gd::GDScript::-1::1684287360::0::1::::ComplexQuestion<>SimpleQuestion<>::
+simple_question.gd::GDScript::-1::1684287360::0::1::::SimpleQuestion<>Category<>::
 simple_question.tscn::PackedScene::1552644180478409788::1682817791::0::1::::<><>::uid://dwcgluun7w64p<>res://category/abstract_categories/simple_question.gd<>uid://d1tw058t07h1x
 visual_question.gd::GDScript::-1::1682662049::0::1::::VisualQuestion<>SimpleQuestion<>::
 visual_question.tscn::PackedScene::5354498015522587805::1682817791::0::1::::<><>::uid://wed28fwnfbng<>res://category/abstract_categories/visual_question.gd
-::res://category/concrete_categories/::1684199639
+::res://category/concrete_categories/::1684288491
 audience_video_game_challenge.tscn::PackedScene::-1::1683354676::0::1::::<><>::uid://wed28fwnfbng<>uid://bi084vbd0shy8
-audio.tscn::PackedScene::-1::1683354676::0::1::::<><>::uid://q2l4rfvc23gk<>uid://cgboxl85r0toy<>uid://ci83o2db0cdeo<>uid://cdoroj6ej46ql
+audio.tscn::PackedScene::2662588706229864413::1684288491::0::1::::<><>::uid://q2l4rfvc23gk<>uid://cgboxl85r0toy<>uid://ci83o2db0cdeo<>uid://cdoroj6ej46ql
 brutal_question.tscn::PackedScene::-1::1683354676::0::1::::<><>::uid://wed28fwnfbng<>uid://pphg5nvr1wgm
-chooose_your_destiny.gd::GDScript::-1::1683731049::0::1::::<>ComplexQuestion<>::
-choose_your_destiny.tscn::PackedScene::6454127626236446389::1684199826::0::1::::<><>::uid://wed28fwnfbng<>res://category/concrete_categories/chooose_your_destiny.gd<>uid://chxvpuvavceha
+choose_your_destiny.gd::GDScript::-1::1684199950::0::1::::<>ComplexQuestion<>::
+choose_your_destiny.tscn::PackedScene::6797465194520336464::1684288491::0::1::::<><>::uid://wed28fwnfbng<>res://category/concrete_categories/choose_your_destiny.gd<>uid://chxvpuvavceha
 devils_deal.gd::GDScript::-1::1682898261::0::1::::<>ComplexQuestion<>::
-devils_deal.tscn::PackedScene::1501705532629216325::1684199639::0::1::::<><>::uid://wed28fwnfbng<>res://category/concrete_categories/devils_deal.gd<>res://category/dialogue.tscn<>uid://cogxonbpf4w4g<>uid://c5u3vtc1eoyw4
+devils_deal.tscn::PackedScene::1501705532629216325::1684288490::0::1::::<><>::uid://wed28fwnfbng<>res://category/concrete_categories/devils_deal.gd<>res://category/dialogue.tscn<>uid://cogxonbpf4w4g<>uid://c5u3vtc1eoyw4
 dialogue.tscn::PackedScene::-1::1683354676::0::1::::<><>::uid://q2l4rfvc23gk<>uid://c00obwwbpvq2g<>uid://ci83o2db0cdeo
 easy_question.tscn::PackedScene::-1::1683354676::0::1::::<><>::uid://wed28fwnfbng<>uid://s2nmqih75ore
 leap_of_faith.tscn::PackedScene::-1::1683354676::0::1::::<><>::uid://wed28fwnfbng<>uid://c0fvwycjpniqm
-lightning_round.gd::GDScript::-1::1683816545::0::1::::<>ComplexQuestion<>::
-lightning_round.tscn::PackedScene::7102491645973169855::1683816545::0::1::::<><>::uid://wed28fwnfbng<>res://category/concrete_categories/lightning_round.gd<>uid://ck5yfcqm7v31f<>res://assets/fonts/roboto_1.tres<>uid://bthtxa1e3eh44<>uid://bll1w1ypl8s2u
-multiple_choice.gd::GDScript::-1::1683816545::0::1::::<>ComplexQuestion<>::
+lightning_round.gd::GDScript::-1::1684288471::0::1::::<>ComplexQuestion<>::
+lightning_round.tscn::PackedScene::7102491645973169855::1684288491::0::1::::<><>::uid://wed28fwnfbng<>res://category/concrete_categories/lightning_round.gd<>uid://ck5yfcqm7v31f<>res://assets/fonts/roboto_1.tres<>uid://bthtxa1e3eh44<>uid://bll1w1ypl8s2u<>uid://dccgc8kt01yun
+multiple_choice.gd::GDScript::-1::1684287089::0::1::::<>ComplexQuestion<>::
 multiple_choice.tscn::PackedScene::554786468879467141::1683816545::0::1::::<><>::uid://wed28fwnfbng<>res://category/dialogue.tscn<>uid://dqy5kr7xce4rd<>res://category/concrete_categories/multiple_choice.gd<>uid://bkorpi2ryxftt
-pick_your_poison.gd::GDScript::-1::1683824387::0::1::::<>ComplexQuestion<>::
+pick_your_poison.gd::GDScript::-1::1684287091::0::1::::<>ComplexQuestion<>::
 pick_your_poison.tscn::PackedScene::26260597988808914::1684081307::0::1::::<><>::uid://wed28fwnfbng<>uid://bfhsujeeuldad<>res://category/concrete_categories/pick_your_poison.gd<>res://category/dialogue.tscn<>uid://c5u3vtc1eoyw4
 screenshot.tscn::PackedScene::-1::1683354676::0::1::::<><>::uid://cij02g20d7tnh<>uid://c184ckll5ci4f
 solo_video_game_challenge.tscn::PackedScene::-1::1683354676::0::1::::<><>::uid://wed28fwnfbng<>uid://6twfe4txdrl5
@@ -149,17 +149,17 @@ keyboard.gd::GDScript::-1::1682433739::0::1::::<>NinePatchRect<>::
 keyboard_key.tscn::PackedScene::4863183998121256533::1682435399::0::1::::<><>::res://assets/fonts/earthbound_font.tres
 name_please.gd::GDScript::-1::1682872974::0::1::::<>GameScene<>::
 name_please.tscn::PackedScene::-1::1683349618::0::1::::<><>::res://name_please/dialogue.tscn<>uid://b02h1tr82lwnr<>uid://bqnc3edh82klo<>uid://dcr2xj0octolv<>res://name_please/name_please.gd<>res://name_please/keyboard.gd<>uid://3ddkadsr3go<>uid://dht7f3wp0q381<>uid://cpewh1jj7ki6c<>uid://bt8jnqabo7ll5<>uid://b86bu5tsbgg4g<>uid://ytj4f4nere2o<>uid://cmkauktl7t2o<>uid://boyowh3dfva5<>uid://x1yl3jwns50g
-::res://panel_select/::1684199639
+::res://panel_select/::1684288490
 earthbound_header_font.tres::FontFile::-1::1682347191::0::1::::<><>::res://assets/fonts/EBMain.ttf
 header_font.tres::FontFile::-1::1682347192::0::1::::<><>::res://assets/fonts/mmrock9/MMRock9.ttf
 msg_box.gd::GDScript::-1::1684199542::0::1::::MessageBox<>Label<>::
-msg_box.tscn::PackedScene::841356751732385488::1684199639::0::1::::<><>::res://panel_select/msg_box.gd
+msg_box.tscn::PackedScene::841356751732385488::1684288490::0::1::::<><>::res://panel_select/msg_box.gd
 numbered_panel.gd::GDScript::-1::1682897594::0::1::::NumberedPanel<>Node2D<>::
 numbered_panel.tscn::PackedScene::-1::1683354676::0::1::::<><>::res://panel_select/panel_font.tres<>res://panel_select/numbered_panel.gd<>uid://ndh6876vsopr
 panel_font.tres::FontFile::-1::1682347192::0::1::::<><>::res://assets/fonts/mmrock9/MMRock9.ttf
 panel_select.gd::GDScript::-1::1683506393::0::1::::PanelSelect<>GameScene<>::
 panel_select.tscn::PackedScene::5872623155717866250::1683816546::0::1::::<><>::uid://bt4f4wcpotw20<>uid://br556gtsgwmhb<>res://panel_select/panel_select.gd<>uid://c143lwvem2jlj
-score_header.gd::GDScript::-1::1682347192::0::1::::<>Control<>::
+score_header.gd::GDScript::-1::1684287360::0::1::::<>Control<>::
 score_header.tscn::PackedScene::3780232199974849375::1682355226::0::1::::<><>::res://panel_select/header_font.tres<>res://panel_select/earthbound_header_font.tres<>res://panel_select/score_header.gd
 ::res://resources/::1684198655
 black.tres::ShaderMaterial::4587632179637169169::1682662323::0::1::::<><>::
@@ -175,10 +175,10 @@ failure_transition.tscn::PackedScene::2379470265561261583::1683816545::0::1::::<
 garage_door.gd::GDScript::-1::1682661964::0::1::::<>ScreenTransition<>::
 garage_door.tscn::PackedScene::5404203082130356514::1682662095::0::1::::<><>::res://screen_transitions/garage_door.gd<>uid://c2gd8hkr74cwe
 screen_transition.gd::GDScript::-1::1682347191::0::1::::ScreenTransition<>Node<>::
-::res://trivia/::1684199639
-trivia_1.tres::Resource/Trivia::4886250433927100452::1684199639::0::1::::<><>::res://resources/trivia.gd
-::res://trivia/audio/::1683353240
-Mother 3 - 129 Even Drier Guys.ogg::AudioStreamOggVorbis::5013366897642867679::1681596332::1682347211::1::::<><>::
+::res://trivia/::1684286646
+trivia_1.tres::Resource/Trivia::4886250433927100452::1684286646::0::1::::<><>::res://resources/trivia.gd
+::res://trivia/audio/::1684287937
+Mother 3 - 129 Even Drier Guys.ogg::AudioStreamOggVorbis::5013366897642867679::1684287864::1684287937::1::::<><>::
 ::res://trivia/dialogue/::1682347312
 we better.wav::AudioStreamWAV::6025779221285755878::1681601496::1682347312::1::::<><>::
 ::res://trivia/screenshot/::1682347311

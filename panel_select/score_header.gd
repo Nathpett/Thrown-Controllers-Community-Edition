@@ -22,7 +22,7 @@ func _enter_tree() -> void:
 		_node = _node.get_parent()
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if header_timer.time_left:
 		timer_value.text = str(ceil(header_timer.time_left))
 	else:

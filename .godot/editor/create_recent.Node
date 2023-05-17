@@ -1,10 +1,10 @@
+TextureRect
+Control
 Panel
 Label
 Sprite2D
-Control
 ColorRect
 AudioStreamPlayer
-TextureRect
 ScreenTransition
 Marker2D
 Node2D

@@ -90,7 +90,7 @@ func submit_answer(submitted_answer) -> void:
 
 
 func conclude_lightning_round() -> void:
-	scene_disabled = true # no more input!
+	question_over = true 
 	
 	dialogue.hide()
 	results_hbox.show()
@@ -126,14 +126,14 @@ func conclude_lightning_round() -> void:
 		tween.tween_interval(i * 0.2)
 		
 		i += 1 + 5 * i / len(correct_arr) # this does a dramatic drop with 5 quesitions, but with 10 it could get agonizing, TODO SCALE SOMEHOW HERE SOME DAY!
-	tween.connect("finished", Callable(self, "_on_tween_all_completed"))
+#	tween.connect("finished", Callable(self, "_on_tween_all_completed"))
 
-
-func _on_tween_all_completed() -> void:
-	if correct_ct > len(correct_arr) / 2.0:
-		emit_signal("success")
-	else:
-		emit_signal("failure")
+#
+#func _on_tween_all_completed() -> void:
+#	if correct_ct > len(correct_arr) / 2.0:
+#		emit_signal("success")
+#	else:
+#		emit_signal("failure")
 
 
 func _on_tween_complete(_object, _key) -> void:
@@ -141,4 +141,9 @@ func _on_tween_complete(_object, _key) -> void:
 
 
 func _on_timer_timeout() -> void:
-	print("AAA")
+	var tween = create_tween()
+	tween.tween_property($OutOfTime, "offset_top", 0, 1).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+	tween.parallel().tween_property($OutOfTime, "offset_bottom", 0, 1).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+	
+	await tween.finished
+	$Thunder.play()

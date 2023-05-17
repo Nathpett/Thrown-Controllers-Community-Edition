@@ -83,6 +83,7 @@ func change_scene_to_file(new_scene, transition = null) -> void:
 	transitions.add_child(transition)
 	
 	current_scene.disable()
+	current_scene.music_fade_off()
 	await transition.screen_covered
 	
 	current_scene.queue_free()
@@ -185,7 +186,7 @@ func _on_success() -> void:
 func _on_failure() -> void:
 	if devil_state: 
 		exit_devil_state()
-		
+	
 	push_current_to_leaderboard()
 	
 	current_contestant_score = 0

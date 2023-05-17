@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8gq88xcykua6"]
+[gd_scene load_steps=8 format=3 uid="uid://c8gq88xcykua6"]
 
 [ext_resource type="PackedScene" uid="uid://wed28fwnfbng" path="res://category/abstract_categories/simple_question.tscn" id="1"]
 [ext_resource type="Script" path="res://category/concrete_categories/lightning_round.gd" id="2"]
@@ -6,9 +6,11 @@
 [ext_resource type="FontFile" path="res://assets/fonts/roboto_1.tres" id="4"]
 [ext_resource type="Texture2D" uid="uid://bthtxa1e3eh44" path="res://assets/img/box.png" id="5"]
 [ext_resource type="AudioStream" uid="uid://bll1w1ypl8s2u" path="res://assets/sound/free_sound/badoink__thunder.wav" id="6"]
+[ext_resource type="Texture2D" uid="uid://dccgc8kt01yun" path="res://assets/img/x.png" id="7_y6jcg"]
 
 [node name="GameScene" instance=ExtResource("1")]
 script = ExtResource("2")
+manual_validation = true
 
 [node name="CategoryTitle" parent="Control" index="3"]
 anchor_left = 0.25
@@ -74,5 +76,16 @@ stretch_mode = 4
 [node name="Thunder" type="AudioStreamPlayer" parent="." index="1"]
 stream = ExtResource("6")
 bus = &"sfx"
+
+[node name="OutOfTime" type="TextureRect" parent="." index="3"]
+modulate = Color(1, 1, 1, 0.682353)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -300.0
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_y6jcg")
 
 [editable path="Control/Dialogue"]
