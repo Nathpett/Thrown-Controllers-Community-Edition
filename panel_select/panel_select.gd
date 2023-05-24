@@ -25,7 +25,7 @@ func _ready() -> void:
 	var val = 0
 	if game:
 		val = min(6.0, game.current_contestant_score)
-	$AudioStreamPlayer.play(val * 125.0/7.0)
+	$Music.play(val * 125.0/7.0)
 
 
 func _input(event: InputEvent) -> void:

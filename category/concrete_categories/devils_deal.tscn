@@ -8,6 +8,7 @@
 
 [node name="GameScene" instance=ExtResource("1_qe71y")]
 script = ExtResource("2_i5ukk")
+manual_validation = false
 
 [node name="Label" parent="Control/Dialogue/MarginContainer" index="0"]
 text = "Sell your soul!  Sell your soul!!"

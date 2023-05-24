@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3]
+[gd_scene load_steps=19 format=3 uid="uid://cl4xbi8rfkasv"]
 
 [ext_resource type="PackedScene" path="res://name_please/dialogue.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://b02h1tr82lwnr" path="res://assets/name_please_tile.png" id="2_ppbx1"]
@@ -139,7 +139,7 @@ bus = &"sfx"
 stream = ExtResource("9")
 bus = &"sfx"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
+[node name="Music" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource("14")
 autoplay = true
 bus = &"music"

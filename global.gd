@@ -3,6 +3,7 @@ extends Node
 
 var available_reigon_vectors: PackedVector2Array
 
+
 func _ready() -> void:
 	randomize()
 	# using dims of NPC sheet, initialize available reigon vectors for avatars to draw from.
