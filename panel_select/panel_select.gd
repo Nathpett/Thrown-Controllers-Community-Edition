@@ -86,7 +86,7 @@ func _panel_select_animation():
 	selected_panel.eff_scale_limit = 100
 	
 	var ani_time = 2
-	ani_tween.tween_property($AudioStreamPlayer, "volume_db", -80, ani_time)
+	ani_tween.tween_property($Music, "volume_db", -80, ani_time)
 	ani_tween.parallel().tween_property(self, "wheel_radius", 5.0, ani_time).set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN)
 	ani_tween.parallel().tween_property(selected_panel, "modulate", Color.BLACK, ani_time).set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN)
 	ani_tween.parallel().tween_method(Callable(self, "_update_panels"), 0, 0, ani_time)

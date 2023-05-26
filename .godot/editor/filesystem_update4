@@ -1,13 +1,4 @@
 res://default_env.tres
-res://category/concrete_categories/devils_deal.tscn
-res://settings_menu/settings_menu.tscn
-res://default_bus_layout.tres
-res://global.gd
-res://name_please/name_please.tscn
+res://pause_menu/pause_menu.tscn
 res://avatar/soulless.gdshader
-res://main_menu/main_menu.tscn
-res://category/concrete_categories/audio.tscn
-res://panel_select/panel_select.tscn
-res://panel_select/panel_select.gd
-res://screen_transitions/failure_transition.tscn
-res://settings_menu/settings_menu.gd
+res://trivia/trivia_1.tres

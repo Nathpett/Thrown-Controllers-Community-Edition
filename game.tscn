@@ -14,3 +14,6 @@ trivia = ExtResource("3")
 visible = false
 
 [node name="Transitions" type="CanvasLayer" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 2

@@ -50,6 +50,15 @@ func _ready() -> void:
 				panels[i] = "brutal_question"
 
 
+func _input(event):
+	if event.is_action_pressed("pause"):
+		var pause_menu = load("res://pause_menu/pause_menu.tscn").instantiate()
+		$UI.add_child(pause_menu)
+#		var settings_menu = load("res://settings_menu/settings_menu.tscn").instantiate()
+#		$UI.add_child(settings_menu)
+		get_tree().paused = true
+
+
 func populate_singlefile(quant) -> void:
 	for i in range(1, quant + 1):
 		panels[i] = pop_category_queue()

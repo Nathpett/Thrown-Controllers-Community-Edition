@@ -50,7 +50,6 @@ one_shot = true
 
 [node name="SpotLight" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4")
-volume_db = -8.789
 bus = &"sfx"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]

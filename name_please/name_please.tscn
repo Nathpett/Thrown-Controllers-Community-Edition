@@ -139,11 +139,6 @@ bus = &"sfx"
 stream = ExtResource("9")
 bus = &"sfx"
 
-[node name="Music" type="AudioStreamPlayer" parent="Control"]
-stream = ExtResource("14")
-autoplay = true
-bus = &"music"
-
 [node name="Avatar" parent="Control" instance=ExtResource("3")]
 position = Vector2(64, 48)
 
@@ -170,6 +165,11 @@ anchor_bottom = 1.0
 offset_left = 328.0
 offset_right = 2.0
 color = Color(0, 0, 0, 1)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14")
+autoplay = true
+bus = &"music"
 
 [connection signal="timeout" from="Control/Control/Keyboard/SecondTry/Cursor/Timer" to="Control/Control/Keyboard" method="_on_Timer_timeout"]
 
