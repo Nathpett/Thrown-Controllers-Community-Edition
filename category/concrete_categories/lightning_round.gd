@@ -92,6 +92,7 @@ func submit_answer(submitted_answer) -> void:
 func conclude_lightning_round() -> void:
 	question_over = true 
 	
+	$Control/Header/Timer.stop()
 	dialogue.hide()
 	results_hbox.show()
 	

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dwvjrc2p4vudx"]
 
-[ext_resource type="PackedScene" uid="uid://y6m18hlv0u16" path="res://game.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://8nevuab6buxh" path="res://game/game.tscn" id="1_w0jp0"]
 [ext_resource type="Shader" path="res://avatar/soulless.gdshader" id="2_e6p75"]
 [ext_resource type="Texture2D" uid="uid://dynb1v3hfwm8i" path="res://icon.png" id="3_xud7x"]
 
@@ -17,4 +17,4 @@ shader_parameter/outline_color = null
 material = SubResource("ShaderMaterial_xs60t")
 texture = ExtResource("3_xud7x")
 
-[node name="Game" parent="." instance=ExtResource("2")]
+[node name="Game" parent="." instance=ExtResource("1_w0jp0")]

@@ -16,6 +16,7 @@ offsets = PackedFloat32Array(0, 0.619377, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.0169955, 0.0169955, 0.0169955, 1, 0, 0, 0, 1)
 
 [node name="Avatar" type="Node2D"]
+visible = false
 script = ExtResource("2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

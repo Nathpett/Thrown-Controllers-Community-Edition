@@ -5,6 +5,7 @@ extends Control
 @onready var sfx_h_slider = $VBoxContainer/SFXSlider/HSlider
 @onready var fullscreen_checkbutton = $VBoxContainer/CenterContainer/CheckButton
 
+var pause_menu
 
 func _ready():
 	var music_bus = AudioServer.get_bus_index("music")
@@ -15,21 +16,12 @@ func _ready():
 	
 	var window_mode = DisplayServer.window_get_mode()
 	fullscreen_checkbutton.button_pressed = window_mode == DisplayServer.WINDOW_MODE_FULLSCREEN
-
-
-func _input(event):
-	if event.is_action_pressed("pause"):
-		_unpause()
-		get_viewport().set_input_as_handled()
+	
+	music_h_slider.grab_focus()
 
 
 func _process(delta):
 	pass
-
-
-func _unpause() -> void:
-	queue_free()
-	get_tree().paused = false
 
 
 func _on_music_h_slider_changed(value):
@@ -47,3 +39,8 @@ func _on_sfx_h_slider_changed(value):
 func _on_fullscreen_toggle_toggled(button_pressed):
 	var new_mode = DisplayServer.WINDOW_MODE_FULLSCREEN if button_pressed else DisplayServer.WINDOW_MODE_WINDOWED 
 	DisplayServer.window_set_mode(new_mode)
+
+
+func _on_back_button_pressed():
+	pause_menu.return_focus()
+	queue_free()

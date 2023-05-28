@@ -12,6 +12,8 @@ var swapping:bool = true
 func _ready() -> void:
 	super._ready()
 	
+	avatar.visible = true
+	
 	keyboard.connect("ok", Callable(self, "_on_ok"))
 	keyboard.connect("swap", Callable(self, "_on_swap"))
 	call_in_avatar()

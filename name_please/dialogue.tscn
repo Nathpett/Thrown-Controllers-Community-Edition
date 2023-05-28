@@ -1,35 +1,36 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=6 format=3 uid="uid://bcswq0s6eqrro"]
 
-[ext_resource path="res://assets/earthbound_dialouge_hud_Bill_Eager_tiny.png" type="Texture2D" id=1]
-[ext_resource path="res://assets/progress_blinker.png" type="Texture2D" id=2]
-[ext_resource path="res://name_please/dialogue.gd" type="Script" id=3]
-[ext_resource path="res://assets/fonts/earthbound_font.tres" type="FontFile" id=4]
+[ext_resource type="Texture2D" uid="uid://bt8jnqabo7ll5" path="res://assets/earthbound_dialouge_hud_Bill_Eager_tiny.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://ih3yv4lgkv2j" path="res://assets/progress_blinker.png" id="2"]
+[ext_resource type="Script" path="res://name_please/dialogue.gd" id="3"]
+[ext_resource type="FontFile" path="res://assets/fonts/earthbound_font.tres" id="4"]
 
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 9, 5 )
+[sub_resource type="AtlasTexture" id="1"]
+atlas = ExtResource("2")
+region = Rect2(0, 0, 9, 5)
 
 [node name="Dialogue" type="NinePatchRect"]
 offset_right = 77.0
 offset_bottom = 46.0
-texture = ExtResource( 1 )
+texture = ExtResource("1")
 patch_margin_left = 5
 patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
-script = ExtResource( 3 )
+script = ExtResource("3")
 
 [node name="ProgressBlinker" type="TextureRect" parent="."]
 visible = false
+layout_mode = 0
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -16.0
 offset_top = -7.0
-texture = SubResource( 1 )
+texture = SubResource("1")
 
 [node name="Timer" type="Timer" parent="ProgressBlinker"]
 wait_time = 0.333
@@ -37,18 +38,16 @@ one_shot = true
 autostart = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_top = 7
 theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
 [node name="Label" type="Label" parent="MarginContainer"]
-offset_left = 7.0
-offset_top = 17.0
-offset_right = 72.0
-offset_bottom = 30.0
-theme_override_fonts/font = ExtResource( 4 )
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4")
 
 [connection signal="timeout" from="ProgressBlinker/Timer" to="." method="_on_Timer_timeout"]

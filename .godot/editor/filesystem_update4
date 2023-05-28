@@ -1,4 +1,11 @@
 res://default_env.tres
-res://pause_menu/pause_menu.tscn
-res://avatar/soulless.gdshader
+res://game/game.tscn
 res://trivia/trivia_1.tres
+res://avatar/soulless.gdshader
+res://Main.tscn
+res://pause_menu/pause_menu.gd
+res://pause_menu/pause_menu.tscn
+res://pause_menu/settings_menu.gd
+res://pause_menu/are_you_sure.gd
+res://pause_menu/are_you_sure.tscn
+res://pause_menu/settings_menu.tscn

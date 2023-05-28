@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://d32dafhxbn8j6"]
 
 [ext_resource type="Texture2D" uid="uid://c3uh5bai2ciq3" path="res://assets/img/crummy_panel.png" id="1"]
 [ext_resource type="FontFile" path="res://assets/fonts/roboto_1.tres" id="2"]

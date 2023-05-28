@@ -4,27 +4,30 @@ extends Node
 enum Mode {DEBUG, RANDOM, JUST_ONE}
 # TODO GET MUSIC ON LIST, IMPLEMENT TO MAKE MORE LIVELY
 
-@export var trivia: Resource
+@export var initial_trivia: Resource
 @export var mode: Mode
 
 var current_scene: GameScene
 var black_fade_transition = preload("res://screen_transitions/black_fade.tscn")
 
-var leaderboard: Dictionary
-
-var panels: Dictionary
-var category_queue: Array = []
 
 # current game state
+var panels: Dictionary = {}
+var category_queue: Array = []
 var current_contestant_name: String = ""
 var current_contestant_score: int = 0
 var devil_state = false
 var point_gain: int = 1
 var temp_point_gain: int = 0 # set by choose your destiny
+var exhausted_categories: Array = []
+var leaderboard: Dictionary = {}
+var trivia
+var avatar: Avatar
+
 
 var msgbox: MessageBox
 
-@onready var avatar = $Avatar
+
 @onready var transitions = $Transitions
 
 
@@ -34,8 +37,8 @@ func _ready() -> void:
 	current_scene.game = self
 	current_scene.enable()
 	
+	# TODO NEXT migrate all state variables to game state, so that we can then be able to save/load game states
 	panels = {}
-	
 	match mode:
 		Mode.DEBUG:
 			# default to all categories for debugging
@@ -48,14 +51,18 @@ func _ready() -> void:
 		Mode.JUST_ONE:
 			for i in range(1, 11):
 				panels[i] = "brutal_question"
+	
+	trivia = initial_trivia.duplicate()
+	
+	avatar = load("res://avatar/avatar.tscn").instantiate()
+	add_child(avatar)
 
 
 func _input(event):
 	if event.is_action_pressed("pause"):
 		var pause_menu = load("res://pause_menu/pause_menu.tscn").instantiate()
+		pause_menu.game = self
 		$UI.add_child(pause_menu)
-#		var settings_menu = load("res://settings_menu/settings_menu.tscn").instantiate()
-#		$UI.add_child(settings_menu)
 		get_tree().paused = true
 
 
@@ -73,7 +80,7 @@ func pop_category_queue() -> String:
 
 func new_category_queue() -> Array:
 	var new_queue = Array(Trivia.CATEGORIES.keys())
-	for cat in trivia.exhausted_categories:
+	for cat in exhausted_categories:
 		new_queue.erase(cat)
 	
 	if devil_state:
@@ -117,12 +124,10 @@ func pop_trivia_data(_category_type: String):
 	if !Trivia.has_trivia_data(_category_type):
 		return null
 	
-	#var indx = trivia_indexes.get(_category_type, 0)
 	var trivia_data = trivia.get(_category_type).pop_front()
 	if !len(trivia[_category_type]):
 		_exhaust_category(_category_type)
 	
-	#trivia_indexes[_category_type] = (indx + 1) % len(trivia.get(_category_type)) # just modulo so that we'll return something.  User will just have to provide enough questions to prevent this, atleast we wont crash if we run out of questions lol
 	return trivia_data
 
 
@@ -140,7 +145,7 @@ func is_contestant_name_available(_name) -> bool:
 
 
 func _exhaust_category(cat: String) -> void:
-	trivia.exhausted_categories.append(cat)
+	exhausted_categories.append(cat)
 	while cat in category_queue:
 		category_queue.erase(cat)
 	
@@ -221,7 +226,7 @@ func exit_devil_state() -> void:
 func return_to_panel_select(transition) -> void:
 	if devil_state:
 		
-		if trivia.exhausted_categories.has("devils_deal"):
+		if exhausted_categories.has("devils_deal"):
 			#exit devil state if devils_deal is exhausted
 			_queue_user_message("All brutal questions have been used, \n the contestant's soul has been refunded.")
 			exit_devil_state()
@@ -230,6 +235,13 @@ func return_to_panel_select(transition) -> void:
 		
 		
 	change_scene_to_file(load("res://panel_select/panel_select.tscn").instantiate(), transition)
+
+
+func return_to_main_menu() -> void:
+	# if there is a transition, destroy it
+	for child in transitions.get_children():
+		child.queue_free()
+	change_scene_to_file(load("res://main_menu/main_menu.tscn").instantiate())
 
 
 func refresh_cats() -> void:

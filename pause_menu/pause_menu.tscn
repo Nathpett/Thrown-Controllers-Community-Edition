@@ -1,7 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://0oj7hdq0savs"]
+[gd_scene load_steps=7 format=3 uid="uid://0oj7hdq0savs"]
 
 [ext_resource type="Script" path="res://pause_menu/pause_menu.gd" id="1_c7782"]
+[ext_resource type="FontFile" path="res://panel_select/panel_font.tres" id="2_0v6qy"]
 [ext_resource type="AudioStream" uid="uid://dk8uujhjfvyy7" path="res://assets/sound/music/05 Battletoads Pause Screen.mp3" id="2_j4vke"]
+[ext_resource type="FontFile" uid="uid://c2gd8hkr74cwe" path="res://assets/fonts/megaman_font.tres" id="3_qxwf0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57d21"]
+bg_color = Color(0.521569, 0.521569, 0.521569, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ojq7f"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -14,13 +25,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c7782")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel2" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_57d21")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -30,12 +42,64 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0v6qy")
 theme_override_font_sizes/font_size = 14
-text = "TEST"
+text = "PAUSE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.929412, 0.839216, 0, 1)
+theme_override_colors/font_focus_color = Color(0.929412, 0.839216, 0, 1)
+theme_override_fonts/font = ExtResource("3_qxwf0")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ojq7f")
+text = "audio/video"
+flat = true
+
+[node name="DebugButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.929412, 0.839216, 0, 1)
+theme_override_colors/font_focus_color = Color(0.929412, 0.839216, 0, 1)
+theme_override_fonts/font = ExtResource("3_qxwf0")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ojq7f")
+text = "debug"
+flat = true
+
+[node name="MainMenu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.929412, 0.839216, 0, 1)
+theme_override_colors/font_focus_color = Color(0.929412, 0.839216, 0, 1)
+theme_override_fonts/font = ExtResource("3_qxwf0")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ojq7f")
+text = "main menu"
+flat = true
+
+[node name="QuitGame" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.929412, 0.839216, 0, 1)
+theme_override_colors/font_focus_color = Color(0.929412, 0.839216, 0, 1)
+theme_override_fonts/font = ExtResource("3_qxwf0")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ojq7f")
+text = "quit game"
 flat = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_j4vke")
 autoplay = true
+bus = &"music"
+
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/DebugButton" to="." method="_on_debug_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MainMenu" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitGame" to="." method="_on_quit_game_button_pressed"]

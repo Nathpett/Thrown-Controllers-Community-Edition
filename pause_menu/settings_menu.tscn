@@ -124,3 +124,4 @@ bus = &"sfx"
 [connection signal="value_changed" from="VBoxContainer/MusicSlider/HSlider" to="." method="_on_music_h_slider_changed"]
 [connection signal="value_changed" from="VBoxContainer/SFXSlider/HSlider" to="." method="_on_sfx_h_slider_changed"]
 [connection signal="toggled" from="VBoxContainer/CenterContainer/CheckButton" to="." method="_on_fullscreen_toggle_toggled"]
+[connection signal="pressed" from="VBoxContainer/CenterContainer2/Button" to="." method="_on_back_button_pressed"]

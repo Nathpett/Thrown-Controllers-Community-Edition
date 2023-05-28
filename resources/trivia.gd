@@ -84,8 +84,6 @@ const CATEGORIES: Dictionary = {
 @export var choose_your_destiny = 0
 
 
-var exhausted_categories: Array = []
-
 # will category show up in devil state
 static func is_devil(cat) -> bool:
 	return !CATEGORIES[cat].get(NO_DEVIL, false)

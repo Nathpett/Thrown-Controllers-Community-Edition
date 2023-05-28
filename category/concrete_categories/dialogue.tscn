@@ -1,16 +1,13 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://cstnljxpw6rbd"]
 
 [ext_resource type="PackedScene" uid="uid://q2l4rfvc23gk" path="res://category/abstract_categories/audio_question.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://c00obwwbpvq2g" path="res://assets/img/dialogue.png" id="2"]
 [ext_resource type="PackedScene" uid="uid://ci83o2db0cdeo" path="res://screen_transitions/garage_door.tscn" id="3"]
 
-[node name="GameScene" instance=ExtResource( 1 )]
-screen_transition = ExtResource( 3 )
+[node name="GameScene" instance=ExtResource("1")]
+screen_transition = ExtResource("3")
 
 [node name="CategoryTitle" parent="Control" index="3"]
-texture = ExtResource( 2 )
-
-[node name="AudioStreamPlayer" parent="." index="1"]
-volume_db = 0.0
+texture = ExtResource("2")
 
 [editable path="Control/Dialogue"]

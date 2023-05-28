@@ -1,13 +1,13 @@
+HBoxContainer
+Label
 Button
 VBoxContainer
 AudioStreamPlayer
 Panel
 CenterContainer
 CheckButton
-Label
 AudioStreamPlayer2D
 Control
-HBoxContainer
 HSlider
 ProgressBar
 CheckBox

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dwcgluun7w64p" path="res://category/abstract_categories/category.tscn" id="1"]
 [ext_resource type="Script" path="res://category/abstract_categories/simple_question.gd" id="2"]
-[ext_resource type="PackedScene" uid="uid://d1tw058t07h1x" path="res://category/dialogue.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://d32dafhxbn8j6" path="res://category/dialogue.tscn" id="3"]
 
 [node name="GameScene" instance=ExtResource("1")]
 script = ExtResource("2")
@@ -21,5 +21,6 @@ anchor_right = 0.96
 anchor_bottom = 0.96
 
 [node name="Music" type="AudioStreamPlayer2D" parent="." index="1"]
+bus = &"music"
 
 [editable path="Control/Dialogue"]
