@@ -35,7 +35,6 @@ const CATEGORIES: Dictionary = {
 								#{"question": "WHY?", "answer": "BECAUSE!"},
 								]
 @export var solo_video_game_challenge = [{"question": "play the game of life"}, {"question": "Katamari"}]
-@export var TheRunawayGuys_video_game_challenge = [{"question": "oh"}, {"question": "TRG 2"}]
 @export var audience_video_game_challenge = [{"question": "play a game"}, {"question": "huhuhuhuhuuu"}]
 @export var leap_of_faith = [{"question": "do 10,000 pushups (one handed)"}]
 
@@ -79,6 +78,19 @@ const CATEGORIES: Dictionary = {
 #							{"game": "Spelunky 6", "challenge": "5 v 5 Arena"},
 #							{"game": "Spelunky 7", "challenge": "6 v 6 Arena"},
 ]
+
+@export var TheRunawayGuys_video_game_challenge = {"chuggaaconroy": ["Super Mario Galaxy 2 (Wii) \n Beat the tall Trunk Slide purple coin star, two attempts", 
+																	"Do a little dance",
+																	],
+													"proton_jon": ["make a little love",
+																	"get down tonight"
+																	],
+													"nintendo_capri_sun": ["ha ha ha ha", 
+																			"stayin alive"
+																	]
+}
+
+
 
 @export var devils_deal = 0
 @export var choose_your_destiny = 0

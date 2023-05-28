@@ -1,3 +1,6 @@
+Sprite2D
+Node2D
+TextureRect
 HBoxContainer
 Label
 Button
@@ -12,12 +15,9 @@ HSlider
 ProgressBar
 CheckBox
 ColorRect
-TextureRect
 Window
-Sprite2D
 ScreenTransition
 Marker2D
-Node2D
 TextureButton
 Camera2D
 GPUParticles2D

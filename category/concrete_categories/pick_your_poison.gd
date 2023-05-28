@@ -9,7 +9,7 @@ func ready_trivia() -> void:
 	withdrawn_callenges = []
 	
 	for i in range(3):
-		var trivia_data = game.pop_trivia_data(get_category_type())
+		var trivia_data = game.game_state.pop_trivia_data(get_category_type())
 		if trivia_data: 
 			withdrawn_callenges.append(trivia_data)
 		else:
@@ -93,7 +93,7 @@ func deposit_challenges() -> void:
 	withdrawn_callenges.reverse()
 	for chal in withdrawn_callenges:
 		if i != selected_idx:
-			game.deposit_trivia_data(get_category_type(), chal)
+			game.game_state.deposit_trivia_data(get_category_type(), chal)
 		i -= 1
 
 

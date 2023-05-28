@@ -20,11 +20,6 @@ solo_video_game_challenge = [{
 }, {
 "question": "Katamari"
 }]
-TheRunawayGuys_video_game_challenge = [{
-"question": "oh"
-}, {
-"question": "TRG 2"
-}]
 audience_video_game_challenge = [{
 "question": "play a game"
 }, {
@@ -75,5 +70,11 @@ pick_your_poison = [{
 "challenge": "3 v 3 Arena",
 "game": "Spelunky 4"
 }]
+TheRunawayGuys_video_game_challenge = {
+"chuggaaconroy": ["Super Mario Galaxy 2 (Wii) 
+ Beat the tall Trunk Slide purple coin star, two attempts", "Do a little dance"],
+"nintendo_capri_sun": ["ha ha ha ha", "stayin alive"],
+"proton_jon": ["make a little love", "get down tonight"]
+}
 devils_deal = 0
 choose_your_destiny = 0

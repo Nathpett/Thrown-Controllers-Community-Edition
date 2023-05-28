@@ -59,14 +59,14 @@ func call_out_avatar() -> void:
 
 func _on_ok(contestant_name) -> void:
 	# don't progress if name taken
-	if !game.is_contestant_name_available(contestant_name):
+	if !game.game_state.is_contestant_name_available(contestant_name):
 		name_this_person.text = "That name is taken"
 		return
 	
 	avatar.confirm_character()
 	call_out_avatar()
 	
-	game.current_contestant_name = contestant_name
+	game.game_state.current_contestant_name = contestant_name
 	game.avatar.reigon_vector = avatar.reigon_vector
 	#emit_signal("contestant_named", contestant_name, avatar.reigon_vector)
 	game.change_scene_to_file(load("res://panel_select/panel_select.tscn").instantiate())

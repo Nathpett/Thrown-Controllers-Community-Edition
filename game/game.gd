@@ -1,31 +1,16 @@
 class_name Game
 extends Node
 
-enum Mode {DEBUG, RANDOM, JUST_ONE}
+
 # TODO GET MUSIC ON LIST, IMPLEMENT TO MAKE MORE LIVELY
+# TODO YOU IMPLEMENTED TRG VIDEO GAME CHALLENGE WONNNNGGGGG!!!! ITS GOTTA BE A COMPLEX QUESTION LIKE PICK YOUR POISON!!
 
-@export var initial_trivia: Resource
-@export var mode: Mode
-
+var game_state: GameState
 var current_scene: GameScene
 var black_fade_transition = preload("res://screen_transitions/black_fade.tscn")
 
-
-# current game state
-var panels: Dictionary = {}
-var category_queue: Array = []
-var current_contestant_name: String = ""
-var current_contestant_score: int = 0
-var devil_state = false
-var point_gain: int = 1
-var temp_point_gain: int = 0 # set by choose your destiny
-var exhausted_categories: Array = []
-var leaderboard: Dictionary = {}
-var trivia
-var avatar: Avatar
-
-
 var msgbox: MessageBox
+var avatar: Avatar
 
 
 @onready var transitions = $Transitions
@@ -37,25 +22,16 @@ func _ready() -> void:
 	current_scene.game = self
 	current_scene.enable()
 	
-	# TODO NEXT migrate all state variables to game state, so that we can then be able to save/load game states
-	panels = {}
-	match mode:
-		Mode.DEBUG:
-			# default to all categories for debugging
-			var i = 1
-			for cat in Trivia.CATEGORIES.keys():
-				panels[i] = cat
-				i += 1
-		Mode.RANDOM:
-			populate_singlefile(10)
-		Mode.JUST_ONE:
-			for i in range(1, 11):
-				panels[i] = "brutal_question"
-	
-	trivia = initial_trivia.duplicate()
-	
 	avatar = load("res://avatar/avatar.tscn").instantiate()
 	add_child(avatar)
+	
+	_new_game_state()
+
+
+func _new_game_state() -> void:
+	game_state = GameState.new()
+	game_state.mode = GameState.Mode.RANDOM
+	game_state.setup()
 
 
 func _input(event):
@@ -64,31 +40,6 @@ func _input(event):
 		pause_menu.game = self
 		$UI.add_child(pause_menu)
 		get_tree().paused = true
-
-
-func populate_singlefile(quant) -> void:
-	for i in range(1, quant + 1):
-		panels[i] = pop_category_queue()
-
-
-func pop_category_queue() -> String:
-	if category_queue.is_empty():
-		category_queue = new_category_queue()
-		category_queue.shuffle()
-	return category_queue.pop_front()
-
-
-func new_category_queue() -> Array:
-	var new_queue = Array(Trivia.CATEGORIES.keys())
-	for cat in exhausted_categories:
-		new_queue.erase(cat)
-	
-	if devil_state:
-		for cat in new_queue.duplicate():
-			if !Trivia.is_devil(cat):
-				new_queue.erase(cat)
-	
-	return new_queue
 
 
 func change_scene_to_file(new_scene, transition = null) -> void:
@@ -116,48 +67,9 @@ func change_scene_to_file(new_scene, transition = null) -> void:
 	_show_message()
 
 
-func push_current_to_leaderboard() -> void:
-	leaderboard[current_contestant_name] = current_contestant_score
-
-
-func pop_trivia_data(_category_type: String):
-	if !Trivia.has_trivia_data(_category_type):
-		return null
-	
-	var trivia_data = trivia.get(_category_type).pop_front()
-	if !len(trivia[_category_type]):
-		_exhaust_category(_category_type)
-	
-	return trivia_data
-
-
-func deposit_trivia_data(_category_type: String, data):
-	trivia[_category_type].insert(0, data)
-
-
 func play_category(category) -> void:
 	var category_path = "res://category/concrete_categories/%s.tscn" % [category]
 	change_scene_to_file(load(category_path).instantiate())
-
-
-func is_contestant_name_available(_name) -> bool:
-	return !leaderboard.has(_name)
-
-
-func _exhaust_category(cat: String) -> void:
-	exhausted_categories.append(cat)
-	while cat in category_queue:
-		category_queue.erase(cat)
-	
-	for n in panels:
-		var p_cat = panels[n]
-		if p_cat == cat:
-			panels[n] = pop_category_queue()
-	
-	# exhaust anyone dependant on this category (e.g., if brutal questions exhausted, exhaust devil deal)
-	var dependants = Trivia.get_dependants(cat)
-	for dependant in dependants:
-		_exhaust_category(dependant)
 
 
 # just connect it to everything lol whatever man...
@@ -172,7 +84,7 @@ func _connect_game_scene(gs):
 
 func _on_play_selected_panel(selected_panel) -> void:
 	# remove selecte panel from panels
-	panels.erase(selected_panel.number)
+	game_state.panels.erase(selected_panel.number)
 	play_category(selected_panel.category)
 
 
@@ -188,8 +100,8 @@ func _on_devil_deal(outcome) -> void:
 
 
 func _on_success() -> void:
-	current_contestant_score += max(point_gain, temp_point_gain)
-	temp_point_gain = 0
+	game_state.on_success()
+	
 	var success_transition = load("res://screen_transitions/garage_door.tscn").instantiate()
 	success_transition.text = "SUCCESS!"
 	success_transition.trans_time = 0.4
@@ -198,42 +110,31 @@ func _on_success() -> void:
 
 
 func _on_failure() -> void:
-	if devil_state: 
-		exit_devil_state()
-	
-	push_current_to_leaderboard()
-	
-	current_contestant_score = 0
+	game_state.on_failure()
 	
 	var transition = load("res://screen_transitions/failure_transition.tscn").instantiate()
 	change_scene_to_file(load("res://name_please/name_please.tscn").instantiate(), transition)
 
 
 func enter_devil_state() -> void:
-	devil_state = true
-	point_gain = 2
-	refresh_cats()
+	game_state.enter_devil_state()
 	avatar.fast_soulless()
 
 
 func exit_devil_state() -> void:
-	devil_state = false
-	point_gain = 1
-	refresh_cats()
+	game_state.exit_devil_state()
 	avatar.souledded()
 
 
 func return_to_panel_select(transition) -> void:
-	if devil_state:
-		
-		if exhausted_categories.has("devils_deal"):
+	if game_state.devil_state:
+		if game_state.exhausted_categories.has("devils_deal"):
 			#exit devil state if devils_deal is exhausted
 			_queue_user_message("All brutal questions have been used, \n the contestant's soul has been refunded.")
 			exit_devil_state()
 		else:
-			enforce_devil_composition()
-		
-		
+			game_state.enforce_devil_composition()
+	
 	change_scene_to_file(load("res://panel_select/panel_select.tscn").instantiate(), transition)
 
 
@@ -242,37 +143,7 @@ func return_to_main_menu() -> void:
 	for child in transitions.get_children():
 		child.queue_free()
 	change_scene_to_file(load("res://main_menu/main_menu.tscn").instantiate())
-
-
-func refresh_cats() -> void:
-	category_queue = []
-	panels = {}
-	populate_singlefile(10)
-
-
-func enforce_devil_composition() -> void:
-	#  Replace a non-brutal question with a brutal question to meet expected brutal ratio... min(0.5, score / 10) brutal questions over non brutals will be the score over 10 until a max of 0.5
-	
-	# first let's make a list of all indexes where there are no brutal categories
-	var non_brutal_keys: Array = []
-	for k in panels:
-		if panels[k] != "brutal_question":
-			non_brutal_keys.append(k)
-	non_brutal_keys.shuffle()
-	
-	# replace random non-brutal questions with brutal questions until we hit dest ratio
-	while true:
-		var dest_brutal_ratio: float = min(0.5, current_contestant_score / 10.0)
-		var actual_brutal_ratio: float = panels.values().count("brutal_question") / float(panels.keys().size())
-		
-		if actual_brutal_ratio < dest_brutal_ratio:
-			# set a random non-brutal to brutal
-			var key = non_brutal_keys.pop_back()
-			panels[key] = "brutal_question"
-		else:
-			print(dest_brutal_ratio)
-			print(panels.values())
-			return
+	_new_game_state()
 
 
 func _queue_user_message(message: String) -> void:

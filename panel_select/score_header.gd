@@ -31,8 +31,8 @@ func _process(_delta: float) -> void:
 
 func update_stats() -> void:
 	if game:
-		contestant_name_label.text = game.current_contestant_name
-		score_label.text = "SCORE:%s" % [game.current_contestant_score]
+		contestant_name_label.text = game.game_state.current_contestant_name
+		score_label.text = "SCORE:%s" % [game.game_state.current_contestant_score]
 		cat_title.text = game.current_scene.get_title().to_upper()
 
 

@@ -3,11 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://wed28fwnfbng" path="res://category/abstract_categories/simple_question.tscn" id="1_r1mr5"]
 [ext_resource type="Texture2D" uid="uid://bfhsujeeuldad" path="res://assets/img/pick_your_poison.png" id="2_c22wv"]
 [ext_resource type="Script" path="res://category/concrete_categories/pick_your_poison.gd" id="2_hlvi2"]
-[ext_resource type="PackedScene" path="res://category/dialogue.tscn" id="4_sd5la"]
+[ext_resource type="PackedScene" uid="uid://d32dafhxbn8j6" path="res://category/dialogue.tscn" id="4_sd5la"]
 [ext_resource type="Texture2D" uid="uid://c5u3vtc1eoyw4" path="res://assets/img/blinker.png" id="5_bhjrh"]
 
 [node name="GameScene" instance=ExtResource("1_r1mr5")]
 script = ExtResource("2_hlvi2")
+manual_validation = false
 
 [node name="CategoryTitle" parent="Control" index="3"]
 texture = ExtResource("2_c22wv")

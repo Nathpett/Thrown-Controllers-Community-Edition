@@ -7,7 +7,7 @@ func initiate_questions() -> void:
 	# get 5 random questions given game state
 	# questions cannot have NO_DESTINY token set to true
 	# if in devil state, questions cannot have NO_DEVIL TOKENS set to true
-	pool = game.new_category_queue() # will already be curated list of categorys that may show up already
+	pool = game.game_state.new_category_queue() # will already be curated list of categorys that may show up already
 	pool = pool.filter(Callable(Trivia, "is_destiny")) # but we have to filter out non-destiny-s
 	pool.shuffle()
 	pool = pool.slice(0, 5)
@@ -18,7 +18,7 @@ func initiate_questions() -> void:
 
 func complx_progress() -> void:
 	var cat_selected = pool[idx_select]
-	game.temp_point_gain = Trivia.get_destiny_value(cat_selected)
+	game.game_state.temp_point_gain = Trivia.get_destiny_value(cat_selected)
 	game.play_category(cat_selected)
 
 

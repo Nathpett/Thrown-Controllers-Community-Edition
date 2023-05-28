@@ -1,6 +1,8 @@
 class_name PanelSelect
 extends GameScene
 
+# TODO REPOPULATE PANEL WHEN ALL GONE HAHA
+
 signal update_panel_position(radius, wheel_angle)
 signal wheel_index_changed(wheel_index)
 signal animation_finished
@@ -24,7 +26,7 @@ func _ready() -> void:
 	
 	var val = 0
 	if game:
-		val = min(6.0, game.current_contestant_score)
+		val = min(6.0, game.game_state.current_contestant_score)
 	$Music.play(val * 125.0/7.0)
 
 
@@ -142,7 +144,7 @@ func motion_toward_wheel_index(index) -> void:
 func initiate_panels() -> void:
 	var panels: Dictionary # because sometimes we need to test panel select without game loaded
 	if game:
-		panels = game.panels
+		panels = game.game_state.panels
 	else:
 		panels = {}
 		for i in range(1, 11):

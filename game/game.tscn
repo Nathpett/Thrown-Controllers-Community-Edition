@@ -1,12 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://8nevuab6buxh"]
+[gd_scene load_steps=3 format=3 uid="uid://8nevuab6buxh"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_u2nrk"]
-[ext_resource type="Resource" uid="uid://cbu63imca60tc" path="res://trivia/trivia_1.tres" id="2_owikc"]
 [ext_resource type="PackedScene" uid="uid://bqnc3edh82klo" path="res://avatar/avatar.tscn" id="3_kwcm4"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_u2nrk")
-initial_trivia = ExtResource("2_owikc")
 
 [node name="GameScenes" type="Node" parent="."]
 

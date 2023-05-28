@@ -1,9 +1,44 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=6 format=3 uid="uid://cgvkcb6fjiu3"]
 
 [ext_resource type="PackedScene" uid="uid://wed28fwnfbng" path="res://category/abstract_categories/simple_question.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://j7rkc8p4fb75" path="res://assets/img/TheRunawayGuys_video_game_challenge.png" id="2"]
+[ext_resource type="Script" path="res://category/concrete_categories/TheRunawayGuys_video_game_challenge.gd" id="2_jhcql"]
+[ext_resource type="Texture2D" uid="uid://c5u3vtc1eoyw4" path="res://assets/img/blinker.png" id="6_8tiau"]
 
-[node name="GameScene" instance=ExtResource( 1 )]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_a3pq2"]
 
-[node name="CategoryTitle" parent="Control" index="3"]
-texture = ExtResource( 2 )
+[node name="GameScene" instance=ExtResource("1")]
+script = ExtResource("2_jhcql")
+manual_validation = false
+
+[node name="Dialogue" parent="Control" index="2"]
+layout_mode = 1
+anchors_preset = -1
+
+[node name="Label" parent="Control/Dialogue/MarginContainer" index="0"]
+theme_override_font_sizes/normal_font_size = 11
+
+[node name="Heads" type="HBoxContainer" parent="Control" index="3"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.49
+anchor_right = 1.0
+anchor_bottom = 0.74
+
+[node name="TextureRect" type="TextureRect" parent="Control/Heads" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("PlaceholderTexture2D_a3pq2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CategoryTitle" parent="Control" index="4"]
+texture = ExtResource("2")
+
+[node name="Cursor" type="Sprite2D" parent="." index="2"]
+visible = false
+rotation = 1.5708
+texture = ExtResource("6_8tiau")
+
+[editable path="Control/Dialogue"]
