@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bn2nblabtlw85" path="res://assets/sound/free_sound/540280__badoink__quantum-ether.wav" id="4_3n2xw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_slmue"]
+resource_local_to_scene = true
 shader = ExtResource("2_cint6")
 shader_parameter/progress = 0.0
 shader_parameter/outline_color = Color(0.32549, 0.592157, 0.580392, 1)

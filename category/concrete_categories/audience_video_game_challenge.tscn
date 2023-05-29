@@ -6,6 +6,9 @@
 
 [node name="GameScene" instance=ExtResource("1")]
 
+[node name="Label" parent="Control/Dialogue/MarginContainer" index="0"]
+text = "Challenge a random member of the audience in a video game!"
+
 [node name="CategoryTitle" parent="Control" index="3"]
 texture = ExtResource("2")
 

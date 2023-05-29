@@ -24,6 +24,10 @@ func _process(delta):
 	pass
 
 
+func destroy():
+	queue_free()
+
+
 func _on_music_h_slider_changed(value):
 	var _bus = AudioServer.get_bus_index("music")
 	AudioServer.set_bus_volume_db(_bus, linear_to_db(value))

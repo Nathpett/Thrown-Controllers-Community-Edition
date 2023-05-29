@@ -9,6 +9,7 @@ var swapping:bool = true
 @onready var keyboard = $Control/Control/Keyboard
 @onready var name_this_person = $Control/Control/NameThisPerson/MarginContainer/Label
 
+
 func _ready() -> void:
 	super._ready()
 	
@@ -17,7 +18,6 @@ func _ready() -> void:
 	keyboard.connect("ok", Callable(self, "_on_ok"))
 	keyboard.connect("swap", Callable(self, "_on_swap"))
 	call_in_avatar()
-	
 
 
 func disable() -> void:

@@ -12,9 +12,11 @@ var correct_ct: int = 0
 func ready_trivia() -> void:
 	var trivia_data = game.game_state.pop_trivia_data(get_category_type())
 	
-	dialogue.show_text(trivia_data["theme"])
-	time_limit = trivia_data.get("time_limit", 0)
 	questions = trivia_data["questions"]
+	time_limit = trivia_data.get("time_limit", 0)
+	var instructions = "Answer %s questions in %s seconds.\nget a majority of the questions correct to pass!" % [questions.size(), time_limit]
+	
+	dialogue.show_text("%s\nTheme: %s" % [instructions, trivia_data["theme"]])
 	
 	$Control/LeftLabel.text = trivia_data.left + "\n<-----"
 	$Control/RightLabel.text = trivia_data.right + "\n----->"

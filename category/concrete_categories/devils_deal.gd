@@ -30,6 +30,8 @@ func initiate_questions() -> void:
 	$Control/NoDeal.show_text("NO DEAL")
 	$Control/Deal.show_text("DEAL")
 	
+	$Control/Dialogue/MarginContainer/Label.text = ""
+	
 	var music_stream
 	if game.game_state.current_contestant_score < 5:
 		music_stream = load("res://assets/sound/music/04. Questioning ~ Moderato 2001.mp3")

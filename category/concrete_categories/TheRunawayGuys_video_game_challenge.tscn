@@ -18,6 +18,7 @@ anchors_preset = -1
 
 [node name="Label" parent="Control/Dialogue/MarginContainer" index="0"]
 theme_override_font_sizes/normal_font_size = 11
+text = "chooses one of the three TRG members, and try to complete their challenge!"
 
 [node name="Heads" type="HBoxContainer" parent="Control" index="3"]
 visible = false

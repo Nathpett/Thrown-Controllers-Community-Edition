@@ -4,7 +4,7 @@ var answers: Array
 var answer_indx
 var avatar
 var selected_answer
-
+var answered = false
 
 @onready var a1 = $Control/Answers/A1
 @onready var a2 = $Control/Answers/A2
@@ -39,9 +39,6 @@ func initiate_questions() -> void:
 	tween.parallel().tween_property(dialogue, "anchor_bottom", 0.3, t_time)
 	tween.parallel().tween_property(dialogue, "anchor_right", 0.95, t_time)
 	tween.parallel().tween_property(dialogue, "anchor_left", 0.05, t_time)
-	
-#	var trans = Tween.TRANS_BACK
-#	var eas = Tween.EASE_IN
 	
 	tween.parallel().tween_property(a1, "offset_top", 0, t_time)
 	tween.parallel().tween_property(a1, "offset_bottom", 0, t_time)
@@ -80,6 +77,10 @@ func complx_progress() -> void:
 	if !selected_answer:
 		return
 	
+	if answered:
+		return
+	answered = true
+	
 	selected_answer.clear_bbcode()
 	
 	var indx = $Control/Answers.get_children().find(selected_answer)
@@ -107,7 +108,6 @@ func complx_progress() -> void:
 		emit_signal("failure")
 
 
-
 func select_answer(_selected_answer) -> void:
 	if selected_answer:
 		selected_answer.clear_bbcode()
@@ -115,6 +115,4 @@ func select_answer(_selected_answer) -> void:
 	selected_answer = _selected_answer
 	selected_answer.push_shake()
 	avatar.move_to(selected_answer.get_global_position() + Vector2.RIGHT * selected_answer.size.x / 2 + Vector2.UP * 10)
-	
 
-	

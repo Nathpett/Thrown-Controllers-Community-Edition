@@ -1,19 +1,19 @@
-[gd_resource type="Resource" script_class="Trivia" load_steps=2 format=3 uid="uid://cbu63imca60tc"]
+[gd_resource type="Resource" script_class="Trivia" load_steps=2 format=3 uid="uid://8i6jg6h3hog8"]
 
-[ext_resource type="Script" path="res://resources/trivia.gd" id="1"]
+[ext_resource type="Script" path="res://trivia/trivia.gd" id="1"]
 
 [resource]
 script = ExtResource("1")
 easy_question = [{
-"answer": "4",
-"question": "What is 2+2?"
+"answer": "2023",
+"question": "What year did Zelda: Tears of the Kingdom release"
 }, {
 "answer": "I dunno lol",
 "question": "What does the sea saw?"
 }]
 brutal_question = [{
-"answer": "A reasonably large number I'm sure",
-"question": "what is the square root of 48509859038"
+"answer": "1889",
+"question": "in what year was Nintendo founded?"
 }]
 solo_video_game_challenge = [{
 "question": "play the game of life"
@@ -36,7 +36,7 @@ audio = [{
 dialogue = [{
 "answer": "Big D. Cat",
 "path": "dialogue/we better.wav",
-"question": "who funny voice man?"
+"question": "who's voice is this?"
 }]
 who_the_heck_is_that = [{
 "answer": "Billy Hatcher",
@@ -57,8 +57,8 @@ lightning_round = [{
 }]
 multiple_choice = [{
 "answer": 2,
-"answers": ["this one!!", "wrong answer", "the correct answer", "not this one"],
-"question": "what is the correct answer testing how long this can get he he he he heh heh e heh h ehe he he hhe he he he heh heheh hehe he h?"
+"answers": ["Monster Hunter", "Pokemon", "Pikmin", "Zelda"],
+"question": "Mandiblard, Sheargrub, and Crawmads are monsters from which game series?"
 }]
 pick_your_poison = [{
 "challenge": "1 v 1 Arena",

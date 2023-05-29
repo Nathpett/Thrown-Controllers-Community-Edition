@@ -1,6 +1,8 @@
 class_name GameState
 extends Resource
 
+signal panels_changed
+
 enum Mode {DEBUG, RANDOM, JUST_ONE}
 
 @export var mode: Mode
@@ -13,13 +15,13 @@ var category_queue: Array = []
 var current_contestant_name: String = ""
 var current_contestant_score: int = 0
 var devil_state = false
+var fast_mode = false
 var point_gain: int = 1
 var temp_point_gain: int = 0 # set by choose your destiny
 var exhausted_categories: Array = []
 var leaderboard: Dictionary = {}
 var trg_challenge_indexes: Dictionary = {}
 var trivia
-
 
 
 func setup() -> void:
@@ -35,7 +37,7 @@ func setup() -> void:
 			populate_singlefile(10)
 		Mode.JUST_ONE:
 			for i in range(1, 2):
-				panels[i] = "TheRunawayGuys_video_game_challenge"
+				panels[i] = "pick_your_poison"
 	
 	trivia = load("res://trivia/trivia_1.tres") # TODO some day allow user to choose trivia resource when starting new game
 	
@@ -63,8 +65,6 @@ func pop_trivia_data(_category_type: String):
 		return null
 	
 	var trivia_data = trivia.get(_category_type).pop_front()
-	if !len(trivia[_category_type]):
-		_exhaust_category(_category_type)
 	
 	return trivia_data
 
@@ -115,10 +115,17 @@ func new_category_queue() -> Array:
 			if !Trivia.is_devil(cat):
 				new_queue.erase(cat)
 	
+	if fast_mode:
+		for cat in new_queue.duplicate():
+			if Trivia.is_video_game_challenge(cat):
+				new_queue.erase(cat)
+	
 	return new_queue
 
 
-func refresh_cats() -> void:
+func refresh_cats(allow_reload = true) -> void:
+	if allow_reload:
+		emit_signal("panels_changed")
 	category_queue = []
 	panels = {}
 	populate_singlefile(10)
@@ -147,6 +154,13 @@ func enforce_devil_composition() -> void:
 			print(dest_brutal_ratio)
 			print(panels.values())
 			return
+
+
+func check_exhaust(cur_category_type) -> void:
+	if !Trivia.has_trivia_data(cur_category_type):
+		return
+	if !len(trivia[cur_category_type]):
+		_exhaust_category(cur_category_type)
 
 
 func _exhaust_category(cat: String) -> void:

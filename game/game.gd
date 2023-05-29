@@ -17,6 +17,11 @@ var avatar: Avatar
 
 
 func _ready() -> void:
+#	# check if trivia in user://, if none, copy and paste the default!
+#	var dir = DirAccess.open("user://")
+#	if !dir.dir_exists("trivia"):
+#		Game.dir_deep_copy("res://trivia", "user://trivia")
+	
 	current_scene = load("res://main_menu/main_menu.tscn").instantiate()
 	$GameScenes.add_child(current_scene)
 	current_scene.game = self
@@ -30,8 +35,9 @@ func _ready() -> void:
 
 func _new_game_state() -> void:
 	game_state = GameState.new()
-	game_state.mode = GameState.Mode.JUST_ONE
+	game_state.mode = GameState.Mode.RANDOM
 	game_state.setup()
+	game_state.connect("panels_changed", Callable(self, "_on_panels_changed"))
 
 
 func _input(event):
@@ -87,7 +93,7 @@ func _on_play_selected_panel(selected_panel) -> void:
 	game_state.panels.erase(selected_panel.number)
 	play_category(selected_panel.category)
 	if !game_state.panels.size():
-		game_state.refresh_cats()
+		game_state.refresh_cats(false)
 
 
 func _on_devil_deal(outcome) -> void:
@@ -98,6 +104,7 @@ func _on_devil_deal(outcome) -> void:
 	transition.text = "DEAL!" if outcome else "NO DEAL!"
 	transition.trans_time = 0.4
 	transition.hold_time = 0.4
+	game_state.check_exhaust(current_scene.get_category_type())
 	return_to_panel_select(transition)
 
 
@@ -108,14 +115,21 @@ func _on_success() -> void:
 	success_transition.text = "SUCCESS!"
 	success_transition.trans_time = 0.4
 	success_transition.hold_time = 0.4
+	game_state.check_exhaust(current_scene.get_category_type())
 	return_to_panel_select(success_transition)
 
 
 func _on_failure() -> void:
 	game_state.on_failure()
+	game_state.check_exhaust(current_scene.get_category_type())
 	
 	var transition = load("res://screen_transitions/failure_transition.tscn").instantiate()
 	change_scene_to_file(load("res://name_please/name_please.tscn").instantiate(), transition)
+
+
+func _on_panels_changed() -> void:
+	if current_scene is PanelSelect:
+		change_scene_to_file(load("res://panel_select/panel_select.tscn").instantiate())
 
 
 func enter_devil_state() -> void:
@@ -129,6 +143,7 @@ func exit_devil_state() -> void:
 
 
 func return_to_panel_select(transition) -> void:
+	# exhaust the category if it's out of questions
 	if game_state.devil_state:
 		if game_state.exhausted_categories.has("devils_deal"):
 			#exit devil state if devils_deal is exhausted
@@ -158,3 +173,18 @@ func _queue_user_message(message: String) -> void:
 func _show_message() -> void:
 	if is_instance_valid(msgbox):
 		msgbox.visible = true
+
+
+static func dir_deep_copy(path_from : String, path_to : String) -> void:
+	var from_dir: DirAccess = DirAccess.open(path_from)
+	if !from_dir.dir_exists(path_to):
+		from_dir.make_dir_absolute(path_to)
+	from_dir.list_dir_begin()
+	var file_name = from_dir.get_next()
+	while file_name:
+		if from_dir.current_is_dir():
+			Game.dir_deep_copy("%s/%s" % [path_from, file_name], "%s/%s" % [path_to, file_name])
+		else:
+			from_dir.copy("%s/%s" % [path_from, file_name], "%s/%s" % [path_to, file_name])
+		file_name = from_dir.get_next()
+	

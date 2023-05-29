@@ -24,7 +24,7 @@ func _unpause() -> void:
 	queue_free()
 	for menu in opened_menus: # user could create a memeory leak if they just opened and closed settings menu all day haha but whatever it works
 		if is_instance_valid(menu):
-			menu.queue_free()
+			menu.destroy()
 	get_tree().paused = false
 
 
@@ -67,4 +67,9 @@ func _on_quit_game_button_pressed():
 
 
 func _on_debug_button_pressed():
-	pass # Replace with function body.
+	var debug_menu = load("res://pause_menu/debug_menu.tscn").instantiate()
+	debug_menu.pause_menu = self
+	get_parent().add_child(debug_menu)
+	
+	opened_menus.append(debug_menu)
+	visible = false

@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://cl4xbi8rfkasv"]
 
-[ext_resource type="PackedScene" path="res://name_please/dialogue.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://bcswq0s6eqrro" path="res://name_please/dialogue.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://b02h1tr82lwnr" path="res://assets/name_please_tile.png" id="2_ppbx1"]
 [ext_resource type="PackedScene" uid="uid://bqnc3edh82klo" path="res://avatar/avatar.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://dcr2xj0octolv" path="res://name_please/input_dialogue.tscn" id="4"]
@@ -59,7 +59,6 @@ offset_right = 248.0
 offset_bottom = 64.0
 
 [node name="ProgressBlinker" parent="Control/Control/NameThisPerson" index="0"]
-layout_mode = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -76,7 +75,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" parent="Control/Control/NameThisPerson/MarginContainer" index="0"]
-layout_mode = 2
 size_flags_vertical = 1
 text = "Please name the contestant."
 vertical_alignment = 1

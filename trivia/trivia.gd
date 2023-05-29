@@ -7,15 +7,16 @@ enum {
 	NO_TRIVIA,  # Category does not need or have any trivia data
 	DESTINY_VALUE, # points awarded if chosen and completed in choose your destiny.  Default is 1.
 	DEPENDANTS, # category is dependant on another category, and will be removed if that category is exhausted (e.g. devil deal will be removed if no brutal questions)
+	VIDEO_GAME_CHALLENGE,
 	} 
 
 const CATEGORIES: Dictionary = {
 						"easy_question": {NO_DEVIL: true}, 
-						"solo_video_game_challenge": {}, 
+						"solo_video_game_challenge": {VIDEO_GAME_CHALLENGE: true}, 
 						"brutal_question": {DESTINY_VALUE: 2, DEPENDANTS:["devils_deal"]}, 
-						"TheRunawayGuys_video_game_challenge": {DESTINY_VALUE: 2}, 
-						"audience_video_game_challenge": {},
-						"leap_of_faith": {},
+						"TheRunawayGuys_video_game_challenge": {DESTINY_VALUE: 2, VIDEO_GAME_CHALLENGE: true}, 
+						"audience_video_game_challenge": {VIDEO_GAME_CHALLENGE: true},
+						"leap_of_faith": {VIDEO_GAME_CHALLENGE: true},
 						"audio": {},
 						"dialogue": {},
 						"who_the_heck_is_that": {},
@@ -24,14 +25,14 @@ const CATEGORIES: Dictionary = {
 						"multiple_choice": {NO_DEVIL: true},
 						"devils_deal": {NO_DEVIL: true, NO_DESTINY: true, NO_TRIVIA: true},
 						"choose_your_destiny": {NO_DESTINY: true, NO_TRIVIA: true},
-						"pick_your_poison": {NO_DESTINY: true},
+						"pick_your_poison": {NO_DESTINY: true, VIDEO_GAME_CHALLENGE: true},
 						}
 
 # simple questions
-@export var easy_question = [{"question": "What is 2+2?", "answer": "4"}, 
+@export var easy_question = [{"question": "What year did Zelda: Tears of the Kingdom release", "answer": "2023"}, 
 							{"question": "What does the sea saw?", "answer": "I dunno lol"}]
-@export var brutal_question = [{"question": "what is the square root of 48509859038", 
-								"answer": "A reasonably large number I'm sure"}, 
+@export var brutal_question = [{"question": "in what year was Nintendo founded?", 
+								"answer": "1889"}, 
 								#{"question": "WHY?", "answer": "BECAUSE!"},
 								]
 @export var solo_video_game_challenge = [{"question": "play the game of life"}, {"question": "Katamari"}]
@@ -40,7 +41,7 @@ const CATEGORIES: Dictionary = {
 
 #audio
 @export var audio = [{"question": "GBA game is fun to play?", "answer": "Mother 3", "path":"audio/Mother 3 - 129 Even Drier Guys.ogg"}]
-@export var dialogue = [{"question": "who funny voice man?", "answer": "Big D. Cat", "path":"dialogue/we better.wav"}]
+@export var dialogue = [{"question": "who's voice is this?", "answer": "Big D. Cat", "path":"dialogue/we better.wav"}]
 
 # visual
 @export var who_the_heck_is_that = [{"question":"little boy egg morning?", "answer": "Billy Hatcher", "path":"who_the_heck_is_that/billy.png"}]
@@ -63,8 +64,8 @@ const CATEGORIES: Dictionary = {
 						]
 
 @export var multiple_choice = [
-							{"question": "what is the correct answer testing how long this can get he he he he heh heh e heh h ehe he he hhe he he he heh heheh hehe he h?",
-							"answers": ["this one!!", "wrong answer", "the correct answer", "not this one"],
+							{"question": "Mandiblard, Sheargrub, and Crawmads are monsters from which game series?",
+							"answers": ["Monster Hunter", "Pokemon", "Pikmin", "Zelda"],
 							"answer": 2
 							}
 ]
@@ -90,8 +91,6 @@ const CATEGORIES: Dictionary = {
 																	]
 }
 
-
-
 @export var devils_deal = 0
 @export var choose_your_destiny = 0
 
@@ -112,3 +111,6 @@ static func get_destiny_value(cat) -> int:
 
 static func get_dependants(cat) -> Array:
 	return CATEGORIES[cat].get(DEPENDANTS, [])
+
+static func is_video_game_challenge(cat) -> bool:
+	return CATEGORIES[cat].get(VIDEO_GAME_CHALLENGE, false)

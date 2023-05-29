@@ -9,6 +9,10 @@ func _ready():
 	$HBoxContainer/NoButton.grab_focus()
 
 
+func destroy() -> void:
+	queue_free()
+
+
 func _on_yes_button_pressed():
 	yes_function.call()
 
