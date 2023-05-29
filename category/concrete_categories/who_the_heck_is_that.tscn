@@ -1,24 +1,31 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://bjebr51cl0oth"]
 
 [ext_resource type="PackedScene" uid="uid://cij02g20d7tnh" path="res://category/abstract_categories/visual_question.tscn" id="1"]
-[ext_resource type="PackedScene" uid="uid://dpf0pv7drnv8l" path="res://screen_transitions/black_fade.tscn" id="2"]
 [ext_resource type="Material" uid="uid://b6mjvqj2em1kv" path="res://resources/black.tres" id="3"]
 [ext_resource type="Texture2D" uid="uid://h48hn1cike58" path="res://assets/img/who_the_heck_is_that.png" id="4"]
+[ext_resource type="AudioStream" uid="uid://sflbdn3kd251" path="res://assets/sound/music/25. Presidential Palace Exploration.mp3" id="4_umdk4"]
 
 [node name="GameScene" instance=ExtResource("1")]
-screen_transition = ExtResource("2")
+
+[node name="Header" parent="Control" index="1"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.075
 
 [node name="Dialogue" parent="Control" index="2"]
 anchor_top = 0.6
 
 [node name="CategoryTitle" parent="Control" index="3"]
 anchor_left = 0.1
-anchor_top = 0.075
 anchor_right = 0.9
 texture = ExtResource("4")
 
 [node name="TextureRect" parent="Control/CategoryTitle" index="1"]
 material = ExtResource("3")
 stretch_mode = 5
+
+[node name="Music" parent="." index="1"]
+stream = ExtResource("4_umdk4")
 
 [editable path="Control/Dialogue"]

@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/04 Battle Preperations_2.mp3-0488d81d776d94f6
 [params]
 
 loop=true
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

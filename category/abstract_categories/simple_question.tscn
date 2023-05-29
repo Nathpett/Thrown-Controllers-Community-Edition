@@ -21,6 +21,7 @@ anchor_right = 0.96
 anchor_bottom = 0.96
 
 [node name="Music" type="AudioStreamPlayer2D" parent="." index="1"]
+autoplay = true
 bus = &"music"
 
 [editable path="Control/Dialogue"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgvkcb6fjiu3"]
+[gd_scene load_steps=7 format=3 uid="uid://cgvkcb6fjiu3"]
 
 [ext_resource type="PackedScene" uid="uid://wed28fwnfbng" path="res://category/abstract_categories/simple_question.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://j7rkc8p4fb75" path="res://assets/img/TheRunawayGuys_video_game_challenge.png" id="2"]
 [ext_resource type="Script" path="res://category/concrete_categories/TheRunawayGuys_video_game_challenge.gd" id="2_jhcql"]
+[ext_resource type="AudioStream" uid="uid://0m1sgjo8egor" path="res://assets/sound/music/19. Boss Intro.mp3" id="4_0gqfb"]
 [ext_resource type="Texture2D" uid="uid://c5u3vtc1eoyw4" path="res://assets/img/blinker.png" id="6_8tiau"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_a3pq2"]
@@ -35,6 +36,9 @@ stretch_mode = 5
 
 [node name="CategoryTitle" parent="Control" index="4"]
 texture = ExtResource("2")
+
+[node name="Music" parent="." index="1"]
+stream = ExtResource("4_0gqfb")
 
 [node name="Cursor" type="Sprite2D" parent="." index="2"]
 visible = false

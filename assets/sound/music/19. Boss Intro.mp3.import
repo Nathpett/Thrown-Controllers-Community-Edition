@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://0m1sgjo8egor"
+path="res://.godot/imported/19. Boss Intro.mp3-4ae082450d614fb08148013755f7117f.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/music/19. Boss Intro.mp3"
+dest_files=["res://.godot/imported/19. Boss Intro.mp3-4ae082450d614fb08148013755f7117f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

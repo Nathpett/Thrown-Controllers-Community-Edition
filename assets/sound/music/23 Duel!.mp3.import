@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://djnx1g8giwdim"
+path="res://.godot/imported/23 Duel!.mp3-a13caa5474ba8fec643d4bfda8b07e73.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/music/23 Duel!.mp3"
+dest_files=["res://.godot/imported/23 Duel!.mp3-a13caa5474ba8fec643d4bfda8b07e73.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://sflbdn3kd251"
+path="res://.godot/imported/25. Presidential Palace Exploration.mp3-45f18d356fc555529d997412c3a564da.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/music/25. Presidential Palace Exploration.mp3"
+dest_files=["res://.godot/imported/25. Presidential Palace Exploration.mp3-45f18d356fc555529d997412c3a564da.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

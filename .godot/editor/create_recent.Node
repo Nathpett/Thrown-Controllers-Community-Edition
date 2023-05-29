@@ -1,3 +1,4 @@
+AudioStreamPlayer
 Sprite2D
 Node2D
 TextureRect
@@ -5,7 +6,6 @@ HBoxContainer
 Label
 Button
 VBoxContainer
-AudioStreamPlayer
 Panel
 CenterContainer
 CheckButton

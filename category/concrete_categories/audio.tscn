@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bd61pgyg3wi10"]
+[gd_scene load_steps=5 format=3 uid="uid://bd61pgyg3wi10"]
 
 [ext_resource type="PackedScene" uid="uid://q2l4rfvc23gk" path="res://category/abstract_categories/audio_question.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://cgboxl85r0toy" path="res://assets/img/audio.png" id="2"]
 [ext_resource type="PackedScene" uid="uid://ci83o2db0cdeo" path="res://screen_transitions/garage_door.tscn" id="3"]
+[ext_resource type="AudioStream" uid="uid://diypqbdsb1vea" path="res://assets/sound/music/24 Protoman's Whistle.mp3" id="4_rj16b"]
 
 [node name="GameScene" instance=ExtResource("1")]
 screen_transition = ExtResource("3")
@@ -12,5 +13,8 @@ anchor_top = 0.6
 
 [node name="CategoryTitle" parent="Control" index="3"]
 texture = ExtResource("2")
+
+[node name="Music" parent="." index="1"]
+stream = ExtResource("4_rj16b")
 
 [editable path="Control/Dialogue"]

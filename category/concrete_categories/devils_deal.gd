@@ -10,7 +10,6 @@ func initiate_questions() -> void:
 	avatar.visible = true
 	add_child(avatar)
 	
-	
 	avatar.move_to(Vector2($Control.size.x/2, $Control.size.y/2), 400)
 	
 	var tween = create_tween()
@@ -30,6 +29,14 @@ func initiate_questions() -> void:
 	
 	$Control/NoDeal.show_text("NO DEAL")
 	$Control/Deal.show_text("DEAL")
+	
+	var music_stream
+	if game.game_state.current_contestant_score < 5:
+		music_stream = load("res://assets/sound/music/04. Questioning ~ Moderato 2001.mp3")
+	else:
+		music_stream = load("res://assets/sound/music/07. Questioning ~ Allegro 2001.mp3")
+	$Music.stream = music_stream
+	$Music.play()
 
 
 func complx_progress() -> void:

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dwn2xrhe3ogkf"
+path="res://.godot/imported/133. We're Counting on You, Mario!.mp3-3d9bc2a457f14023d216082b96061f4d.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/music/133. We're Counting on You, Mario!.mp3"
+dest_files=["res://.godot/imported/133. We're Counting on You, Mario!.mp3-3d9bc2a457f14023d216082b96061f4d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

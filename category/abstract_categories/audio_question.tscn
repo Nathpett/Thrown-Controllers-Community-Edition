@@ -8,4 +8,6 @@
 script = ExtResource("3")
 screen_transition = ExtResource("2")
 
+[node name="TriviaAudio" type="AudioStreamPlayer" parent="." index="2"]
+
 [editable path="Control/Dialogue"]

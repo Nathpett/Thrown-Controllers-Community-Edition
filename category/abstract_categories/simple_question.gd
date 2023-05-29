@@ -54,7 +54,6 @@ func _input(event: InputEvent) -> void:
 		down()
 
 
-
 func register_double_tap(action:String) -> void:
 	if cooldown_timers.get(action, false):
 		cooldown_timers[action].free()

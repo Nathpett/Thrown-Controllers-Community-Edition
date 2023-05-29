@@ -30,7 +30,7 @@ func _ready() -> void:
 
 func _new_game_state() -> void:
 	game_state = GameState.new()
-	game_state.mode = GameState.Mode.RANDOM
+	game_state.mode = GameState.Mode.DEBUG
 	game_state.setup()
 
 

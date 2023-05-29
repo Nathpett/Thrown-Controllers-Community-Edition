@@ -80,6 +80,9 @@ func select_idx() -> void:
 	if selected_idx != -1:
 		var child = $Control2.get_child(selected_idx)
 		child.clear_bbcode()
+	else:
+		$Music.stream = load("res://assets/sound/music/04 Course Map Select.mp3")
+		$Music.play()
 	
 	selected_idx = cursor_idx
 	

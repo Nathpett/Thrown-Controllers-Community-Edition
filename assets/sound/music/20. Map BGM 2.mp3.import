@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/20. Map BGM 2.mp3-6490183fde7dbe7b99203907146
 [params]
 
 loop=true
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4
