@@ -30,7 +30,7 @@ func _ready() -> void:
 
 func _new_game_state() -> void:
 	game_state = GameState.new()
-	game_state.mode = GameState.Mode.DEBUG
+	game_state.mode = GameState.Mode.JUST_ONE
 	game_state.setup()
 
 
@@ -86,6 +86,8 @@ func _on_play_selected_panel(selected_panel) -> void:
 	# remove selecte panel from panels
 	game_state.panels.erase(selected_panel.number)
 	play_category(selected_panel.category)
+	if !game_state.panels.size():
+		game_state.refresh_cats()
 
 
 func _on_devil_deal(outcome) -> void:

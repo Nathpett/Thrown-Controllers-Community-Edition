@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8gq88xcykua6"]
+[gd_scene load_steps=9 format=3 uid="uid://c8gq88xcykua6"]
 
 [ext_resource type="PackedScene" uid="uid://wed28fwnfbng" path="res://category/abstract_categories/simple_question.tscn" id="1"]
 [ext_resource type="Script" path="res://category/concrete_categories/lightning_round.gd" id="2"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" path="res://assets/fonts/roboto_1.tres" id="4"]
 [ext_resource type="Texture2D" uid="uid://bthtxa1e3eh44" path="res://assets/img/box.png" id="5"]
 [ext_resource type="AudioStream" uid="uid://bll1w1ypl8s2u" path="res://assets/sound/free_sound/badoink__thunder.wav" id="6"]
+[ext_resource type="AudioStream" uid="uid://uyacj7sw21i3" path="res://assets/sound/music/08 - Telling the Truth 2007.mp3" id="7_j74mt"]
 [ext_resource type="Texture2D" uid="uid://dccgc8kt01yun" path="res://assets/img/x.png" id="7_y6jcg"]
 
 [node name="GameScene" instance=ExtResource("1")]
@@ -76,6 +77,10 @@ stretch_mode = 4
 [node name="Thunder" type="AudioStreamPlayer" parent="." index="1"]
 stream = ExtResource("6")
 bus = &"sfx"
+
+[node name="Music" parent="." index="2"]
+stream = ExtResource("7_j74mt")
+autoplay = false
 
 [node name="OutOfTime" type="TextureRect" parent="." index="3"]
 modulate = Color(1, 1, 1, 0.682353)

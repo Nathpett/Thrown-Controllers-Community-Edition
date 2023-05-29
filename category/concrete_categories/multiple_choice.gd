@@ -58,8 +58,6 @@ func initiate_questions() -> void:
 	var _answers = answers.duplicate()
 	for child in $Control/Answers.get_children():
 		child.show_text(_answers.pop_front())
-	
-	$Music.play()
 
 
 func left() -> void:

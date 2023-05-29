@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://uyacj7sw21i3"
+path="res://.godot/imported/08 - Telling the Truth 2007.mp3-0ffce6275aa9291f5ec0bdaa346b9354.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/music/08 - Telling the Truth 2007.mp3"
+dest_files=["res://.godot/imported/08 - Telling the Truth 2007.mp3-0ffce6275aa9291f5ec0bdaa346b9354.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

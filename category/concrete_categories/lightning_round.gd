@@ -43,6 +43,8 @@ func initiate_questions() -> void:
 	
 	dialogue.centerify()
 	next_lightning()
+	
+	$Music.play()
 
 
 func left() -> void:
@@ -90,6 +92,7 @@ func submit_answer(submitted_answer) -> void:
 
 
 func conclude_lightning_round() -> void:
+	$Music.stop()
 	question_over = true 
 	
 	$Control/Header/Timer.stop()

@@ -34,7 +34,7 @@ func setup() -> void:
 		Mode.RANDOM:
 			populate_singlefile(10)
 		Mode.JUST_ONE:
-			for i in range(1, 11):
+			for i in range(1, 2):
 				panels[i] = "TheRunawayGuys_video_game_challenge"
 	
 	trivia = load("res://trivia/trivia_1.tres") # TODO some day allow user to choose trivia resource when starting new game
