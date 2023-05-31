@@ -2,9 +2,6 @@ class_name Game
 extends Node
 
 
-# TODO GET MUSIC ON LIST, IMPLEMENT TO MAKE MORE LIVELY
-# TODO YOU IMPLEMENTED TRG VIDEO GAME CHALLENGE WONNNNGGGGG!!!! ITS GOTTA BE A COMPLEX QUESTION LIKE PICK YOUR POISON!!
-
 var game_state: GameState
 var current_scene: GameScene
 var black_fade_transition = preload("res://screen_transitions/black_fade.tscn")
@@ -17,10 +14,7 @@ var avatar: Avatar
 
 
 func _ready() -> void:
-#	# check if trivia in user://, if none, copy and paste the default!
-#	var dir = DirAccess.open("user://")
-#	if !dir.dir_exists("trivia"):
-#		Game.dir_deep_copy("res://trivia", "user://trivia")
+	randomize()
 	
 	current_scene = load("res://main_menu/main_menu.tscn").instantiate()
 	$GameScenes.add_child(current_scene)
@@ -124,12 +118,19 @@ func _on_failure() -> void:
 	game_state.check_exhaust(current_scene.get_category_type())
 	
 	var transition = load("res://screen_transitions/failure_transition.tscn").instantiate()
+	
+	# ever heard of DRY? me neither.  putting this here to catch instances where the contestant would get the very last trivia wrong
+	var cat_queue: Array = game_state.new_category_queue() # TODO TEST THIS
+	if cat_queue.all(Callable(game_state.trivia, "is_not_substantive")):
+		change_scene_to_file(load("res://game/end_screen.tscn").instantiate(), transition)
+		return
+	
 	change_scene_to_file(load("res://name_please/name_please.tscn").instantiate(), transition)
 
 
 func _on_panels_changed() -> void:
 	if current_scene is PanelSelect:
-		change_scene_to_file(load("res://panel_select/panel_select.tscn").instantiate())
+		return_to_panel_select()
 
 
 func enter_devil_state() -> void:
@@ -142,8 +143,7 @@ func exit_devil_state() -> void:
 	avatar.souledded()
 
 
-func return_to_panel_select(transition) -> void:
-	# exhaust the category if it's out of questions
+func return_to_panel_select(transition = null) -> void:
 	if game_state.devil_state:
 		if game_state.exhausted_categories.has("devils_deal"):
 			#exit devil state if devils_deal is exhausted
@@ -151,6 +151,12 @@ func return_to_panel_select(transition) -> void:
 			exit_devil_state()
 		else:
 			game_state.enforce_devil_composition()
+	# TODO NEXT REFACTOR SO THAT THIS IS ALWAYS RUN WHEN GOING TO PANEL SELECT, USE game_state.new_category_queue() TO VALIDATE WHETHER ALL SUBSTANSTIVE TRIVIA ARE RULED OUT
+	# get a new category queue, if none of the categories are substantive, enter the end scene
+	var cat_queue: Array = game_state.new_category_queue()
+	if cat_queue.all(Callable(game_state.trivia, "is_not_substantive")):
+		change_scene_to_file(load("res://game/end_screen.tscn").instantiate(), transition)
+		return
 	
 	change_scene_to_file(load("res://panel_select/panel_select.tscn").instantiate(), transition)
 
@@ -161,6 +167,10 @@ func return_to_main_menu() -> void:
 		child.queue_free()
 	change_scene_to_file(load("res://main_menu/main_menu.tscn").instantiate())
 	_new_game_state()
+
+
+func show_leaderboard() -> void:
+	change_scene_to_file(load("res://game/leader_board.tscn").instantiate())
 
 
 func _queue_user_message(message: String) -> void:

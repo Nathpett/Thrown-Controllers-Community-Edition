@@ -86,7 +86,6 @@ func complx_progress() -> void:
 	var indx = $Control/Answers.get_children().find(selected_answer)
 	var was_correct = indx == answer_indx
 	
-	print(was_correct)
 	var tween = create_tween()
 	var t_time = 0.4
 	

@@ -17,6 +17,7 @@ func _ready() -> void:
 	
 	keyboard.connect("ok", Callable(self, "_on_ok"))
 	keyboard.connect("swap", Callable(self, "_on_swap"))
+	
 	call_in_avatar()
 
 
@@ -67,9 +68,10 @@ func _on_ok(contestant_name) -> void:
 	call_out_avatar()
 	
 	game.game_state.current_contestant_name = contestant_name
+	game.game_state.current_contestant_avatar_reigon = avatar.reigon_vector
 	game.avatar.reigon_vector = avatar.reigon_vector
-	#emit_signal("contestant_named", contestant_name, avatar.reigon_vector)
-	game.change_scene_to_file(load("res://panel_select/panel_select.tscn").instantiate())
+	game.return_to_panel_select()
+
 
 func _on_swap() -> void:
 	swap_avatar()

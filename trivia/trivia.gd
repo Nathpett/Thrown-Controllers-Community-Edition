@@ -8,6 +8,7 @@ enum {
 	DESTINY_VALUE, # points awarded if chosen and completed in choose your destiny.  Default is 1.
 	DEPENDANTS, # category is dependant on another category, and will be removed if that category is exhausted (e.g. devil deal will be removed if no brutal questions)
 	VIDEO_GAME_CHALLENGE,
+	NOT_SUBSTANTIVE,
 	} 
 
 const CATEGORIES: Dictionary = {
@@ -23,17 +24,18 @@ const CATEGORIES: Dictionary = {
 						"screenshot": {},
 						"lightning_round": {},
 						"multiple_choice": {NO_DEVIL: true},
-						"devils_deal": {NO_DEVIL: true, NO_DESTINY: true, NO_TRIVIA: true},
-						"choose_your_destiny": {NO_DESTINY: true, NO_TRIVIA: true},
+						"devils_deal": {NO_DEVIL: true, NO_DESTINY: true, NO_TRIVIA: true, NOT_SUBSTANTIVE: true},
+						"choose_your_destiny": {NO_DESTINY: true, NO_TRIVIA: true, NOT_SUBSTANTIVE: true},
 						"pick_your_poison": {NO_DESTINY: true, VIDEO_GAME_CHALLENGE: true},
 						}
 
 # simple questions
 @export var easy_question = [{"question": "What year did Zelda: Tears of the Kingdom release", "answer": "2023"}, 
-							{"question": "What does the sea saw?", "answer": "I dunno lol"}]
+							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"}]
 @export var brutal_question = [{"question": "in what year was Nintendo founded?", 
 								"answer": "1889"}, 
-								#{"question": "WHY?", "answer": "BECAUSE!"},
+								{"question":"While many people know Team Fortress 2, the original Team Fortress started as a mod to Quake. It also started with five classes as opposed to the modern nine. Which classes did the original Team Fortress start out with?",
+								"answer": "Scout, Sniper, Soldier, Demoman, Medic"}
 								]
 @export var solo_video_game_challenge = [{"question": "play the game of life"}, {"question": "Katamari"}]
 @export var audience_video_game_challenge = [{"question": "play a game"}, {"question": "huhuhuhuhuuu"}]
@@ -114,3 +116,6 @@ static func get_dependants(cat) -> Array:
 
 static func is_video_game_challenge(cat) -> bool:
 	return CATEGORIES[cat].get(VIDEO_GAME_CHALLENGE, false)
+
+static func is_not_substantive(cat) -> bool:
+	return CATEGORIES[cat].get(NOT_SUBSTANTIVE, false)

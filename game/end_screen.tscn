@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://b167un716twy4"]
+
+[ext_resource type="Script" path="res://game/game_scene.gd" id="1_yq0pn"]
+[ext_resource type="AudioStream" uid="uid://b4qstfmfj0c8e" path="res://assets/sound/music/15 Ending Theme.mp3" id="2_4gafi"]
+
+[node name="EndScreen" type="Node"]
+script = ExtResource("1_yq0pn")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_4gafi")
+autoplay = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "ALL TRIVIA EXHAUSTED
+THANK YOU FOR PLAYING!"
+horizontal_alignment = 1
+vertical_alignment = 1

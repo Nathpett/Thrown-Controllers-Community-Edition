@@ -13,16 +13,22 @@ var reigon_vector: Vector2: set = _set_reigon_vector
 var facing: int: set = _set_facing
 var is_walking: bool: set = _set_walking
 var move_tween: Tween
+var game
 
 @onready var sprite = $Sprite2D
 
 func _ready() -> void:
 	$CPUParticles2D.emitting = false # since this lets us turn it on faster
 	self.is_walking = true
-
+	
+	# look up the tree until we find the game lol
+	var parent = get_parent()
+	while not parent is Game:
+		parent = parent.get_parent()
+	game = parent
 
 func randomize_character() -> void: #_fruits[randi() % _fruits.size()]
-	self.reigon_vector = Global.available_reigon_vectors[randi() % Global.available_reigon_vectors.size()]
+	self.reigon_vector = game.game_state.available_reigon_vectors[randi() % game.game_state.available_reigon_vectors.size()]
 
 
 func _set_reigon_vector(new_reigon_vector) -> void:
@@ -32,8 +38,8 @@ func _set_reigon_vector(new_reigon_vector) -> void:
 
 # actually remove the reigon vector from available_reigon_vectors
 func confirm_character() -> void:
-	var idx = Global.available_reigon_vectors.find(reigon_vector)
-	Global.available_reigon_vectors.remove_at(idx)
+	var idx = game.game_state.available_reigon_vectors.find(reigon_vector)
+	game.game_state.available_reigon_vectors.remove_at(idx)
 
 
 func advance_animation() -> void:

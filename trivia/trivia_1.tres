@@ -8,12 +8,15 @@ easy_question = [{
 "answer": "2023",
 "question": "What year did Zelda: Tears of the Kingdom release"
 }, {
-"answer": "I dunno lol",
-"question": "What does the sea saw?"
+"answer": "Beam",
+"question": "What is the first available copy ability in Kirby's Adventure?"
 }]
 brutal_question = [{
 "answer": "1889",
 "question": "in what year was Nintendo founded?"
+}, {
+"answer": "Scout, Sniper, Soldier, Demoman, Medic",
+"question": "While many people know Team Fortress 2, the original Team Fortress started as a mod to Quake. It also started with five classes as opposed to the modern nine. Which classes did the original Team Fortress start out with?"
 }]
 solo_video_game_challenge = [{
 "question": "play the game of life"

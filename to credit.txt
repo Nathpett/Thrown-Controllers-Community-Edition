@@ -8,3 +8,6 @@ earthbound - https://earthboundcentral.com/2012/12/an-accurate-earthbound-font/
 
 sound:
 glewlio (for menu bloop)
+
+trivia writing:
+	100% All Marsh

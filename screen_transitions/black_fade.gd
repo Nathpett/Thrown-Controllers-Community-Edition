@@ -14,8 +14,7 @@ func _ready() -> void:
 	
 	tween = create_tween()
 	tween.set_trans(Tween.TRANS_EXPO)
-	tween.tween_property(color_rect, "color", Color(0, 0, 0, 0), trans_time/2)
-	#tween.start()
+	tween.tween_property(color_rect, "color", Color(0, 0, 0, 0), trans_time)
 	
 	await tween.finished
 	queue_free()

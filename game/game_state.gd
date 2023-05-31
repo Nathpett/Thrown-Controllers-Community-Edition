@@ -7,13 +7,13 @@ enum Mode {DEBUG, RANDOM, JUST_ONE}
 
 @export var mode: Mode
 # TODO this won't capture avialable reigon vectors... gotta refactor how that is edited
-# TODO NEXT migrate all state variables to game state, so that we can then be able to save/load game states
 
 
 var panels: Dictionary = {}
 var category_queue: Array = []
 var current_contestant_name: String = ""
 var current_contestant_score: int = 0
+var current_contestant_avatar_reigon: Vector2
 var devil_state = false
 var fast_mode = false
 var point_gain: int = 1
@@ -21,6 +21,7 @@ var temp_point_gain: int = 0 # set by choose your destiny
 var exhausted_categories: Array = []
 var leaderboard: Dictionary = {}
 var trg_challenge_indexes: Dictionary = {}
+var available_reigon_vectors: PackedVector2Array
 var trivia
 
 
@@ -44,6 +45,12 @@ func setup() -> void:
 	var trg_trivia_data = trivia.get("TheRunawayGuys_video_game_challenge")
 	for host in trg_trivia_data:
 		trg_challenge_indexes[host] = 0
+	
+	# using dims of NPC sheet, initialize available reigon vectors for avatars to draw from.
+	var npc_sheet:Texture2D = load("res://assets/sprite_sheets/SNES - EarthBound Mother 2 - NPCs People.png")
+	for j in (npc_sheet.get_height() / 50):
+		for i in (npc_sheet.get_width() / 68):
+			available_reigon_vectors.append(Vector2(i, j))
 
 
 func on_success() -> void:
@@ -74,7 +81,11 @@ func deposit_trivia_data(_category_type: String, data):
 
 
 func push_current_to_leaderboard() -> void:
-	leaderboard[current_contestant_name] = current_contestant_score
+	var player_data: Dictionary = {}
+	player_data["score"] = current_contestant_score
+	player_data["reigon_vector"] = current_contestant_avatar_reigon
+	player_data["devil_state"] = devil_state
+	leaderboard[current_contestant_name] = player_data
 
 
 func is_contestant_name_available(_name) -> bool:
@@ -151,8 +162,6 @@ func enforce_devil_composition() -> void:
 			var key = non_brutal_keys.pop_back()
 			panels[key] = "brutal_question"
 		else:
-			print(dest_brutal_ratio)
-			print(panels.values())
 			return
 
 
@@ -168,6 +177,7 @@ func _exhaust_category(cat: String) -> void:
 	while cat in category_queue:
 		category_queue.erase(cat)
 	
+	# reroll all panels with the now exhausted category
 	for n in panels:
 		var p_cat = panels[n]
 		if p_cat == cat:

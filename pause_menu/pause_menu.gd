@@ -6,6 +6,8 @@ var game
 
 func _ready():
 	return_focus()
+	if not game.current_scene is PanelSelect:
+		$VBoxContainer/LeaderBoard.disabled = true
 
 
 func _input(event):
@@ -73,3 +75,8 @@ func _on_debug_button_pressed():
 	
 	opened_menus.append(debug_menu)
 	visible = false
+
+
+func _on_leader_board_pressed():
+	game.show_leaderboard()
+	_unpause()

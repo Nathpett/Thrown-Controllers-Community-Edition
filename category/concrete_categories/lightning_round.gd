@@ -119,7 +119,7 @@ func conclude_lightning_round() -> void:
 	# now make the last four intervals twice as long as the last for that dramatic drop baby!
 	# but make the very last one interval time again
 	for j in range(min(len(correct_arr), 4)):
-		interval_times[-j] = 1 # TODO HERE!
+		interval_times[-j] = 1
 	
 	
 	i = 0

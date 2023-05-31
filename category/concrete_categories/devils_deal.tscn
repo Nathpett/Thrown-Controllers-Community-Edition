@@ -11,7 +11,7 @@ script = ExtResource("2_i5ukk")
 manual_validation = false
 
 [node name="Label" parent="Control/Dialogue/MarginContainer" index="0"]
-text = "The contestant may sell their soul.  If you do, all panels onward will worth 2 points. However, Easy Question and Multiple Choice will not present in the panels anymore, and brutal questions will become more frequent proportional to your score."
+text = "The contestant may sell their soul.  If they do, all panels onward will worth 2 points. However, Easy Question and Multiple Choice will not be present in the panels anymore, and brutal questions will become more frequent proportional to your score."
 
 [node name="Deal" parent="Control" index="3" instance=ExtResource("3_yf2cq")]
 layout_mode = 1

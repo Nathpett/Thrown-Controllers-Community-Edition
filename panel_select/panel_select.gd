@@ -1,7 +1,6 @@
 class_name PanelSelect
 extends GameScene
 
-# TODO REPOPULATE PANEL WHEN ALL GONE HAHA
 
 signal update_panel_position(radius, wheel_angle)
 signal wheel_index_changed(wheel_index)
@@ -191,4 +190,3 @@ func _set_wheel_index(new_wheel_index) -> void:
 	wheel_index = new_wheel_index
 	$SpotLight.play()
 	emit_signal("wheel_index_changed", wheel_index)
-
