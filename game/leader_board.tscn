@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgqweabkt0k0r"]
+[gd_scene load_steps=8 format=3 uid="uid://dgqweabkt0k0r"]
 
 [ext_resource type="Script" path="res://game/leader_board.gd" id="1_rffnh"]
 [ext_resource type="Shader" path="res://game/leader_board_background.gdshader" id="2_nc1r6"]
 [ext_resource type="Texture2D" uid="uid://bghbslbghg0gs" path="res://assets/img/trg.png" id="3_ft1np"]
 [ext_resource type="FontFile" uid="uid://c2gd8hkr74cwe" path="res://assets/fonts/megaman_font.tres" id="4_favgp"]
+[ext_resource type="AudioStream" uid="uid://d1mrbiropavp0" path="res://assets/sound/music/18 Scenario Mode Clear.mp3" id="5_aabcx"]
+[ext_resource type="FontFile" path="res://assets/fonts/earthbound_font.tres" id="5_sseyi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6bjgl"]
 shader = ExtResource("2_nc1r6")
@@ -20,6 +22,7 @@ trans_time = 1.0
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -55,7 +58,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Item" type="Control" parent="Control/Scores"]
-visible = false
 layout_mode = 1
 anchor_right = 1.0
 anchor_bottom = 0.125
@@ -83,11 +85,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_favgp")
-theme_override_font_sizes/font_size = 12
-text = "NATE THE GR8"
+theme_override_fonts/font = ExtResource("5_sseyi")
+theme_override_font_sizes/font_size = 28
+text = "HUHUHU"
 horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 2
 
 [node name="Score" type="Label" parent="Control/Scores/Item"]
 layout_mode = 1
@@ -101,3 +103,18 @@ theme_override_font_sizes/font_size = 12
 text = "100"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Control/Scores"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_aabcx")
+autoplay = true
+
+[node name="AvatarPosition" type="Node2D" parent="."]
+position = Vector2(-45, 112)

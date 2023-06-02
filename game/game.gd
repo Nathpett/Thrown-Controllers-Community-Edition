@@ -185,16 +185,16 @@ func _show_message() -> void:
 		msgbox.visible = true
 
 
-static func dir_deep_copy(path_from : String, path_to : String) -> void:
-	var from_dir: DirAccess = DirAccess.open(path_from)
-	if !from_dir.dir_exists(path_to):
-		from_dir.make_dir_absolute(path_to)
-	from_dir.list_dir_begin()
-	var file_name = from_dir.get_next()
-	while file_name:
-		if from_dir.current_is_dir():
-			Game.dir_deep_copy("%s/%s" % [path_from, file_name], "%s/%s" % [path_to, file_name])
-		else:
-			from_dir.copy("%s/%s" % [path_from, file_name], "%s/%s" % [path_to, file_name])
-		file_name = from_dir.get_next()
-	
+#static func dir_deep_copy(path_from : String, path_to : String) -> void:
+#	var from_dir: DirAccess = DirAccess.open(path_from)
+#	if !from_dir.dir_exists(path_to):
+#		from_dir.make_dir_absolute(path_to)
+#	from_dir.list_dir_begin()
+#	var file_name = from_dir.get_next()
+#	while file_name:
+#		if from_dir.current_is_dir():
+#			Game.dir_deep_copy("%s/%s" % [path_from, file_name], "%s/%s" % [path_to, file_name])
+#		else:
+#			from_dir.copy("%s/%s" % [path_from, file_name], "%s/%s" % [path_to, file_name])
+#		file_name = from_dir.get_next()
+#

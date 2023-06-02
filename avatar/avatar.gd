@@ -23,7 +23,7 @@ func _ready() -> void:
 	
 	# look up the tree until we find the game lol
 	var parent = get_parent()
-	while not parent is Game:
+	while not parent is Game and is_instance_valid(parent):
 		parent = parent.get_parent()
 	game = parent
 

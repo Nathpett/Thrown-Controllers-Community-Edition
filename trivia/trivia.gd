@@ -29,14 +29,26 @@ const CATEGORIES: Dictionary = {
 						"pick_your_poison": {NO_DESTINY: true, VIDEO_GAME_CHALLENGE: true},
 						}
 
+
 # simple questions
 @export var easy_question = [{"question": "What year did Zelda: Tears of the Kingdom release", "answer": "2023"}, 
-							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"}]
+							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
+							{"question": "What is it called when you clear four lines at once in Tetris?", "answer": "A Tetris"},
+							{"question": "", "answer": "Beam"},
+							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
+							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
+							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
+							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
+							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
+							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
+							]
+
 @export var brutal_question = [{"question": "in what year was Nintendo founded?", 
 								"answer": "1889"}, 
 								{"question":"While many people know Team Fortress 2, the original Team Fortress started as a mod to Quake. It also started with five classes as opposed to the modern nine. Which classes did the original Team Fortress start out with?",
 								"answer": "Scout, Sniper, Soldier, Demoman, Medic"}
 								]
+
 @export var solo_video_game_challenge = [{"question": "play the game of life"}, {"question": "Katamari"}]
 @export var audience_video_game_challenge = [{"question": "play a game"}, {"question": "huhuhuhuhuuu"}]
 @export var leap_of_faith = [{"question": "do 10,000 pushups (one handed)"}]
@@ -77,9 +89,6 @@ const CATEGORIES: Dictionary = {
 							{"game": "Spelunky 2", "challenge": "1 v 1 Arena"},
 							{"game": "Spelunky 3", "challenge": "2 v 2 Arena"},
 							{"game": "Spelunky 4", "challenge": "3 v 3 Arena"},
-#							{"game": "Spelunky 5", "challenge": "4 v 4 Arena"},
-#							{"game": "Spelunky 6", "challenge": "5 v 5 Arena"},
-#							{"game": "Spelunky 7", "challenge": "6 v 6 Arena"},
 ]
 
 @export var TheRunawayGuys_video_game_challenge = {"chuggaaconroy": ["Super Mario Galaxy 2 (Wii) \n Beat the tall Trunk Slide purple coin star, two attempts", 

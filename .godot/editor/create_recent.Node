@@ -1,5 +1,7 @@
-Sprite2D
+Node2D
+AudioStreamPlayer
 Control
+Sprite2D
 Label
 VBoxContainer
 GridContainer
@@ -8,8 +10,6 @@ ColorRect
 TextureRect
 TileMap
 Node
-AudioStreamPlayer
-Node2D
 HBoxContainer
 Button
 Panel
