@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0qo53rq1fyml"]
+
+[ext_resource type="Script" path="res://screen_transitions/success_transition.gd" id="1_f8me7"]
+[ext_resource type="Texture2D" uid="uid://cbuaqrh7esx1y" path="res://assets/img/check.png" id="2_6g1ta"]
+[ext_resource type="AudioStream" uid="uid://cle7oaw0b4viw" path="res://assets/sound/music/15 Level Clear.mp3" id="3_xk6v4"]
+
+[sub_resource type="Gradient" id="Gradient_sn08b"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5ehtf"]
+gradient = SubResource("Gradient_sn08b")
+fill = 1
+fill_from = Vector2(0.491453, 0.495726)
+
+[node name="SuccessTransition" type="Node"]
+script = ExtResource("1_f8me7")
+
+[node name="Check" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0, 0.65098, 0.105882, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6g1ta")
+
+[node name="ColorFlash" type="TextureRect" parent="."]
+modulate = Color(0, 0.65098, 0.105882, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_5ehtf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_xk6v4")
+autoplay = true
+bus = &"music"

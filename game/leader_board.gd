@@ -25,13 +25,13 @@ func _ready():
 		# TEST LEADERBOARD
 		leaderboard = {"JIMBO": {"score": 0, "devil_state": false, "reigon_vector": Vector2(2, 2)},
 						"BO": {"score": 0, "devil_state": true, "reigon_vector": Vector2(0, 2)},
-						"MBO": {"score": 2, "devil_state": false, "reigon_vector": Vector2(1, 2)},
+						"MBO": {"score": 2, "devil_state": false, "reigon_vector": Vector2(1, 3)},
 						"IMBO": {"score": 0, "devil_state": false, "reigon_vector": Vector2(2, 4)},
-						"O": {"score": 3, "devil_state": false, "reigon_vector": Vector2(0, 4)},
+						"O": {"score": 3, "devil_state": false, "reigon_vector": Vector2(0, 8)},
 						"add": {"score": 0, "devil_state": false, "reigon_vector": Vector2(2, 2)},
 						"BaadO": {"score": 0, "devil_state": false, "reigon_vector": Vector2(0, 2)},
 						"dd": {"score": 2, "devil_state": false, "reigon_vector": Vector2(1, 2)},
-						"IMasdadBO": {"score": 0, "devil_state": false, "reigon_vector": Vector2(2, 4)},
+						"IMasdadBO": {"score": 0, "devil_state": false, "reigon_vector": Vector2(2, 6)},
 						"dsadasdO": {"score": 3, "devil_state": false, "reigon_vector": Vector2(0, 4)},
 			}
 	
@@ -107,6 +107,7 @@ func _set_page(idx: int) -> void:
 		out_items.append(item)
 		
 		var tween = create_tween()
+		tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 		tween.tween_interval(interval_time * item_idx)
 		tween.tween_property(item, "offset_top", 0, t_time)
 		tween.parallel().tween_property(item, "offset_bottom", 0, t_time)
@@ -132,6 +133,7 @@ func _move_off_stage() -> void:
 	out_items.reverse()
 	for item in out_items:
 		var tween = create_tween()
+		tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 		tween.tween_interval(interval_time * i)
 		tween.tween_property(item, "offset_top", 250, t_time)
 		tween.parallel().tween_property(item, "offset_bottom", 250, t_time)

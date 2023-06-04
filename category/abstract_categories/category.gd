@@ -11,7 +11,7 @@ signal devil_deal
 
 func get_transition():
 	var transition = super.get_transition()
-	transition.text = get_category_type()
+	transition.text = get_category_type().capitalize()
 	
 	return transition
 

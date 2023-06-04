@@ -61,7 +61,7 @@ func change_scene_to_file(new_scene, transition = null) -> void:
 	_connect_game_scene(current_scene)
 	
 	# wait until transition is complete to actually allow input
-	await transition.tree_exited
+	await transition.finished
 	current_scene.enable()
 	
 	_show_message()
@@ -105,16 +105,19 @@ func _on_devil_deal(outcome) -> void:
 func _on_success() -> void:
 	game_state.on_success()
 	
-	var success_transition = load("res://screen_transitions/garage_door.tscn").instantiate()
-	success_transition.text = "SUCCESS!"
-	success_transition.trans_time = 0.4
-	success_transition.hold_time = 0.4
+	# TODO NEXT SUCCESS TRANSITION
+	var success_transition = load("res://screen_transitions/success_transition.tscn").instantiate()
+#	success_transition.text = "SUCCESS!"
+#	success_transition.trans_time = 0.4
+#	success_transition.hold_time = 0.4
 	game_state.check_exhaust(current_scene.get_category_type())
 	return_to_panel_select(success_transition)
 
 
 func _on_failure() -> void:
 	game_state.on_failure()
+	if game_state.devil_state: 
+		exit_devil_state()
 	game_state.check_exhaust(current_scene.get_category_type())
 	
 	var transition = load("res://screen_transitions/failure_transition.tscn").instantiate()
@@ -122,7 +125,7 @@ func _on_failure() -> void:
 	# ever heard of DRY? me neither.  putting this here to catch instances where the contestant would get the very last trivia wrong
 	var cat_queue: Array = game_state.new_category_queue() # TODO TEST THIS
 	if cat_queue.all(Callable(game_state.trivia, "is_not_substantive")):
-		change_scene_to_file(load("res://game/end_screen.tscn").instantiate(), transition)
+		all_trivia_exhausted(transition)
 		return
 	
 	change_scene_to_file(load("res://name_please/name_please.tscn").instantiate(), transition)
@@ -155,7 +158,7 @@ func return_to_panel_select(transition = null) -> void:
 	# get a new category queue, if none of the categories are substantive, enter the end scene
 	var cat_queue: Array = game_state.new_category_queue()
 	if cat_queue.all(Callable(game_state.trivia, "is_not_substantive")):
-		change_scene_to_file(load("res://game/end_screen.tscn").instantiate(), transition)
+		all_trivia_exhausted(transition)
 		return
 	
 	change_scene_to_file(load("res://panel_select/panel_select.tscn").instantiate(), transition)
@@ -171,6 +174,11 @@ func return_to_main_menu() -> void:
 
 func show_leaderboard() -> void:
 	change_scene_to_file(load("res://game/leader_board.tscn").instantiate())
+
+
+func all_trivia_exhausted(transition = null) -> void:
+	game_state.push_current_to_leaderboard()
+	change_scene_to_file(load("res://game/end_screen.tscn").instantiate(), transition)
 
 
 func _queue_user_message(message: String) -> void:

@@ -4,65 +4,21 @@
 
 [resource]
 script = ExtResource("1")
-easy_question = [{
-"answer": "2023",
-"question": "What year did Zelda: Tears of the Kingdom release"
-}, {
-"answer": "Beam",
-"question": "What is the first available copy ability in Kirby's Adventure?"
-}]
-brutal_question = [{
-"answer": "1889",
-"question": "in what year was Nintendo founded?"
-}, {
-"answer": "Scout, Sniper, Soldier, Demoman, Medic",
-"question": "While many people know Team Fortress 2, the original Team Fortress started as a mod to Quake. It also started with five classes as opposed to the modern nine. Which classes did the original Team Fortress start out with?"
-}]
-solo_video_game_challenge = [{
-"question": "play the game of life"
-}, {
-"question": "Katamari"
-}]
-audience_video_game_challenge = [{
-"question": "play a game"
-}, {
-"question": "huhuhuhuhuuu"
-}]
-leap_of_faith = [{
-"question": "do 10,000 pushups (one handed)"
-}]
-audio = [{
-"answer": "Mother 3",
-"path": "audio/Mother 3 - 129 Even Drier Guys.ogg",
-"question": "GBA game is fun to play?"
-}]
-dialogue = [{
-"answer": "Big D. Cat",
-"path": "dialogue/we better.wav",
-"question": "who's voice is this?"
-}]
-who_the_heck_is_that = [{
-"answer": "Billy Hatcher",
-"path": "who_the_heck_is_that/billy.png",
-"question": "little boy egg morning?"
-}]
+easy_question = []
+brutal_question = []
+solo_video_game_challenge = []
+audience_video_game_challenge = []
+leap_of_faith = []
+audio = []
+dialogue = []
+who_the_heck_is_that = []
 screenshot = [{
 "answer": "John Test",
 "path": "screenshot/bo.jpg",
 "question": "I hate this boy?"
 }]
-lightning_round = [{
-"left": "Mario Party",
-"questions": [["Bombs Away", true], ["Drummer duel", false], ["Airboarder", false], ["Bowl Over", true], ["Knock Block Tower", true]],
-"right": "Rhythm Heaven",
-"theme": "Is this the name of a mario party minigam or a rhythm heaven rhythm game?",
-"time_limit": 30
-}]
-multiple_choice = [{
-"answer": 2,
-"answers": ["Monster Hunter", "Pokemon", "Pikmin", "Zelda"],
-"question": "Mandiblard, Sheargrub, and Crawmads are monsters from which game series?"
-}]
+lightning_round = []
+multiple_choice = []
 pick_your_poison = [{
 "challenge": "1 v 1 Arena",
 "game": "Spelunky 2"

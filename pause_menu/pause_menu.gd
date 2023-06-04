@@ -9,7 +9,7 @@ func _ready():
 	if game.current_scene is LeaderBoard:
 		$VBoxContainer/LeaderBoard.text = "return"
 		return
-	if not game.current_scene is PanelSelect:
+	if not (game.current_scene is PanelSelect or game.current_scene.name == "EndScreen"):
 		$VBoxContainer/LeaderBoard.disabled = true
 
 
@@ -81,7 +81,7 @@ func _on_debug_button_pressed():
 
 
 func _on_leader_board_pressed():
-	if game.current_scene is PanelSelect:
+	if game.current_scene is PanelSelect or game.current_scene.name == "EndScreen":
 		game.show_leaderboard()
 	if game.current_scene is LeaderBoard:
 		game.return_to_panel_select()

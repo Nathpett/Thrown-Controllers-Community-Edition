@@ -28,3 +28,4 @@ theme_override_fonts/font = ExtResource("2")
 text = "Easy Question"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3

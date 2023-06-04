@@ -42,6 +42,10 @@ func setup() -> void:
 	
 	trivia = load("res://trivia/trivia_1.tres") # TODO some day allow user to choose trivia resource when starting new game
 	
+	# in case any trivia starts the game with 0 data
+	for cat in trivia.CATEGORIES:
+		check_exhaust(cat)
+	
 	var trg_trivia_data = trivia.get("TheRunawayGuys_video_game_challenge")
 	for host in trg_trivia_data:
 		trg_challenge_indexes[host] = 0
@@ -59,9 +63,6 @@ func on_success() -> void:
 
 
 func on_failure() -> void:
-	if devil_state: 
-		exit_devil_state()
-	
 	push_current_to_leaderboard()
 	
 	current_contestant_score = 0
@@ -81,11 +82,15 @@ func deposit_trivia_data(_category_type: String, data):
 
 
 func push_current_to_leaderboard() -> void:
+	if current_contestant_name.length() == 0:
+		return
 	var player_data: Dictionary = {}
 	player_data["score"] = current_contestant_score
 	player_data["reigon_vector"] = current_contestant_avatar_reigon
 	player_data["devil_state"] = devil_state
 	leaderboard[current_contestant_name] = player_data
+	
+	current_contestant_name = ""
 
 
 func is_contestant_name_available(_name) -> bool:
