@@ -30,80 +30,80 @@ const CATEGORIES: Dictionary = {
 						}
 
 
-## simple questions
-#@export var easy_question = [{"question": "What year did Zelda: Tears of the Kingdom release", "answer": "2023"}, 
-#							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
-#							{"question": "What is it called when you clear four lines at once in Tetris?", "answer": "A Tetris"},
-#							{"question": "", "answer": "Beam"},
-#							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
-#							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
-#							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
-#							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
-#							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
-#							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
-#							]
-#
-#@export var brutal_question = [{"question": "in what year was Nintendo founded?", 
-#								"answer": "1889"}, 
-#								{"question":"While many people know Team Fortress 2, the original Team Fortress started as a mod to Quake. It also started with five classes as opposed to the modern nine. Which classes did the original Team Fortress start out with?",
-#								"answer": "Scout, Sniper, Soldier, Demoman, Medic"}
-#								]
-#
-#@export var solo_video_game_challenge = [{"question": "play the game of life"}, {"question": "Katamari"}]
-#@export var audience_video_game_challenge = [{"question": "play a game"}, {"question": "huhuhuhuhuuu"}]
-#@export var leap_of_faith = [{"question": "do 10,000 pushups (one handed)"}]
-#
-##audio
-#@export var audio = [{"question": "GBA game is fun to play?", "answer": "Mother 3", "path":"audio/Mother 3 - 129 Even Drier Guys.ogg"}]
-#@export var dialogue = [{"question": "who's voice is this?", "answer": "Big D. Cat", "path":"dialogue/we better.wav"}]
-#
-## visual
-#@export var who_the_heck_is_that = [{"question":"little boy egg morning?", "answer": "Billy Hatcher", "path":"who_the_heck_is_that/billy.png"}]
-#@export var screenshot = [{"question":"I hate this boy?", "answer": "John Test", "path":"screenshot/bo.jpg"}]
-#
-## true is left, false is right
-#@export var lightning_round = [
-#							{"theme": "Is this the name of a mario party minigam or a rhythm heaven rhythm game?",
-#							"time_limit":30,
-#							"left":"Mario Party",
-#							"right":"Rhythm Heaven",
-#							"questions":[
-#								["Bombs Away", true],
-#								["Drummer duel", false],
-#								["Airboarder", false],
-#								["Bowl Over", true],
-#								["Knock Block Tower", true],
-##								["Tipsy Tourney", true],
-#							]},
-#						]
-#
-#@export var multiple_choice = [
-#							{"question": "Mandiblard, Sheargrub, and Crawmads are monsters from which game series?",
-#							"answers": ["Monster Hunter", "Pokemon", "Pikmin", "Zelda"],
-#							"answer": 2
-#							}
-#]
-#
-## a little unique, as it is popped three times instead of once per trivia --- and the two unused challenges are put back in!
-#@export var pick_your_poison = [
-#							{"game": "Spelunky 2", "challenge": "1 v 1 Arena"},
-#							{"game": "Spelunky 3", "challenge": "2 v 2 Arena"},
-#							{"game": "Spelunky 4", "challenge": "3 v 3 Arena"},
-#]
-#
-#@export var TheRunawayGuys_video_game_challenge = {"chuggaaconroy": ["Super Mario Galaxy 2 (Wii) \n Beat the tall Trunk Slide purple coin star, two attempts", 
-#																	"Do a little dance",
-#																	],
-#													"proton_jon": ["make a little love",
-#																	"get down tonight"
-#																	],
-#													"nintendo_capri_sun": ["ha ha ha ha", 
-#																			"stayin alive"
-#																	]
-#}
-#
-#@export var devils_deal = 0
-#@export var choose_your_destiny = 0
+# simple questions
+@export var easy_question = [{"question": "What year did Zelda: Tears of the Kingdom release", "answer": "2023"}, 
+							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
+							{"question": "What is it called when you clear four lines at once in Tetris?", "answer": "A Tetris"},
+							{"question": "", "answer": "Beam"},
+							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
+							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
+							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
+							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
+							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
+							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
+							]
+
+@export var brutal_question = [{"question": "in what year was Nintendo founded?", 
+								"answer": "1889"}, 
+								{"question":"While many people know Team Fortress 2, the original Team Fortress started as a mod to Quake. It also started with five classes as opposed to the modern nine. Which classes did the original Team Fortress start out with?",
+								"answer": "Scout, Sniper, Soldier, Demoman, Medic"}
+								]
+
+@export var solo_video_game_challenge = [{"question": "play the game of life"}, {"question": "Katamari"}]
+@export var audience_video_game_challenge = [{"question": "play a game"}, {"question": "huhuhuhuhuuu"}]
+@export var leap_of_faith = [{"question": "do 10,000 pushups (one handed)"}]
+
+#audio
+@export var audio = [{"question": "GBA game is fun to play?", "answer": "Mother 3", "path":"audio/Mother 3 - 129 Even Drier Guys.ogg"}]
+@export var dialogue = [{"question": "who's voice is this?", "answer": "Big D. Cat", "path":"dialogue/we better.wav"}]
+
+# visual
+@export var who_the_heck_is_that = [{"question":"little boy egg morning?", "answer": "Billy Hatcher", "path":"who_the_heck_is_that/billy.png"}]
+@export var screenshot = [{"question":"I hate this boy?", "answer": "John Test", "path":"screenshot/bo.jpg"}]
+
+# true is left, false is right
+@export var lightning_round = [
+							{"theme": "Is this the name of a mario party minigam or a rhythm heaven rhythm game?",
+							"time_limit":30,
+							"left":"Mario Party",
+							"right":"Rhythm Heaven",
+							"questions":[
+								["Bombs Away", true],
+								["Drummer duel", false],
+								["Airboarder", false],
+								["Bowl Over", true],
+								["Knock Block Tower", true],
+#								["Tipsy Tourney", true],
+							]},
+						]
+
+@export var multiple_choice = [
+							{"question": "Mandiblard, Sheargrub, and Crawmads are monsters from which game series?",
+							"answers": ["Monster Hunter", "Pokemon", "Pikmin", "Zelda"],
+							"answer": 2
+							}
+]
+
+# a little unique, as it is popped three times instead of once per trivia --- and the two unused challenges are put back in!
+@export var pick_your_poison = [
+							{"game": "Spelunky 2", "challenge": "1 v 1 Arena"},
+							{"game": "Spelunky 3", "challenge": "2 v 2 Arena"},
+							{"game": "Spelunky 4", "challenge": "3 v 3 Arena"},
+]
+
+@export var TheRunawayGuys_video_game_challenge = {"chuggaaconroy": ["Super Mario Galaxy 2 (Wii) \n Beat the tall Trunk Slide purple coin star, two attempts", 
+																	"Do a little dance",
+																	],
+													"proton_jon": ["make a little love",
+																	"get down tonight"
+																	],
+													"nintendo_capri_sun": ["ha ha ha ha", 
+																			"stayin alive"
+																	]
+}
+
+@export var devils_deal = 0
+@export var choose_your_destiny = 0
 
 
 # will category show up in devil state

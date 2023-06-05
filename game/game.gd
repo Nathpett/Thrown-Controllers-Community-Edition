@@ -124,7 +124,7 @@ func _on_failure() -> void:
 	
 	# ever heard of DRY? me neither.  putting this here to catch instances where the contestant would get the very last trivia wrong
 	var cat_queue: Array = game_state.new_category_queue() # TODO TEST THIS
-	if cat_queue.all(Callable(game_state.trivia, "is_not_substantive")):
+	if cat_queue.all(Callable(Trivia, "is_not_substantive")):
 		all_trivia_exhausted(transition)
 		return
 	
@@ -157,7 +157,7 @@ func return_to_panel_select(transition = null) -> void:
 	# TODO NEXT REFACTOR SO THAT THIS IS ALWAYS RUN WHEN GOING TO PANEL SELECT, USE game_state.new_category_queue() TO VALIDATE WHETHER ALL SUBSTANSTIVE TRIVIA ARE RULED OUT
 	# get a new category queue, if none of the categories are substantive, enter the end scene
 	var cat_queue: Array = game_state.new_category_queue()
-	if cat_queue.all(Callable(game_state.trivia, "is_not_substantive")):
+	if cat_queue.all(Callable(Trivia, "is_not_substantive")):
 		all_trivia_exhausted(transition)
 		return
 	

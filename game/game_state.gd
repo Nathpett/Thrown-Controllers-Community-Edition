@@ -43,7 +43,7 @@ func setup() -> void:
 	trivia = load("res://trivia/trivia_1.tres") # TODO some day allow user to choose trivia resource when starting new game
 	
 	# in case any trivia starts the game with 0 data
-	for cat in trivia.CATEGORIES:
+	for cat in Trivia.CATEGORIES:
 		check_exhaust(cat)
 	
 	var trg_trivia_data = trivia.get("TheRunawayGuys_video_game_challenge")

@@ -1,8 +1,8 @@
 res://default_env.tres
 res://game/credits.tscn
 res://game/leader_board_background.gdshader
+res://game/game.gd
+res://game/game_state.gd
 res://main_menu/main_menu.tscn
 res://game/leader_board.tscn
-res://screen_transitions/failure_transition.gd
-res://trivia/trivia.json
-res://trivia/trivia_1.tres
+res://trivia/trivia.gd
