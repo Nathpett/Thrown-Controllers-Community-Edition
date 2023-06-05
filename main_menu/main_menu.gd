@@ -26,12 +26,10 @@ func _input(event: InputEvent) -> void:
 		if !selected_element: # I don't know if this is possible, like, input before a call to ready, but just in case lol just in case... it's not possible!
 			return
 		match selected_element.get_parsed_text():
-			"Settings":
-				pass
 			"Start Game!":
 				game.change_scene_to_file(load("res://name_please/name_please.tscn").instantiate())
 			"Credits":
-				pass
+				game.change_scene_to_file(load("res://game/credits.tscn").instantiate())
 			"Exit":
 				get_tree().quit()
 

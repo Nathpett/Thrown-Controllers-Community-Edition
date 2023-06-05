@@ -15,6 +15,7 @@ var on_stage: bool = false
 var out_items: Array = []
 var leaderboard
 var complete_tween: Tween
+var scores: Array
 
 
 func _ready():
@@ -51,6 +52,11 @@ func _ready():
 			new_avatar.fast_soulless()
 		
 		avatars[player] = new_avatar
+		var score = leaderboard[player]["score"]
+		if !scores.has(score):
+			scores.append(score)
+	
+	scores.sort_custom(Callable(self, "_sort_des"))
 	
 	var anchor_step = 1.0 / ITEMS_PER_PAGE
 	for i in range(ITEMS_PER_PAGE):
@@ -79,6 +85,10 @@ func _sort_score(a, b) -> bool:
 	return a_score > b_score
 
 
+func _sort_des(a, b) -> bool:
+	return a > b
+
+
 func _set_page(idx: int) -> void:
 	var page_ct = int(ceil(players.size() / ITEMS_PER_PAGE))
 	idx = posmod(idx, page_ct)
@@ -100,7 +110,7 @@ func _set_page(idx: int) -> void:
 		var player = players[i]
 		var player_data = leaderboard[player]
 		
-		item.get_node("Place").text = _get_ord(i + 1)
+		item.get_node("Place").text = _get_ord(scores.find(player_data["score"]) + 1)
 		item.get_node("Name").text = player
 		item.get_node("Score").text = str(player_data["score"])
 		
@@ -169,7 +179,3 @@ func _get_ord(idx: int) -> String:
 		return num + "rd"
 	
 	return num + "th"
-	
-	return "AA"
-
-

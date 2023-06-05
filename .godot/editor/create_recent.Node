@@ -1,9 +1,11 @@
-ColorRect
-Node2D
 AudioStreamPlayer
+RichTextLabel
 Control
-Sprite2D
+ColorRect
 Label
+GameScene
+Node2D
+Sprite2D
 VBoxContainer
 GridContainer
 ItemList
@@ -26,4 +28,3 @@ TextureButton
 Camera2D
 GPUParticles2D
 CPUParticles2D
-RichTextLabel
