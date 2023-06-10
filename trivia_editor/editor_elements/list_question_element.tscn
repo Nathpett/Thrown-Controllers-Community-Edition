@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://xu0bo41mkjkr"]
+
+[ext_resource type="FontFile" path="res://assets/fonts/roboto_1.tres" id="1_r6eoc"]
+[ext_resource type="Script" path="res://trivia_editor/editor_elements/list_question_element.gd" id="1_yiii5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wmsix"]
+
+[node name="ListQuestionElement" type="VBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 98.0
+grow_horizontal = 2
+script = ExtResource("1_yiii5")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_r6eoc")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wmsix")
+text = "Add Element"
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]

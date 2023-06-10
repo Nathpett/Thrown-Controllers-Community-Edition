@@ -1,0 +1,48 @@
+{
+"easy_question": [{"question": "QUESTION HERE", "answer": "ANSWER HERE"}],
+"brutal_question": [{"question": "QUESTION HERE", "answer": "ANSWER HERE"}],
+"solo_video_game_challenge": [{"question": "CHALLENGE HERE"}],
+"audience_video_game_challenge": [{"question": "CHALLENGE HERE"}],
+"leap_of_faith": [{"question": "CHALLENGE HERE"}],
+
+
+"audio": [{"question": "QUESTION HERE", "answer": "ANSWER HERE", "path":"FILE NAME HERE"}],
+"dialogue": [{"question": "QUESTION HERE", "answer": "ANSWER HERE", "path":"FILE NAME HERE"}],
+"who_the_heck_is_that": [{"question":"QUESTION HERE", "answer": "ANSWER HERE", "path":"FILE NAME HERE"}],
+"screenshot": [{"question":"QUESTION HERE", "answer": "ANSWER HERE", "path":"FILE NAME HERE"}],
+
+"lightning_round": [
+	{"theme": "QUESTION THEME HERE (e.g. is this a pokemon or a digimon?)",
+	"time_limit":30,
+	"left":"LEFT CATEGORY (true)",
+	"right":"RIGHT CATEGORY (false)",
+	"questions":[
+		["ITEM HERE", true]
+	]},
+],
+
+"multiple_choice": [
+	{"question": "QUESTION HERE",
+	"answers": ["ANSWER 1", "ANSWER 2", "ANSWER 3", "ANSWER 4"],
+	"answer": 2
+	}
+],
+
+"pick_your_poison": [
+	{"game": "GAME HERE", 
+	"challenge": "CHALLENGE HERE"}
+],
+
+"TheRunawayGuys_video_game_challenge": 
+	{"chuggaaconroy": [
+		"CHALLENGE HERE"
+		],
+	"proton_jon": [
+		"CHALLENGE HERE"
+	],
+	"nintendo_capri_sun": [
+		"CHALLENGE HERE"
+	],
+},
+
+}

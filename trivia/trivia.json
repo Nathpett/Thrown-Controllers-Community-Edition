@@ -1,13 +1,5 @@
 {"easy_question": [{"question": "What year did Zelda: Tears of the Kingdom release", "answer": "2023"}, 
 							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
-							{"question": "What is it called when you clear four lines at once in Tetris?", "answer": "A Tetris"},
-							{"question": "", "answer": "Beam"},
-							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
-							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
-							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
-							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
-							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
-							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
 							],
 
 "brutal_question": [{"question": "in what year was Nintendo founded?", 
@@ -22,11 +14,11 @@
 
 "leap_of_faith": [{"question": "do 10,000 pushups (one handed)"}],
 
-"audio": [{"question": "GBA game is fun to play?", "answer": "Mother 3", "path":"audio/Mother 3 - 129 Even Drier Guys.ogg"}],
-"dialogue": [{"question": "who's voice is this?", "answer": "Big D. Cat", "path":"dialogue/we better.wav"}],
+"audio": [{"question": "GBA game is fun to play?", "answer": "Mother 3", "path":"Mother 3 - 129 Even Drier Guys.ogg"}],
+"dialogue": [{"question": "who's voice is this?", "answer": "Big D. Cat", "path":"we better.wav"}],
 
-"who_the_heck_is_that": [{"question":"little boy egg morning?", "answer": "Billy Hatcher", "path":"who_the_heck_is_that/billy.png"}],
-"screenshot": [{"question":"I hate this boy?", "answer": "John Test", "path":"screenshot/bo.jpg"}],
+"who_the_heck_is_that": [{"question":"little boy egg morning?", "answer": "Billy Hatcher", "path":"billy.png"}],
+"screenshot": [{"question":"I hate this boy?", "answer": "John Test", "path":"bo.jpg"}],
 
 "lightning_round": [
 	{"theme": "Is this the name of a mario party minigam or a rhythm heaven rhythm game?",
@@ -34,11 +26,11 @@
 	"left":"Mario Party",
 	"right":"Rhythm Heaven",
 	"questions":[
-		["Bombs Away", true],
-		["Drummer duel", false],
-		["Airboarder", false],
-		["Bowl Over", true],
-		["Knock Block Tower", true],
+		["Bombs Away", false],
+		["Drummer duel", true],
+		["Airboarder", true],
+		["Bowl Over", false],
+		["Knock Block Tower", false],
 	]},
 ],
 

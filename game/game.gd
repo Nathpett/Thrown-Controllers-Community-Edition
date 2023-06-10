@@ -25,11 +25,15 @@ func _ready() -> void:
 	add_child(avatar)
 	
 	_new_game_state()
+	
+	var dir = DirAccess.open("user://")
+	if !dir.dir_exists("trivia"):
+		dir.make_dir("trivia")
 
 
 func _new_game_state() -> void:
 	game_state = GameState.new()
-	game_state.mode = GameState.Mode.RANDOM
+	game_state.mode = GameState.Mode.DEBUG
 	game_state.setup()
 	game_state.connect("panels_changed", Callable(self, "_on_panels_changed"))
 
@@ -105,11 +109,7 @@ func _on_devil_deal(outcome) -> void:
 func _on_success() -> void:
 	game_state.on_success()
 	
-	# TODO NEXT SUCCESS TRANSITION
 	var success_transition = load("res://screen_transitions/success_transition.tscn").instantiate()
-#	success_transition.text = "SUCCESS!"
-#	success_transition.trans_time = 0.4
-#	success_transition.hold_time = 0.4
 	game_state.check_exhaust(current_scene.get_category_type())
 	return_to_panel_select(success_transition)
 
@@ -124,7 +124,7 @@ func _on_failure() -> void:
 	
 	# ever heard of DRY? me neither.  putting this here to catch instances where the contestant would get the very last trivia wrong
 	var cat_queue: Array = game_state.new_category_queue() # TODO TEST THIS
-	if cat_queue.all(Callable(Trivia, "is_not_substantive")):
+	if cat_queue.all(Callable(CategoryStatics, "is_not_substantive")):
 		all_trivia_exhausted(transition)
 		return
 	
@@ -157,7 +157,7 @@ func return_to_panel_select(transition = null) -> void:
 	# TODO NEXT REFACTOR SO THAT THIS IS ALWAYS RUN WHEN GOING TO PANEL SELECT, USE game_state.new_category_queue() TO VALIDATE WHETHER ALL SUBSTANSTIVE TRIVIA ARE RULED OUT
 	# get a new category queue, if none of the categories are substantive, enter the end scene
 	var cat_queue: Array = game_state.new_category_queue()
-	if cat_queue.all(Callable(Trivia, "is_not_substantive")):
+	if cat_queue.all(Callable(CategoryStatics, "is_not_substantive")):
 		all_trivia_exhausted(transition)
 		return
 	

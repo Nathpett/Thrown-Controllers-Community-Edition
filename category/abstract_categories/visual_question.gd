@@ -10,7 +10,8 @@ func progress() -> void:
 	super.progress()
 	color_rect.show()
 	texture_rect.show()
-	texture_rect.texture = load("res://trivia/" + path)
+	var folder_name = get_category_type()
+	texture_rect.texture = load("res://trivia/" + folder_name  + "/" +  path)
 
 
 func show_answer() -> void:

@@ -1,0 +1,131 @@
+[gd_scene load_steps=5 format=3 uid="uid://d715hicp03t4"]
+
+[ext_resource type="Script" path="res://trivia_editor/editor_elements/lightning_element.gd" id="1_soi2k"]
+[ext_resource type="PackedScene" uid="uid://n1hhsnha6o7f" path="res://trivia_editor/editor_elements/string_element.tscn" id="2_t8qrh"]
+[ext_resource type="PackedScene" uid="uid://kjgal817dm6l" path="res://trivia_editor/editor_elements/integer_element.tscn" id="3_qarkc"]
+[ext_resource type="PackedScene" uid="uid://xu0bo41mkjkr" path="res://trivia_editor/editor_elements/list_question_element.tscn" id="4_kl63f"]
+
+[node name="LightningQuestionElement" type="VBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 98.0
+grow_horizontal = 2
+script = ExtResource("1_soi2k")
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+
+[node name="Theme" parent="." instance=ExtResource("2_t8qrh")]
+layout_mode = 2
+
+[node name="Label" parent="Theme" index="0"]
+text = "THEME:"
+
+[node name="17006" type="HScrollBar" parent="Theme/TextEdit" index="6"]
+visible = false
+layout_mode = 0
+offset_top = 27.0
+offset_right = 311.6
+offset_bottom = 35.0
+max_value = 0.0
+
+[node name="17007" type="VScrollBar" parent="Theme/TextEdit" index="7"]
+visible = false
+layout_mode = 0
+offset_left = 311.6
+offset_top = 4.0
+offset_right = 319.6
+offset_bottom = 27.0
+max_value = 0.0
+step = 1.0
+
+[node name="17008" type="Timer" parent="Theme/TextEdit" index="8"]
+wait_time = 0.65
+
+[node name="17009" type="Timer" parent="Theme/TextEdit" index="9"]
+wait_time = 0.05
+
+[node name="17010" type="Timer" parent="Theme/TextEdit" index="10"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Left" parent="." instance=ExtResource("2_t8qrh")]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="Label" parent="Left" index="0"]
+text = "LEFT (false):"
+
+[node name="17011" type="HScrollBar" parent="Left/TextEdit" index="6"]
+visible = false
+layout_mode = 0
+offset_top = 27.0
+offset_right = 311.6
+offset_bottom = 35.0
+max_value = 0.0
+
+[node name="17012" type="VScrollBar" parent="Left/TextEdit" index="7"]
+visible = false
+layout_mode = 0
+offset_left = 311.6
+offset_top = 4.0
+offset_right = 319.6
+offset_bottom = 27.0
+max_value = 0.0
+step = 1.0
+
+[node name="17013" type="Timer" parent="Left/TextEdit" index="8"]
+wait_time = 0.65
+
+[node name="17014" type="Timer" parent="Left/TextEdit" index="9"]
+wait_time = 0.05
+
+[node name="17015" type="Timer" parent="Left/TextEdit" index="10"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Right" parent="." instance=ExtResource("2_t8qrh")]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="Label" parent="Right" index="0"]
+text = "RIGHT (true):"
+
+[node name="17011" type="HScrollBar" parent="Right/TextEdit" index="6"]
+visible = false
+layout_mode = 0
+offset_top = 27.0
+offset_right = 311.6
+offset_bottom = 35.0
+max_value = 0.0
+
+[node name="17012" type="VScrollBar" parent="Right/TextEdit" index="7"]
+visible = false
+layout_mode = 0
+offset_left = 311.6
+offset_top = 4.0
+offset_right = 319.6
+offset_bottom = 27.0
+max_value = 0.0
+step = 1.0
+
+[node name="17013" type="Timer" parent="Right/TextEdit" index="8"]
+wait_time = 0.65
+
+[node name="17014" type="Timer" parent="Right/TextEdit" index="9"]
+wait_time = 0.05
+
+[node name="17015" type="Timer" parent="Right/TextEdit" index="10"]
+wait_time = 3.0
+one_shot = true
+
+[node name="TimeLimit" parent="." instance=ExtResource("3_qarkc")]
+layout_mode = 2
+
+[node name="ListQuestionElement" parent="." instance=ExtResource("4_kl63f")]
+layout_mode = 2
+toggles_visible = true
+
+[editable path="Theme"]
+[editable path="Left"]
+[editable path="Right"]

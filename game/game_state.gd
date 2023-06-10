@@ -31,7 +31,7 @@ func setup() -> void:
 		Mode.DEBUG:
 			# default to all categories for debugging
 			var i = 1
-			for cat in Trivia.CATEGORIES.keys():
+			for cat in CategoryStatics.CATEGORIES.keys():
 				panels[i] = cat
 				i += 1
 		Mode.RANDOM:
@@ -40,10 +40,10 @@ func setup() -> void:
 			for i in range(1, 2):
 				panels[i] = "pick_your_poison"
 	
-	trivia = load("res://trivia/trivia_1.tres") # TODO some day allow user to choose trivia resource when starting new game
-	
+	#trivia = load("res://trivia/trivia_1.tres") # TODO some day allow user to choose trivia resource when starting new game
+	trivia = load("res://trivia/trivia.json").data
 	# in case any trivia starts the game with 0 data
-	for cat in Trivia.CATEGORIES:
+	for cat in CategoryStatics.CATEGORIES:
 		check_exhaust(cat)
 	
 	var trg_trivia_data = trivia.get("TheRunawayGuys_video_game_challenge")
@@ -69,7 +69,7 @@ func on_failure() -> void:
 
 
 func pop_trivia_data(_category_type: String):
-	if !Trivia.has_trivia_data(_category_type):
+	if !CategoryStatics.has_trivia_data(_category_type):
 		return null
 	
 	var trivia_data = trivia.get(_category_type).pop_front()
@@ -122,18 +122,18 @@ func pop_category_queue() -> String:
 
 
 func new_category_queue() -> Array:
-	var new_queue = Array(Trivia.CATEGORIES.keys())
+	var new_queue = Array(CategoryStatics.CATEGORIES.keys())
 	for cat in exhausted_categories:
 		new_queue.erase(cat)
 	
 	if devil_state:
 		for cat in new_queue.duplicate():
-			if !Trivia.is_devil(cat):
+			if !CategoryStatics.is_devil(cat):
 				new_queue.erase(cat)
 	
 	if fast_mode:
 		for cat in new_queue.duplicate():
-			if Trivia.is_video_game_challenge(cat):
+			if CategoryStatics.is_video_game_challenge(cat):
 				new_queue.erase(cat)
 	
 	return new_queue
@@ -171,7 +171,7 @@ func enforce_devil_composition() -> void:
 
 
 func check_exhaust(cur_category_type) -> void:
-	if !Trivia.has_trivia_data(cur_category_type):
+	if !CategoryStatics.has_trivia_data(cur_category_type):
 		return
 	if !len(trivia[cur_category_type]):
 		_exhaust_category(cur_category_type)
@@ -189,6 +189,6 @@ func _exhaust_category(cat: String) -> void:
 			panels[n] = pop_category_queue()
 	
 	# exhaust anyone dependant on this category (e.g., if brutal questions exhausted, exhaust devil deal)
-	var dependants = Trivia.get_dependants(cat)
+	var dependants = CategoryStatics.get_dependants(cat)
 	for dependant in dependants:
 		_exhaust_category(dependant)

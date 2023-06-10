@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://kjgal817dm6l"]
+
+[ext_resource type="FontFile" path="res://assets/fonts/roboto_1.tres" id="2_48u0h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3cldw"]
+
+[sub_resource type="Theme" id="Theme_wo8gh"]
+default_font = ExtResource("2_48u0h")
+default_font_size = 8
+
+[node name="IntegerElement" type="Control"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.15
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_48u0h")
+theme_override_font_sizes/font_size = 8
+text = "Time Limit:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Label"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -4.0
+offset_right = 4.0
+offset_bottom = 8.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_48u0h")
+theme_override_font_sizes/font_size = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3cldw")
+text = "Delete"
+
+[node name="SpinBox" type="SpinBox" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.5
+anchor_right = 0.35
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_wo8gh")
+suffix = "sec"
+
+[connection signal="pressed" from="Label/Button" to="." method="_on_button_pressed"]

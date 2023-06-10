@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://n1hhsnha6o7f"]
+
+[ext_resource type="FontFile" path="res://assets/fonts/roboto_1.tres" id="1_j7sk7"]
+[ext_resource type="Script" path="res://trivia_editor/editor_elements/string_element.gd" id="1_y08vm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3cldw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ed4ol"]
+
+[node name="StringElement" type="Control"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+script = ExtResource("1_y08vm")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.15
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_j7sk7")
+theme_override_font_sizes/font_size = 8
+text = " QUESTION:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Label"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -4.0
+offset_right = 4.0
+offset_bottom = 8.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_j7sk7")
+theme_override_font_sizes/font_size = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3cldw")
+text = "Delete"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_j7sk7")
+theme_override_font_sizes/font_size = 4
+wrap_mode = 1
+
+[node name="CheckButton" type="CheckButton" parent="TextEdit"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -12.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ed4ol")
+
+[connection signal="pressed" from="Label/Button" to="." method="_on_button_pressed"]

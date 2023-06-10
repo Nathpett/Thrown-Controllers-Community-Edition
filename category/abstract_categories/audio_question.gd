@@ -4,6 +4,7 @@ extends SimpleQuestion
 
 func progress() -> void:
 	super.progress()
-	$Music.stream = ResourceLoader.load("res://trivia/" + path)
+	var folder_name = get_category_type()
+	$Music.stream = ResourceLoader.load("res://trivia/" + folder_name + "/" + path)
 	$Music.play()
 

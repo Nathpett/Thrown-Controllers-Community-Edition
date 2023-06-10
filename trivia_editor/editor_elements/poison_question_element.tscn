@@ -1,0 +1,85 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu1e8jcuapcyw"]
+
+[ext_resource type="Script" path="res://trivia_editor/editor_elements/simple_question_element.gd" id="1_scd0r"]
+[ext_resource type="PackedScene" uid="uid://n1hhsnha6o7f" path="res://trivia_editor/editor_elements/string_element.tscn" id="3_ek30r"]
+
+[node name="SimpleQuestionElement" type="VBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 98.0
+grow_horizontal = 2
+script = ExtResource("1_scd0r")
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+
+[node name="Game" parent="." instance=ExtResource("3_ek30r")]
+layout_mode = 2
+
+[node name="Label" parent="Game" index="0"]
+text = "GAME:"
+
+[node name="17006" type="HScrollBar" parent="Game/TextEdit" index="6"]
+visible = false
+layout_mode = 0
+offset_top = 27.0
+offset_right = 311.6
+offset_bottom = 35.0
+max_value = 0.0
+
+[node name="17007" type="VScrollBar" parent="Game/TextEdit" index="7"]
+visible = false
+layout_mode = 0
+offset_left = 311.6
+offset_top = 4.0
+offset_right = 319.6
+offset_bottom = 27.0
+max_value = 0.0
+step = 1.0
+
+[node name="17008" type="Timer" parent="Game/TextEdit" index="8"]
+wait_time = 0.65
+
+[node name="17009" type="Timer" parent="Game/TextEdit" index="9"]
+wait_time = 0.05
+
+[node name="17010" type="Timer" parent="Game/TextEdit" index="10"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Challenge" parent="." instance=ExtResource("3_ek30r")]
+layout_mode = 2
+
+[node name="Label" parent="Challenge" index="0"]
+text = "CHALLENGE:"
+
+[node name="17011" type="HScrollBar" parent="Challenge/TextEdit" index="6"]
+visible = false
+layout_mode = 0
+offset_top = 27.0
+offset_right = 311.6
+offset_bottom = 35.0
+max_value = 0.0
+
+[node name="17012" type="VScrollBar" parent="Challenge/TextEdit" index="7"]
+visible = false
+layout_mode = 0
+offset_left = 311.6
+offset_top = 4.0
+offset_right = 319.6
+offset_bottom = 27.0
+max_value = 0.0
+step = 1.0
+
+[node name="17013" type="Timer" parent="Challenge/TextEdit" index="8"]
+wait_time = 0.65
+
+[node name="17014" type="Timer" parent="Challenge/TextEdit" index="9"]
+wait_time = 0.05
+
+[node name="17015" type="Timer" parent="Challenge/TextEdit" index="10"]
+wait_time = 3.0
+one_shot = true
+
+[editable path="Game"]
+[editable path="Challenge"]

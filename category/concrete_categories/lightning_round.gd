@@ -51,14 +51,14 @@ func initiate_questions() -> void:
 
 func left() -> void:
 	if question_started and !dialogue.is_printing() and !question_over:
-		move_dialogue(true)
-		submit_answer(true)
+		move_dialogue(false)
+		submit_answer(false)
 
 
 func right() -> void:
 	if question_started and !dialogue.is_printing() and !question_over:
-		move_dialogue(false)
-		submit_answer(false)
+		move_dialogue(true)
+		submit_answer(true)
 
 
 func next_lightning() -> void:
@@ -72,7 +72,7 @@ func next_lightning() -> void:
 
 func move_dialogue(dir_bool: bool) -> void:
 	var dir: int
-	dir = -1 if dir_bool else 1
+	dir = 1 if dir_bool else -1
 	
 	var copy_dialogue = dialogue.duplicate()
 	copy_dialogue.set_script(null)

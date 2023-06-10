@@ -1,0 +1,106 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7jbo4t24x7hi"]
+
+[ext_resource type="Script" path="res://trivia_editor/editor_elements/multiple_question_element.gd" id="1_6nf4j"]
+[ext_resource type="FontFile" path="res://assets/fonts/roboto_1.tres" id="2_e827u"]
+[ext_resource type="PackedScene" uid="uid://n1hhsnha6o7f" path="res://trivia_editor/editor_elements/string_element.tscn" id="3_lrqm7"]
+
+[node name="MultipleQuestionElement" type="VBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 98.0
+grow_horizontal = 2
+script = ExtResource("1_6nf4j")
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+
+[node name="Question" parent="." instance=ExtResource("3_lrqm7")]
+layout_mode = 2
+
+[node name="Label" parent="Question" index="0"]
+text = "QUESTION:"
+
+[node name="17006" type="HScrollBar" parent="Question/TextEdit" index="6"]
+visible = false
+layout_mode = 0
+offset_top = 27.0
+offset_right = 311.6
+offset_bottom = 35.0
+max_value = 0.0
+
+[node name="17007" type="VScrollBar" parent="Question/TextEdit" index="7"]
+visible = false
+layout_mode = 0
+offset_left = 311.6
+offset_top = 4.0
+offset_right = 319.6
+offset_bottom = 27.0
+max_value = 0.0
+step = 1.0
+
+[node name="17008" type="Timer" parent="Question/TextEdit" index="8"]
+wait_time = 0.65
+
+[node name="17009" type="Timer" parent="Question/TextEdit" index="9"]
+wait_time = 0.05
+
+[node name="17010" type="Timer" parent="Question/TextEdit" index="10"]
+wait_time = 3.0
+one_shot = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_e827u")
+theme_override_font_sizes/font_size = 12
+text = "Answers (check the correct one)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StringElement" parent="VBoxContainer" instance=ExtResource("3_lrqm7")]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label" parent="VBoxContainer/StringElement" index="0"]
+text = "ANSWER:"
+
+[node name="CheckButton" parent="VBoxContainer/StringElement/TextEdit" index="5"]
+visible = true
+
+[node name="StringElement2" parent="VBoxContainer" instance=ExtResource("3_lrqm7")]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label" parent="VBoxContainer/StringElement2" index="0"]
+text = "ANSWER:"
+
+[node name="CheckButton" parent="VBoxContainer/StringElement2/TextEdit" index="5"]
+visible = true
+
+[node name="StringElement3" parent="VBoxContainer" instance=ExtResource("3_lrqm7")]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label" parent="VBoxContainer/StringElement3" index="0"]
+text = "ANSWER:"
+
+[node name="CheckButton" parent="VBoxContainer/StringElement3/TextEdit" index="5"]
+visible = true
+
+[node name="StringElement4" parent="VBoxContainer" instance=ExtResource("3_lrqm7")]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label" parent="VBoxContainer/StringElement4" index="0"]
+text = "ANSWER:"
+
+[node name="CheckButton" parent="VBoxContainer/StringElement4/TextEdit" index="5"]
+visible = true
+
+[editable path="Question"]
+[editable path="VBoxContainer/StringElement"]
+[editable path="VBoxContainer/StringElement2"]
+[editable path="VBoxContainer/StringElement3"]
+[editable path="VBoxContainer/StringElement4"]
