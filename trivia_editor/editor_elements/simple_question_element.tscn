@@ -8,6 +8,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 98.0
 grow_horizontal = 2
+focus_mode = 1
 script = ExtResource("1_u1j5r")
 
 [node name="HSeparator" type="HSeparator" parent="."]

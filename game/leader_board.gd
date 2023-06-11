@@ -24,7 +24,7 @@ func _ready():
 		leaderboard = game.game_state.leaderboard
 	else:
 		# TEST LEADERBOARD
-		leaderboard = {"JIMBO": {"score": 0, "devil_state": false, "reigon_vector": Vector2(2, 2)},
+		leaderboard = {"JIMBO": {"score": 0, "devil_state": false, "reigon_vector": Vector2(1, 2)},
 						"BO": {"score": 0, "devil_state": true, "reigon_vector": Vector2(0, 2)},
 						"MBO": {"score": 2, "devil_state": false, "reigon_vector": Vector2(1, 3)},
 						"IMBO": {"score": 0, "devil_state": false, "reigon_vector": Vector2(2, 4)},
@@ -34,6 +34,18 @@ func _ready():
 						"dd": {"score": 2, "devil_state": false, "reigon_vector": Vector2(1, 2)},
 						"IMasdadBO": {"score": 0, "devil_state": false, "reigon_vector": Vector2(2, 6)},
 						"dsadasdO": {"score": 3, "devil_state": false, "reigon_vector": Vector2(0, 4)},
+						"434O": {"score": 3, "devil_state": false, "reigon_vector": Vector2(0, 8)},
+						"adddfzfds": {"score": 0, "devil_state": false, "reigon_vector": Vector2(2, 9)},
+						"BaadOaasdf": {"score": 0, "devil_state": false, "reigon_vector": Vector2(0, 9)},
+						"dasdfd": {"score": 2, "devil_state": false, "reigon_vector": Vector2(1, 2)},
+						"IMasdadsfadBO": {"score": 0, "devil_state": false, "reigon_vector": Vector2(2, 6)},
+						"dsadaadsfsafsdO": {"score": 3, "devil_state": false, "reigon_vector": Vector2(0, 7)},
+						"O3": {"score": 3, "devil_state": false, "reigon_vector": Vector2(0, 8)},
+						"admd": {"score": 0, "devil_state": false, "reigon_vector": Vector2(2, 6)},
+						"BmaadmkO": {"score": 0, "devil_state": false, "reigon_vector": Vector2(0, 9)},
+						"d4d": {"score": 2, "devil_state": false, "reigon_vector": Vector2(1, 2)},
+						"IMas4234dadBO": {"score": 0, "devil_state": false, "reigon_vector": Vector2(2, 6)},
+						"dsad2343243424324asdO": {"score": 3, "devil_state": false, "reigon_vector": Vector2(0, 4)},
 			}
 	
 	players = leaderboard.keys()

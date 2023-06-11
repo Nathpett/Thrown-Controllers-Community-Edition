@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqyw1qslokxw"]
+
+[ext_resource type="FontFile" path="res://assets/fonts/roboto_1.tres" id="1_2ief4"]
+
+[sub_resource type="Theme" id="Theme_xk88h"]
+default_font = ExtResource("1_2ief4")
+default_font_size = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y74nn"]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+size_flags_horizontal = 4
+
+[node name="DeleteButton" type="Button" parent="."]
+layout_mode = 2
+theme = SubResource("Theme_xk88h")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y74nn")
+text = "delete"
+
+[node name="TestButton" type="Button" parent="."]
+layout_mode = 2
+theme = SubResource("Theme_xk88h")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y74nn")
+text = "test"

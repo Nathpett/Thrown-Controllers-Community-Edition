@@ -1,4 +1,4 @@
-extends VBoxContainer
+extends TriviaElement
 
 
 func get_question() -> Dictionary:

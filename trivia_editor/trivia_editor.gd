@@ -1,14 +1,13 @@
 extends Control
 
 var trivia_data: Dictionary
-var current_category: String
+var current_category: String: set = _set_current_category
 
 func _ready():
-	current_category = $Control/Control/OptionButton.text
-	
 	for cat in CategoryStatics.CATEGORIES:
 		$Control/Control/OptionButton.add_item(cat)
-
+	
+	current_category = $Control/Control/OptionButton.text
 
 
 func _unload_category():
@@ -41,9 +40,12 @@ func _add_item(item) -> void:
 func _on_option_button_item_selected(index):
 	_unload_category()
 	current_category = $Control/Control/OptionButton.text
-	_load_category()
 
 
 func _on_add_item_button_pressed():
 	_add_item(load(CategoryStatics.get_editor_element_path(current_category)).instantiate())
 	
+
+func _set_current_category(new_value: String) -> void:
+	current_category = new_value
+	_load_category()
