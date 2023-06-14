@@ -33,7 +33,7 @@ text = "LEFT
 <-----"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
+autowrap_mode = 2
 
 [node name="RightLabel" type="Label" parent="Control" index="5"]
 layout_mode = 0
@@ -48,7 +48,7 @@ text = "RIGHT
 ----->"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
+autowrap_mode = 2
 
 [node name="ResultsHbox" type="HBoxContainer" parent="Control" index="6"]
 visible = false

@@ -9,7 +9,6 @@ var scroll: float = 0
 
 func _ready():
 	var credits_json = load("res://main_menu/credits.json")
-	print(credits_json.data)
 	
 	text.append_text("[center]")
 	for key in credits_json.data:

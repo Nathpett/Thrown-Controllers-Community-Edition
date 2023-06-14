@@ -37,10 +37,9 @@ func setup() -> void:
 		Mode.RANDOM:
 			populate_singlefile(10)
 		Mode.JUST_ONE:
-			for i in range(1, 2):
-				panels[i] = "pick_your_poison"
-	
-	#trivia = load("res://trivia/trivia_1.tres") # TODO some day allow user to choose trivia resource when starting new game
+			for i in range(1, 10):
+				panels[i] = "who_the_heck_is_that"
+	# TODO NEXT MAKE THIS EDITABLE VIA GAMESETTINGS, GRAY OUT WHEN IN GAME HOWEVER!!
 	trivia = load("res://trivia/trivia.json").data
 	# in case any trivia starts the game with 0 data
 	for cat in CategoryStatics.CATEGORIES:

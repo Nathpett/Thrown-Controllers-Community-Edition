@@ -11,6 +11,8 @@ extends TriviaElement
 var answer_texts: Array = []
 
 func _ready():
+	super._ready()
+	
 	answer_texts.append($VBoxContainer/StringElement/TextEdit)
 	answer_texts.append($VBoxContainer/StringElement2/TextEdit)
 	answer_texts.append($VBoxContainer/StringElement3/TextEdit)

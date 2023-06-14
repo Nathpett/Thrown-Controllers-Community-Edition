@@ -35,6 +35,7 @@ func _ready() -> void:
 	await tween.finished
 	
 	emit_signal("finished")
+	queue_free()
 
 
 func _show_check() -> void:

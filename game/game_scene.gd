@@ -26,7 +26,7 @@ func disable() -> void:
 
 
 func music_fade_off() -> void:
-	var music = get_node("Music")
+	var music = get_node_or_null("Music")
 	if !is_instance_valid(music):
 		return
 	

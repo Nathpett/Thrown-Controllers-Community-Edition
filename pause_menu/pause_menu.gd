@@ -71,15 +71,6 @@ func _on_quit_game_button_pressed():
 	visible = false
 
 
-func _on_debug_button_pressed():
-	var debug_menu = load("res://pause_menu/debug_menu.tscn").instantiate()
-	debug_menu.pause_menu = self
-	get_parent().add_child(debug_menu)
-	
-	opened_menus.append(debug_menu)
-	visible = false
-
-
 func _on_leader_board_pressed():
 	if game.current_scene is PanelSelect or game.current_scene.name == "EndScreen":
 		game.show_leaderboard()
@@ -87,3 +78,12 @@ func _on_leader_board_pressed():
 		game.return_to_panel_select()
 	_unpause()
 		
+
+
+func _on_gameplay_settings_pressed():
+	var gameplay_menu = load("res://pause_menu/gameplay_menu.tscn").instantiate()
+	gameplay_menu.pause_menu = self
+	get_parent().add_child(gameplay_menu)
+	
+	opened_menus.append(gameplay_menu)
+	visible = false

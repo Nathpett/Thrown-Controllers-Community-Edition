@@ -9,7 +9,7 @@ func ready_trivia() -> void:
 	withdrawn_callenges = []
 	
 	for i in range(3):
-		var trivia_data = game.game_state.pop_trivia_data(get_category_type())
+		var trivia_data = get_trivia_data()
 		if trivia_data: 
 			withdrawn_callenges.append(trivia_data)
 		else:

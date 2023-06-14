@@ -10,7 +10,7 @@ var correct_ct: int = 0
 
 
 func ready_trivia() -> void:
-	var trivia_data = game.game_state.pop_trivia_data(get_category_type())
+	var trivia_data = get_trivia_data()
 	
 	questions = trivia_data["questions"]
 	time_limit = trivia_data.get("time_limit", 0)

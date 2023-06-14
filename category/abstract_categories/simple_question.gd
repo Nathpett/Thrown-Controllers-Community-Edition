@@ -71,7 +71,7 @@ func is_double_tap(action:String) -> bool:
 
 
 func ready_trivia():
-	var trivia_data = game.game_state.pop_trivia_data(get_category_type())
+	var trivia_data = get_trivia_data()
 	if trivia_data:
 		question = trivia_data["question"]
 		answer = trivia_data.get("answer", trivia_data["question"])

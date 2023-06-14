@@ -5,7 +5,7 @@ extends ComplexQuestion
 var cursor_idx = 0
 
 func ready_trivia() -> void:
-	var trivia_data = game.game_state.trivia.get("TheRunawayGuys_video_game_challenge")
+	var trivia_data = get_trivia_data()
 	var texture_rect = $Control/Heads/TextureRect
 	for host in trivia_data:
 		var new_texture_rect = texture_rect.duplicate()
@@ -17,6 +17,12 @@ func ready_trivia() -> void:
 		new_texture_rect.name = host
 	
 	texture_rect.free()
+
+
+func get_trivia_data():
+	if override_trivia_data.size():
+		return override_trivia_data
+	return game.game_state.trivia.get("TheRunawayGuys_video_game_challenge")
 
 
 func initiate_questions() -> void:

@@ -1,3 +1,4 @@
+TabBar
 HBoxContainer
 Button
 Window
@@ -18,7 +19,6 @@ ScrollContainer
 TextEdit
 Control
 OptionButton
-TabBar
 AudioStreamPlayer
 RichTextLabel
 ColorRect

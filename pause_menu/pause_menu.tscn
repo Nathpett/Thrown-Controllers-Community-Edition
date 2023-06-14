@@ -72,7 +72,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_ojq7f")
 text = "leaderboard"
 flat = true
 
-[node name="DebugButton" type="Button" parent="VBoxContainer"]
+[node name="GameplaySettings" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.929412, 0.839216, 0, 1)
@@ -80,7 +80,7 @@ theme_override_colors/font_focus_color = Color(0.929412, 0.839216, 0, 1)
 theme_override_fonts/font = ExtResource("3_qxwf0")
 theme_override_font_sizes/font_size = 10
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ojq7f")
-text = "debug"
+text = "gameplay"
 flat = true
 
 [node name="MainMenu" type="Button" parent="VBoxContainer"]
@@ -112,6 +112,6 @@ bus = &"music"
 
 [connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/LeaderBoard" to="." method="_on_leader_board_pressed"]
-[connection signal="pressed" from="VBoxContainer/DebugButton" to="." method="_on_debug_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GameplaySettings" to="." method="_on_gameplay_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/MainMenu" to="." method="_on_main_menu_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitGame" to="." method="_on_quit_game_button_pressed"]

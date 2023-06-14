@@ -43,6 +43,9 @@ static func get_editor_element_path(cat: String):
 	if CategoryStatics.has_content(cat): 
 		return "res://trivia_editor/editor_elements/content_question_element.tscn"
 	
+	if CategoryStatics.is_video_game_challenge(cat):
+		return "res://trivia_editor/editor_elements/challenge_element.tscn"
+	
 	return "res://trivia_editor/editor_elements/simple_question_element.tscn"
 
 
@@ -71,3 +74,6 @@ static func is_video_game_challenge(cat) -> bool:
 
 static func is_not_substantive(cat) -> bool:
 	return CATEGORIES[cat].get(NOT_SUBSTANTIVE, false)
+
+static func is_substantive(cat) -> bool:
+	return !CATEGORIES[cat].get(NOT_SUBSTANTIVE, false)

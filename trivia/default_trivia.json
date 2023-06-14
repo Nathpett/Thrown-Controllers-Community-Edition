@@ -6,9 +6,7 @@
 "brutal_question": [{"question": "in what year was Nintendo founded?", 
 								"answer": "1889"}, 
 								{"question":"While many people know Team Fortress 2, the original Team Fortress started as a mod to Quake. It also started with five classes as opposed to the modern nine. Which classes did the original Team Fortress start out with?",
-								"answer": "Scout, Sniper, Soldier, Demoman, Medic"},
-								{"question":"In The Legend of Zelda (NES), What color is Link's Tunic? (Answer only acceptable as a hexidecimal value)",
-								"answer": "00CC00"},
+								"answer": "Scout, Sniper, Soldier, Demoman, Medic"}
 								],
 
 "solo_video_game_challenge": [{"question": "play the game of life"}, {"question": "Katamari"}],
@@ -60,7 +58,7 @@
 	},
 	{"question": "Which of these Zelda races never appear in the same game?",
 	"answers": ["Twili and Gorons", "Rito and Zora", "Minish and Rito", "Gorons and Zora"],
-	"answer": 2}
+	"answer": 3}
 ],
 
 "pick_your_poison": [

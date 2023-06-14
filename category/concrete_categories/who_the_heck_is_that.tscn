@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjebr51cl0oth"]
+[gd_scene load_steps=6 format=3 uid="uid://bjebr51cl0oth"]
 
 [ext_resource type="PackedScene" uid="uid://cij02g20d7tnh" path="res://category/abstract_categories/visual_question.tscn" id="1"]
 [ext_resource type="Material" uid="uid://b6mjvqj2em1kv" path="res://resources/black.tres" id="3"]
 [ext_resource type="Texture2D" uid="uid://h48hn1cike58" path="res://assets/img/who_the_heck_is_that.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bq2uwnm6opq8u" path="res://trivia/who_the_heck_is_that/raiden.png" id="4_ncn1f"]
 [ext_resource type="AudioStream" uid="uid://sflbdn3kd251" path="res://assets/sound/music/25. Presidential Palace Exploration.mp3" id="4_umdk4"]
 
 [node name="GameScene" instance=ExtResource("1")]
@@ -13,10 +14,12 @@ anchor_top = 0.6
 [node name="CategoryTitle" parent="Control" index="3"]
 anchor_left = 0.1
 anchor_right = 0.9
+anchor_bottom = 0.58
 texture = ExtResource("4")
 
 [node name="TextureRect" parent="Control/CategoryTitle" index="1"]
 material = ExtResource("3")
+texture = ExtResource("4_ncn1f")
 stretch_mode = 5
 
 [node name="Music" parent="." index="1"]

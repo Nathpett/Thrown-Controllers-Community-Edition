@@ -13,7 +13,7 @@ var answered = false
 
 
 func ready_trivia() -> void:
-	var trivia_data = game.game_state.pop_trivia_data(get_category_type())
+	var trivia_data = get_trivia_data()
 	
 	answers = trivia_data["answers"]
 	answer_indx = trivia_data["answer"]

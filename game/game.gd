@@ -8,7 +8,9 @@ var black_fade_transition = preload("res://screen_transitions/black_fade.tscn")
 
 var msgbox: MessageBox
 var avatar: Avatar
-
+var editor_mode: bool = false
+var editor_category: String
+var editor_trivia_file_name: String
 
 @onready var transitions = $Transitions
 
@@ -24,16 +26,22 @@ func _ready() -> void:
 	avatar = load("res://avatar/avatar.tscn").instantiate()
 	add_child(avatar)
 	
-	_new_game_state()
-	
 	var dir = DirAccess.open("user://")
 	if !dir.dir_exists("trivia"):
 		dir.make_dir("trivia")
+	# copy trivia.json, push it to this dir as 'default_trivia.json
+	if !dir.file_exists("user://trivia/default_trivia.json"):
+		dir.copy("res://trivia/trivia.json", "user://trivia/default_trivia.json")
+
+
+func new_game() -> void:
+	_new_game_state()
 
 
 func _new_game_state() -> void:
+	editor_mode = false
 	game_state = GameState.new()
-	game_state.mode = GameState.Mode.DEBUG
+	game_state.mode = GameState.Mode.RANDOM
 	game_state.setup()
 	game_state.connect("panels_changed", Callable(self, "_on_panels_changed"))
 
@@ -107,20 +115,27 @@ func _on_devil_deal(outcome) -> void:
 
 
 func _on_success() -> void:
+	var success_transition = load("res://screen_transitions/success_transition.tscn").instantiate()
+	if editor_mode:
+		change_scene_to_file(load("res://trivia_editor/trivia_editor.tscn").instantiate(), success_transition)
+		return
+	
 	game_state.on_success()
 	
-	var success_transition = load("res://screen_transitions/success_transition.tscn").instantiate()
 	game_state.check_exhaust(current_scene.get_category_type())
 	return_to_panel_select(success_transition)
 
 
 func _on_failure() -> void:
+	var transition = load("res://screen_transitions/failure_transition.tscn").instantiate()
+	if editor_mode:
+		change_scene_to_file(load("res://trivia_editor/trivia_editor.tscn").instantiate(), transition)
+		return
+	
 	game_state.on_failure()
 	if game_state.devil_state: 
 		exit_devil_state()
 	game_state.check_exhaust(current_scene.get_category_type())
-	
-	var transition = load("res://screen_transitions/failure_transition.tscn").instantiate()
 	
 	# ever heard of DRY? me neither.  putting this here to catch instances where the contestant would get the very last trivia wrong
 	var cat_queue: Array = game_state.new_category_queue() # TODO TEST THIS

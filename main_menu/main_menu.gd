@@ -21,13 +21,16 @@ func _input(event: InputEvent) -> void:
 		alter_select(1)
 	if event.is_action_pressed("up"):
 		alter_select(-1)
-	
+		
 	if event.is_action_pressed("progress"):
 		if !selected_element: # I don't know if this is possible, like, input before a call to ready, but just in case lol just in case... it's not possible!
 			return
 		match selected_element.get_parsed_text():
 			"Start Game!":
+				game.new_game()
 				game.change_scene_to_file(load("res://name_please/name_please.tscn").instantiate())
+			"Editor":
+				game.change_scene_to_file(load("res://trivia_editor/trivia_editor.tscn").instantiate())
 			"Credits":
 				game.change_scene_to_file(load("res://game/credits.tscn").instantiate())
 			"Exit":
