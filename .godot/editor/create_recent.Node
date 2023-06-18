@@ -1,3 +1,4 @@
+CheckButton
 AudioStreamPlayer
 Sprite2D
 MarginContainer
@@ -18,7 +19,6 @@ HSlider
 LineEdit
 VSlider
 VScrollBar
-CheckButton
 MenuButton
 HSeparator
 PanelContainer

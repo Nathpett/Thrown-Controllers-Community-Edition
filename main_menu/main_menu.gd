@@ -27,8 +27,6 @@ func _input(event: InputEvent) -> void:
 			return
 		match selected_element.get_parsed_text():
 			"New Game!":
-#				game.new_game()
-#				game.change_scene_to_file(load("res://name_please/name_please.tscn").instantiate())
 				game.change_scene_to_file(load("res://main_menu/new_game_menu.tscn").instantiate())
 			"Load Game":
 				scene_disabled = true

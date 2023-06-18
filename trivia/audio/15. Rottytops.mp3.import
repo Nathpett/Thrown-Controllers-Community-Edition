@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://0168fnicdex8"
+path="res://.godot/imported/15. Rottytops.mp3-6667fb0e535f6d4bf099ca7bcd006fcc.mp3str"
+
+[deps]
+
+source_file="res://trivia/audio/15. Rottytops.mp3"
+dest_files=["res://.godot/imported/15. Rottytops.mp3-6667fb0e535f6d4bf099ca7bcd006fcc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

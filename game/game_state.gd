@@ -27,10 +27,10 @@ enum Mode {RANDOM, DEBUG, JUST_ONE}
 @export var trivia: Dictionary
 
 
-func initiate(trivia_path: String, initial_mode: int) -> void:
+func initiate(trivia_path: String, initial_mode: int, _fast_mode: bool = false) -> void:
 	trivia = load(trivia_path).data
-	
 	initial_trivia_set = trivia_path.get_file().get_basename()
+	fast_mode = _fast_mode
 	
 	panels = {}
 	match initial_mode:

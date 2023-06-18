@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cs0rjjekejkpv"]
+[gd_scene load_steps=3 format=3 uid="uid://cs0rjjekejkpv"]
 
 [ext_resource type="Script" path="res://main_menu/new_game_menu.gd" id="1_sjmie"]
+[ext_resource type="FontFile" uid="uid://bqbm4s6w7s13v" path="res://assets/fonts/Roboto-Regular.ttf" id="2_861c8"]
 
 [node name="NewGameMenu" type="Control"]
 layout_mode = 3
@@ -35,15 +36,23 @@ popup/item_1/id = 1
 popup/item_2/text = "Just One"
 popup/item_2/id = 2
 
+[node name="OnlyTriviaButton" type="CheckButton" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_861c8")
+theme_override_font_sizes/font_size = 8
+button_pressed = true
+text = "Only Show Trivia"
+alignment = 2
+
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Start"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 87.0
-offset_top = 67.0
-offset_right = 183.0
+offset_left = 35.0
+offset_top = 51.0
+offset_right = 185.0
 offset_bottom = 157.0
 
 [node name="L" type="Label" parent="VBoxContainer2"]

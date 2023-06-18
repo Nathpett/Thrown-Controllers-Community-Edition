@@ -1,12 +1,3 @@
 res://default_env.tres
-res://game/leader_board_background.gdshader
-res://testing/testing_imports.tscn
-res://testing/testing_imports.gd
-res://main_menu/load_game_menu.tscn
-res://main_menu/load_menu_file_element.tscn
-res://main_menu/new_game_menu.tscn
-res://trivia_editor/trivia_editor.tscn
 res://game/leader_board.tscn
-res://pause_menu/are_you_sure.tscn
-res://main_menu/main_menu.tscn
-res://trivia_editor/editor_elements/content_question_element.tscn
+res://game/leader_board_background.gdshader

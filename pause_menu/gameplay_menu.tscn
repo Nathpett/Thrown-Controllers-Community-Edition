@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://dcxdjp8kwff5c"]
 
 [ext_resource type="Script" path="res://pause_menu/gameplay_menu.gd" id="1_prp18"]
 [ext_resource type="AudioStream" uid="uid://cpewh1jj7ki6c" path="res://assets/sound/menu sounds/backspace.wav" id="2_633q7"]
@@ -41,7 +41,7 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Debug"
+text = "GamePlay"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -52,7 +52,7 @@ layout_mode = 2
 layout_mode = 2
 tooltip_text = "Video game challenges will stop appearing."
 theme_override_font_sizes/font_size = 8
-text = "Fast Mode"
+text = "Trivia Only Mode"
 
 [node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer"]
 layout_mode = 2

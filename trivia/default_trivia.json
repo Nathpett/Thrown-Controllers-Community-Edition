@@ -1,87 +1,406 @@
-{"easy_question": [{"question": "What year did Zelda: Tears of the Kingdom release", "answer": "2023"}, 
-							{"question": "What is the first available copy ability in Kirby's Adventure?", "answer": "Beam"},
-							{"question": "What is Fox Mccloud's vocation?", "answer": "mercenary, or piolet"}
-							],
-
-"brutal_question": [{"question": "in what year was Nintendo founded?", 
-								"answer": "1889"}, 
-								{"question":"While many people know Team Fortress 2, the original Team Fortress started as a mod to Quake. It also started with five classes as opposed to the modern nine. Which classes did the original Team Fortress start out with?",
-								"answer": "Scout, Sniper, Soldier, Demoman, Medic"}
-								],
-
-"solo_video_game_challenge": [{"question": "play the game of life"}, {"question": "Katamari"}],
-
-"audience_video_game_challenge": [{"question": "play a game"}, {"question": "huhuhuhuhuuu"}],
-
-"leap_of_faith": [{"question": "do 10,000 pushups (one handed)"}],
-
-"audio": [{"question": "GBA game is fun to play?", "answer": "Mother 3", "path":"Mother 3 - 129 Even Drier Guys.ogg"}],
-"dialogue": [{"question": "who's voice is this?", "answer": "Big D. Cat", "path":"we better.wav"}],
-
-"who_the_heck_is_that": [{"question":"This titular titular protagonist is whisked to Morning Land where he must do battle with Dark Raven!", "answer": "Billy Hatcher", "path":"billy.png"},
-						{"question": "Unite Hand! Will Wedgewood is a mild mannered school teacher, but when the fate of the world is hanging by a thread he'll transform into this super hero.", "answer":"Wonder Red", "path":"wonder_red.png"},
-						{"question": "Alone initially, this character later befriends Chris, John, Claire, Laura, James, and Sarah", "answer": "Thomas", "path":"thomas.png"},
-						{"question": "As a commanding officer, this character commands the forces of Orange Star", "answer": "Andy", "path":"andy.png"},
-						{"question": "As a child soldier he earned the nickname 'Jack the Ripper' due to his incredibly high kill rate. While his name really is Jack, only his current name is valid.", "answer": "Raiden", "path":"raiden.png"}],
-						
-"screenshot": [{"question":"I hate this boy?", "answer": "John Test", "path":"bo.jpg"}],
-
-"lightning_round": [
-	{"theme": "Is this the name of a mario party minigam or a rhythm heaven rhythm game?",
-	"time_limit":30,
-	"left":"Mario Party",
-	"right":"Rhythm Heaven",
-	"questions":[
-		["Bombs Away", false],
-		["Drummer duel", true],
-		["Airboarder", true],
-		["Bowl Over", false],
-		["Knock Block Tower", false],
-	]},
-	{"theme": "Is this the name of a Rune Factory monster or bachelorette?",
-	"time_limit":30,
-	"left":"Monster",
-	"right":"Bachelorette",
-	"questions":[
-		["Sakuya ", true],
-		["Lizzy", false],
-		["Forte", true],
-		["Gobby", false],
-		["Sky", false],
-	]},
-],
-
-"multiple_choice": [
-	{"question": "Mandiblard, Sheargrub, and Crawmads are monsters from which game series?",
-	"answers": ["Monster Hunter", "Pokemon", "Pikmin", "Zelda"],
-	"answer": 2
-	},
-	{"question": "Which of these Zelda races never appear in the same game?",
-	"answers": ["Twili and Gorons", "Rito and Zora", "Minish and Rito", "Gorons and Zora"],
-	"answer": 3}
-],
-
-"pick_your_poison": [
-	{"game": "Spelunky 2", 
-	"challenge": "1 v 1 Arena"},
-	{"game": "Spelunky 3", 
-	"challenge": "2 v 2 Arena"},
-	{"game": "Spelunky 4", 
-	"challenge": "3 v 3 Arena"},
-],
-
-"TheRunawayGuys_video_game_challenge": 
-	{"chuggaaconroy": ["Super Mario Galaxy 2 (Wii) \n Beat the tall Trunk Slide purple coin star, two attempts", 
-		"Do a little dance",
-		],
-		"proton_jon": [
-			"make a little love",
+{
+	"easy_question": [
+		{
+			"question": "What year did Zelda: Tears of the Kingdom release",
+			"answer": "2023"
+		},
+		{
+			"question": "What is the first available copy ability in Kirby's Adventure?",
+			"answer": "Beam"
+		},
+		{
+			"question": "What is Fox Mccloud's vocation?",
+			"answer": "mercenary, or piolet"
+		},
+		{
+			"question": "What was Mother 2: Gīgu no Gyakushū called when it released in North America?",
+			"answer": "Earthbound"
+		},
+		{
+			"question": "How many pieces of the Triforce are there?",
+			"answer": "Three"
+		}
+	],
+	"brutal_question": [
+		{
+			"question": "in what year was Nintendo founded?",
+			"answer": "1889"
+		},
+		{
+			"question": "While many people know Team Fortress 2, the original Team Fortress started as a mod to Quake. It also started with five classes as opposed to the modern nine. Which classes did the original Team Fortress start out with?",
+			"answer": "Scout, Sniper, Soldier, Demoman, Medic"
+		},
+		{
+			"question": "In The Legend of Zelda (NES), What color is Link's Tunic? (Answer only acceptable as a hexidecimal value)",
+			"answer": "00CC00"
+		},
+		{
+			"question": "What color are mario and luigi's overalls in Super Mario Bros (NES)? hint: they're two different colors!",
+			"answer": "Red and white"
+		},
+		{
+			"question": "This game's working title was 'Dark Ring.' this was changed due to Dark Ring possibly being slang for anus. ",
+			"answer": "Dark Souls"
+		}
+	],
+	"solo_video_game_challenge": [
+		{
+			"question": "play the game of life"
+		},
+		{
+			"question": "Katamari"
+		}
+	],
+	"audience_video_game_challenge": [
+		{
+			"question": "play a game"
+		},
+		{
+			"question": "huhuhuhuhuuu"
+		}
+	],
+	"leap_of_faith": [
+		{
+			"question": "do 10,000 pushups (one handed)"
+		}
+	],
+	"audio": [
+		{
+			"question": "What game series is this song from?",
+			"answer": "Mother (Mother 3)",
+			"path": "Mother 3 - 129 Even Drier Guys.ogg"
+		},
+		{
+			"question": "What game series is this song from?",
+			"answer": "Harvest Moon",
+			"path": "03 - Song of the Gentle Breeze.mp3"
+		},
+		{
+			"question": "What game (or games) is this song from?",
+			"answer": "Super Mario Bros 2. Or Doki Doki Panic.",
+			"path": "02 Player Select.mp3"
+		},
+		{
+			"question": "What game series is this song from?",
+			"answer": "PaRappa the Rapper",
+			"path": "29 - (Instrumental) Toasty Buns (Good).mp3"
+		},
+		{
+			"question": "What game series is this song from?",
+			"answer": "Shantae",
+			"path": "15. Rottytops.mp3"
+		}
+	],
+	"dialogue": [
+		{
+			"question": "who's voice is this?",
+			"answer": "Big the Cat",
+			"path": "we better.wav"
+		},
+		{
+			"question": "What game series is this audio from?",
+			"answer": "WarioWare",
+			"path": "Wario.wav"
+		},
+		{
+			"question": "What game is this clip from?",
+			"answer": "Wii Sports",
+			"path": "NiceOn1.wav"
+		},
+		{
+			"question": "What game series is this voice clip from?",
+			"answer": "Danganronpa",
+			"path": "dr1_voice_hca_us.awb.05270.ogg"
+		},
+		{
+			"question": "What game is this voice clip from?",
+			"answer": "Shadow the Hedgehog",
+			"path": "all01_s09_sd.wav"
+		}
+	],
+	"who_the_heck_is_that": [
+		{
+			"question": "This titular titular protagonist is whisked to Morning Land where he must do battle with Dark Raven!",
+			"answer": "Billy Hatcher",
+			"path": "billy.png"
+		},
+		{
+			"question": "Unite Hand! Will Wedgewood is a mild mannered school teacher, but when the fate of the world is hanging by a thread he'll transform into this super hero.",
+			"answer": "Wonder Red",
+			"path": "wonder_red.png"
+		},
+		{
+			"question": "Alone initially, this character later befriends Chris, John, Claire, Laura, James, and Sarah",
+			"answer": "Thomas",
+			"path": "thomas.png"
+		},
+		{
+			"question": "As a commanding officer, this character commands the forces of Orange Star",
+			"answer": "Andy",
+			"path": "andy.png"
+		},
+		{
+			"question": "As a child soldier he earned the nickname 'Jack the Ripper' due to his incredibly high kill rate. While his name really is Jack, only his current name is valid.",
+			"answer": "Raiden",
+			"path": "raiden.png"
+		}
+	],
+	"screenshot": [
+		{
+			"question": "What game is this image from?",
+			"answer": "The Great Ace Attorney",
+			"path": "1200.png"
+		},
+		{
+			"question": "What game series is this image from?",
+			"answer": "Zero Escape",
+			"path": "maxresdefault.jpg"
+		},
+		{
+			"question": "What game is this image from?",
+			"answer": "Outer Wilds",
+			"path": "Outer-Wilds-Screenshot-2019-06-05-13-58-15.png"
+		},
+		{
+			"question": "What game series is this image from?",
+			"answer": "Overcooked",
+			"path": "overcooked2e3_01.jpg"
+		},
+		{
+			"question": "What game is this image from?",
+			"answer": "Iron Lung",
+			"path": "ironlung.jpg"
+		}
+	],
+	"lightning_round": [
+		{
+			"theme": "Is this the name of a mario party minigam or a rhythm heaven rhythm game?",
+			"left": "Mario Party",
+			"right": "Rhythm Heaven",
+			"time_limit": 30,
+			"questions": [
+				[
+					"Bombs Away",
+					false
+				],
+				[
+					"Drummer duel",
+					true
+				],
+				[
+					"Airboarder",
+					true
+				],
+				[
+					"Bowl Over",
+					false
+				],
+				[
+					"Knock Block Tower",
+					false
+				]
+			]
+		},
+		{
+			"theme": "Is this the name of a Rune Factory monster or bachelorette?",
+			"left": "Monster",
+			"right": "Bachelorette",
+			"time_limit": 30,
+			"questions": [
+				[
+					"Sakuya ",
+					true
+				],
+				[
+					"Lizzy",
+					false
+				],
+				[
+					"Forte",
+					true
+				],
+				[
+					"Gobby",
+					false
+				],
+				[
+					"Sky",
+					false
+				]
+			]
+		},
+		{
+			"theme": "Does this video game's title contain a playable character?",
+			"left": "someone is playable",
+			"right": "no one is playable",
+			"time_limit": 30,
+			"questions": [
+				[
+					"Phoenix Wright: Ace Attorney",
+					false
+				],
+				[
+					"Metroid Prime",
+					true
+				],
+				[
+					"The Legend of Zelda: Link's Awakening",
+					false
+				],
+				[
+					"Red Dead Revolver",
+					false
+				],
+				[
+					"Hades",
+					true
+				]
+			]
+		},
+		{
+			"theme": "Did this game get a sequel?",
+			"left": "got a sequel",
+			"right": "no sequel",
+			"time_limit": 30,
+			"questions": [
+				[
+					"Baba is You",
+					false
+				],
+				[
+					"Spelunky",
+					false
+				],
+				[
+					"Ape Escape",
+					false
+				],
+				[
+					"Chrone Trigger",
+					true
+				],
+				[
+					"Bloodborne",
+					true
+				]
+			]
+		},
+		{
+			"theme": "Has a monopoly boardgame been made using this game or game series?",
+			"left": "yes monopoly",
+			"right": "no monopoly",
+			"time_limit": 30,
+			"questions": [
+				[
+					"Fallout",
+					false
+				],
+				[
+					"Pokemon",
+					false
+				],
+				[
+					"Five Nights at Freddy",
+					false
+				],
+				[
+					"Grand Theft Auto",
+					false
+				],
+				[
+					"Tetris",
+					false
+				]
+			]
+		}
+	],
+	"multiple_choice": [
+		{
+			"question": "Mandiblards, Sheargrubs, and Crawmads are monsters from which game series?",
+			"answers": [
+				"Monster Hunter",
+				"Pokemon",
+				"Pikmin",
+				"Zelda"
+			],
+			"answer": 2
+		},
+		{
+			"question": "Which of these Zelda races never appear in the same game?",
+			"answers": [
+				"Twili and Gorons",
+				"Rito and Zora",
+				"Minish and Rito",
+				"Gorons and Zora"
+			],
+			"answer": 2
+		},
+		{
+			"question": "In the main series of Pokemon games, how many unique spot patterns does Spinda have? (shiny Spinda don't count)",
+			"answers": [
+				"65,536",
+				"16,777,216",
+				"268,435,456",
+				"4,294,967,296"
+			],
+			"answer": 3
+		},
+		{
+			"question": "Which Pac-Man ghost's AI is programmed to move tword the space just ahead of Pac-Man in order to entrap and cut him off?",
+			"answers": [
+				"Blinky",
+				"Inky",
+				"Pinky",
+				"Clyde"
+			],
+			"answer": 2
+		},
+		{
+			"question": "Which of these mobs was not in Minecraft's Java Edition Alpha?",
+			"answers": [
+				"Enderman",
+				"Zombie",
+				"Creeper",
+				"Skeleton"
+			],
+			"answer": 0
+		}
+	],
+	"pick_your_poison": [
+		{
+			"game": "Spelunky 2",
+			"challenge": "1 v 1 Arena"
+		},
+		{
+			"game": "Spelunky 3",
+			"challenge": "2 v 2 Arena"
+		},
+		{
+			"game": "Spelunky 4",
+			"challenge": "3 v 3 Arena"
+		}
+	],
+	"TheRunawayGuys_video_game_challenge": [
+		{
+			"host": "chuggaaconroy",
+			"challenges": [
+				"Super Mario Galaxy 2 (Wii) \n Beat the tall Trunk Slide purple coin star, two attempts",
+				"Do a little dance"
+			]
+		},
+		{
+			"host": "proton_jon",
+			"challenges": [
+				"make a little love",
 				"get down tonight"
-		],
-		"nintendo_capri_sun": [
-			"ha ha ha ha", 
-			"stayin alive"
-		]
-},
-
+			]
+		},
+		{
+			"host": "nintendo_capri_sun",
+			"challenges": [
+				"ha ha ha ha",
+				"stayin alive"
+			]
+		}
+	]
 }
