@@ -3,11 +3,13 @@ extends ComplexQuestion
 # by design this will have to be exhausted manually! it's more on the host to navigate that.
 
 var cursor_idx = 0
+var editor_trg_challenge_indexes: Dictionary = {}
 
 func ready_trivia() -> void:
 	var trivia_data = get_trivia_data()
 	var texture_rect = $Control/Heads/TextureRect
-	for host in trivia_data:
+	for data in trivia_data:
+		var host = data["host"]
 		var new_texture_rect = texture_rect.duplicate()
 		$Control/Heads.add_child(new_texture_rect)
 		# try to set texture using default names
@@ -20,7 +22,7 @@ func ready_trivia() -> void:
 
 
 func get_trivia_data():
-	if override_trivia_data.size():
+	if override_trivia_data and override_trivia_data.size():
 		return override_trivia_data
 	return game.game_state.trivia.get("TheRunawayGuys_video_game_challenge")
 
@@ -42,15 +44,30 @@ func initiate_questions() -> void:
 func complx_progress() -> void:
 	var selected_host = $Control/Heads.get_child(cursor_idx)
 	var host = selected_host.name 
-	var trivia_data = game.game_state.trivia.get("TheRunawayGuys_video_game_challenge")
+	var trivia_data = get_trivia_data() 
 	
-	var challenge_idx = game.game_state.trg_challenge_indexes[host]
+	# ugly solution, but this is what happens when you want all trivia data to be elements in a list nate!
+	var host_challenges: Array
+	for data in trivia_data:
+		if data["host"] == host:
+			host_challenges = data["challenges"]
+			break
 	
-	dialogue.show_text("%s's challenge:\n%s" % [host.capitalize(), trivia_data[host][challenge_idx]])
+	# indexes will be saved in game if we're not in editor mode, if we are in editor mode they'll be saved locally in editor_trg_challenge_indexes
+	var challenge_idx
+	if !game.editor_mode:
+		challenge_idx = game.game_state.trg_challenge_indexes[host]
+	else:
+		challenge_idx = editor_trg_challenge_indexes.get(host, 0)
+	
+	dialogue.show_text("%s's challenge:\n%s" % [host.capitalize(), host_challenges[challenge_idx]])
 	challenge_idx += 1
-	challenge_idx %= trivia_data[host].size()
+	challenge_idx %= host_challenges.size()
 	
-	game.game_state.trg_challenge_indexes[host] = challenge_idx
+	if !game.editor_mode:
+		game.game_state.trg_challenge_indexes[host] = challenge_idx
+	else:
+		editor_trg_challenge_indexes[host] = challenge_idx
 
 
 func left() -> void:

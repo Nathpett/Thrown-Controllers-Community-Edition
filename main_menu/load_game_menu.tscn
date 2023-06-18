@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://dy8hiua4u2aoo"]
+
+[ext_resource type="Script" path="res://main_menu/load_game_menu.gd" id="1_slwcv"]
+[ext_resource type="FontFile" path="res://assets/fonts/roboto_1.tres" id="2_d4jju"]
+[ext_resource type="Texture2D" uid="uid://c5u3vtc1eoyw4" path="res://assets/img/blinker.png" id="3_c8k30"]
+
+[sub_resource type="Theme" id="Theme_njqhi"]
+default_font = ExtResource("2_d4jju")
+default_font_size = 14
+
+[node name="LoadGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_slwcv")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_njqhi")
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+layout_mode = 2
+follow_focus = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Blinker" type="Sprite2D" parent="."]
+position = Vector2(-100, -100)
+texture = ExtResource("3_c8k30")

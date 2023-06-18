@@ -3,31 +3,37 @@ extends Resource
 
 signal panels_changed
 
-enum Mode {DEBUG, RANDOM, JUST_ONE}
+const AUTO_SAVE_LIMIT: int = 3
 
-@export var mode: Mode
-# TODO this won't capture avialable reigon vectors... gotta refactor how that is edited
-
-
-var panels: Dictionary = {}
-var category_queue: Array = []
-var current_contestant_name: String = ""
-var current_contestant_score: int = 0
-var current_contestant_avatar_reigon: Vector2
-var devil_state = false
-var fast_mode = false
-var point_gain: int = 1
-var temp_point_gain: int = 0 # set by choose your destiny
-var exhausted_categories: Array = []
-var leaderboard: Dictionary = {}
-var trg_challenge_indexes: Dictionary = {}
-var available_reigon_vectors: PackedVector2Array
-var trivia
+enum Mode {RANDOM, DEBUG, JUST_ONE}
 
 
-func setup() -> void:
+
+@export var panels: Dictionary = {}
+@export var category_queue: Array = []
+@export var current_contestant_name: String = ""
+@export var current_contestant_score: int = 0
+@export var current_contestant_avatar_reigon: Vector2
+@export var devil_state = false
+@export var fast_mode = false
+@export var point_gain: int = 1
+@export var temp_point_gain: int = 0 # set by choose your destiny
+@export var exhausted_categories: Array = []
+@export var leaderboard: Dictionary = {}
+@export var trg_challenge_indexes: Dictionary = {}
+@export var available_reigon_vectors: PackedVector2Array
+@export var initial_trivia_set: String = ""
+@export var time_string: String = ""
+@export var trivia: Dictionary
+
+
+func initiate(trivia_path: String, initial_mode: int) -> void:
+	trivia = load(trivia_path).data
+	
+	initial_trivia_set = trivia_path.get_file().get_basename()
+	
 	panels = {}
-	match mode:
+	match initial_mode:
 		Mode.DEBUG:
 			# default to all categories for debugging
 			var i = 1
@@ -39,14 +45,14 @@ func setup() -> void:
 		Mode.JUST_ONE:
 			for i in range(1, 10):
 				panels[i] = "who_the_heck_is_that"
-	# TODO NEXT MAKE THIS EDITABLE VIA GAMESETTINGS, GRAY OUT WHEN IN GAME HOWEVER!!
-	trivia = load("res://trivia/trivia.json").data
+	
 	# in case any trivia starts the game with 0 data
 	for cat in CategoryStatics.CATEGORIES:
 		check_exhaust(cat)
 	
 	var trg_trivia_data = trivia.get("TheRunawayGuys_video_game_challenge")
-	for host in trg_trivia_data:
+	for dict in trg_trivia_data:
+		var host = dict["host"]
 		trg_challenge_indexes[host] = 0
 	
 	# using dims of NPC sheet, initialize available reigon vectors for avatars to draw from.
@@ -54,6 +60,26 @@ func setup() -> void:
 	for j in (npc_sheet.get_height() / 50):
 		for i in (npc_sheet.get_width() / 68):
 			available_reigon_vectors.append(Vector2(i, j))
+
+
+func save(save_name: String, use_time_string: bool = false) -> void:
+	time_string = StringTools.stringify_date(Time.get_datetime_dict_from_system())
+	if use_time_string:
+		save_name += time_string
+	ResourceSaver.save(self, "user://saves/%s.tres" % [save_name])
+
+
+func auto_save() -> void:
+	save("auto_save_", true)
+	
+	var dir = DirAccess.open("user://saves")
+	# get list of all saves with auto save token, if there are 3 or more, delete the oldest until there are 2. 
+	var save_files: Array = dir.get_files()
+	save_files.filter(Callable(self, "_is_auto_save"))
+	save_files.sort()
+	while save_files.size() > AUTO_SAVE_LIMIT: # this won't acount for... daylight savings or system time changes, but you know what right now I don't care dangit!
+		var to_delete = save_files.pop_front()
+		dir.remove(to_delete)
 
 
 func on_success() -> void:
@@ -71,6 +97,7 @@ func pop_trivia_data(_category_type: String):
 	if !CategoryStatics.has_trivia_data(_category_type):
 		return null
 	
+#	var trivia_data = trivia.get(_category_type)[0]
 	var trivia_data = trivia.get(_category_type).pop_front()
 	
 	return trivia_data
@@ -191,3 +218,7 @@ func _exhaust_category(cat: String) -> void:
 	var dependants = CategoryStatics.get_dependants(cat)
 	for dependant in dependants:
 		_exhaust_category(dependant)
+
+
+func _is_auto_save(file_string: String) -> bool:
+	return file_string.left(9) == "auto_save"

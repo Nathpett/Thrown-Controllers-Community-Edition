@@ -40,6 +40,9 @@ static func get_editor_element_path(cat: String):
 	if cat == "pick_your_poison": 
 		return "res://trivia_editor/editor_elements/poison_question_element.tscn"
 	
+	if cat == "TheRunawayGuys_video_game_challenge":
+		return "res://trivia_editor/editor_elements/trg_question_element.tscn"
+	
 	if CategoryStatics.has_content(cat): 
 		return "res://trivia_editor/editor_elements/content_question_element.tscn"
 	

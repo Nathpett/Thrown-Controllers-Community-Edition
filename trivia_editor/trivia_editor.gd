@@ -8,8 +8,6 @@ var current_file_name: String: set = _set_current_file_name
 @onready var vbox_container = $ScrollContainer/VBoxContainer
 @onready var trivia_json_button = $Control/Control2/TriviaJsonButton
 
-# TODO NEXT, FIGURE OUT TRG CHALLENGE
-# ALSO TODO, NEW FILE OPTION
 
 func _ready():
 	var editiable_categories = CategoryStatics.CATEGORIES.keys()
@@ -106,15 +104,17 @@ func _set_current_file_name(new_value: String) -> void:
 
 func _on_test_trivia(question: Dictionary) -> void:
 	var category = load("res://category/concrete_categories/%s.tscn" % [current_category]).instantiate()
-	category.override_trivia_data = question
+	if current_category == "TheRunawayGuys_video_game_challenge": # man what a hack! but I can't think of a better way to force the test to take the whole trivia_data
+		category.override_trivia_data = trivia_data["TheRunawayGuys_video_game_challenge"]
+	else:
+		category.override_trivia_data = question
 	game.change_scene_to_file(category)
 
 
 func _on_trivia_json_button_item_selected(index):
 	if index == trivia_json_button.item_count - 1:
 		var dir = DirAccess.open("user://trivia/")
-		var file_ct = dir.get_files().size()
-		var number_tag = "000".right(3 - len(str(file_ct))) + str(file_ct)
+		var number_tag = _get_unique_tag(dir)
 		# copy trivia.json, push it to this dir as 'default_trivia.json
 		dir.copy("res://trivia/trivia_abstracts.json", "user://trivia/%s_trivia.json" % [number_tag])
 		_populate_trivia_json_button()
@@ -122,3 +122,18 @@ func _on_trivia_json_button_item_selected(index):
 	
 	_unload_category()
 	current_file_name = trivia_json_button.text
+
+
+func _get_unique_tag(dir: DirAccess) -> String:
+	var taken_tags: Array = []
+	for file in dir.get_files():
+		taken_tags.append(file.get_basename().left(3))
+	taken_tags.sort()
+	
+	var tag = "def"
+	var i = 1
+	while taken_tags.has(tag):
+		tag = StringTools.rjust(i, "0", 3)
+		i += 1
+	
+	return tag

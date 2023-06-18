@@ -33,16 +33,13 @@
 	"challenge": "CHALLENGE HERE"}
 ],
 
-"TheRunawayGuys_video_game_challenge": 
-	{"chuggaaconroy": [
-		"CHALLENGE HERE"
-		],
-	"proton_jon": [
-		"CHALLENGE HERE"
-	],
-	"nintendo_capri_sun": [
-		"CHALLENGE HERE"
-	],
-},
+"TheRunawayGuys_video_game_challenge":[
+	{"host": "chuggaaconroy",
+	"challenges": ["CHALLENGE HERE"]},
+	{"host": "proton_jon",
+	"challenges": ["CHALLENGE HERE"]},
+	{"host": "nintendo_capri_sun",
+	"challenges": ["CHALLENGE HERE"]},
+]
 
 }

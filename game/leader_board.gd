@@ -122,7 +122,7 @@ func _set_page(idx: int) -> void:
 		var player = players[i]
 		var player_data = leaderboard[player]
 		
-		item.get_node("Place").text = _get_ord(scores.find(player_data["score"]) + 1)
+		item.get_node("Place").text = StringTools.get_ord(scores.find(player_data["score"]) + 1)
 		item.get_node("Name").text = player
 		item.get_node("Score").text = str(player_data["score"])
 		
@@ -175,19 +175,3 @@ func _move_off_stage() -> void:
 	emit_signal("gotten_off_stage")
 
 
-func _get_ord(idx: int) -> String:
-	var num = str(idx)
-	var last_two = int(num.right(2))
-	
-	if last_two >= 11 and last_two <= 13:
-		return num + "th"
-	
-	var last_one = int(num.right(1))
-	if last_one == 1:
-		return num + "st"
-	if last_one == 2:
-		return num + "nd"
-	if last_one == 3:
-		return num + "rd"
-	
-	return num + "th"

@@ -8,7 +8,7 @@ var black_fade_transition = preload("res://screen_transitions/black_fade.tscn")
 
 var msgbox: MessageBox
 var avatar: Avatar
-var editor_mode: bool = false
+var editor_mode: bool = true
 var editor_category: String
 var editor_trivia_file_name: String
 
@@ -29,29 +29,37 @@ func _ready() -> void:
 	var dir = DirAccess.open("user://")
 	if !dir.dir_exists("trivia"):
 		dir.make_dir("trivia")
+	if !dir.dir_exists("saves"):
+		dir.make_dir("saves")
 	# copy trivia.json, push it to this dir as 'default_trivia.json
 	if !dir.file_exists("user://trivia/default_trivia.json"):
 		dir.copy("res://trivia/trivia.json", "user://trivia/default_trivia.json")
 
 
-func new_game() -> void:
-	_new_game_state()
-
-
-func _new_game_state() -> void:
-	editor_mode = false
-	game_state = GameState.new()
-	game_state.mode = GameState.Mode.RANDOM
-	game_state.setup()
-	game_state.connect("panels_changed", Callable(self, "_on_panels_changed"))
-
-
 func _input(event):
-	if event.is_action_pressed("pause"):
+	if event.is_action_pressed("pause") and !current_scene.scene_disabled:
 		var pause_menu = load("res://pause_menu/pause_menu.tscn").instantiate()
 		pause_menu.game = self
 		$UI.add_child(pause_menu)
 		get_tree().paused = true
+
+
+func new_game(trivia_path: String, initial_mode: int) -> void:
+	editor_mode = false
+	game_state = GameState.new()
+	game_state.initiate(trivia_path, initial_mode)
+	_register_game_state()
+
+
+func load_game_state(file) -> void:
+	editor_mode = false
+	game_state = ResourceLoader.load("user://saves/" + file)
+	_register_game_state()
+	
+	if game_state.current_contestant_name == "":
+		change_scene_to_file(load("res://name_please/name_please.tscn").instantiate())
+	else:
+		change_scene_to_file(load("res://panel_select/panel_select.tscn").instantiate())
 
 
 func change_scene_to_file(new_scene, transition = null) -> void:
@@ -138,11 +146,12 @@ func _on_failure() -> void:
 	game_state.check_exhaust(current_scene.get_category_type())
 	
 	# ever heard of DRY? me neither.  putting this here to catch instances where the contestant would get the very last trivia wrong
-	var cat_queue: Array = game_state.new_category_queue() # TODO TEST THIS
+	var cat_queue: Array = game_state.new_category_queue()
 	if cat_queue.all(Callable(CategoryStatics, "is_not_substantive")):
 		all_trivia_exhausted(transition)
 		return
 	
+	game_state.auto_save()
 	change_scene_to_file(load("res://name_please/name_please.tscn").instantiate(), transition)
 
 
@@ -161,7 +170,7 @@ func exit_devil_state() -> void:
 	avatar.souledded()
 
 
-func return_to_panel_select(transition = null) -> void:
+func return_to_panel_select(transition = null, will_auto_save: bool = true) -> void:
 	if game_state.devil_state:
 		if game_state.exhausted_categories.has("devils_deal"):
 			#exit devil state if devils_deal is exhausted
@@ -169,13 +178,14 @@ func return_to_panel_select(transition = null) -> void:
 			exit_devil_state()
 		else:
 			game_state.enforce_devil_composition()
-	# TODO NEXT REFACTOR SO THAT THIS IS ALWAYS RUN WHEN GOING TO PANEL SELECT, USE game_state.new_category_queue() TO VALIDATE WHETHER ALL SUBSTANSTIVE TRIVIA ARE RULED OUT
 	# get a new category queue, if none of the categories are substantive, enter the end scene
 	var cat_queue: Array = game_state.new_category_queue()
 	if cat_queue.all(Callable(CategoryStatics, "is_not_substantive")):
 		all_trivia_exhausted(transition)
 		return
 	
+	if will_auto_save:
+		game_state.auto_save()
 	change_scene_to_file(load("res://panel_select/panel_select.tscn").instantiate(), transition)
 
 
@@ -184,7 +194,6 @@ func return_to_main_menu() -> void:
 	for child in transitions.get_children():
 		child.queue_free()
 	change_scene_to_file(load("res://main_menu/main_menu.tscn").instantiate())
-	_new_game_state()
 
 
 func show_leaderboard() -> void:
@@ -208,16 +217,5 @@ func _show_message() -> void:
 		msgbox.visible = true
 
 
-#static func dir_deep_copy(path_from : String, path_to : String) -> void:
-#	var from_dir: DirAccess = DirAccess.open(path_from)
-#	if !from_dir.dir_exists(path_to):
-#		from_dir.make_dir_absolute(path_to)
-#	from_dir.list_dir_begin()
-#	var file_name = from_dir.get_next()
-#	while file_name:
-#		if from_dir.current_is_dir():
-#			Game.dir_deep_copy("%s/%s" % [path_from, file_name], "%s/%s" % [path_to, file_name])
-#		else:
-#			from_dir.copy("%s/%s" % [path_from, file_name], "%s/%s" % [path_to, file_name])
-#		file_name = from_dir.get_next()
-#
+func _register_game_state() -> void:
+	game_state.connect("panels_changed", Callable(self, "_on_panels_changed"))

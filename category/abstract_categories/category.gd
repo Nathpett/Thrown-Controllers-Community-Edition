@@ -8,7 +8,7 @@ signal devil_deal
 @onready var question_label = $Control/Dialogue/MarginContainer/Label
 @onready var dialogue = $Control/Dialogue
 
-var override_trivia_data: Dictionary = {}
+var override_trivia_data
 
 func get_transition():
 	var transition = super.get_transition()
@@ -27,6 +27,6 @@ func get_category_type() -> String:
 
 
 func get_trivia_data():
-	if override_trivia_data.size():
+	if override_trivia_data and override_trivia_data.size():
 		return override_trivia_data
 	return game.game_state.pop_trivia_data(get_category_type())

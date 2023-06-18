@@ -11,13 +11,14 @@ func _ready():
 		return
 	if not (game.current_scene is PanelSelect or game.current_scene.name == "EndScreen"):
 		$VBoxContainer/LeaderBoard.disabled = true
+	if game.editor_mode:
+		$VBoxContainer/GameplaySettings.disabled = true
 
 
 func _input(event):
 	if event.is_action_pressed("pause"):
 		_unpause()
 		get_viewport().set_input_as_handled()
-	
 
 
 func return_focus() -> void:
@@ -75,7 +76,7 @@ func _on_leader_board_pressed():
 	if game.current_scene is PanelSelect or game.current_scene.name == "EndScreen":
 		game.show_leaderboard()
 	if game.current_scene is LeaderBoard:
-		game.return_to_panel_select()
+		game.return_to_panel_select(null, false)
 	_unpause()
 		
 

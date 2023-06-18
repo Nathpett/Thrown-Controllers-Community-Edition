@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://c3eoepu5qhlbt"]
+
+[node name="LoadMenuFileElement" type="Control"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 3
+anchors_preset = 0
+focus_mode = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SaveNameLabel" type="Label" parent="."]
+layout_mode = 1
+offset_right = 53.0
+offset_bottom = 22.0
+text = "auto_save_2023-06-17_11-32-43"
+
+[node name="TriviaSet" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -22.0
+offset_right = 53.0
+grow_vertical = 0
+text = "Trivia Set: 001_trivia"
+
+[node name="DateLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -180.0
+offset_top = -22.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "June 17th 2023 11:32:43"
