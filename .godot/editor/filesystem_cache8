@@ -1,8 +1,8 @@
 2a60927148abd1d33b818b535e306557
-::res://::1687119632
+::res://::1687132019
 default_bus_layout.tres::AudioBusLayout::5830074746750912054::1684948742::0::1::::<><>::
-default_env.tres::Environment::6807410154984247636::1687119632::0::1::::<><>::
-export_presets.cfg::TextFile::-1::1685377929::0::1::::<><>::
+default_env.tres::Environment::6807410154984247636::1687132019::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1687131653::0::1::::<><>::
 global.gd::GDScript::-1::1685541261::0::1::::<>Node<>::
 icon.png::CompressedTexture2D::8870739503399637242::1678584902::1682347311::1::::<><>::
 Main.tscn::PackedScene::8747345502860105573::1686512242::0::1::::<><>::res://game/shader_cache.gd<>uid://8nevuab6buxh<>res://avatar/soulless.gdshader<>uid://b6mjvqj2em1kv<>uid://dynb1v3hfwm8i
@@ -157,7 +157,7 @@ test.gdshader::Shader::-1::1685651316::0::1::::<><>::
 TheRunawayGuys_video_game_challenge.gd::GDScript::-1::1686803108::0::1::::<>ComplexQuestion<>::
 TheRunawayGuys_video_game_challenge.tscn::PackedScene::154056976594616348::1685397373::0::1::::<><>::uid://wed28fwnfbng<>uid://j7rkc8p4fb75<>res://category/concrete_categories/TheRunawayGuys_video_game_challenge.gd<>uid://0m1sgjo8egor<>uid://c5u3vtc1eoyw4
 who_the_heck_is_that.tscn::PackedScene::3026470478912770429::1686528657::0::1::::<><>::uid://cij02g20d7tnh<>uid://b6mjvqj2em1kv<>uid://h48hn1cike58<>uid://bq2uwnm6opq8u<>uid://sflbdn3kd251
-::res://game/::1687119632
+::res://game/::1687132019
 credits.gd::GDScript::-1::1686631842::0::1::::Credtis<>GameScene<>::
 credits.tscn::PackedScene::5727446992075694833::1686236132::0::1::::<><>::res://game/credits.gd<>uid://c2gd8hkr74cwe<>uid://7p1rqbwhhs2j
 end_screen.tscn::PackedScene::4277305721765234541::1685917392::0::1::::<><>::res://game/game_scene.gd<>uid://b4qstfmfj0c8e
@@ -166,8 +166,8 @@ game.tscn::PackedScene::2343350171054842365::1686236132::0::1::::<><>::res://gam
 game_scene.gd::GDScript::-1::1686514246::0::1::::GameScene<>Node<>::
 game_state.gd::GDScript::-1::1687104138::0::1::::GameState<>Resource<>::
 leader_board.gd::GDScript::-1::1687019318::0::1::::LeaderBoard<>GameScene<>::
-leader_board.tscn::PackedScene::7614768076014479747::1687119632::0::1::::<><>::res://game/leader_board.gd<>res://game/leader_board_background.gdshader<>uid://bghbslbghg0gs<>uid://c2gd8hkr74cwe<>uid://d1mrbiropavp0<>res://assets/fonts/earthbound_font.tres
-leader_board_background.gdshader::Shader::-1::1687112452::0::1::::<><>::
+leader_board.tscn::PackedScene::7614768076014479747::1687132019::0::1::::<><>::res://game/leader_board.gd<>res://game/leader_board_background.gdshader<>uid://bghbslbghg0gs<>uid://c2gd8hkr74cwe<>uid://d1mrbiropavp0<>res://assets/fonts/earthbound_font.tres
+leader_board_background.gdshader::Shader::-1::1687131774::0::1::::<><>::
 shader_cache.gd::GDScript::-1::1686512231::0::1::::<>Node<>::
 ::res://main_menu/::1687104729
 ControllerIcon.tscn::PackedScene::-1::1682347192::0::1::::<><>::res://main_menu/controller_icon.gd
@@ -210,6 +210,8 @@ pause_menu.gd::GDScript::-1::1687031493::0::1::::<>Control<>::
 pause_menu.tscn::PackedScene::1784226350906448956::1687104729::0::1::::<><>::res://pause_menu/pause_menu.gd<>res://panel_select/panel_font.tres<>uid://dk8uujhjfvyy7<>uid://c2gd8hkr74cwe
 settings_menu.gd::GDScript::-1::1685399536::0::1::::<>Control<>::
 settings_menu.tscn::PackedScene::872641738769928414::1687104729::0::1::::<><>::res://pause_menu/settings_menu.gd<>uid://cpewh1jj7ki6c
+::res://playable game/::1687131723
+Controls and Notes.txt::TextFile::-1::1687125588::0::1::::<><>::
 ::res://resources/::1687021447
 black.tres::ShaderMaterial::4587632179637169169::1686527815::0::1::::<><>::
 hwave.gd::GDScript::-1::1682354365::0::1::::Hwave<>RichTextEffect<>::
@@ -231,21 +233,22 @@ testing_imports.gd::GDScript::-1::1687046994::0::1::::<>Node2D<>::
 testing_imports.tscn::PackedScene::3808539673741692939::1687046670::0::1::::<><>::res://testing/testing_imports.gd
 ::res://trivia/::1687036733
 category_statics.gd::GDScript::-1::1686762801::0::1::::CategoryStatics<>Resource<>::
-default_trivia.json::JSON::-1::1686590586::0::1::::<><>::
+default_trivia.json::JSON::-1::1687124862::0::1::::<><>::
 trivia_abstracts.json::JSON::-1::1686755255::0::1::::<><>::
-::res://trivia/audio/::1687115100
-02 Player Select.mp3::AudioStreamMP3::1203616697610979192::1687114476::1687115100::1::::<><>::
-03 - Song of the Gentle Breeze.mp3::AudioStreamMP3::6786658432247511080::1687114744::1687115100::1::::<><>::
-15. Rottytops.mp3::AudioStreamMP3::1810336353596473271::1687113101::1687115100::1::::<><>::
-29 - (Instrumental) Toasty Buns (Good).mp3::AudioStreamMP3::2270283396468068468::1687113940::1687115100::1::::<><>::
-Mother 3 - 129 Even Drier Guys.ogg::AudioStreamOggVorbis::5013366897642867679::1685114654::1685395443::1::::<><>::
-::res://trivia/dialogue/::1687117912
-all01_s09_sd.wav::AudioStreamWAV::8210798686492081217::1687117907::1687117912::1::::<><>::
-dr1_voice_hca_us.awb.05270.ogg::AudioStreamOggVorbis::6278020298777222163::1687116566::1687117912::1::::<><>::
-NiceOn1.wav::AudioStreamWAV::4991385119547405290::1687116895::1687117912::1::::<><>::
-Wario.wav::AudioStreamWAV::3895037455392937261::1687117742::1687117912::1::::<><>::
-we better.wav::AudioStreamWAV::6025779221285755878::1681601496::1685395444::1::::<><>::
-::res://trivia/screenshot/::1687119875
+::res://trivia/audio/::1687132090
+02 Player Select.mp3::AudioStreamMP3::3924929889735804249::1687131997::1687132091::1::::<><>::
+03 - Song of the Gentle Breeze.mp3::AudioStreamMP3::3595293333374690420::1687131380::1687132011::1::::<><>::
+15. Rottytops.mp3::AudioStreamMP3::1758629108613700335::1687131410::1687131768::1::::<><>::
+29 - (Instrumental) Toasty Buns (Good).mp3::AudioStreamMP3::4374589530242787640::1687131445::1687131768::1::::<><>::
+Mother 3 - 129 Even Drier Guys.ogg::AudioStreamOggVorbis::7351178780879330496::1685114654::1687131771::1::::<><>::
+::res://trivia/dialogue/::1687132080
+02 Player Select.mp3::AudioStreamMP3::2985707460907426138::1687132073::1687132080::1::::<><>::
+all01_s09_sd.wav::AudioStreamWAV::758749881706036815::1687131490::1687131771::1::::<><>::
+dr1_voice_hca_us.awb.05270.ogg::AudioStreamOggVorbis::7009757491598243152::1687131521::1687131771::1::::<><>::
+NiceOn1.wav::AudioStreamWAV::3235653498757885144::1687131550::1687131771::1::::<><>::
+Wario.wav::AudioStreamWAV::7890304306765791593::1687131571::1687131771::1::::<><>::
+we better.wav::AudioStreamWAV::1671824016273316587::1681601496::1687131771::1::::<><>::
+::res://trivia/screenshot/::1687119898
 1200.png::CompressedTexture2D::7553643876221421068::1687119019::1687119630::1::::<><>::
 ironlung.jpg::CompressedTexture2D::3814982602273079057::1687119619::1687119898::1::::<><>::
 maxresdefault.jpg::CompressedTexture2D::5646098610713083625::1687119475::1687119630::1::::<><>::
