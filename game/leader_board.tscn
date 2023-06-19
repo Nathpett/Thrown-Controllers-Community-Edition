@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://game/leader_board.gd" id="1_rffnh"]
 [ext_resource type="Shader" path="res://game/leader_board_background.gdshader" id="2_nc1r6"]
-[ext_resource type="Texture2D" uid="uid://bghbslbghg0gs" path="res://assets/img/trg.png" id="3_ft1np"]
+[ext_resource type="Texture2D" uid="uid://dhw63dmcn8kx1" path="res://game/high_score.png" id="3_anx4d"]
 [ext_resource type="FontFile" uid="uid://c2gd8hkr74cwe" path="res://assets/fonts/megaman_font.tres" id="4_favgp"]
 [ext_resource type="AudioStream" uid="uid://d1mrbiropavp0" path="res://assets/sound/music/18 Scenario Mode Clear.mp3" id="5_aabcx"]
 [ext_resource type="FontFile" path="res://assets/fonts/earthbound_font.tres" id="5_sseyi"]
@@ -46,7 +46,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_ft1np")
+texture = ExtResource("3_anx4d")
 stretch_mode = 1
 
 [node name="Scores" type="Control" parent="Control"]

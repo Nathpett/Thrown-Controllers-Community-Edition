@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bghbslbghg0gs"
-path="res://.godot/imported/trg.png-efb1982b28d36c2a3621624285acaf66.ctex"
+uid="uid://dhw63dmcn8kx1"
+path="res://.godot/imported/high_score.png-805d826c4b71dbe10453d67e4493dde4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/trg.png"
-dest_files=["res://.godot/imported/trg.png-efb1982b28d36c2a3621624285acaf66.ctex"]
+source_file="res://game/high_score.png"
+dest_files=["res://.godot/imported/high_score.png-805d826c4b71dbe10453d67e4493dde4.ctex"]
 
 [params]
 
