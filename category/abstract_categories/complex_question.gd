@@ -7,6 +7,7 @@ var question_started: bool = false
 var question_over: bool = false
 # parent to lightning round and multiple choice, just some things those two will have in common that I felt needed abstraction
 
+
 func progress() -> void:
 	if dialogue.is_printing():
 		dialogue.show_all()

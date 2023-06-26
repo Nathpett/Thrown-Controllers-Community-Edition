@@ -1,0 +1,122 @@
+[gd_scene load_steps=10 format=3 uid="uid://dlxb2iue480ab"]
+
+[ext_resource type="Texture2D" uid="uid://bgrw3hahw2qg2" path="res://assets/sprite_sheets/vanna_sheet.png" id="1_gjhse"]
+[ext_resource type="Script" path="res://category/concrete_categories/ericas_game/vanna.gd" id="2_8leyq"]
+
+[sub_resource type="Animation" id="Animation_n0m23"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_13u2q"]
+resource_name = "applause"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [13, 12]
+}
+
+[sub_resource type="Animation" id="Animation_bvyyq"]
+resource_name = "begin_applause"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.14, 0.3, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [10, 11, 12, 13]
+}
+
+[sub_resource type="Animation" id="Animation_ymiln"]
+resource_name = "gesticulate"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_h1q8p"]
+resource_name = "turn_letter"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:letter_turn_frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_u8t1f"]
+resource_name = "walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [20, 29]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1y1tw"]
+_data = {
+"RESET": SubResource("Animation_n0m23"),
+"applause": SubResource("Animation_13u2q"),
+"begin_applause": SubResource("Animation_bvyyq"),
+"gesticulate": SubResource("Animation_ymiln"),
+"turn_letter": SubResource("Animation_h1q8p"),
+"walk": SubResource("Animation_u8t1f")
+}
+
+[node name="Vanna" type="Sprite2D"]
+texture = ExtResource("1_gjhse")
+hframes = 10
+vframes = 4
+script = ExtResource("2_8leyq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1y1tw")
+}

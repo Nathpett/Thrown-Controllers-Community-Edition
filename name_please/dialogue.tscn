@@ -49,5 +49,6 @@ theme_override_constants/margin_bottom = 5
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4")
+visible_characters_behavior = 2
 
 [connection signal="timeout" from="ProgressBlinker/Timer" to="." method="_on_Timer_timeout"]

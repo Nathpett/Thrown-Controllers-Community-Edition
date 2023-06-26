@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://iy7lryvoawtb"
-path="res://.godot/imported/SNES - EarthBound Mother 2 - Hint Man.png-68a6cac582a5385d6fafd962efdd58f3.ctex"
+uid="uid://mpegc3dwrfux"
+path="res://.godot/imported/board.png-a638185e27b724e9d6939669991f3375.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite_sheets/SNES - EarthBound Mother 2 - Hint Man.png"
-dest_files=["res://.godot/imported/SNES - EarthBound Mother 2 - Hint Man.png-68a6cac582a5385d6fafd962efdd58f3.ctex"]
+source_file="res://category/concrete_categories/ericas_game/board.png"
+dest_files=["res://.godot/imported/board.png-a638185e27b724e9d6939669991f3375.ctex"]
 
 [params]
 

@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://cffwskfxwrhmt"]
+
+[ext_resource type="Texture2D" uid="uid://bue6t3au40bya" path="res://category/concrete_categories/ericas_game/blocky_font_atlus.png" id="1_onc05"]
+[ext_resource type="Script" path="res://category/concrete_categories/ericas_game/fortune_letter.gd" id="2_1oupc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3o60f"]
+resource_local_to_scene = true
+atlas = ExtResource("1_onc05")
+region = Rect2(4, 4, 18, 18)
+
+[node name="FortuneLetter" type="Control"]
+self_modulate = Color(0.486275, 0.486275, 0.486275, 1)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_1oupc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_3o60f")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.796078, 0.796078, 0.796078, 1)

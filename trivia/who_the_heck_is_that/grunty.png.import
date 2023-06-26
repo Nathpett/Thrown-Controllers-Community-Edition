@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b33r8alr3utlh"
-path="res://.godot/imported/SNES - EarthBound Mother 2 - Nesss Mom & Tracy.png-815ab3af597ad68d1911e2d65ba48895.ctex"
+uid="uid://7on1djlcwh4t"
+path="res://.godot/imported/grunty.png-b3acc5671df2a84596d3f7a5e8c26936.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite_sheets/SNES - EarthBound Mother 2 - Nesss Mom & Tracy.png"
-dest_files=["res://.godot/imported/SNES - EarthBound Mother 2 - Nesss Mom & Tracy.png-815ab3af597ad68d1911e2d65ba48895.ctex"]
+source_file="res://trivia/who_the_heck_is_that/grunty.png"
+dest_files=["res://.godot/imported/grunty.png-b3acc5671df2a84596d3f7a5e8c26936.ctex"]
 
 [params]
 

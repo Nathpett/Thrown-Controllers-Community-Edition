@@ -1,0 +1,160 @@
+[gd_scene load_steps=11 format=3 uid="uid://osj3vwu2muv6"]
+
+[ext_resource type="Script" path="res://category/concrete_categories/ericas_game/ericas_game.gd" id="1_k0sxc"]
+[ext_resource type="PackedScene" uid="uid://dlxb2iue480ab" path="res://category/concrete_categories/ericas_game/vanna.tscn" id="2_0llq6"]
+[ext_resource type="Texture2D" uid="uid://mpegc3dwrfux" path="res://category/concrete_categories/ericas_game/board.png" id="2_26oxp"]
+[ext_resource type="PackedScene" uid="uid://bt4f4wcpotw20" path="res://panel_select/score_header.tscn" id="2_r0eub"]
+[ext_resource type="FontFile" uid="uid://cn0op72w43g4y" path="res://assets/fonts/Helvetica Neue LT Std 87 Heavy Condensed.otf" id="4_tp2c3"]
+[ext_resource type="PackedScene" uid="uid://d32dafhxbn8j6" path="res://category/dialogue.tscn" id="5_5oxwm"]
+[ext_resource type="AudioStream" uid="uid://dkjb3u1oo7k4n" path="res://assets/sound/music/01 Main Theme.mp3" id="5_ixaw2"]
+[ext_resource type="AudioStream" uid="uid://cpo6du8g1ongy" path="res://assets/sound/menu sounds/06 Letter.mp3" id="6_bcxsc"]
+
+[sub_resource type="Theme" id="Theme_hlqid"]
+default_font = ExtResource("4_tp2c3")
+default_font_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_or8hn"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[node name="EricasGame" type="Node"]
+script = ExtResource("1_k0sxc")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Header" parent="Control" instance=ExtResource("2_r0eub")]
+layout_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.18
+anchor_top = 0.089
+anchor_right = 0.82
+anchor_bottom = 0.612
+offset_top = 0.0639992
+offset_right = -3.05176e-05
+offset_bottom = -0.0880127
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_26oxp")
+expand_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="Control/TextureRect2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.156
+anchor_top = 0.402
+anchor_right = 0.84
+anchor_bottom = 0.94
+offset_left = 0.064003
+offset_top = -0.0339966
+offset_right = -0.039978
+offset_bottom = 0.0200043
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 2
+columns = 11
+
+[node name="HUD" type="Control" parent="Control"]
+layout_mode = 1
+anchor_top = 0.681
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_hlqid")
+
+[node name="Left" type="VBoxContainer" parent="Control/HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.437
+anchor_bottom = 1.0
+theme_override_constants/separation = 0
+
+[node name="Hint" type="Label" parent="Control/HUD/Left"]
+layout_mode = 2
+text = "Phrase"
+horizontal_alignment = 1
+vertical_alignment = 2
+uppercase = true
+
+[node name="HSeparator" type="HSeparator" parent="Control/HUD/Left"]
+layout_mode = 2
+
+[node name="DefaultLetters" type="Label" parent="Control/HUD/Left"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 2
+uppercase = true
+visible_characters = 0
+visible_characters_behavior = 2
+visible_ratio = 0.0
+
+[node name="Right" type="Control" parent="Control/HUD"]
+layout_mode = 1
+anchor_left = 0.601
+anchor_top = 0.126
+anchor_right = 0.891
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control/HUD/Right"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8hn")
+
+[node name="DefaultLetters" type="Label" parent="Control/HUD/Right"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_right = -1.52588e-05
+offset_bottom = 0.275459
+grow_horizontal = 2
+grow_vertical = 2
+text = "C  C  C  V"
+horizontal_alignment = 1
+vertical_alignment = 2
+visible_characters_behavior = 2
+
+[node name="Dialogue" parent="Control" instance=ExtResource("5_5oxwm")]
+visible = false
+layout_mode = 0
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(90, 109)
+
+[node name="Vanna" parent="Node2D" instance=ExtResource("2_0llq6")]
+frame = 2
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ixaw2")
+
+[node name="LetterSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_bcxsc")

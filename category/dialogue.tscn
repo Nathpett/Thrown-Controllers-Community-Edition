@@ -34,3 +34,4 @@ bbcode_enabled = true
 fit_content = true
 scroll_active = false
 custom_effects = [ExtResource("4_sthcu")]
+visible_characters_behavior = 2

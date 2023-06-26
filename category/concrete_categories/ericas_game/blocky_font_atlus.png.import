@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mqywn5rnxybo"
-path="res://.godot/imported/SNES - EarthBound Mother 2 - Gonzales.png-3c93d501409bd62dc32d0c7ddde2e4db.ctex"
+uid="uid://bue6t3au40bya"
+path="res://.godot/imported/blocky_font_atlus.png-f42676b16c186e0d5e95dcad3a596692.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite_sheets/SNES - EarthBound Mother 2 - Gonzales.png"
-dest_files=["res://.godot/imported/SNES - EarthBound Mother 2 - Gonzales.png-3c93d501409bd62dc32d0c7ddde2e4db.ctex"]
+source_file="res://category/concrete_categories/ericas_game/blocky_font_atlus.png"
+dest_files=["res://.godot/imported/blocky_font_atlus.png-f42676b16c186e0d5e95dcad3a596692.ctex"]
 
 [params]
 

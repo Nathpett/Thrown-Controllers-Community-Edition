@@ -143,6 +143,11 @@
 			"question": "As a child soldier he earned the nickname 'Jack the Ripper' due to his incredibly high kill rate. While his name really is Jack, only his current name is valid.",
 			"answer": "Raiden",
 			"path": "raiden.png"
+		},
+		{
+			"question": "She wants to be beautiful, so she'll steal your sis. This nasty witch loves to rhyme like this. With every game she looks worse than before. Get this one right and add to your score.",
+			"answer": "Gruntilda Winkybunion",
+			"path": "grunty.png"
 		}
 	],
 	"screenshot": [
@@ -286,7 +291,7 @@
 			]
 		},
 		{
-			"theme": "Has a monopoly boardgame been made using this game or game series?",
+			"theme": "Has an official monopoly boardgame been made using this game or game series?",
 			"left": "yes monopoly",
 			"right": "no monopoly",
 			"time_limit": 30,
@@ -309,7 +314,7 @@
 				],
 				[
 					"Tetris",
-					false
+					true
 				]
 			]
 		}
@@ -362,6 +367,26 @@
 				"Zombie",
 				"Creeper",
 				"Skeleton"
+			],
+			"answer": 0
+		},
+		{
+			"question": "Which is not the name of a faction in the Advance Wars series?",
+			"answers": [
+				"Orange Star",
+				"Green Earth",
+				"Gold Comet",
+				"Purple Nebula"
+			],
+			"answer": 3
+		},
+		{
+			"question": "Which of these was not an available form for Mario and Luigi in Puzzle & Dragons: Super Mario Bros. Edition?",
+			"answers": [
+				"Tanooki/Kitsune",
+				"Boomerang",
+				"Double",
+				"Gold"
 			],
 			"answer": 0
 		}

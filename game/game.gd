@@ -33,7 +33,7 @@ func _ready() -> void:
 		dir.make_dir("saves")
 	# copy trivia.json, push it to this dir as 'default_trivia.json
 	if !dir.file_exists("user://trivia/default_trivia.json"):
-		dir.copy("res://trivia/trivia.json", "user://trivia/default_trivia.json")
+		dir.copy("res://trivia/default_trivia.json", "user://trivia/default_trivia.json")
 
 
 func _input(event):
