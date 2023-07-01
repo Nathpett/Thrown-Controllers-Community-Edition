@@ -70,7 +70,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_h1q8p"]
 resource_name = "turn_letter"
 length = 0.4
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -114,6 +113,7 @@ _data = {
 texture = ExtResource("1_gjhse")
 hframes = 10
 vframes = 4
+frame = 28
 script = ExtResource("2_8leyq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

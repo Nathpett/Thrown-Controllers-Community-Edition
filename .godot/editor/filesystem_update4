@@ -1,10 +1,8 @@
 res://default_env.tres
-res://category/dialogue.tscn
-res://game/leader_board_background.gdshader
-res://avatar/soulless.gdshader
-res://category/concrete_categories/dialogue.tscn
-res://category/concrete_categories/ericas_game/ericas_game.tscn
 res://category/concrete_categories/ericas_game/fortune_letter.tscn
+res://avatar/soulless.gdshader
+res://category/concrete_categories/ericas_game/ericas_game.gd
 res://category/concrete_categories/ericas_game/vanna.tscn
 res://game/game.tscn
-res://game/game.gd
+res://category/concrete_categories/ericas_game/ericas_game.tscn
+res://category/concrete_categories/ericas_game/vanna.gd

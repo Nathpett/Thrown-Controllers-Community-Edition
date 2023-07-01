@@ -4,6 +4,11 @@ var char: String: set = _set_char
 var is_blue: bool = false: set = _set_is_blue
 
 
+func reveal() -> void:
+	$TextureRect.visible = true # TODO MAYBE, CAN ANIMATE BLUE TO MAKE SMOOTHER?
+	self.is_blue = false
+
+
 func _set_char(new_char: String) -> void:
 	var atlas_idx = "abcdefghijklmnopqrstuvwxyz?-'!".find(new_char)
 	if atlas_idx == -1:

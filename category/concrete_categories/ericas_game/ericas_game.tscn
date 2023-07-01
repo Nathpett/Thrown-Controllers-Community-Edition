@@ -93,7 +93,6 @@ theme_override_constants/separation = 0
 
 [node name="Hint" type="Label" parent="Control/HUD/Left"]
 layout_mode = 2
-text = "Phrase"
 horizontal_alignment = 1
 vertical_alignment = 2
 uppercase = true
@@ -128,7 +127,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_or8hn")
 
-[node name="DefaultLetters" type="Label" parent="Control/HUD/Right"]
+[node name="PlayerLetters" type="Label" parent="Control/HUD/Right"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -138,7 +137,6 @@ offset_right = -1.52588e-05
 offset_bottom = 0.275459
 grow_horizontal = 2
 grow_vertical = 2
-text = "C  C  C  V"
 horizontal_alignment = 1
 vertical_alignment = 2
 visible_characters_behavior = 2

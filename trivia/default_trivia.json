@@ -19,6 +19,26 @@
 		{
 			"question": "How many pieces of the Triforce are there?",
 			"answer": "Three"
+		},
+		{
+			"question": "What color is Sonic the Hedgehog? ",
+			"answer": "Blue"
+		},
+		{
+			"question": "Where does Kirby from the Kirby series live?",
+			"answer": "Dream Land/Pop Star"
+		},
+		{
+			"question": "What game is Cloud Strife originally from?",
+			"answer": "Final Fantasy VII (7)"
+		},
+		{
+			"question": "Who is the main villain of the Crash Bandicoot series?",
+			"answer": "Dr. Neo Cortex"
+		},
+		{
+			"question": "What year did the original Super Mario Bros for the NES/Famicom come out? ",
+			"answer": "1985"
 		}
 	],
 	"brutal_question": [
@@ -41,6 +61,26 @@
 		{
 			"question": "This game's working title was 'Dark Ring.' this was changed due to Dark Ring possibly being slang for anus. ",
 			"answer": "Dark Souls"
+		},
+		{
+			"question": "Tiger Electronics is infamous for its myriad of LED screen games that were incredibly primitive even in their prime. They even made a game console in 1995 to contest what they believed was their biggest competitor: the Virtual Boy. What was this console? ",
+			"answer": "The R Zone"
+		},
+		{
+			"question": "As of June 26, 2023, how many playable characters are currently available in 100% Orange Juice, not counting event-exclusive characters? (will accept ranges of 10, e.g. 1 - 10, 11 - 20)",
+			"answer": "83"
+		},
+		{
+			"question": "In an elaborate plan to get Japanese players into their game, Valve, in partnership with Taito, released Left 4 Dead 2 in Japan as an arcade game in 2014, with its service being shut down in 2017. What was this arcade game called in Japan, when translated?",
+			"answer": "Left 4 Dead Survivors"
+		},
+		{
+			"question": "After receiving immense backlash from an incredibly infamous incident, Blizzard received a letter in October 2019 from a very significant source. Who sent this letter?",
+			"answer": "The United States Congress"
+		},
+		{
+			"question": "Among the original Smash 64 roster, which two characters are considered to be in the top half of tier lists in all Smash titles?",
+			"answer": "Fox and Pikachu"
 		}
 	],
 	"solo_video_game_challenge": [
@@ -89,6 +129,116 @@
 			"question": "What game series is this song from?",
 			"answer": "Shantae",
 			"path": "15. Rottytops.mp3"
+		},
+		{
+			"question": "What game is this from?",
+			"answer": "Under Night In-Birth",
+			"path": "under_night.mp3"
+		},
+		{
+			"question": "What game is this from?",
+			"answer": "Paper Mario The Origami King",
+			"path": "plunger.mp3"
+		},
+		{
+			"question": "What game is this from?",
+			"answer": "Street Fighter",
+			"path": "street_fighter.mp3"
+		},
+		{
+			"question": "What game is this from?",
+			"answer": "Sonic the Hedgehog",
+			"path": "green_hills.mp3"
+		},
+		{
+			"question": "What game is this from?",
+			"answer": "Sonic Mania",
+			"path": "sonic_mania.mp3"
+		},
+		{
+			"question": "What game is this from?",
+			"answer": "Sonic Chronicles",
+			"path": "sonic_dark.mp3"
+		},
+		{
+			"question": "What game is this from?",
+			"answer": "Puyo Puyo",
+			"path": "puyo.mp3"
+		},
+		{
+			"question": "What game is this from?",
+			"answer": "Professor Layton and The Last Specter",
+			"path": "layton.mp3"
+		},
+		{
+			"question": "What game is this from?",
+			"answer": "Pokemon Sun and Moon/Ultra Sun and Ultra Moon",
+			"path": "sun_and_moon.mp3"
+		},
+		{
+			"question": "What game series is this from?",
+			"answer": "WarioWare",
+			"path": "penny.mp3"
+		},
+		{
+			"question": "What game is this from?",
+			"answer": "Omori",
+			"path": "omori.mp3"
+		},
+		{
+			"question": "What game series is this from?",
+			"answer": "Megaman",
+			"path": "mm9.mp3"
+		},
+		{
+			"question": "What game is this from?",
+			"answer": "Final Fantasy XIII-2",
+			"path": "FF13-2.mp3"
+		},
+		{
+			"question": "What game is this from?",
+			"answer": "Dragon Ball FighterZ",
+			"path": "dragon_ball.mp3"
+		},
+		{
+			"question": "What game is this from?",
+			"answer": "Paper Mario The Origami King",
+			"path": "paper_king.mp3"
+		},
+		{
+			"question": "What game is this from?",
+			"answer": "Xenoblade Chronicles 3",
+			"path": "x2.mp3"
+		},
+		{
+			"question": "What game is this from?",
+			"answer": "Castlevania: Symphony of the Night)",
+			"path": "sotn.mp3"
+		},
+		{
+			"question": "What game is this from?",
+			"answer": "Fire Emblem Engage",
+			"path": "engage.mp3"
+		},
+		{
+			"question": "What game series is this from?",
+			"answer": "Battletoads",
+			"path": "toads.mp3"
+		},
+		{
+			"question": "What game series is this from?",
+			"answer": "Advance Wars",
+			"path": "sensei.mp3"
+		},
+		{
+			"question": "What game is this from?",
+			"answer": "A Hat in Time",
+			"path": "hat.mp3"
+		},
+		{
+			"question": "What game is this from?",
+			"answer": "Celeste",
+			"path": "celeste.mp3"
 		}
 	],
 	"dialogue": [
@@ -116,6 +266,26 @@
 			"question": "What game is this voice clip from?",
 			"answer": "Shadow the Hedgehog",
 			"path": "all01_s09_sd.wav"
+		},
+		{
+			"question": "What game are these characters from?",
+			"answer": "Team Fortress 2",
+			"path": "bucket.mp3"
+		},
+		{
+			"question": "What game series is this voice clip from?",
+			"answer": "Mario Party",
+			"path": "doh.mp3"
+		},
+		{
+			"question": "What game is this voice clip from?",
+			"answer": "Dokapon Kingdom",
+			"path": "sale.mp3"
+		},
+		{
+			"question": "What game is this voice clip from?",
+			"answer": "Xenoblade Chronicles 2",
+			"path": "ether.mp3"
 		}
 	],
 	"who_the_heck_is_that": [
@@ -135,7 +305,7 @@
 			"path": "thomas.png"
 		},
 		{
-			"question": "As a commanding officer, this character commands the forces of Orange Star",
+			"question": "A mechanic at heart, this boy has found himself to be a new commanding officer for the Orange Star army. With great passion and determination, he will prove to always be a threat, even to a copy of himself. But first, he needs to find out what an airport is.",
 			"answer": "Andy",
 			"path": "andy.png"
 		},
@@ -148,6 +318,36 @@
 			"question": "She wants to be beautiful, so she'll steal your sis. This nasty witch loves to rhyme like this. With every game she looks worse than before. Get this one right and add to your score.",
 			"answer": "Gruntilda Winkybunion",
 			"path": "grunty.png"
+		},
+		{
+			"question": "Pick one of these adventurers from some other world, and you’ll embark on an elemental journey filled with dragons, ancient sea monsters, and maybe even a duel with a demigod! Just hope you shelled out enough for the right companions. (Please don’t actually do this.)",
+			"answer": "Traveler (Lumine and Aether, respectively)",
+			"path": "traveler.png"
+		},
+		{
+			"question": "(TODO REWRITE THIS TO BE MORE VAUGE) Insert yelling. A lot of yelling. And maybe a KAMEHAMEHA.",
+			"answer": "Goku",
+			"path": "goku.png"
+		},
+		{
+			"question": "While rather petite, this Jellyfish Pirate can effortlessly swing around such a massive weapon with ease, alongside calling her trusty companion, Mr. Dolphin! TOTSUGEKI!",
+			"answer": "May",
+			"path": "may.png"
+		},
+		{
+			"question": "From pirate captain to mad scientist, this kruel kremlin’s got the evil to spare. Too bad a mean gorilla and a monkey always stand in his way of ruling the day.",
+			"answer": "King K Rool",
+			"path": "krool.png"
+		},
+		{
+			"question": "When you recognize that your world is full of eccentric characters that always settle disputes with puzzle battles, you slowly begin to realize that maybe you’re the only sane person in a land of falling blobs. At least you can beat people up with math, though.",
+			"answer": "Ringo",
+			"path": "ringo.png"
+		},
+		{
+			"question": "Having gone the opposite direction from his father’s path, this legendary prosecutor has only one goal in his life: find the truth. And maybe lower the detective’s salary again.",
+			"answer": "Miles Edgeworth",
+			"path": "miles.png"
 		}
 	],
 	"screenshot": [
@@ -175,6 +375,16 @@
 			"question": "What game is this image from?",
 			"answer": "Iron Lung",
 			"path": "ironlung.jpg"
+		},
+		{
+			"question": "What game is this image from?",
+			"answer": "GTA San Andreas",
+			"path": "goagain.png"
+		},
+		{
+			"question": "What game is this image from?",
+			"answer": "Paper Mario Color Splash",
+			"path": "colorsplash.png"
 		}
 	],
 	"lightning_round": [
@@ -389,6 +599,56 @@
 				"Gold"
 			],
 			"answer": 0
+		},
+		{
+			"question": "In Puyo Puyo Tetris, which of these characters is NOT part of the Tetra Crew?",
+			"answers": [
+				"Tee",
+				"Ess",
+				"Zed",
+				"X"
+			],
+			"answer": 3
+		},
+		{
+			"question": "Between Super Monkey Ball Banana Blitz and its remake, what world did NOT have its music changed for the remake?",
+			"answers": [
+				"Monkey Island",
+				"Space Case",
+				"Smooth Sherbet ",
+				"Cobalt Caverns"
+			],
+			"answer": 2
+		},
+		{
+			"question": "What is the name of the main villain in the first LittleBigPlanet.",
+			"answers": [
+				"The Collector",
+				"The Creator",
+				"The Creeper",
+				"The Destroyer"
+			],
+			"answer": 0
+		},
+		{
+			"question": "What is the official name of the final boss theme from Kirby and the Forgotten Land?",
+			"answers": [
+				"Two Planets Approach the Roche Limit",
+				"Mistiliteinn, Tree Crown Without a Ruler",
+				"Deus Ex Machina at a Young Age",
+				"Mind in a PROGRAM"
+			],
+			"answer": 0
+		},
+		{
+			"question": "Game Boy Advance Video was a format to watch shows and movies on the Game Boy Advance. Which of these movies was not released for the format?",
+			"answers": [
+				"Shrek",
+				"Shrek 2",
+				"Shark Tale",
+				"The SpongeBob SquarePants Movie"
+			],
+			"answer": 3
 		}
 	],
 	"pick_your_poison": [
