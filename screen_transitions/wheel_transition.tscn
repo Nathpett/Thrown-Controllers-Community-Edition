@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://du6tl0lvagjvf"]
+
+[ext_resource type="Script" path="res://screen_transitions/wheel_transition.gd" id="1_d03vt"]
+[ext_resource type="AudioStream" uid="uid://k261rbc02cpn" path="res://assets/sound/music/01.mp3" id="2_tv4fm"]
+[ext_resource type="Material" uid="uid://c2jeewvh3h651" path="res://screen_transitions/wheel_transition.tres" id="3_ttdl7"]
+[ext_resource type="Texture2D" uid="uid://d1d62j0utmg4k" path="res://category/concrete_categories/ericas_game/Wheel_of_Fortune_Round_1_template_Season_31.png" id="4_ucs6b"]
+
+[node name="WheelTransition" type="Node"]
+script = ExtResource("1_d03vt")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_tv4fm")
+bus = &"music"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = ExtResource("3_ttdl7")
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 220.0
+grow_horizontal = 2
+texture = ExtResource("4_ucs6b")
+expand_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+color = Color(0, 0, 0, 1)

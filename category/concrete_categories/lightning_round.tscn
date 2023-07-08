@@ -12,6 +12,7 @@
 [node name="GameScene" instance=ExtResource("1")]
 script = ExtResource("2")
 manual_validation = true
+showable_answer = false
 
 [node name="CategoryTitle" parent="Control" index="3"]
 anchor_left = 0.25

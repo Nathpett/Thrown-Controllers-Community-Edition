@@ -28,6 +28,7 @@ const CATEGORIES: Dictionary = {
 						"devils_deal": {NO_DEVIL: true, NO_DESTINY: true, NO_TRIVIA: true, NOT_SUBSTANTIVE: true},
 						"choose_your_destiny": {NO_DESTINY: true, NO_TRIVIA: true, NOT_SUBSTANTIVE: true},
 						"pick_your_poison": {NO_DESTINY: true, VIDEO_GAME_CHALLENGE: true},
+						"ericas_game": {},
 						}
 
 
@@ -42,6 +43,9 @@ static func get_editor_element_path(cat: String):
 	
 	if cat == "TheRunawayGuys_video_game_challenge":
 		return "res://trivia_editor/editor_elements/trg_question_element.tscn"
+	
+	if cat == "ericas_game":
+		return "res://trivia_editor/editor_elements/erica_element.tscn"
 	
 	if CategoryStatics.has_content(cat): 
 		return "res://trivia_editor/editor_elements/content_question_element.tscn"

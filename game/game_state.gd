@@ -89,7 +89,7 @@ func on_success() -> void:
 
 func on_failure() -> void:
 	push_current_to_leaderboard()
-	
+	refresh_cats()
 	current_contestant_score = 0
 
 

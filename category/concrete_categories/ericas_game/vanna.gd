@@ -1,5 +1,6 @@
 extends Sprite2D
 
+signal letters_pushed
 signal at_postion
 signal touch_letter(letter_vector: Vector2)
 
@@ -17,6 +18,10 @@ func _process(delta):
 
 
 func touch_letters(letter_vectors) -> void:
+	if len(letter_vectors) == 0:
+		call_deferred("emit_signal", "letters_pushed")
+		return
+	
 	for vector in letter_vectors:
 		_seek(first_letter_x + vector.x * 16)
 		await self.at_postion
@@ -36,6 +41,10 @@ func touch_letters(letter_vectors) -> void:
 	flip_h = position.x == right_home_x
 	
 	$AnimationPlayer.play("gesticulate")
+	
+	await $AnimationPlayer.animation_finished
+	
+	emit_signal("letters_pushed")
 
 
 func _set_letter_turn_frame(new_value: int) -> void:

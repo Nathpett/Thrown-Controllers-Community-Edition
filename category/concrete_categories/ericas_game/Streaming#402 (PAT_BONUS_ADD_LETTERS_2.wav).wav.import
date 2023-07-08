@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://x02xg1fvkp8s"
+path="res://.godot/imported/Streaming#402 (PAT_BONUS_ADD_LETTERS_2.wav).wav-c96cb1be09dfa3b4844df6782a7e7fc3.sample"
+
+[deps]
+
+source_file="res://category/concrete_categories/ericas_game/Streaming#402 (PAT_BONUS_ADD_LETTERS_2.wav).wav"
+dest_files=["res://.godot/imported/Streaming#402 (PAT_BONUS_ADD_LETTERS_2.wav).wav-c96cb1be09dfa3b4844df6782a7e7fc3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

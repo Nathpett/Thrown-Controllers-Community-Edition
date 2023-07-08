@@ -1,12 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b6mjvqj2em1kv"]
 
-[sub_resource type="Shader" id="1"]
-code = "shader_type canvas_item;
-
-
-void fragment () {
-	COLOR = vec4(0.0, 0.0, 0.0, texture(TEXTURE, UV).a);
-}"
+[ext_resource type="Shader" path="res://resources/black.gdshader" id="1_7l761"]
 
 [resource]
-shader = SubResource("1")
+shader = ExtResource("1_7l761")

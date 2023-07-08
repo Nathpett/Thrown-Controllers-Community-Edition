@@ -137,7 +137,7 @@
 		},
 		{
 			"question": "What game is this from?",
-			"answer": "Paper Mario The Origami King",
+			"answer": "Paper Mario: Color Splash",
 			"path": "plunger.mp3"
 		},
 		{
@@ -286,6 +286,11 @@
 			"question": "What game is this voice clip from?",
 			"answer": "Xenoblade Chronicles 2",
 			"path": "ether.mp3"
+		},
+		{
+			"question": "What game is this voice clip from?",
+			"answer": "Team Fortress 2",
+			"path": "Heavy_sandwichtaunt10.wav"
 		}
 	],
 	"who_the_heck_is_that": [
@@ -325,7 +330,7 @@
 			"path": "traveler.png"
 		},
 		{
-			"question": "(TODO REWRITE THIS TO BE MORE VAUGE) Insert yelling. A lot of yelling. And maybe a KAMEHAMEHA.",
+			"question": "The youngest son of Bardock and Gine, he was sent to earth to destroy all life!",
 			"answer": "Goku",
 			"path": "goku.png"
 		},
@@ -348,6 +353,16 @@
 			"question": "Having gone the opposite direction from his father’s path, this legendary prosecutor has only one goal in his life: find the truth. And maybe lower the detective’s salary again.",
 			"answer": "Miles Edgeworth",
 			"path": "miles.png"
+		},
+		{
+			"question": "While fighting over a pit with something flying in the sky, finish your opponent in two rounds perfectly without blocking. Once you've done that, you've earned your right to fight this elusive, acid-spitting fighter.",
+			"answer": "Reptile or Syzoth",
+			"path": "reptile.png"
+		},
+		{
+			"question": "She used to make a name for herself by crawling through dungeons, this tomboy sorceress turned to a career in puzzle battles. Just don't ask about her decapitating a dark wizard that one time... or that time she fought the creator of her universe.",
+			"answer": "Arle Nadja",
+			"path": "arle.png"
 		}
 	],
 	"screenshot": [
@@ -385,6 +400,16 @@
 			"question": "What game is this image from?",
 			"answer": "Paper Mario Color Splash",
 			"path": "colorsplash.png"
+		},
+		{
+			"question": "What game is this image from?",
+			"answer": "South Park: The Fractured but Whole",
+			"path": "south_park_fbw.jpg"
+		},
+		{
+			"question": "What game is this image from?",
+			"answer": "Rune Factory 4",
+			"path": "rf4.jpg"
 		}
 	],
 	"lightning_round": [
@@ -480,7 +505,7 @@
 			"questions": [
 				[
 					"Baba is You",
-					false
+					true
 				],
 				[
 					"Spelunky",
@@ -491,7 +516,7 @@
 					false
 				],
 				[
-					"Chrone Trigger",
+					"Grim Fandango",
 					true
 				],
 				[
@@ -524,6 +549,62 @@
 				],
 				[
 					"Tetris",
+					true
+				]
+			]
+		},
+		{
+			"theme": "Did these real life brands appear as product placement in Pikmin 2?",
+			"left": "Real\t",
+			"right": "Fake",
+			"time_limit": 30,
+			"questions": [
+				[
+					"Duracell",
+					false
+				],
+				[
+					"Haribo ",
+					false
+				],
+				[
+					"Mountain Dew",
+					true
+				],
+				[
+					"7 Up",
+					false
+				],
+				[
+					"PEZ",
+					true
+				]
+			]
+		},
+		{
+			"theme": "Were these transformation power-ups in Mario's games, or Wario's?",
+			"left": "Mario",
+			"right": "Wario",
+			"time_limit": 30,
+			"questions": [
+				[
+					"Wing",
+					false
+				],
+				[
+					"Dragon",
+					true
+				],
+				[
+					"Frog",
+					false
+				],
+				[
+					"Zombie",
+					true
+				],
+				[
+					"Arty",
 					true
 				]
 			]
@@ -606,7 +687,7 @@
 				"Tee",
 				"Ess",
 				"Zed",
-				"X"
+				"Ex"
 			],
 			"answer": 3
 		},
@@ -649,6 +730,16 @@
 				"The SpongeBob SquarePants Movie"
 			],
 			"answer": 3
+		},
+		{
+			"question": "Which Teenage Mutant Ninja Turtles villain was not playable in any version of Tournament Fighters?",
+			"answers": [
+				"Shredder",
+				"Bebop",
+				"Rat King",
+				"Karai"
+			],
+			"answer": 1
 		}
 	],
 	"pick_your_poison": [
@@ -686,6 +777,20 @@
 				"ha ha ha ha",
 				"stayin alive"
 			]
+		}
+	],
+	"ericas_game": [
+		{
+			"hint": "Thing",
+			"answer": "__Daisy's__\n___Heart___\nShaped Box"
+		},
+		{
+			"hint": "Location",
+			"answer": "___________\n__IN_THE___\n_BATHROOM_"
+		},
+		{
+			"hint": "quotation",
+			"answer": "_DON'T EAT\n_____THE____\n__MUSHROOM_"
 		}
 	]
 }

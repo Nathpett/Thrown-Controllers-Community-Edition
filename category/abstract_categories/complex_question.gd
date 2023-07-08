@@ -2,6 +2,8 @@ class_name ComplexQuestion
 extends SimpleQuestion
 
 @export var manual_validation: bool = false
+@export var showable_answer: bool = false
+
 
 var question_started: bool = false
 var question_over: bool = false
@@ -40,4 +42,5 @@ func player_failure() -> void:
 
 
 func show_answer() -> void:
-	pass
+	if showable_answer:
+		super.show_answer()

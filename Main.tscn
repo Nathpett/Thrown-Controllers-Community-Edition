@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwvjrc2p4vudx"]
+[gd_scene load_steps=8 format=3 uid="uid://dwvjrc2p4vudx"]
 
 [ext_resource type="Script" path="res://game/shader_cache.gd" id="1_acnib"]
 [ext_resource type="PackedScene" uid="uid://8nevuab6buxh" path="res://game/game.tscn" id="1_w0jp0"]
 [ext_resource type="Shader" path="res://avatar/soulless.gdshader" id="2_e6p75"]
 [ext_resource type="Material" uid="uid://b6mjvqj2em1kv" path="res://resources/black.tres" id="3_vb0np"]
 [ext_resource type="Texture2D" uid="uid://dynb1v3hfwm8i" path="res://icon.png" id="3_xud7x"]
+[ext_resource type="Material" uid="uid://c2jeewvh3h651" path="res://screen_transitions/wheel_transition.tres" id="5_hkedn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xs60t"]
 shader = ExtResource("2_e6p75")
@@ -22,6 +23,10 @@ texture = ExtResource("3_xud7x")
 
 [node name="Sprite2D2" type="Sprite2D" parent="ShaderCache"]
 material = ExtResource("3_vb0np")
+texture = ExtResource("3_xud7x")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ShaderCache"]
+material = ExtResource("5_hkedn")
 texture = ExtResource("3_xud7x")
 
 [node name="Game" parent="." instance=ExtResource("1_w0jp0")]

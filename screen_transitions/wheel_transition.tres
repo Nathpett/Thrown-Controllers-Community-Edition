@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c2jeewvh3h651"]
+
+[ext_resource type="Shader" path="res://screen_transitions/wheel_transition.gdshader" id="1_eytkw"]
+
+[resource]
+shader = ExtResource("1_eytkw")
+shader_parameter/pixels = 100

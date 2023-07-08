@@ -1,15 +1,15 @@
+ColorRect
+Sprite2D
+TextureRect
 Node2D
 Panel
 Control
-TextureRect
-ColorRect
 TextureButton
 Label
 HSeparator
 VBoxContainer
 GridContainer
 AudioStreamPlayer
-Sprite2D
 AnimationPlayer
 ComplexQuestion
 CheckButton
@@ -30,4 +30,3 @@ VScrollBar
 MenuButton
 PanelContainer
 Container
-RichTextLabel

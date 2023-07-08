@@ -1,16 +1,19 @@
-[gd_scene load_steps=11 format=3 uid="uid://osj3vwu2muv6"]
+[gd_scene load_steps=14 format=3 uid="uid://osj3vwu2muv6"]
 
-[ext_resource type="Script" path="res://category/concrete_categories/ericas_game/ericas_game.gd" id="1_k0sxc"]
-[ext_resource type="PackedScene" uid="uid://dlxb2iue480ab" path="res://category/concrete_categories/ericas_game/vanna.tscn" id="2_0llq6"]
-[ext_resource type="Texture2D" uid="uid://mpegc3dwrfux" path="res://category/concrete_categories/ericas_game/board.png" id="2_26oxp"]
-[ext_resource type="PackedScene" uid="uid://bt4f4wcpotw20" path="res://panel_select/score_header.tscn" id="2_r0eub"]
-[ext_resource type="FontFile" uid="uid://cn0op72w43g4y" path="res://assets/fonts/Helvetica Neue LT Std 87 Heavy Condensed.otf" id="4_tp2c3"]
-[ext_resource type="PackedScene" uid="uid://d32dafhxbn8j6" path="res://category/dialogue.tscn" id="5_5oxwm"]
-[ext_resource type="AudioStream" uid="uid://dkjb3u1oo7k4n" path="res://assets/sound/music/01 Main Theme.mp3" id="5_ixaw2"]
-[ext_resource type="AudioStream" uid="uid://cpo6du8g1ongy" path="res://assets/sound/menu sounds/06 Letter.mp3" id="6_bcxsc"]
+[ext_resource type="Script" path="res://category/concrete_categories/ericas_game/ericas_game.gd" id="1_3trnr"]
+[ext_resource type="PackedScene" uid="uid://bt4f4wcpotw20" path="res://panel_select/score_header.tscn" id="2_epjha"]
+[ext_resource type="PackedScene" uid="uid://du6tl0lvagjvf" path="res://screen_transitions/wheel_transition.tscn" id="2_x16pf"]
+[ext_resource type="Texture2D" uid="uid://mpegc3dwrfux" path="res://category/concrete_categories/ericas_game/board.png" id="3_0nptw"]
+[ext_resource type="FontFile" uid="uid://cn0op72w43g4y" path="res://assets/fonts/Helvetica Neue LT Std 87 Heavy Condensed.otf" id="4_bhyfc"]
+[ext_resource type="PackedScene" uid="uid://d32dafhxbn8j6" path="res://category/dialogue.tscn" id="5_1tnni"]
+[ext_resource type="PackedScene" uid="uid://dlxb2iue480ab" path="res://category/concrete_categories/ericas_game/vanna.tscn" id="6_6tgqy"]
+[ext_resource type="AudioStream" uid="uid://k3c4yt22p7oe" path="res://assets/sound/music/09.mp3" id="8_3pbwc"]
+[ext_resource type="AudioStream" uid="uid://cpo6du8g1ongy" path="res://assets/sound/menu sounds/06 Letter.mp3" id="8_7t8h4"]
+[ext_resource type="AudioStream" uid="uid://dwb057jb0xkqu" path="res://category/concrete_categories/ericas_game/Streaming#417 (PAT_BONUS_SOLVE_3.wav).wav" id="10_4vx43"]
+[ext_resource type="AudioStream" uid="uid://x02xg1fvkp8s" path="res://category/concrete_categories/ericas_game/Streaming#402 (PAT_BONUS_ADD_LETTERS_2.wav).wav" id="11_yb0pt"]
 
 [sub_resource type="Theme" id="Theme_hlqid"]
-default_font = ExtResource("4_tp2c3")
+default_font = ExtResource("4_bhyfc")
 default_font_size = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_or8hn"]
@@ -21,7 +24,8 @@ border_width_right = 1
 border_width_bottom = 1
 
 [node name="EricasGame" type="Node"]
-script = ExtResource("1_k0sxc")
+script = ExtResource("1_3trnr")
+screen_transition = ExtResource("2_x16pf")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -40,7 +44,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Header" parent="Control" instance=ExtResource("2_r0eub")]
+[node name="Header" parent="Control" instance=ExtResource("2_epjha")]
 layout_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="Control"]
@@ -55,7 +59,7 @@ offset_right = -3.05176e-05
 offset_bottom = -0.0880127
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_26oxp")
+texture = ExtResource("3_0nptw")
 expand_mode = 1
 
 [node name="GridContainer" type="GridContainer" parent="Control/TextureRect2"]
@@ -141,18 +145,24 @@ horizontal_alignment = 1
 vertical_alignment = 2
 visible_characters_behavior = 2
 
-[node name="Dialogue" parent="Control" instance=ExtResource("5_5oxwm")]
+[node name="Dialogue" parent="Control" instance=ExtResource("5_1tnni")]
 visible = false
 layout_mode = 0
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(90, 109)
 
-[node name="Vanna" parent="Node2D" instance=ExtResource("2_0llq6")]
+[node name="Vanna" parent="Node2D" instance=ExtResource("6_6tgqy")]
 frame = 2
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_ixaw2")
+stream = ExtResource("8_3pbwc")
 
 [node name="LetterSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_bcxsc")
+stream = ExtResource("8_7t8h4")
+
+[node name="TimeToSolve" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_4vx43")
+
+[node name="ThreeCons" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_yb0pt")
