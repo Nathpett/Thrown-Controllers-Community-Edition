@@ -17,7 +17,7 @@ func _ready() -> void:
 	await tween.finished
 	
 	tween = create_tween()
-	tween.tween_interval(3)
+	tween.tween_interval(4.5)
 	
 	await tween.finished
 	emit_signal("screen_covered")

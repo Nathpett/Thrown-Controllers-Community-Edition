@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8gq88xcykua6"]
+[gd_scene load_steps=10 format=3 uid="uid://c8gq88xcykua6"]
 
 [ext_resource type="PackedScene" uid="uid://wed28fwnfbng" path="res://category/abstract_categories/simple_question.tscn" id="1"]
 [ext_resource type="Script" path="res://category/concrete_categories/lightning_round.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://ck5yfcqm7v31f" path="res://assets/img/lightning_round.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://dh5dedvlrdsns" path="res://screen_transitions/lightning_transition.tscn" id="3_0ias4"]
 [ext_resource type="FontFile" path="res://assets/fonts/roboto_1.tres" id="4"]
 [ext_resource type="Texture2D" uid="uid://bthtxa1e3eh44" path="res://assets/img/box.png" id="5"]
 [ext_resource type="AudioStream" uid="uid://bll1w1ypl8s2u" path="res://assets/sound/free_sound/badoink__thunder.wav" id="6"]
@@ -13,6 +14,7 @@
 script = ExtResource("2")
 manual_validation = true
 showable_answer = false
+screen_transition = ExtResource("3_0ias4")
 
 [node name="CategoryTitle" parent="Control" index="3"]
 anchor_left = 0.25

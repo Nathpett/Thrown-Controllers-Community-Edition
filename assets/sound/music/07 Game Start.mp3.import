@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b8hw5k4mlkj40"
+path="res://.godot/imported/07 Game Start.mp3-8ffecfa268ddc10e1240c04c639b9afd.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/music/07 Game Start.mp3"
+dest_files=["res://.godot/imported/07 Game Start.mp3-8ffecfa268ddc10e1240c04c639b9afd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

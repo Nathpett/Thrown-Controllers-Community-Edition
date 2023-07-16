@@ -1,4 +1,3 @@
-@tool
 extends ScreenTransition
 
 @export var shutter_frame: int = 0 : set = _set_shutter_frame

@@ -1,0 +1,64 @@
+[gd_scene load_steps=11 format=3 uid="uid://dh5dedvlrdsns"]
+
+[ext_resource type="Script" path="res://screen_transitions/lightning_transition.gd" id="1_i5xvu"]
+[ext_resource type="AudioStream" uid="uid://cxvrw331wb62q" path="res://assets/sound/music/01 Prologue.mp3" id="2_nygrk"]
+[ext_resource type="Texture2D" uid="uid://bth5hcbh8rmlt" path="res://screen_transitions/awake.png" id="3_gn2ud"]
+[ext_resource type="Shader" path="res://game/vertical_repeat.gdshader" id="3_xi53f"]
+[ext_resource type="Texture2D" uid="uid://cgmf4rc5mdjni" path="res://screen_transitions/link_ship.png" id="4_pnfa1"]
+[ext_resource type="Texture2D" uid="uid://dom51sr6irrqv" path="res://screen_transitions/lightning_1.png" id="5_l7m6h"]
+[ext_resource type="Texture2D" uid="uid://c0uft10jtwagl" path="res://screen_transitions/lightning_2.png" id="6_uprre"]
+[ext_resource type="Texture2D" uid="uid://dhkxbpptyuqqp" path="res://screen_transitions/lightning_long.png" id="7_oef2y"]
+[ext_resource type="AudioStream" uid="uid://ckg3j8bt820qx" path="res://assets/sound/free_sound/467777__sgak__thunder.wav" id="8_v2bn1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cff7w"]
+shader = ExtResource("3_xi53f")
+
+[node name="LightningTransition" type="Node"]
+script = ExtResource("1_i5xvu")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_nygrk")
+bus = &"music"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_cff7w")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_gn2ud")
+stretch_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="LinksShip" type="Sprite2D" parent="."]
+position = Vector2(193, 105)
+texture = ExtResource("4_pnfa1")
+
+[node name="Lightning1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(89, 100)
+scale = Vector2(-1, 1)
+texture = ExtResource("5_l7m6h")
+
+[node name="Lightning2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(301, 97)
+texture = ExtResource("6_uprre")
+
+[node name="LightningLong" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(194, 46)
+texture = ExtResource("7_oef2y")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Thunder" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_v2bn1")

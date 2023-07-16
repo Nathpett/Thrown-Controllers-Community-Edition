@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://4g3o1ay7a3yw"]
+
+[ext_resource type="Script" path="res://screen_transitions/yoshi_start_transition.gd" id="1_gelgb"]
+[ext_resource type="AudioStream" uid="uid://b8hw5k4mlkj40" path="res://assets/sound/music/07 Game Start.mp3" id="2_ffxd7"]
+[ext_resource type="Material" uid="uid://d170mahams6gj" path="res://screen_transitions/yoshi_start.tres" id="2_wo3sw"]
+[ext_resource type="FontFile" uid="uid://bqbm4s6w7s13v" path="res://assets/fonts/Roboto-Regular.ttf" id="4_k3s6k"]
+
+[node name="YoshiStartTransition" type="Node"]
+script = ExtResource("1_gelgb")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ffxd7")
+bus = &"sfx"
+
+[node name="Control" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SolidRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.121569, 0.121569, 0.121569, 1)
+
+[node name="WaveRect" type="ColorRect" parent="Control"]
+material = ExtResource("2_wo3sw")
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.117647, 0.117647, 0.117647, 1)
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.0
+offset_top = -45.0
+offset_right = 33.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_k3s6k")
+text = "1-1: Easy
+Question"
+visible_characters = 0
+visible_characters_behavior = 1
+visible_ratio = 0.0
