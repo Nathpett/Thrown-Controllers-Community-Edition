@@ -1,12 +1,13 @@
-ColorRect
-Sprite2D
-CenterContainer
 TextureRect
-AudioStreamPlayer
+SubViewport
+ColorRect
 AnimationPlayer
+Sprite2D
+Control
+CenterContainer
+AudioStreamPlayer
 Node2D
 Label
-Control
 HSplitContainer
 Panel
 TextureButton
@@ -29,4 +30,3 @@ HSlider
 LineEdit
 VSlider
 VScrollBar
-MenuButton

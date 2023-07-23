@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dwvjrc2p4vudx"]
+[gd_scene load_steps=12 format=3 uid="uid://dwvjrc2p4vudx"]
 
 [ext_resource type="Script" path="res://game/shader_cache.gd" id="1_acnib"]
 [ext_resource type="PackedScene" uid="uid://8nevuab6buxh" path="res://game/game.tscn" id="1_w0jp0"]
@@ -6,7 +6,8 @@
 [ext_resource type="Material" uid="uid://b6mjvqj2em1kv" path="res://resources/black.tres" id="3_vb0np"]
 [ext_resource type="Texture2D" uid="uid://dynb1v3hfwm8i" path="res://icon.png" id="3_xud7x"]
 [ext_resource type="Material" uid="uid://c2jeewvh3h651" path="res://screen_transitions/wheel_transition.tres" id="5_hkedn"]
-[ext_resource type="Shader" path="res://game/vertical_repeat.gdshader" id="6_0c8h8"]
+[ext_resource type="Shader" path="res://screen_transitions/codec_transition.gdshader" id="6_3d5fv"]
+[ext_resource type="Shader" path="res://screen_transitions/music_note_transition.gdshader" id="6_qrpv4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xs60t"]
 shader = ExtResource("2_e6p75")
@@ -14,7 +15,13 @@ shader_parameter/progress = 0.0
 shader_parameter/outline_color = null
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h0tqh"]
-shader = ExtResource("6_0c8h8")
+shader = ExtResource("6_3d5fv")
+shader_parameter/progress = null
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m8lw6"]
+shader = ExtResource("6_qrpv4")
+shader_parameter/progress = null
+shader_parameter/inverted = false
 
 [node name="Main" type="Node"]
 
@@ -39,6 +46,14 @@ texture = ExtResource("3_xud7x")
 
 [node name="Sprite2D5" type="Sprite2D" parent="ShaderCache"]
 material = SubResource("ShaderMaterial_h0tqh")
+texture = ExtResource("3_xud7x")
+
+[node name="Sprite2D6" type="Sprite2D" parent="ShaderCache"]
+material = SubResource("ShaderMaterial_h0tqh")
+texture = ExtResource("3_xud7x")
+
+[node name="Sprite2D7" type="Sprite2D" parent="ShaderCache"]
+material = SubResource("ShaderMaterial_m8lw6")
 texture = ExtResource("3_xud7x")
 
 [node name="Game" parent="." instance=ExtResource("1_w0jp0")]

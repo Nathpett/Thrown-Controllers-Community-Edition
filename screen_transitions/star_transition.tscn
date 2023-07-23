@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://cr286tp0mr6iq"]
+
+[ext_resource type="Script" path="res://screen_transitions/star_transition.gd" id="1_583vr"]
+[ext_resource type="AudioStream" uid="uid://d4bteky6lbhnm" path="res://assets/sound/game_sounds/Mario & Luigi - Let's go, Oki dokie.mp3" id="2_17jwj"]
+[ext_resource type="Texture2D" uid="uid://ba1etn6xb60jg" path="res://screen_transitions/letsago.png" id="3_ejwqu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7xqt"]
+atlas = ExtResource("3_ejwqu")
+region = Rect2(480, 0, 240, 160)
+
+[sub_resource type="Animation" id="Animation_g1rtt"]
+resource_name = "go"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 22]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lc6je"]
+_data = {
+"go": SubResource("Animation_g1rtt")
+}
+
+[node name="StarTransition" type="Node"]
+script = ExtResource("1_583vr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_17jwj")
+autoplay = true
+bus = &"music"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_k7xqt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lc6je")
+}

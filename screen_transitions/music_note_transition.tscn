@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://cpdjcj46hmn0d"]
+
+[ext_resource type="Script" path="res://screen_transitions/music_note_transition.gd" id="1_fuo34"]
+[ext_resource type="AudioStream" uid="uid://diypqbdsb1vea" path="res://assets/sound/music/24 Protoman's Whistle.mp3" id="2_36pnb"]
+[ext_resource type="Texture2D" uid="uid://657ybyayep1n" path="res://screen_transitions/music-note.png" id="3_jx011"]
+[ext_resource type="Shader" path="res://screen_transitions/music_note_transition.gdshader" id="4_6bhis"]
+
+[sub_resource type="Animation" id="Animation_lkpj8"]
+resource_name = "note_in"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(0.307786, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jclg3"]
+_data = {
+"note_in": SubResource("Animation_lkpj8")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1dane"]
+shader = ExtResource("4_6bhis")
+shader_parameter/progress = 0.0
+shader_parameter/inverted = false
+
+[node name="MusicNoteTransition" type="Node"]
+script = ExtResource("1_fuo34")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_36pnb")
+autoplay = true
+bus = &"music"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jclg3")
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_1dane")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_jx011")

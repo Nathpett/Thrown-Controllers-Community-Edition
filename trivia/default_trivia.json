@@ -81,6 +81,14 @@
 		{
 			"question": "Among the original Smash 64 roster, which two characters are considered to be in the top half of tier lists in all Smash titles?",
 			"answer": "Fox and Pikachu"
+		},
+		{
+			"question": "While Sega IPs have been appearing on Nintendo consoles since 2001,  a single Nintendo IPs appeares on a Sega console. Which Nintendo franchise was it, and on which Sega console did this occur?",
+			"answer": "Pokémon on the Sega Pico"
+		},
+		{
+			"question": "While Mario has been Nintendo's mascot for over forty years with over a hundred games spanning their systems, there are only two Nintendo consoles in which he doesn't appear in. Name at least one.",
+			"answer": "Color TV-Game and Pokémon Mini"
 		}
 	],
 	"solo_video_game_challenge": [
@@ -791,6 +799,10 @@
 		{
 			"hint": "quotation",
 			"answer": "_DON'T EAT\n_____THE____\n__MUSHROOM_"
+		},
+		{
+			"hint": "quotation",
+			"answer": "thank you\nso much for\nplaying my\n___game____"
 		}
 	]
 }

@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://bchlei3kvagr5"]
+
+[ext_resource type="Script" path="res://screen_transitions/ashely_door_transition.gd" id="1_6pg6q"]
+[ext_resource type="AudioStream" uid="uid://b18fl4sd86qq7" path="res://assets/sound/free_sound/613498__endritprenku__prison-cell-door-sound-effect.mp3" id="2_cl4h4"]
+[ext_resource type="Texture2D" uid="uid://dbp2bfg6ba5ib" path="res://screen_transitions/ashely_door.png" id="3_jik6i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcjjn"]
+atlas = ExtResource("3_jik6i")
+region = Rect2(1792, 0, 256, 192)
+
+[sub_resource type="Animation" id="Animation_2hgjo"]
+resource_name = "open"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:shutter_frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 7]
+}
+
+[sub_resource type="Animation" id="Animation_6teqr"]
+resource_name = "close"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:shutter_frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [7, 7, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kv7e2"]
+_data = {
+"close": SubResource("Animation_6teqr"),
+"open": SubResource("Animation_2hgjo")
+}
+
+[node name="AshelyDoorTransition" type="Node"]
+script = ExtResource("1_6pg6q")
+shutter_frame = 7
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_cl4h4")
+bus = &"music"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_rcjjn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kv7e2")
+}

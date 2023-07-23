@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://vno4us2effg4"]
+[gd_scene load_steps=7 format=3 uid="uid://vno4us2effg4"]
 
 [ext_resource type="PackedScene" uid="uid://wed28fwnfbng" path="res://category/abstract_categories/simple_question.tscn" id="1_qe71y"]
 [ext_resource type="Script" path="res://category/concrete_categories/devils_deal.gd" id="2_i5ukk"]
+[ext_resource type="PackedScene" uid="uid://bchlei3kvagr5" path="res://screen_transitions/ashely_door_transition.tscn" id="3_knpij"]
 [ext_resource type="PackedScene" uid="uid://d32dafhxbn8j6" path="res://category/dialogue.tscn" id="3_yf2cq"]
 [ext_resource type="Texture2D" uid="uid://cogxonbpf4w4g" path="res://assets/img/devils_deal.png" id="4_gkcg6"]
 [ext_resource type="Texture2D" uid="uid://c5u3vtc1eoyw4" path="res://assets/img/blinker.png" id="5_pmt5d"]
@@ -9,6 +10,8 @@
 [node name="GameScene" instance=ExtResource("1_qe71y")]
 script = ExtResource("2_i5ukk")
 manual_validation = false
+showable_answer = false
+screen_transition = ExtResource("3_knpij")
 
 [node name="Label" parent="Control/Dialogue/MarginContainer" index="0"]
 text = "The contestant may sell their soul.  If they do, all panels onward will worth 2 points. However, Easy Question and Multiple Choice will not be present in the panels anymore, and brutal questions will become more frequent proportional to your score."
