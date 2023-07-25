@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://dv48ss04713bt"]
+
+[ext_resource type="Script" path="res://screen_transitions/happening_transition.gd" id="1_k1nvm"]
+[ext_resource type="Shader" path="res://screen_transitions/music_note_transition.gdshader" id="2_228v2"]
+[ext_resource type="AudioStream" uid="uid://b6n710hvy2077" path="res://screen_transitions/Dice Roll.mp3" id="2_l8gb4"]
+[ext_resource type="Texture2D" uid="uid://bvd703w0cvu5j" path="res://screen_transitions/question_mark.png" id="3_rnfh1"]
+
+[sub_resource type="Animation" id="Animation_jsjms"]
+resource_name = "ani_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(3, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_17gu0"]
+_data = {
+"ani_in": SubResource("Animation_jsjms")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_53tsm"]
+shader = ExtResource("2_228v2")
+shader_parameter/progress = 1.0
+shader_parameter/inverted = true
+shader_parameter/color = Color(0.168627, 0.168627, 0.168627, 1)
+shader_parameter/alpha = 1.0
+
+[node name="HappeningTransition" type="Node"]
+script = ExtResource("1_k1nvm")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_l8gb4")
+bus = &"music"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_17gu0")
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_53tsm")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_rnfh1")
+expand_mode = 4

@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://wed28fwnfbng" path="res://category/abstract_categories/simple_question.tscn" id="1"]
 [ext_resource type="Script" path="res://category/concrete_categories/lightning_round.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://ck5yfcqm7v31f" path="res://assets/img/lightning_round.png" id="3"]
 [ext_resource type="PackedScene" uid="uid://dh5dedvlrdsns" path="res://screen_transitions/lightning_transition.tscn" id="3_0ias4"]
 [ext_resource type="FontFile" path="res://assets/fonts/roboto_1.tres" id="4"]
+[ext_resource type="Texture2D" uid="uid://v5b32kx8jhrx" path="res://assets/img/lightning_round_2.png" id="4_s8mgw"]
 [ext_resource type="Texture2D" uid="uid://bthtxa1e3eh44" path="res://assets/img/box.png" id="5"]
 [ext_resource type="AudioStream" uid="uid://bll1w1ypl8s2u" path="res://assets/sound/free_sound/badoink__thunder.wav" id="6"]
 [ext_resource type="AudioStream" uid="uid://uyacj7sw21i3" path="res://assets/sound/music/08 - Telling the Truth 2007.mp3" id="7_j74mt"]
@@ -21,7 +21,9 @@ anchor_left = 0.25
 anchor_top = 0.075
 anchor_right = 0.75
 anchor_bottom = 0.473
-texture = ExtResource("3")
+texture = ExtResource("4_s8mgw")
+expand_mode = 2
+stretch_mode = 5
 
 [node name="LeftLabel" type="Label" parent="Control" index="4"]
 layout_mode = 0

@@ -34,6 +34,10 @@ func _ready():
 
 
 func _exit_tree():
+	_save_trivia_set()
+
+
+func _save_trivia_set() -> void:
 	_unload_category()
 	var json = JSON.new()
 	json.data = trivia_data
@@ -112,16 +116,21 @@ func _on_test_trivia(question: Dictionary) -> void:
 
 
 func _on_trivia_json_button_item_selected(index):
+	var new_cur_file_name
 	if index == trivia_json_button.item_count - 1:
 		var dir = DirAccess.open("user://trivia/")
 		var number_tag = _get_unique_tag(dir)
 		# copy trivia.json, push it to this dir as 'default_trivia.json
 		dir.copy("res://trivia/trivia_abstracts.json", "user://trivia/%s_trivia.json" % [number_tag])
-		_populate_trivia_json_button()
-		return
+		
+		new_cur_file_name = "%s_trivia" % [number_tag]
+		trivia_json_button.set_item_text(index, new_cur_file_name)
+		trivia_json_button.add_item("New")
+	else:
+		new_cur_file_name = trivia_json_button.text
 	
-	_unload_category()
-	current_file_name = trivia_json_button.text
+	_save_trivia_set()
+	current_file_name = new_cur_file_name
 
 
 func _get_unique_tag(dir: DirAccess) -> String:

@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://ddunupapeyoev"]
 
 [ext_resource type="PackedScene" uid="uid://wed28fwnfbng" path="res://category/abstract_categories/simple_question.tscn" id="1"]
-[ext_resource type="Texture2D" uid="uid://c0fvwycjpniqm" path="res://assets/img/leap_of_faith.png" id="2"]
 [ext_resource type="PackedScene" uid="uid://4g3o1ay7a3yw" path="res://screen_transitions/yoshi_start_transition.tscn" id="2_h1rnq"]
 [ext_resource type="AudioStream" uid="uid://dwn2xrhe3ogkf" path="res://assets/sound/music/133. We're Counting on You, Mario!.mp3" id="3_ncb7x"]
+[ext_resource type="Texture2D" uid="uid://ixn85yjsb3y2" path="res://assets/img/leap_of_faith_2.png" id="3_q77rj"]
 
 [node name="GameScene" instance=ExtResource("1")]
 screen_transition = ExtResource("2_h1rnq")
@@ -12,7 +12,9 @@ screen_transition = ExtResource("2_h1rnq")
 text = "choose a member of the audience to do a challenge for you!"
 
 [node name="CategoryTitle" parent="Control" index="3"]
-texture = ExtResource("2")
+texture = ExtResource("3_q77rj")
+expand_mode = 2
+stretch_mode = 5
 
 [node name="Music" parent="." index="1"]
 stream = ExtResource("3_ncb7x")

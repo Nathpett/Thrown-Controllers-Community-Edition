@@ -11,6 +11,8 @@ text = "Challenge a random member of the audience in a video game!"
 
 [node name="CategoryTitle" parent="Control" index="3"]
 texture = ExtResource("2")
+expand_mode = 2
+stretch_mode = 5
 
 [node name="Music" parent="." index="1"]
 stream = ExtResource("3_23cys")

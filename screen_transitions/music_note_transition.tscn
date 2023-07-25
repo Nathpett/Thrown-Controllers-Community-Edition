@@ -30,6 +30,8 @@ _data = {
 shader = ExtResource("4_6bhis")
 shader_parameter/progress = 0.0
 shader_parameter/inverted = false
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/alpha = 1.0
 
 [node name="MusicNoteTransition" type="Node"]
 script = ExtResource("1_fuo34")

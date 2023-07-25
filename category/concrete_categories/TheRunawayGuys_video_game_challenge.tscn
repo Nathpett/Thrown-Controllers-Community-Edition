@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://cgvkcb6fjiu3"]
 
 [ext_resource type="PackedScene" uid="uid://wed28fwnfbng" path="res://category/abstract_categories/simple_question.tscn" id="1"]
-[ext_resource type="Texture2D" uid="uid://j7rkc8p4fb75" path="res://assets/img/TheRunawayGuys_video_game_challenge.png" id="2"]
 [ext_resource type="Script" path="res://category/concrete_categories/TheRunawayGuys_video_game_challenge.gd" id="2_jhcql"]
+[ext_resource type="Texture2D" uid="uid://44365v1v4raq" path="res://assets/img/trg_video_game_challenge.png" id="3_2mpus"]
 [ext_resource type="AudioStream" uid="uid://0m1sgjo8egor" path="res://assets/sound/music/19. Boss Intro.mp3" id="4_0gqfb"]
 [ext_resource type="Texture2D" uid="uid://c5u3vtc1eoyw4" path="res://assets/img/blinker.png" id="6_8tiau"]
 
@@ -11,6 +11,7 @@
 [node name="GameScene" instance=ExtResource("1")]
 script = ExtResource("2_jhcql")
 manual_validation = false
+showable_answer = false
 
 [node name="Dialogue" parent="Control" index="2"]
 layout_mode = 1
@@ -36,7 +37,9 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="CategoryTitle" parent="Control" index="4"]
-texture = ExtResource("2")
+texture = ExtResource("3_2mpus")
+expand_mode = 2
+stretch_mode = 5
 
 [node name="Music" parent="." index="1"]
 stream = ExtResource("4_0gqfb")

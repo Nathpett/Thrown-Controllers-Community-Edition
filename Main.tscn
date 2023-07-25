@@ -22,6 +22,8 @@ shader_parameter/progress = null
 shader = ExtResource("6_qrpv4")
 shader_parameter/progress = null
 shader_parameter/inverted = false
+shader_parameter/color = null
+shader_parameter/alpha = null
 
 [node name="Main" type="Node"]
 

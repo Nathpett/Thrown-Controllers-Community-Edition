@@ -1,15 +1,17 @@
 [gd_scene load_steps=5 format=3 uid="uid://big0kps7wujbb"]
 
 [ext_resource type="PackedScene" uid="uid://wed28fwnfbng" path="res://category/abstract_categories/simple_question.tscn" id="1"]
-[ext_resource type="Texture2D" uid="uid://6twfe4txdrl5" path="res://assets/img/solo_video_game_challenge.png" id="2"]
 [ext_resource type="PackedScene" uid="uid://cbu3652pp4dwt" path="res://screen_transitions/cloud_mario_transition.tscn" id="2_4wril"]
 [ext_resource type="AudioStream" uid="uid://dunkb8s1qlybv" path="res://assets/sound/music/18 Play A Mini-Game!.mp3" id="3_mv7oi"]
+[ext_resource type="Texture2D" uid="uid://dlqk4cxo4eip4" path="res://assets/img/solo_video_game_challenge_2.png" id="3_tlxk8"]
 
 [node name="GameScene" instance=ExtResource("1")]
 screen_transition = ExtResource("2_4wril")
 
 [node name="CategoryTitle" parent="Control" index="3"]
-texture = ExtResource("2")
+texture = ExtResource("3_tlxk8")
+expand_mode = 2
+stretch_mode = 5
 
 [node name="Music" parent="." index="1"]
 stream = ExtResource("3_mv7oi")

@@ -1,19 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://c330i18i17pm3"]
+[gd_scene load_steps=6 format=3 uid="uid://c330i18i17pm3"]
 
 [ext_resource type="PackedScene" uid="uid://wed28fwnfbng" path="res://category/abstract_categories/simple_question.tscn" id="1_rqm71"]
 [ext_resource type="Script" path="res://category/concrete_categories/choose_your_destiny.gd" id="2_8be77"]
-[ext_resource type="Texture2D" uid="uid://chxvpuvavceha" path="res://assets/img/choose_your_destiny.png" id="3_8jfpv"]
+[ext_resource type="PackedScene" uid="uid://dv48ss04713bt" path="res://screen_transitions/happening_transition.tscn" id="3_a4jxj"]
+[ext_resource type="Texture2D" uid="uid://bmg0w2us8r6b2" path="res://assets/img/choose_your_destiny_2.png" id="4_j74c3"]
 [ext_resource type="AudioStream" uid="uid://d2xinfmo3e8a7" path="res://assets/sound/music/Saturn Bomberman - Battle Menu.mp3" id="4_tx8xw"]
 
 [node name="GameScene" instance=ExtResource("1_rqm71")]
 script = ExtResource("2_8be77")
 manual_validation = false
+showable_answer = false
+screen_transition = ExtResource("3_a4jxj")
 
 [node name="Label" parent="Control/Dialogue/MarginContainer" index="0"]
 text = "Choose one of five random categories, if you choose a Brutal Question or TRG Video Game Challenge (if available) you will gain two points instead of one."
 
 [node name="CategoryTitle" parent="Control" index="3"]
-texture = ExtResource("3_8jfpv")
+texture = ExtResource("4_j74c3")
+expand_mode = 2
+stretch_mode = 5
 
 [node name="Music" parent="." index="1"]
 stream = ExtResource("4_tx8xw")

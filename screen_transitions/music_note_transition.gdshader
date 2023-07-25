@@ -2,6 +2,8 @@ shader_type canvas_item;
 
 uniform float progress: hint_range(0.0, 1.0);
 uniform bool inverted = false;
+uniform vec4 color: source_color;
+uniform float alpha: hint_range(0.0, 1.0);
 uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
 
 vec2 scale(vec2 uv, vec2 scl)
@@ -15,7 +17,7 @@ vec2 scale(vec2 uv, vec2 scl)
 }
 
 void fragment() {	
-	vec2 uv = scale(UV, vec2(mix(0.05, 50.0, 1.0 - progress)));
+	vec2 uv = scale(UV, vec2(mix(0.05, 90.0, 1.0 - progress)));
 	uv.x = clamp(uv.x, 0.0, 1.0);
 	uv.y = clamp(uv.y, 0.0, 1.0);
 	
@@ -24,8 +26,9 @@ void fragment() {
 	vec4 s_col = texture(TEXTURE, uv);
 	
 	if (inverted) {
-		COLOR = vec4(1.0 - s_col);
+		COLOR = color * vec4(1.0 - s_col);
 	} else {
-		COLOR = vec4(s_col);
+		COLOR = color * vec4(s_col);
 	}
+	COLOR.a = min(COLOR.a, alpha);
 }

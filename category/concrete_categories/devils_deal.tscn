@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://category/concrete_categories/devils_deal.gd" id="2_i5ukk"]
 [ext_resource type="PackedScene" uid="uid://bchlei3kvagr5" path="res://screen_transitions/ashely_door_transition.tscn" id="3_knpij"]
 [ext_resource type="PackedScene" uid="uid://d32dafhxbn8j6" path="res://category/dialogue.tscn" id="3_yf2cq"]
-[ext_resource type="Texture2D" uid="uid://cogxonbpf4w4g" path="res://assets/img/devils_deal.png" id="4_gkcg6"]
+[ext_resource type="Texture2D" uid="uid://d30qfm2kyse5o" path="res://assets/img/devils_deal_2.png" id="5_n4c3n"]
 [ext_resource type="Texture2D" uid="uid://c5u3vtc1eoyw4" path="res://assets/img/blinker.png" id="5_pmt5d"]
 
 [node name="GameScene" instance=ExtResource("1_qe71y")]
@@ -39,7 +39,7 @@ offset_right = 150.0
 ini_centerify = true
 
 [node name="CategoryTitle" parent="Control" index="5"]
-texture = ExtResource("4_gkcg6")
+texture = ExtResource("5_n4c3n")
 
 [node name="Blinker" type="Sprite2D" parent="." index="2"]
 position = Vector2(198, 253)
