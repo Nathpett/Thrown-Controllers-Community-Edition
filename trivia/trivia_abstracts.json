@@ -33,6 +33,11 @@
 	"challenge": "CHALLENGE HERE"}
 ],
 
+"ericas_game": [
+	{"hint": "hint",
+	"answer": "answer"}
+],
+
 "TheRunawayGuys_video_game_challenge":[
 	{"host": "chuggaaconroy",
 	"challenges": ["CHALLENGE HERE"]},

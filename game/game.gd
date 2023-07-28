@@ -44,10 +44,10 @@ func _input(event):
 		get_tree().paused = true
 
 
-func new_game(trivia_path: String, initial_mode: int, _fast_mode: bool) -> void:
+func new_game(trivia_path: String, initial_mode: int, _fast_mode: bool, _shuffle_trivia: bool) -> void:
 	editor_mode = false
 	game_state = GameState.new()
-	game_state.initiate(trivia_path, initial_mode, _fast_mode)
+	game_state.initiate(trivia_path, initial_mode, _fast_mode, _shuffle_trivia)
 	_register_game_state()
 
 

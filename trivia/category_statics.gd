@@ -26,7 +26,7 @@ const CATEGORIES: Dictionary = {
 						"lightning_round": {},
 						"multiple_choice": {NO_DEVIL: true},
 						"devils_deal": {NO_DEVIL: true, NO_DESTINY: true, NO_TRIVIA: true, NOT_SUBSTANTIVE: true},
-						"choose_your_destiny": {NO_DESTINY: true, NO_TRIVIA: true, NOT_SUBSTANTIVE: true},
+						"choose_your_destiny": {NO_DESTINY: true, NO_TRIVIA: true, NOT_SUBSTANTIVE: true, NO_DEVIL: true},
 						"pick_your_poison": {NO_DESTINY: true, VIDEO_GAME_CHALLENGE: true},
 						"ericas_game": {},
 						}

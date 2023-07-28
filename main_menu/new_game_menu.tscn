@@ -19,6 +19,10 @@ anchor_left = 0.66
 anchor_top = 0.5
 anchor_right = 0.66
 anchor_bottom = 0.5
+offset_left = -54.5
+offset_top = -58.0
+offset_right = 54.5
+offset_bottom = 88.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -42,6 +46,14 @@ theme_override_fonts/font = ExtResource("2_861c8")
 theme_override_font_sizes/font_size = 8
 button_pressed = true
 text = "Only Show Trivia"
+alignment = 2
+
+[node name="ShuffelTriviaButton" type="CheckButton" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_861c8")
+theme_override_font_sizes/font_size = 8
+button_pressed = true
+text = "Shuffle Trivia"
 alignment = 2
 
 [node name="Button" type="Button" parent="VBoxContainer"]
