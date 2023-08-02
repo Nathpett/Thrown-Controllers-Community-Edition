@@ -371,6 +371,11 @@
 			"question": "She used to make a name for herself by crawling through dungeons, this tomboy sorceress turned to a career in puzzle battles. Just don't ask about her decapitating a dark wizard that one time... or that time she fought the creator of her universe.",
 			"answer": "Arle Nadja",
 			"path": "arle.png"
+		},
+		{
+			"question": "Most kids run away from their families to join the circus. But for this young boy, he ran away from his family's traveling circus to join a camp of psychic trainees learning to become secret agents. Though despite his surname, this kid can't handle large bodies of water.",
+			"answer": "Razputin \"Raz\" Aquato",
+			"path": "raz.png"
 		}
 	],
 	"screenshot": [
