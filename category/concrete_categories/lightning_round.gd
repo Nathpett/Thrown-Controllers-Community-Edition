@@ -51,13 +51,11 @@ func initiate_questions() -> void:
 
 func left() -> void:
 	if question_started and !dialogue.is_printing() and !question_over:
-		move_dialogue(false)
 		submit_answer(false)
 
 
 func right() -> void:
 	if question_started and !dialogue.is_printing() and !question_over:
-		move_dialogue(true)
 		submit_answer(true)
 
 
@@ -70,7 +68,7 @@ func next_lightning() -> void:
 		conclude_lightning_round()
 
 
-func move_dialogue(dir_bool: bool) -> void:
+func move_dialogue(dir_bool: bool, is_correct: bool) -> void:
 	var dir: int
 	dir = 1 if dir_bool else -1
 	
@@ -82,10 +80,29 @@ func move_dialogue(dir_bool: bool) -> void:
 	var t_time = 0.4
 	tween.tween_property(copy_dialogue, "offset_left", 500 * dir, t_time).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 	tween.parallel().tween_property(copy_dialogue, "offset_right", 500 * dir, t_time).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+	
+	await tween.finished
+	
+	var ani_string
+	var cor_color = Color.GREEN if is_correct else Color.RED
+	var sound = $Correct if is_correct else $Incorrect
+	cor_color.a = 0
+	
+	if dir_bool:
+		ani_string = "RightFlash"
+		$Control/RightFlash.modulate = cor_color
+	else:
+		ani_string = "LeftFlash"
+		$Control/LeftFlash.modulate = cor_color
+	
+	sound.play()
+	
+	$FlashPlayer.play(ani_string)
 
 
 func submit_answer(submitted_answer) -> void:
 	var is_correct = submitted_answer == answer
+	move_dialogue(submitted_answer, is_correct)
 	correct_arr.append(is_correct)
 	if is_correct:
 		correct_ct += 1

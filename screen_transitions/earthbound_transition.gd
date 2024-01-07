@@ -14,9 +14,6 @@ var h_frames = 5
 func _ready():
 	await get_tree().create_timer(0.4).timeout
 	
-	
-	
-	
 	$AnimationPlayer.play("go")
 	
 	var tween_time
@@ -47,9 +44,6 @@ func _ready():
 	await tween.finished
 	
 	queue_free()
-	
-
-
 
 
 func _set_frame(new_value) -> void:

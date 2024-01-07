@@ -17,6 +17,7 @@ var game
 
 @onready var sprite = $Sprite2D
 
+
 func _ready() -> void:
 	$CPUParticles2D.emitting = false # since this lets us turn it on faster
 	self.is_walking = true

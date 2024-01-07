@@ -4,6 +4,7 @@ enum {INITIAL, INPUT, TIME_TO_ANSWER, COUNT_DOWN}
 
 signal complex_progress_done
 
+# TODO BUG! one can spam enter after submitting letters lol
 
 var alph_matrix = "___________HE__________HE______________HE?__"
 var hint = "Phrase"

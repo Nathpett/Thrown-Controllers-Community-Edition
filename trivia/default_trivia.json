@@ -89,6 +89,14 @@
 		{
 			"question": "While Mario has been Nintendo's mascot for over forty years with over a hundred games spanning their systems, there are only two Nintendo consoles in which he doesn't appear in. Name at least one.",
 			"answer": "Color TV-Game and Pokémon Mini"
+		},
+		{
+			"question": "The Triforce is an arcade system board based on the GameCube's architecture. It's named as such because it was made through a collaboration between Nintendo and two other companies. Who were those other companies?",
+			"answer": "Sega and Namco"
+		},
+		{
+			"question": "In the mid 2000s, THQ published a tetralogy of Nicktoons platformers featuring the likes of SpongeBob SquarePants, Jimmy Neutron, and Danny Phantom. However, because of Nickelodeon's lack of popularity outside of the United States this series goes by a different name in Europe. What is the series called there? ",
+			"answer": "SpongeBob SquarePants and Friends"
 		}
 	],
 	"solo_video_game_challenge": [
@@ -376,6 +384,11 @@
 			"question": "Most kids run away from their families to join the circus. But for this young boy, he ran away from his family's traveling circus to join a camp of psychic trainees learning to become secret agents. Though despite his surname, this kid can't handle large bodies of water.",
 			"answer": "Razputin \"Raz\" Aquato",
 			"path": "raz.png"
+		},
+		{
+			"question": "While she's not necessarily the face of her franchise, this Lady of the Plains was your first ally for many western players. This popularity gave her several cameos and gacha alts, and she is either mother or aunt to \"our boy\".",
+			"answer": "Lyn",
+			"path": "lyn.png"
 		}
 	],
 	"screenshot": [
@@ -619,6 +632,34 @@
 				[
 					"Arty",
 					true
+				]
+			]
+		},
+		{
+			"theme": "9-Volt's Backloggery: Did these real life video games appear as microgames in the WarioWare series?",
+			"left": "WarioWare Microgame",
+			"right": "Not a Microgame",
+			"time_limit": 30,
+			"questions": [
+				[
+					"Wario Land 3",
+					false
+				],
+				[
+					"Fire Emblem Awakening",
+					false
+				],
+				[
+					"Freshly-Picked Tingle's Rosy Rupeeland",
+					false
+				],
+				[
+					"Kirby's Adventure",
+					true
+				],
+				[
+					"Shantae",
+					false
 				]
 			]
 		}

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8gq88xcykua6"]
+[gd_scene load_steps=20 format=3 uid="uid://c8gq88xcykua6"]
 
 [ext_resource type="PackedScene" uid="uid://wed28fwnfbng" path="res://category/abstract_categories/simple_question.tscn" id="1"]
 [ext_resource type="Script" path="res://category/concrete_categories/lightning_round.gd" id="2"]
@@ -9,6 +9,64 @@
 [ext_resource type="AudioStream" uid="uid://bll1w1ypl8s2u" path="res://assets/sound/free_sound/badoink__thunder.wav" id="6"]
 [ext_resource type="AudioStream" uid="uid://uyacj7sw21i3" path="res://assets/sound/music/08 - Telling the Truth 2007.mp3" id="7_j74mt"]
 [ext_resource type="Texture2D" uid="uid://dccgc8kt01yun" path="res://assets/img/x.png" id="7_y6jcg"]
+[ext_resource type="AudioStream" uid="uid://tt0aqswil7qq" path="res://assets/sound/free_sound/529384__beetlemuse__invalid-selection.wav" id="10_b625l"]
+[ext_resource type="AudioStream" uid="uid://c64ysxvmdttfs" path="res://assets/sound/free_sound/325805__wagna__collect.wav" id="11_hxtjl"]
+
+[sub_resource type="Gradient" id="Gradient_6jtae"]
+resource_local_to_scene = true
+colors = PackedColorArray(1, 1, 1, 0.729412, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_chubm"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_6jtae")
+
+[sub_resource type="Gradient" id="Gradient_00ayl"]
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.729412)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pjnwc"]
+gradient = SubResource("Gradient_00ayl")
+
+[sub_resource type="Animation" id="Animation_syjde"]
+resource_name = "LeftFlash"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/LeftFlash:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.0, 1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_c6bh4"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_jtgqo"]
+resource_name = "RightFlash"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/RightFlash:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.0, 1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4cjdi"]
+_data = {
+"LeftFlash": SubResource("Animation_syjde"),
+"RESET": SubResource("Animation_c6bh4"),
+"RightFlash": SubResource("Animation_jtgqo")
+}
 
 [node name="GameScene" instance=ExtResource("1")]
 script = ExtResource("2")
@@ -79,15 +137,41 @@ offset_bottom = -220.0
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Thunder" type="AudioStreamPlayer" parent="." index="1"]
+[node name="LeftFlash" type="TextureRect" parent="Control" index="7"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.2
+anchor_bottom = 1.0
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_chubm")
+expand_mode = 4
+
+[node name="RightFlash" type="TextureRect" parent="Control" index="8"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_pjnwc")
+expand_mode = 4
+
+[node name="FlashPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_4cjdi")
+}
+
+[node name="Thunder" type="AudioStreamPlayer" parent="." index="2"]
 stream = ExtResource("6")
 bus = &"sfx"
 
-[node name="Music" parent="." index="2"]
+[node name="Music" parent="." index="3"]
 stream = ExtResource("7_j74mt")
 autoplay = false
 
-[node name="OutOfTime" type="TextureRect" parent="." index="3"]
+[node name="OutOfTime" type="TextureRect" parent="." index="4"]
 modulate = Color(1, 1, 1, 0.682353)
 anchors_preset = 15
 anchor_right = 1.0
@@ -97,5 +181,11 @@ offset_bottom = -300.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_y6jcg")
+
+[node name="Incorrect" type="AudioStreamPlayer" parent="." index="5"]
+stream = ExtResource("10_b625l")
+
+[node name="Correct" type="AudioStreamPlayer" parent="." index="6"]
+stream = ExtResource("11_hxtjl")
 
 [editable path="Control/Dialogue"]
