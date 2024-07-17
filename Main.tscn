@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://dwvjrc2p4vudx"]
 
 [ext_resource type="Script" path="res://game/shader_cache.gd" id="1_acnib"]
-[ext_resource type="PackedScene" uid="uid://8nevuab6buxh" path="res://game/game.tscn" id="1_w0jp0"]
+[ext_resource type="Script" path="res://main.gd" id="1_uyevp"]
 [ext_resource type="Shader" path="res://avatar/soulless.gdshader" id="2_e6p75"]
 [ext_resource type="Material" uid="uid://b6mjvqj2em1kv" path="res://resources/black.tres" id="3_vb0np"]
 [ext_resource type="Texture2D" uid="uid://dynb1v3hfwm8i" path="res://icon.png" id="3_xud7x"]
@@ -26,6 +26,7 @@ shader_parameter/color = null
 shader_parameter/alpha = null
 
 [node name="Main" type="Node"]
+script = ExtResource("1_uyevp")
 
 [node name="ShaderCache" type="Node2D" parent="."]
 script = ExtResource("1_acnib")
@@ -58,4 +59,4 @@ texture = ExtResource("3_xud7x")
 material = SubResource("ShaderMaterial_m8lw6")
 texture = ExtResource("3_xud7x")
 
-[node name="Game" parent="." instance=ExtResource("1_w0jp0")]
+[node name="Transitions" type="CanvasLayer" parent="."]

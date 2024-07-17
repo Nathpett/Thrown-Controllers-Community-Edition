@@ -35,7 +35,7 @@ func _unpause() -> void:
 
 
 func _return_to_main_menu() -> void:
-	game.return_to_main_menu()
+	game.main.return_to_main_menu()
 	_unpause()
 
 

@@ -9,5 +9,4 @@ func _ready():
 
 
 func _on_button_pressed():
-	game.new_game("user://trivia/%s.json" % [$VBoxContainer/TriviaOptionButton.text], $VBoxContainer/ModeOptionButton.selected, $VBoxContainer/OnlyTriviaButton.button_pressed, $VBoxContainer/ShuffelTriviaButton.button_pressed)
-	game.change_scene_to_file(load("res://name_please/name_please.tscn").instantiate())
+	game.new_game($VBoxContainer/GameMode.text, "user://trivia/%s.json" % [$VBoxContainer/TriviaOptionButton.text], $VBoxContainer/ModeOptionButton.selected, $VBoxContainer/OnlyTriviaButton.button_pressed, $VBoxContainer/ShuffelTriviaButton.button_pressed)

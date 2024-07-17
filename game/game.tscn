@@ -10,7 +10,5 @@ script = ExtResource("1_u2nrk")
 
 [node name="Avatar" parent="." instance=ExtResource("3_kwcm4")]
 
-[node name="Transitions" type="CanvasLayer" parent="."]
-
 [node name="UI" type="CanvasLayer" parent="."]
 layer = 2

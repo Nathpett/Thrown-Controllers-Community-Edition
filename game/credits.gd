@@ -40,5 +40,5 @@ func _process(delta):
 	scroll = fmod(scroll, 1.0)
 	
 	if $Control/Control2.get_global_position().y + $Control/Control2/Text.size.y <= 0:
-		game.return_to_main_menu()
+		game.main.return_to_main_menu()
 		set_process(false)
