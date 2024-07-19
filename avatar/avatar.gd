@@ -24,9 +24,10 @@ func _ready() -> void:
 	
 	# look up the tree until we find the game lol
 	var parent = get_parent()
-	while not parent is Game and is_instance_valid(parent):
+	while not parent is Main and is_instance_valid(parent):
 		parent = parent.get_parent()
-	game = parent
+	game = parent.game
+
 
 func randomize_character() -> void: #_fruits[randi() % _fruits.size()]
 	self.reigon_vector = game.game_state.available_reigon_vectors[randi() % game.game_state.available_reigon_vectors.size()]

@@ -14,6 +14,7 @@ func _ready() -> void:
 	main = get_parent()
 	
 	avatar = load("res://avatar/avatar.tscn").instantiate()
+	avatar.game = self
 	add_child(avatar)
 	
 	var dir = DirAccess.open("user://")
@@ -26,12 +27,12 @@ func _ready() -> void:
 	dir.copy("res://trivia/default_trivia.json", "user://trivia/default_trivia.json") # REMINDER ABOUT RELOADING GAME WHEN TRIVIA HAS BEEN CHANGED!
 
 
-func _input(event):
-	if event.is_action_pressed("pause") and !main.current_scene.scene_disabled:
-		var pause_menu = load("res://pause_menu/pause_menu.tscn").instantiate()
-		pause_menu.game = self
-		$UI.add_child(pause_menu)
-		get_tree().paused = true
+func initiate(_trivia_path: String, _initial_mode: int, _fast_mode: bool, _shuffle_trivia: bool):
+	game_state = GameState.new()
+	game_state.initiate(_trivia_path, _initial_mode, _fast_mode, _shuffle_trivia)
+	_register_game_state()
+	
+	main.change_scene_to_file(load("res://name_please/name_please.tscn").instantiate())
 
 
 func load_game_state(file) -> void:
@@ -45,15 +46,10 @@ func load_game_state(file) -> void:
 		main.change_scene_to_file(load("res://panel_select/panel_select.tscn").instantiate())
 
 
-func play_category(category) -> void:
-	var category_path = "res://category/concrete_categories/%s.tscn" % [category]
-	main.change_scene_to_file(load(category_path).instantiate())
-
-
 func _on_play_selected_panel(selected_panel) -> void:
 	# remove selecte panel from panels
 	game_state.panels.erase(selected_panel.number)
-	play_category(selected_panel.category)
+	main.play_category(selected_panel.category)
 	if !game_state.panels.size():
 		game_state.refresh_cats(false)
 

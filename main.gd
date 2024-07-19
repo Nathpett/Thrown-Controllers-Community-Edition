@@ -21,15 +21,20 @@ func _ready():
 	randomize()
 
 
-func new_game(_game_mode: String, trivia_path: String, initial_mode: int, _fast_mode: bool, _shuffle_trivia: bool) -> void:
-	game = load("res://game/game.tscn").instantiate()
-	# TODO NEXT 
+func _input(event):
+	if event.is_action_pressed("pause") and !current_scene.scene_disabled:
+		var pause_menu = load("res://pause_menu/pause_menu.tscn").instantiate()
+		pause_menu.main = self
+		$UI.add_child(pause_menu)
+		get_tree().paused = true
+
+
+func new_game(_game_mode: String, _trivia_path: String, _initial_mode: int, _fast_mode: bool, _shuffle_trivia: bool) -> void:
+	game = load("res://game/%s_game.tscn" % [_game_mode.to_lower()]).instantiate()
+		
+	add_child(game)
+	game.initiate(_trivia_path, _initial_mode, _fast_mode, _shuffle_trivia)
 	editor_mode = false
-	game_state = GameState.new()
-	game_state.initiate(trivia_path, initial_mode, _fast_mode, _shuffle_trivia)
-	_register_game_state()
-	
-	change_scene_to_file(load("res://name_please/name_please.tscn").instantiate())
 
 
 func change_scene_to_file(new_scene, transition = null) -> void:
@@ -57,21 +62,27 @@ func change_scene_to_file(new_scene, transition = null) -> void:
 	_show_message()
 
 
+func play_category(category) -> void:
+	var category_path = "res://category/concrete_categories/%s.tscn" % [category]
+	change_scene_to_file(load(category_path).instantiate())
+
+
 func return_to_main_menu() -> void:
 	# if there is a transition, destroy it
 	for child in transitions.get_children():
 		child.queue_free()
 	change_scene_to_file(load("res://main_menu/main_menu.tscn").instantiate())
+	game.queue_free()
 
 
 # just connect it to everything lol whatever man...
 func _connect_game_scene(gs):
 	if gs is PanelSelect:
-		gs.connect("play_selected_panel", Callable(self, "_on_play_selected_panel"))
+		gs.connect("play_selected_panel", Callable(game, "_on_play_selected_panel"))
 	if gs is Category:
-		gs.connect("success", Callable(self, "_on_success"))
-		gs.connect("failure", Callable(self, "_on_failure"))
-		gs.connect("devil_deal", Callable(self, "_on_devil_deal"))
+		gs.connect("success", Callable(game, "_on_success"))
+		gs.connect("failure", Callable(game, "_on_failure"))
+		gs.connect("devil_deal", Callable(game, "_on_devil_deal"))
 
 
 func queue_user_message(message: String) -> void:

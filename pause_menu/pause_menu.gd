@@ -1,17 +1,19 @@
 extends Control
 
 var opened_menus: Array = []
+var main
 var game
 
 
 func _ready():
 	return_focus()
-	if game.current_scene is LeaderBoard:
+	game = main.game
+	if main.current_scene is LeaderBoard:
 		$VBoxContainer/LeaderBoard.text = "return"
 		return
-	if not (game.current_scene is PanelSelect or game.current_scene.name == "EndScreen"):
+	if not (main.current_scene is PanelSelect or main.current_scene.name == "EndScreen"):
 		$VBoxContainer/LeaderBoard.disabled = true
-	if game.editor_mode:
+	if main.editor_mode:
 		$VBoxContainer/GameplaySettings.disabled = true
 
 
@@ -35,7 +37,7 @@ func _unpause() -> void:
 
 
 func _return_to_main_menu() -> void:
-	game.main.return_to_main_menu()
+	main.return_to_main_menu()
 	_unpause()
 
 
@@ -73,9 +75,9 @@ func _on_quit_game_button_pressed():
 
 
 func _on_leader_board_pressed():
-	if game.current_scene is PanelSelect or game.current_scene.name == "EndScreen":
+	if main.current_scene is PanelSelect or main.current_scene.name == "EndScreen":
 		game.show_leaderboard()
-	if game.current_scene is LeaderBoard:
+	if main.current_scene is LeaderBoard:
 		game.return_to_panel_select(null, false)
 	_unpause()
 		

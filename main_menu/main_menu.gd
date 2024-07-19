@@ -11,6 +11,7 @@ var cursor_offset = Vector2(-10, 4)
 
 
 func _ready() -> void:
+	super._ready()
 	select(0)
 
 
@@ -27,7 +28,7 @@ func _input(event: InputEvent) -> void:
 			return
 		match selected_element.get_parsed_text():
 			"New Game!":
-				game.change_scene_to_file(load("res://main_menu/new_game_menu.tscn").instantiate())
+				main.change_scene_to_file(load("res://main_menu/new_game_menu.tscn").instantiate())
 			"Load Game":
 				scene_disabled = true
 				var load_menu = load("res://main_menu/load_game_menu.tscn").instantiate()
@@ -35,9 +36,9 @@ func _input(event: InputEvent) -> void:
 				add_child(load_menu)
 				load_menu.connect("tree_exited", Callable(self, "set").bind("scene_disabled", false))
 			"Editor":
-				game.change_scene_to_file(load("res://trivia_editor/trivia_editor.tscn").instantiate())
+				main.change_scene_to_file(load("res://trivia_editor/trivia_editor.tscn").instantiate())
 			"Credits":
-				game.change_scene_to_file(load("res://game/credits.tscn").instantiate())
+				main.change_scene_to_file(load("res://game/credits.tscn").instantiate())
 			"Exit":
 				get_tree().quit()
 

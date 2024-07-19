@@ -55,7 +55,7 @@ func complx_progress() -> void:
 	
 	# indexes will be saved in game if we're not in editor mode, if we are in editor mode they'll be saved locally in editor_trg_challenge_indexes
 	var challenge_idx
-	if !game.editor_mode:
+	if !game.main.editor_mode:
 		challenge_idx = game.game_state.trg_challenge_indexes[host]
 	else:
 		challenge_idx = editor_trg_challenge_indexes.get(host, 0)
@@ -64,7 +64,7 @@ func complx_progress() -> void:
 	challenge_idx += 1
 	challenge_idx %= host_challenges.size()
 	
-	if !game.editor_mode:
+	if !game.main.editor_mode:
 		game.game_state.trg_challenge_indexes[host] = challenge_idx
 	else:
 		editor_trg_challenge_indexes[host] = challenge_idx

@@ -2,6 +2,7 @@ extends Control
 
 
 var game = null
+var main = null
 
 @onready var timer_value = $VBoxContainer/Control3/TimerValue
 @onready var header_timer: Timer = $Timer
@@ -17,8 +18,9 @@ func _enter_tree() -> void:
 	var _node = self.get_parent()
 	
 	while _node:
-		if _node.name == "Game":
-			game = _node
+		if _node.name == "Main":
+			main = _node
+			game = main.game
 		_node = _node.get_parent()
 
 
@@ -30,10 +32,10 @@ func _process(_delta: float) -> void:
 
 
 func update_stats() -> void:
-	if game and !game.editor_mode:
+	if game and !main.editor_mode:
 		contestant_name_label.text = game.game_state.current_contestant_name
 		score_label.text = "SCORE:%s" % [game.game_state.current_contestant_score]
-		cat_title.text = game.current_scene.get_title().to_upper()
+		cat_title.text = main.current_scene.get_title().to_upper()
 
 
 func start_timer(time_limit: float) -> void:

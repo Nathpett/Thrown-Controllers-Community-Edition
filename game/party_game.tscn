@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnohf7c26ql65"]
+
+[ext_resource type="Script" path="res://game/party_game.gd" id="1_yq8yj"]
+[ext_resource type="PackedScene" uid="uid://bqnc3edh82klo" path="res://avatar/avatar.tscn" id="2_o6ahm"]
+
+[node name="PartyGame" type="Node"]
+script = ExtResource("1_yq8yj")
+
+[node name="Avatar" parent="." instance=ExtResource("2_o6ahm")]

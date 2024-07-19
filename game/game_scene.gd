@@ -9,12 +9,20 @@ signal play_selected_panel(number)
 
 
 var scene_disabled = true
+var main = null
 var game = null
 
 
 func _ready() -> void:
 	if get_tree().current_scene.name == self.name:
 		call_deferred("enable")
+	
+	var _node = self.get_parent()
+	while _node:
+		if _node.name == "Main":
+			main = _node
+			game = main.game
+		_node = _node.get_parent()
 
 
 func enable() -> void:

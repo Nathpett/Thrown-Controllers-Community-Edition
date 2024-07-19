@@ -8,6 +8,7 @@ var scroll: float = 0
 
 
 func _ready():
+	super._ready()
 	var credits_json = load("res://main_menu/credits.json")
 	
 	text.append_text("[center]")
@@ -40,5 +41,5 @@ func _process(delta):
 	scroll = fmod(scroll, 1.0)
 	
 	if $Control/Control2.get_global_position().y + $Control/Control2/Text.size.y <= 0:
-		game.main.return_to_main_menu()
+		main.return_to_main_menu()
 		set_process(false)
