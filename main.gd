@@ -53,7 +53,8 @@ func change_scene_to_file(new_scene, transition = null) -> void:
 	current_scene = new_scene
 	current_scene.game = self
 	$GameScenes.add_child(new_scene)
-	_connect_game_scene(current_scene)
+	if game:
+		game.connect_game_scene(current_scene)
 	
 	# wait until transition is complete to actually allow input
 	await transition.finished
@@ -73,16 +74,6 @@ func return_to_main_menu() -> void:
 		child.queue_free()
 	change_scene_to_file(load("res://main_menu/main_menu.tscn").instantiate())
 	game.queue_free()
-
-
-# just connect it to everything lol whatever man...
-func _connect_game_scene(gs):
-	if gs is PanelSelect:
-		gs.connect("play_selected_panel", Callable(game, "_on_play_selected_panel"))
-	if gs is Category:
-		gs.connect("success", Callable(game, "_on_success"))
-		gs.connect("failure", Callable(game, "_on_failure"))
-		gs.connect("devil_deal", Callable(game, "_on_devil_deal"))
 
 
 func queue_user_message(message: String) -> void:

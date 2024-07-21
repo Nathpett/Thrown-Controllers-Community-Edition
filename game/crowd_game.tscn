@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://8nevuab6buxh"]
 
-[ext_resource type="Script" path="res://game/game.gd" id="1_i82j8"]
+[ext_resource type="Script" path="res://game/crowd_game.gd" id="1_mifl8"]
 [ext_resource type="PackedScene" uid="uid://bqnc3edh82klo" path="res://avatar/avatar.tscn" id="2_arhsf"]
 
 [node name="CrowdGame" type="Node"]
-script = ExtResource("1_i82j8")
+script = ExtResource("1_mifl8")
 
 [node name="Avatar" parent="." instance=ExtResource("2_arhsf")]
