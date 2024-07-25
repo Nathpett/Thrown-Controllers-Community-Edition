@@ -1,9 +1,10 @@
 res://default_env.tres
-res://panel_select/numbered_panel.tscn
+res://panel_select/party_panel_select.tscn
 res://avatar/soulless.gdshader
 res://screen_transitions/wheel_transition.gdshader
+res://panel_select/numbered_panel.tscn
 res://Main.tscn
 res://game/crowd_game.tscn
 res://game/party_game.tscn
 res://panel_select/panel_select.tscn
-res://panel_select/party_panel_select.tscn
+res://panel_select/player_score_widget/earthbound_score.gd
