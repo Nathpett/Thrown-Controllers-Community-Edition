@@ -1,3 +1,4 @@
+class_name NamePlease
 extends GameScene
 
 var swapping:bool = true

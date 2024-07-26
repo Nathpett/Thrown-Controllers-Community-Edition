@@ -7,8 +7,6 @@ const AUTO_SAVE_LIMIT: int = 3
 
 enum Mode {RANDOM, DEBUG, JUST_ONE}
 
-
-
 @export var panels: Dictionary = {}
 @export var category_queue: Array = []
 @export var current_contestant_name: String = ""

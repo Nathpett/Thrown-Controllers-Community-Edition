@@ -28,10 +28,10 @@ func _ready() -> void:
 
 
 func initiate(_trivia_path: String, _initial_mode: int, _fast_mode: bool, _shuffle_trivia: bool):
-	game_state = GameState.new()
-	game_state.initiate(_trivia_path, _initial_mode, _fast_mode, _shuffle_trivia)
-	_register_game_state()
-	
+	pass
+
+
+func go_to_name_please() -> void:
 	main.change_scene_to_file(load("res://name_please/name_please.tscn").instantiate())
 
 

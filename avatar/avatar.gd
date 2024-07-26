@@ -2,11 +2,11 @@ class_name Avatar
 extends Node2D
 
 signal soulless
+signal done_moving
 
 const SPRITE_STEP: Vector2 = Vector2(68, 50) # size of each sharacters sprite sheet in the whole NPC sprite sheet
 
 enum Facing{UP, RIGHT, DOWN, LEFT}
-
 
 var contestant_name = ""
 var reigon_vector: Vector2: set = _set_reigon_vector
@@ -26,7 +26,8 @@ func _ready() -> void:
 	var parent = get_parent()
 	while not parent is Main and is_instance_valid(parent):
 		parent = parent.get_parent()
-	game = parent.game
+	if is_instance_valid(parent):
+		game = parent.game
 
 
 func randomize_character() -> void: #_fruits[randi() % _fruits.size()]
@@ -77,6 +78,7 @@ func move_to(_position, walk_speed: float = 100, end_facing: int = Facing.DOWN) 
 	await move_tween.finished
 	
 	self.facing = end_facing
+	emit_signal("done_moving")
 
 
 func become_soulless() -> void:

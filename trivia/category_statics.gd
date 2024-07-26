@@ -9,26 +9,27 @@ enum {
 	DEPENDANTS, # category is dependant on another category, and will be removed if that category is exhausted (e.g. devil deal will be removed if no brutal questions)
 	VIDEO_GAME_CHALLENGE,
 	NOT_SUBSTANTIVE,
-	YES_CONTENT # Trivia requires extra resource -- like an image or audio
+	YES_CONTENT, # Trivia requires extra resource -- like an image or audio
+	PARTY_VALUE
 	} 
 
 const CATEGORIES: Dictionary = {
-						"easy_question": {NO_DEVIL: true}, 
-						"solo_video_game_challenge": {VIDEO_GAME_CHALLENGE: true}, 
-						"brutal_question": {DESTINY_VALUE: 2, DEPENDANTS:["devils_deal"]}, 
-						"TheRunawayGuys_video_game_challenge": {DESTINY_VALUE: 2, VIDEO_GAME_CHALLENGE: true}, 
-						"audience_video_game_challenge": {VIDEO_GAME_CHALLENGE: true},
-						"leap_of_faith": {VIDEO_GAME_CHALLENGE: true},
-						"audio": {YES_CONTENT: true},
-						"dialogue": {YES_CONTENT: true},
-						"who_the_heck_is_that": {YES_CONTENT: true},
-						"screenshot": {YES_CONTENT: true},
-						"lightning_round": {},
-						"multiple_choice": {NO_DEVIL: true},
-						"devils_deal": {NO_DEVIL: true, NO_DESTINY: true, NO_TRIVIA: true, NOT_SUBSTANTIVE: true},
-						"choose_your_destiny": {NO_DESTINY: true, NO_TRIVIA: true, NOT_SUBSTANTIVE: true, NO_DEVIL: true},
-						"pick_your_poison": {NO_DESTINY: true, VIDEO_GAME_CHALLENGE: true},
-						"ericas_game": {},
+						"easy_question": {PARTY_VALUE: 5, NO_DEVIL: true}, 
+						"solo_video_game_challenge": {PARTY_VALUE: 5, VIDEO_GAME_CHALLENGE: true}, 
+						"brutal_question": {PARTY_VALUE: 5, DESTINY_VALUE: 2, DEPENDANTS:["devils_deal"]}, 
+						"TheRunawayGuys_video_game_challenge": {PARTY_VALUE: 5, DESTINY_VALUE: 2, VIDEO_GAME_CHALLENGE: true}, 
+						"audience_video_game_challenge": {PARTY_VALUE: 5, VIDEO_GAME_CHALLENGE: true},
+						"leap_of_faith": {PARTY_VALUE: 5, VIDEO_GAME_CHALLENGE: true},
+						"audio": {PARTY_VALUE: 5, YES_CONTENT: true},
+						"dialogue": {PARTY_VALUE: 5, YES_CONTENT: true},
+						"who_the_heck_is_that": {PARTY_VALUE: 5, YES_CONTENT: true},
+						"screenshot": {PARTY_VALUE: 5, YES_CONTENT: true},
+						"lightning_round": {PARTY_VALUE: 5},
+						"multiple_choice": {PARTY_VALUE: 5, NO_DEVIL: true},
+						"devils_deal": {PARTY_VALUE: 5, NO_DEVIL: true, NO_DESTINY: true, NO_TRIVIA: true, NOT_SUBSTANTIVE: true},
+						"choose_your_destiny": {PARTY_VALUE: 5, NO_DESTINY: true, NO_TRIVIA: true, NOT_SUBSTANTIVE: true, NO_DEVIL: true},
+						"pick_your_poison": {PARTY_VALUE: 5, NO_DESTINY: true, VIDEO_GAME_CHALLENGE: true},
+						"ericas_game": {PARTY_VALUE: 5},
 						}
 
 

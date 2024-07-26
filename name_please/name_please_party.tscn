@@ -1,0 +1,180 @@
+[gd_scene load_steps=19 format=3 uid="uid://by87l2yh04em3"]
+
+[ext_resource type="Script" path="res://name_please/name_please_party.gd" id="1_inr8n"]
+[ext_resource type="Texture2D" uid="uid://b02h1tr82lwnr" path="res://assets/name_please_tile.png" id="2_ls02f"]
+[ext_resource type="PackedScene" uid="uid://bcswq0s6eqrro" path="res://name_please/dialogue.tscn" id="3_v0k6a"]
+[ext_resource type="PackedScene" uid="uid://dcr2xj0octolv" path="res://name_please/input_dialogue.tscn" id="4_fkkit"]
+[ext_resource type="Texture2D" uid="uid://bt8jnqabo7ll5" path="res://assets/earthbound_dialouge_hud_Bill_Eager_tiny.png" id="5_dqumn"]
+[ext_resource type="Script" path="res://name_please/keyboard.gd" id="6_flcts"]
+[ext_resource type="Texture2D" uid="uid://ytj4f4nere2o" path="res://assets/select_blinker.png" id="7_gagq5"]
+[ext_resource type="AudioStream" uid="uid://x1yl3jwns50g" path="res://assets/sound/menu sounds/vertical_curson_movement.wav" id="8_e7l6j"]
+[ext_resource type="AudioStream" uid="uid://cmkauktl7t2o" path="res://assets/sound/menu sounds/horizontal_cursor_movement.wav" id="9_2not2"]
+[ext_resource type="AudioStream" uid="uid://3ddkadsr3go" path="res://assets/sound/menu sounds/ok.wav" id="10_g1p2n"]
+[ext_resource type="AudioStream" uid="uid://dht7f3wp0q381" path="res://assets/sound/menu sounds/type_letter.wav" id="11_wugrr"]
+[ext_resource type="AudioStream" uid="uid://b86bu5tsbgg4g" path="res://assets/sound/menu sounds/easter_egg_ok.wav" id="12_ebicm"]
+[ext_resource type="AudioStream" uid="uid://cpewh1jj7ki6c" path="res://assets/sound/menu sounds/backspace.wav" id="13_d4grv"]
+[ext_resource type="PackedScene" uid="uid://bqnc3edh82klo" path="res://avatar/avatar.tscn" id="14_ooxtd"]
+[ext_resource type="AudioStream" uid="uid://boyowh3dfva5" path="res://assets/sound/music/007- Earthbound - Your Name, Please.mp3" id="15_knjxc"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vg8d8"]
+texture = ExtResource("2_ls02f")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_u04o5"]
+sources/0 = SubResource("TileSetAtlasSource_vg8d8")
+
+[sub_resource type="AtlasTexture" id="1"]
+atlas = ExtResource("7_gagq5")
+region = Rect2(4, 0, 4, 8)
+
+[node name="NamePlease" type="Node"]
+script = ExtResource("1_inr8n")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="Control"]
+anchors_preset = 0
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -127.0
+offset_right = -127.0
+
+[node name="TileMap" type="TileMap" parent="Control/Control"]
+tile_set = SubResource("TileSet_u04o5")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 0, 0, 589824, 0, 0, 655360, 0, 0, 720896, 0, 0, 786432, 0, 0, 851968, 0, 0, 65537, 0, 0, 131073, 0, 0, 196609, 0, 0, 262145, 0, 0, 327681, 0, 0, 393217, 0, 0, 458753, 0, 0, 524289, 0, 0, 589825, 0, 0, 655361, 0, 0, 720897, 0, 0, 786433, 0, 0, 851969, 0, 0, 65538, 0, 0, 131074, 0, 0, 196610, 0, 0, 262146, 0, 0, 327682, 0, 0, 393218, 0, 0, 458754, 0, 0, 524290, 0, 0, 589826, 0, 0, 655362, 0, 0, 720898, 0, 0, 786434, 0, 0, 851970, 0, 0, 65539, 0, 0, 131075, 0, 0, 196611, 0, 0, 262147, 0, 0, 327683, 0, 0, 393219, 0, 0, 458755, 0, 0, 524291, 0, 0, 589827, 0, 0, 655363, 0, 0, 720899, 0, 0, 786435, 0, 0, 851971, 0, 0, 65540, 0, 0, 131076, 0, 0, 196612, 0, 0, 262148, 0, 0, 327684, 0, 0, 393220, 0, 0, 458756, 0, 0, 524292, 0, 0, 589828, 0, 0, 655364, 0, 0, 720900, 0, 0, 786436, 0, 0, 851972, 0, 0, 65541, 0, 0, 131077, 0, 0, 196613, 0, 0, 262149, 0, 0, 327685, 0, 0, 393221, 0, 0, 458757, 0, 0, 524293, 0, 0, 589829, 0, 0, 655365, 0, 0, 720901, 0, 0, 786437, 0, 0, 851973, 0, 0, 65542, 0, 0, 131078, 0, 0, 196614, 0, 0, 262150, 0, 0, 327686, 0, 0, 393222, 0, 0, 458758, 0, 0, 524294, 0, 0, 589830, 0, 0, 655366, 0, 0, 720902, 0, 0, 786438, 0, 0, 851974, 0, 0, 65543, 0, 0, 131079, 0, 0, 196615, 0, 0, 262151, 0, 0, 327687, 0, 0, 393223, 0, 0, 458759, 0, 0, 524295, 0, 0, 589831, 0, 0, 655367, 0, 0, 720903, 0, 0, 786439, 0, 0, 851975, 0, 0, 65544, 0, 0, 131080, 0, 0, 196616, 0, 0, 262152, 0, 0, 327688, 0, 0, 393224, 0, 0, 458760, 0, 0, 524296, 0, 0, 589832, 0, 0, 655368, 0, 0, 720904, 0, 0, 786440, 0, 0, 851976, 0, 0, 65545, 0, 0, 131081, 0, 0, 196617, 0, 0, 262153, 0, 0, 327689, 0, 0, 393225, 0, 0, 458761, 0, 0, 524297, 0, 0, 589833, 0, 0, 655369, 0, 0, 720905, 0, 0, 786441, 0, 0, 851977, 0, 0, 65546, 0, 0, 131082, 0, 0, 196618, 0, 0, 262154, 0, 0, 327690, 0, 0, 393226, 0, 0, 458762, 0, 0, 524298, 0, 0, 589834, 0, 0, 655370, 0, 0, 720906, 0, 0, 786442, 0, 0, 851978, 0, 0, 65547, 0, 0, 131083, 0, 0, 196619, 0, 0, 262155, 0, 0, 327691, 0, 0, 393227, 0, 0, 458763, 0, 0, 524299, 0, 0, 589835, 0, 0, 655371, 0, 0, 720907, 0, 0, 786443, 0, 0, 851979, 0, 0, 65548, 0, 0, 131084, 0, 0, 196620, 0, 0, 262156, 0, 0, 327692, 0, 0, 393228, 0, 0, 458764, 0, 0, 524300, 0, 0, 589836, 0, 0, 655372, 0, 0, 720908, 0, 0, 786444, 0, 0, 851980, 0, 0, 65549, 0, 0, 131085, 0, 0, 196621, 0, 0, 262157, 0, 0, 327693, 0, 0, 393229, 0, 0, 458765, 0, 0, 524301, 0, 0, 589837, 0, 0, 655373, 0, 0, 720909, 0, 0, 786445, 0, 0, 851981, 0, 0, 65550, 0, 0, 131086, 0, 0, 196622, 0, 0, 262158, 0, 0, 327694, 0, 0, 393230, 0, 0, 458766, 0, 0, 524302, 0, 0, 589838, 0, 0, 655374, 0, 0, 720910, 0, 0, 786446, 0, 0, 851982, 0, 0, 65551, 0, 0, 131087, 0, 0, 196623, 0, 0, 262159, 0, 0, 327695, 0, 0, 393231, 0, 0, 458767, 0, 0, 524303, 0, 0, 589839, 0, 0, 655375, 0, 0, 720911, 0, 0, 786447, 0, 0, 851983, 0, 0)
+
+[node name="NameThisPerson" parent="Control/Control" instance=ExtResource("3_v0k6a")]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 32.0
+offset_right = 248.0
+offset_bottom = 64.0
+
+[node name="ProgressBlinker" parent="Control/Control/NameThisPerson" index="0"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 16.0
+offset_bottom = 7.0
+
+[node name="MarginContainer" parent="Control/Control/NameThisPerson" index="1"]
+layout_mode = 1
+anchors_preset = 15
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" parent="Control/Control/NameThisPerson/MarginContainer" index="0"]
+size_flags_vertical = 1
+text = "Please name the contestant."
+vertical_alignment = 1
+
+[node name="NameDialogue" parent="Control/Control" instance=ExtResource("4_fkkit")]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 32.0
+offset_right = 104.0
+offset_bottom = 64.0
+
+[node name="Keyboard" type="NinePatchRect" parent="Control/Control"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 72.0
+offset_right = 248.0
+offset_bottom = 200.0
+texture = ExtResource("5_dqumn")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+script = ExtResource("6_flcts")
+
+[node name="SecondTry" type="Control" parent="Control/Control/Keyboard"]
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Cursor" type="Sprite2D" parent="Control/Control/Keyboard/SecondTry"]
+texture = SubResource("1")
+
+[node name="Timer" type="Timer" parent="Control/Control/Keyboard/SecondTry/Cursor"]
+wait_time = 0.25
+autostart = true
+
+[node name="CursorVerticalSound" type="AudioStreamPlayer" parent="Control/Control/Keyboard"]
+stream = ExtResource("8_e7l6j")
+bus = &"sfx"
+
+[node name="CursorHorizontalSound" type="AudioStreamPlayer" parent="Control/Control/Keyboard"]
+stream = ExtResource("9_2not2")
+bus = &"sfx"
+
+[node name="OkSound" type="AudioStreamPlayer" parent="Control/Control/Keyboard"]
+stream = ExtResource("10_g1p2n")
+bus = &"sfx"
+
+[node name="TypeLetterSound" type="AudioStreamPlayer" parent="Control/Control/Keyboard"]
+stream = ExtResource("11_wugrr")
+bus = &"sfx"
+
+[node name="EasterEggOkSound" type="AudioStreamPlayer" parent="Control/Control/Keyboard"]
+stream = ExtResource("12_ebicm")
+bus = &"sfx"
+
+[node name="BackSpaceSound" type="AudioStreamPlayer" parent="Control/Control/Keyboard"]
+stream = ExtResource("13_d4grv")
+bus = &"sfx"
+
+[node name="Avatar" parent="Control" instance=ExtResource("14_ooxtd")]
+position = Vector2(64, 48)
+
+[node name="OnStagePosition" type="Marker2D" parent="Control"]
+position = Vector2(96, 48)
+
+[node name="OffStagePosition" type="Marker2D" parent="Control"]
+position = Vector2(64, 48)
+
+[node name="OutStagePosition" type="Marker2D" parent="Control"]
+position = Vector2(96, -16)
+
+[node name="BlackBar" type="ColorRect" parent="Control"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -326.0
+color = Color(0, 0, 0, 1)
+
+[node name="BlackBar2" type="ColorRect" parent="Control"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 328.0
+offset_right = 2.0
+color = Color(0, 0, 0, 1)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_knjxc")
+autoplay = true
+bus = &"music"
+
+[node name="PlayerOverlay" type="VBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.821
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[connection signal="timeout" from="Control/Control/Keyboard/SecondTry/Cursor/Timer" to="Control/Control/Keyboard" method="_on_Timer_timeout"]
+
+[editable path="Control/Control/NameThisPerson"]

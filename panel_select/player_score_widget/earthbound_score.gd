@@ -6,7 +6,8 @@ var score: int = 0: set = _set_score
 var shown_score: float = 0
 var children: Array
 var cooldown = 0
-var cooldown_reset = 4
+
+@export var cooldown_reset: int = 2
 
 func _ready():
 	children = get_children()
@@ -14,17 +15,6 @@ func _ready():
 	set_process(false)
 	
 	cooldown = cooldown_reset
-	
-	await get_tree().create_timer(3).timeout
-	self.score = 11
-	#await get_tree().create_timer(19).timeout
-	#self.score = 100
-	#await get_tree().create_timer(3).timeout
-	#self.score = 90
-	#await get_tree().create_timer(3).timeout
-	#self.score = 24
-	#await get_tree().create_timer(3).timeout
-	#self.score = 7
 
 
 func _process(delta):
@@ -37,14 +27,21 @@ func _process(delta):
 	var dir = sign(score - shown_score)
 	
 	_tic(dir)
-	shown_score += 0.25
+	shown_score += 0.25 * dir # TODO REFACTOR SO IT CAN PICK UP FROM ANYWHERE
 	
-	if score == floor(shown_score):
+	var r_score = 0
+	if dir == 1:
+		r_score = floor(shown_score)
+	else:
+		r_score = ceil(shown_score)
+	
+	if score == r_score:
 		set_process(false)
 
 
 func _tic(dir: int) -> void:
-	var cur_value = str(floor(shown_score)).reverse()
+	var cur_value: String = '%03d' % floor(shown_score) # TODO possible to insert variable instead of 3?
+	cur_value = cur_value.reverse()
 	
 	if shown_score == 9:
 		pass
@@ -52,7 +49,8 @@ func _tic(dir: int) -> void:
 	var n = int(cur_value[0]) 
 	var i = 1 # Number for digits from the right that need changing.
 	while (n + dir == -1 or n + dir == 10) and i < len(cur_value):
-		n = int(cur_value[i])
+		if i < len(cur_value):
+			n = int(cur_value[i])
 		i += 1
 	
 	var children_to_change = children.slice(0, i)
@@ -60,13 +58,8 @@ func _tic(dir: int) -> void:
 	for child in children_to_change:
 		var texture: Texture = child.get_texture()
 		var cur_frame = texture.region.position.x
-		var next_x = ((int(cur_frame / 8) + 1) % 40)  * 8
+		var next_x = posmod(int(cur_frame / 8) + 1 * dir, 40)  * 8
 		texture.set_region(Rect2(Vector2(next_x, 0), REGION_SIZE))
-		print(shown_score)
-		
-		i -= 1
-	
-	
 
 
 func _set_score(_score) -> void:
