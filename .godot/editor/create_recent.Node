@@ -1,7 +1,9 @@
+Sprite2D
+ColorRect
+Control
+GameScene
 Label
 VBoxContainer
-Control
-ColorRect
 Avatar
 TextureRect
 HBoxContainer
@@ -10,5 +12,3 @@ Node
 AudioStreamPlayer
 AnimationPlayer
 SubViewport
-Sprite2D
-CenterContainer

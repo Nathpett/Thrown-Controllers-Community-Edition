@@ -42,7 +42,8 @@ func _set_reigon_vector(new_reigon_vector) -> void:
 # actually remove the reigon vector from available_reigon_vectors
 func confirm_character() -> void:
 	var idx = game.game_state.available_reigon_vectors.find(reigon_vector)
-	game.game_state.available_reigon_vectors.remove_at(idx)
+	if idx != -1:
+		game.game_state.available_reigon_vectors.remove_at(idx)
 
 
 func advance_animation() -> void:

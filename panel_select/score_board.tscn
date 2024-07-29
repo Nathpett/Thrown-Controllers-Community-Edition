@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctb3qqhe3qjv0"]
+
+[ext_resource type="Script" path="res://panel_select/score_board.gd" id="1_p1ih2"]
+[ext_resource type="Texture2D" uid="uid://ndh6876vsopr" path="res://assets/img/spotlight.png" id="2_6nql8"]
+[ext_resource type="AudioStream" uid="uid://c143lwvem2jlj" path="res://assets/sound/free_sound/spotlight_reidmangan.wav" id="3_2getg"]
+
+[node name="ScoreBoard" type="Control"]
+layout_mode = 3
+anchor_top = 0.643
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_p1ih2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.215686, 0.215686, 0.215686, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 17
+alignment = 1
+
+[node name="Spotlight" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.188235)
+position = Vector2(43, -65.032)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_6nql8")
+
+[node name="SpotLightSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2getg")
+bus = &"sfx"

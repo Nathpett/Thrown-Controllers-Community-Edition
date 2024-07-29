@@ -20,36 +20,22 @@ func go_to_name_please() -> void:
 	main.change_scene_to_file(load("res://name_please/name_please_party.tscn").instantiate())
 
 
-func _on_devil_deal(_outcome) -> void:
-	pass
-
-
 func _on_success() -> void:
-	pass
+	super._on_success()
 
 
+# TODO CAche the question, allow other player to answer
 func _on_failure() -> void:
-	pass
+	#super._on_failure() # TODO STILL HAVE TO DO THIS ALL
+	#
+	var transition = load("res://screen_transitions/failure_transition.tscn").instantiate()
+	main.change_scene_to_file(load("res://game/game_steal.tscn").instantiate(), transition)
+	#main.change_scene_to_file(load("res://panel_select/party_panel_select.gd").instantiate(), transition)
 
 
-func _on_play_selected_panel(_selected_panel) -> void:
-	pass
-
-
-func _on_panels_changed() -> void:
-	pass
-
-
-func enter_devil_state() -> void:
-	pass
-
-
-func exit_devil_state() -> void:
-	pass
-
-
-func return_to_panel_select(_transition = null, _will_auto_save: bool = true) -> void:
-	main.change_scene_to_file(load("res://panel_select/party_panel_select.tscn").instantiate())
+func return_to_panel_select(transition = null, _will_auto_save: bool = true) -> void:
+	game_state.cycle_player()
+	main.change_scene_to_file(load("res://panel_select/party_panel_select.tscn").instantiate(), transition)
 
 
 func show_leaderboard() -> void:

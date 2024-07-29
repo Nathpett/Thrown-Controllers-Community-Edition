@@ -18,7 +18,7 @@ func _ready():
 	current_scene.main = self
 	current_scene.enable()
 	
-	randomize()
+	#randomize()
 
 
 func _input(event):

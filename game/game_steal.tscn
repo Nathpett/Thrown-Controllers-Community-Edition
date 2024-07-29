@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://drkqh1qhkmwwe"]
+
+[ext_resource type="Script" path="res://game/game_steal.gd" id="1_brkr3"]
+[ext_resource type="PackedScene" uid="uid://ctb3qqhe3qjv0" path="res://panel_select/score_board.tscn" id="2_1hghr"]
+
+[node name="GameSteal" type="Node"]
+script = ExtResource("1_brkr3")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ScoreBoard" parent="Control" instance=ExtResource("2_1hghr")]
+layout_mode = 1

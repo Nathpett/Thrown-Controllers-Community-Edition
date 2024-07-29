@@ -23,6 +23,7 @@ enum Mode {RANDOM, DEBUG, JUST_ONE}
 @export var initial_trivia_set: String = ""
 @export var time_string: String = ""
 @export var trivia: Dictionary
+@export var current_category: String = ""
 
 
 func initiate(trivia_path: String, initial_mode: int, _fast_mode: bool = false, shuffle_trivia: bool = false) -> void:

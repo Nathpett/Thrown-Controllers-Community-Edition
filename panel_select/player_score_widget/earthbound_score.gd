@@ -39,6 +39,20 @@ func _process(delta):
 		set_process(false)
 
 
+func fast_set_score(_score: int) -> void:
+	score = _score
+	shown_score = score
+	var cur_value: String = '%03d' % floor(shown_score)
+	cur_value = cur_value.reverse()
+	
+	var i = 0
+	for child in children:
+		var texture: Texture = child.get_texture()
+		var new_x = 32 * int(cur_value[i])
+		texture.set_region(Rect2(Vector2(new_x, 0), REGION_SIZE))
+		i += 1
+
+
 func _tic(dir: int) -> void:
 	var cur_value: String = '%03d' % floor(shown_score) # TODO possible to insert variable instead of 3?
 	cur_value = cur_value.reverse()

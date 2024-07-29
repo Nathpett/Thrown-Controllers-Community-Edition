@@ -10,10 +10,16 @@ func _ready():
 
 
 func _input(event):
+	if scene_disabled:
+		return
+	
 	if event.is_action_pressed("left_person"):
-		next_person(1)
-	if event.is_action_pressed("right_person"):
 		next_person(-1)
+	if event.is_action_pressed("right_person"):
+		next_person(1)
+	if event.is_action_pressed("registration_complete"):
+		disable()
+		main.change_scene_to_file(load("res://panel_select/party_panel_select.tscn").instantiate())
 
 
 func next_person(dir: int):
@@ -24,14 +30,20 @@ func next_person(dir: int):
 	if dir:
 		call_out_avatar()
 		await avatar.done_moving
-		call_in_avatar()
-	
+		
 	swapping = false
 	
 	cur_enum += dir
 	cur_enum = posmod(cur_enum, game.game_state.players.size())
 	
-	name_this_person.text = "This is %s" % [game.game_state.players[cur_enum]]
+	if dir:
+		call_in_avatar() 
+	
+	var default_vector = game.game_state.available_reigon_vectors[0]
+	avatar.reigon_vector = game.game_state.players[cur_enum].get("reigon_vector", default_vector)
+	
+	name_this_person.text = "This is %s" % [game.game_state.players[cur_enum]["name"]]
+	$Control/Control/NameDialogue.clear()
 
 
 func _on_ok(contestant_name) -> void:

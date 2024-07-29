@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6o2rsbxc30ws"]
+[gd_scene load_steps=7 format=3 uid="uid://c6o2rsbxc30ws"]
 
 [ext_resource type="Script" path="res://panel_select/party_panel_select.gd" id="1_bl8y5"]
 [ext_resource type="PackedScene" uid="uid://bt4f4wcpotw20" path="res://panel_select/score_header.tscn" id="2_mjhye"]
-[ext_resource type="PackedScene" uid="uid://cfet8mnmyc3uy" path="res://panel_select/player_score_widget/player_score_widget.tscn" id="2_tebjk"]
+[ext_resource type="PackedScene" uid="uid://ctb3qqhe3qjv0" path="res://panel_select/score_board.tscn" id="2_pvwl5"]
+[ext_resource type="Script" path="res://panel_select/score_board.gd" id="3_2el7i"]
 [ext_resource type="AudioStream" uid="uid://c143lwvem2jlj" path="res://assets/sound/free_sound/spotlight_reidmangan.wav" id="3_u55p1"]
+[ext_resource type="AudioStream" uid="uid://1y57mjsg03fw" path="res://assets/sound/music/A4 - Childishly fresh eyes (8-BIT) [E189KUOWNWs].mp3" id="4_14n8r"]
 
 [node name="Node" type="Node"]
 script = ExtResource("1_bl8y5")
@@ -43,34 +45,9 @@ anchor_bottom = 0.339
 offset_top = 0.0639954
 offset_bottom = 0.0639954
 
-[node name="ScoreBoard" type="Control" parent="Control"]
+[node name="ScoreBoard" parent="Control" instance=ExtResource("2_pvwl5")]
 layout_mode = 1
-anchor_top = 0.643
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="ColorRect" type="ColorRect" parent="Control/ScoreBoard"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.215686, 0.215686, 0.215686, 1)
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScoreBoard"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 17
-alignment = 1
-
-[node name="PlayerScoreWidget" parent="Control/ScoreBoard/HBoxContainer" instance=ExtResource("2_tebjk")]
-layout_mode = 2
+script = ExtResource("3_2el7i")
 
 [node name="Header" parent="." instance=ExtResource("2_mjhye")]
 
@@ -83,4 +60,8 @@ stream = ExtResource("3_u55p1")
 bus = &"sfx"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_14n8r")
+volume_db = -2.569
 bus = &"music"
+
+[editable path="Control/ScoreBoard"]

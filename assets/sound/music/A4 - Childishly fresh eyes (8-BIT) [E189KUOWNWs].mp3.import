@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://1y57mjsg03fw"
+path="res://.godot/imported/A4 - Childishly fresh eyes (8-BIT) [E189KUOWNWs].mp3-7caef3b4794ea61c20c992a3a21a81dd.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/music/A4 - Childishly fresh eyes (8-BIT) [E189KUOWNWs].mp3"
+dest_files=["res://.godot/imported/A4 - Childishly fresh eyes (8-BIT) [E189KUOWNWs].mp3-7caef3b4794ea61c20c992a3a21a81dd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

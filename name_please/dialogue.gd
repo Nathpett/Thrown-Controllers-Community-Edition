@@ -17,6 +17,10 @@ func type_char(new_char) -> void:
 		label.text[indx + 1] = "@"
 
 
+func clear() -> void:
+	label.text = "@-----"
+
+
 func backspace() -> void:
 	var indx = label.text.find("@")
 	if indx == 0: # yah I know I can just do if index, but I actually want to point out that index is 0 so we can't do anything

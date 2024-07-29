@@ -10,6 +10,7 @@ enum {
 	VIDEO_GAME_CHALLENGE,
 	NOT_SUBSTANTIVE,
 	YES_CONTENT, # Trivia requires extra resource -- like an image or audio
+	CROWD_ONLY,
 	PARTY_VALUE
 	} 
 
@@ -85,3 +86,6 @@ static func is_not_substantive(cat) -> bool:
 
 static func is_substantive(cat) -> bool:
 	return !CATEGORIES[cat].get(NOT_SUBSTANTIVE, false)
+
+static func get_party_value(cat) -> int:
+	return CATEGORIES[cat].get(PARTY_VALUE, 10)
