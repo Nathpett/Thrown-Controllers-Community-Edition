@@ -24,7 +24,8 @@ enum Mode {RANDOM, DEBUG, JUST_ONE}
 @export var time_string: String = ""
 @export var trivia: Dictionary
 @export var current_category: String = ""
-
+@export var use_cached: bool :set = _set_use_cached
+@export var cached_trivia_data: Dictionary
 
 func initiate(trivia_path: String, initial_mode: int, _fast_mode: bool = false, shuffle_trivia: bool = false) -> void:
 	trivia = load(trivia_path).data
@@ -100,10 +101,13 @@ func pop_trivia_data(_category_type: String):
 	if !CategoryStatics.has_trivia_data(_category_type):
 		return null
 	
-#	var trivia_data = trivia.get(_category_type)[0]
-	var trivia_data = trivia.get(_category_type).pop_front()
+	if use_cached:
+		return cached_trivia_data.duplicate() 
+	else:
+		var trivia_data = trivia.get(_category_type).pop_front()
+		cached_trivia_data = trivia_data.duplicate(true)
 	
-	return trivia_data
+		return trivia_data
 
 
 func deposit_trivia_data(_category_type: String, data):
@@ -225,3 +229,7 @@ func _exhaust_category(cat: String) -> void:
 
 func _is_auto_save(file_string: String) -> bool:
 	return file_string.left(9) == "auto_save"
+
+
+func _set_use_cached(_use_cached: bool) -> void:
+	use_cached = _use_cached

@@ -1,13 +1,10 @@
 res://default_env.tres
 res://panel_select/party_panel_select.tscn
+res://game/party_game.gd
+res://game/party_game_state.gd
 res://panel_select/player_score_widget/player_score_widget.tscn
 res://panel_select/player_score_widget/counter.tscn
-res://panel_select/party_panel_select.gd
-res://game/party_game.gd
-res://game/game_steal.gd
-res://panel_select/score_board.gd
 res://game/game_steal.tscn
 res://panel_select/score_board.tscn
 res://panel_select/numbered_panel.tscn
-res://game/party_game_state.gd
-res://name_please/name_please_party.gd
+res://category/concrete_categories/choose_your_destiny.gd

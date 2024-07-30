@@ -11,7 +11,8 @@ enum {
 	NOT_SUBSTANTIVE,
 	YES_CONTENT, # Trivia requires extra resource -- like an image or audio
 	CROWD_ONLY,
-	PARTY_VALUE
+	PARTY_VALUE,
+	NO_STEAL, # Trvia cannot be stolen in party mode
 	} 
 
 const CATEGORIES: Dictionary = {
@@ -25,12 +26,12 @@ const CATEGORIES: Dictionary = {
 						"dialogue": {PARTY_VALUE: 5, YES_CONTENT: true},
 						"who_the_heck_is_that": {PARTY_VALUE: 5, YES_CONTENT: true},
 						"screenshot": {PARTY_VALUE: 5, YES_CONTENT: true},
-						"lightning_round": {PARTY_VALUE: 5},
-						"multiple_choice": {PARTY_VALUE: 5, NO_DEVIL: true},
+						"lightning_round": {NO_STEAL: true, PARTY_VALUE: 5},
+						"multiple_choice": {NO_STEAL: true, PARTY_VALUE: 5, NO_DEVIL: true},
 						"devils_deal": {PARTY_VALUE: 5, NO_DEVIL: true, NO_DESTINY: true, NO_TRIVIA: true, NOT_SUBSTANTIVE: true},
 						"choose_your_destiny": {PARTY_VALUE: 5, NO_DESTINY: true, NO_TRIVIA: true, NOT_SUBSTANTIVE: true, NO_DEVIL: true},
 						"pick_your_poison": {PARTY_VALUE: 5, NO_DESTINY: true, VIDEO_GAME_CHALLENGE: true},
-						"ericas_game": {PARTY_VALUE: 5},
+						"ericas_game": {NO_STEAL: true, PARTY_VALUE: 5},
 						}
 
 
@@ -89,3 +90,6 @@ static func is_substantive(cat) -> bool:
 
 static func get_party_value(cat) -> int:
 	return CATEGORIES[cat].get(PARTY_VALUE, 10)
+
+static func can_steal(cat) -> bool:
+	return !CATEGORIES[cat].get(NO_STEAL, false)

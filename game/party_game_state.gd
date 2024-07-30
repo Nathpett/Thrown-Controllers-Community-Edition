@@ -15,6 +15,7 @@ enum Players{DAD, SAV, SHEN, ALEX, NATE}
 @export var playing_players: Array = []
 @export var active_player_idx: int = -1
 @export var active_player: int
+@export var pre_game_steal_active_player_idx: int = -1 # TODO NEXT ME
 
 
 func initiate(trivia_path: String, initial_mode: int, _fast_mode: bool = false, shuffle_trivia: bool = false) -> void:
@@ -24,6 +25,7 @@ func initiate(trivia_path: String, initial_mode: int, _fast_mode: bool = false, 
 
 func iterate_player(dir: int = 1) -> void:
 	active_player_idx = posmod(active_player_idx + dir, playing_players.size())
+	active_player = playing_players[active_player_idx]
 
 
 func cycle_player() -> void:
@@ -61,6 +63,7 @@ func add_player(player_enum: int, player_name: String, reigon_vector: Vector2i):
 func on_success() -> void:
 	var base_value = CategoryStatics.get_party_value(current_category)
 	players[active_player]["score"] += base_value
+	
 	#var earned_points = 0 # TODO 
 	
 	#current_contestant_score += max(point_gain, temp_point_gain)
@@ -72,3 +75,12 @@ func on_failure() -> void:
 	#push_current_to_leaderboard()
 	#refresh_cats()
 	#current_contestant_score = 0
+
+
+func _set_use_cached(_use_cached) -> void: # TODO NEXT HERE
+	if _use_cached and !use_cached: # False to True
+		pre_game_steal_active_player_idx = active_player_idx
+	if use_cached and !_use_cached: # True to False
+		active_player_idx = pre_game_steal_active_player_idx
+		active_player = playing_players[active_player_idx]
+	use_cached = _use_cached

@@ -18,6 +18,7 @@ func initiate_questions() -> void:
 
 func complx_progress() -> void:
 	var cat_selected = pool[idx_select]
+	game.game_state.current_category = cat_selected
 	game.game_state.temp_point_gain = CategoryStatics.get_destiny_value(cat_selected)
 	main.play_category(cat_selected)
 

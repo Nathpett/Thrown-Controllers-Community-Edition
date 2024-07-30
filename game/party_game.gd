@@ -21,16 +21,26 @@ func go_to_name_please() -> void:
 
 
 func _on_success() -> void:
-	super._on_success()
+	var success_transition = load("res://screen_transitions/success_transition.tscn").instantiate()
+	if main.editor_mode:
+		main.change_scene_to_file(load("res://trivia_editor/trivia_editor.tscn").instantiate(), success_transition)
+		return
+	
+	game_state.on_success()
+	game_state.use_cached = false
+	return_to_panel_select(success_transition)
 
 
 # TODO CAche the question, allow other player to answer
 func _on_failure() -> void:
-	#super._on_failure() # TODO STILL HAVE TO DO THIS ALL
-	#
 	var transition = load("res://screen_transitions/failure_transition.tscn").instantiate()
-	main.change_scene_to_file(load("res://game/game_steal.tscn").instantiate(), transition)
-	#main.change_scene_to_file(load("res://panel_select/party_panel_select.gd").instantiate(), transition)
+	if CategoryStatics.can_steal(game_state.current_category):
+		game_state.use_cached = true
+		main.change_scene_to_file(load("res://game/game_steal.tscn").instantiate(), transition)
+		return
+	
+	super._on_failure() # TODO STILL HAVE TO DO THIS ALL
+	return_to_panel_select(transition)
 
 
 func return_to_panel_select(transition = null, _will_auto_save: bool = true) -> void:
