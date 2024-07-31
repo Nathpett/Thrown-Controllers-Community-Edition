@@ -22,7 +22,7 @@ func _input(event):
 		disable()
 		game.game_state.use_cached = false
 		game.return_to_panel_select()
-	
+
 
 func enable() -> void:
 	await get_tree().create_timer(0.1).timeout

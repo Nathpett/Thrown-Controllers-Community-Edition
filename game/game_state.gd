@@ -17,7 +17,7 @@ enum Mode {RANDOM, DEBUG, JUST_ONE}
 @export var point_gain: int = 1
 @export var temp_point_gain: int = 0 # set by choose your destiny
 @export var exhausted_categories: Array = []
-@export var leaderboard: Dictionary = {}
+@export var leaderboard: Dictionary = {}: get = _get_leaderboard
 @export var trg_challenge_indexes: Dictionary = {}
 @export var available_reigon_vectors: PackedVector2Array
 @export var initial_trivia_set: String = ""
@@ -241,3 +241,7 @@ func _get_current_contestant_name() -> String:
 
 func _get_current_contestant_score() -> int:
 	return current_contestant_score
+
+
+func _get_leaderboard() -> Dictionary:
+	return leaderboard

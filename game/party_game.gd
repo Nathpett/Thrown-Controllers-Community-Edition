@@ -2,7 +2,6 @@ class_name PartyGame
 extends Game
 
 
-# TODO NEXT START DESIGNING PARTY GAME
 
 func initiate(_trivia_path: String, _initial_mode: int, _fast_mode: bool, _shuffle_trivia: bool):
 	game_state = PartyGameState.new()
@@ -28,6 +27,8 @@ func _on_success() -> void:
 	
 	game_state.on_success()
 	game_state.use_cached = false
+	
+	
 	return_to_panel_select(success_transition)
 
 
@@ -39,18 +40,22 @@ func _on_failure() -> void:
 		main.change_scene_to_file(load("res://game/game_steal.tscn").instantiate(), transition)
 		return
 	
-	super._on_failure() #TODO THIS DOESN'T GET CALLED WHEN LEAVING STEAL MODE!!
+	super._on_failure()
 	return_to_panel_select(transition)
 
 
 func return_to_panel_select(transition = null, _will_auto_save: bool = true) -> void:
+	game_state.check_exhaust(main.current_scene.get_category_type())
+	
+	var cat_queue: Array = game_state.new_category_queue()
+	if cat_queue.all(Callable(CategoryStatics, "is_not_substantive")):
+		all_trivia_exhausted(transition)
+		return
+	
 	game_state.cycle_player()
 	main.change_scene_to_file(load("res://panel_select/party_panel_select.tscn").instantiate(), transition)
 
 
-func show_leaderboard() -> void:
-	pass
+func all_trivia_exhausted(transition = null) -> void:
+	main.change_scene_to_file(load("res://game/leader_board.tscn").instantiate(), transition)
 
-
-func all_trivia_exhausted(_transition = null) -> void:
-	pass

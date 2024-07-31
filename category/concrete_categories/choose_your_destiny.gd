@@ -41,7 +41,7 @@ func get_new_text() -> String:
 	var i = 0
 	for cat in pool:
 		var arrow = "->" if i == idx_select else "  "
-		new_text.append("%s%s (+%s)" % [arrow, cat.capitalize(), CategoryStatics.get_destiny_value(cat)])
+		new_text.append("%s%s (X%s)" % [arrow, cat.capitalize(), CategoryStatics.get_destiny_value(cat)])
 		i += 1
 	
 	return "\n".join(new_text)

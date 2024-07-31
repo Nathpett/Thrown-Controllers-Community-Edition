@@ -112,7 +112,7 @@ func _on_test_trivia(question: Dictionary) -> void:
 		category.override_trivia_data = trivia_data["TheRunawayGuys_video_game_challenge"]
 	else:
 		category.override_trivia_data = question
-	game.change_scene_to_file(category)
+	main.change_scene_to_file(category)
 
 
 func _on_trivia_json_button_item_selected(index):

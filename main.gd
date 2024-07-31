@@ -54,7 +54,7 @@ func change_scene_to_file(new_scene, transition = null) -> void:
 	current_scene = new_scene
 	current_scene.game = self
 	$GameScenes.add_child(new_scene)
-	if game:
+	if is_instance_valid(game):
 		game.connect_game_scene(current_scene)
 	
 	# wait until transition is complete to actually allow input
@@ -74,7 +74,8 @@ func return_to_main_menu() -> void:
 	for child in transitions.get_children():
 		child.queue_free()
 	change_scene_to_file(load("res://main_menu/main_menu.tscn").instantiate())
-	game.queue_free()
+	if is_instance_valid(game):
+		game.queue_free()
 
 
 func queue_user_message(message: String) -> void:

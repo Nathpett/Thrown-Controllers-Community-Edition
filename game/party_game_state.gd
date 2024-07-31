@@ -22,6 +22,7 @@ enum Players{DAD, SAV, SHEN, ALEX, NATE}
 func initiate(trivia_path: String, initial_mode: int, _fast_mode: bool = false, shuffle_trivia: bool = false) -> void:
 	super.initiate(trivia_path, initial_mode, _fast_mode, shuffle_trivia)
 	lagging_players = players.duplicate(true)
+	temp_point_gain = 1
 
 
 func iterate_player(dir: int = 1) -> void:
@@ -63,10 +64,10 @@ func add_player(player_enum: int, player_name: String, reigon_vector: Vector2i):
 
 func on_success() -> void:
 	players[active_player]["score"] += _get_trivia_value()
+	temp_point_gain = 1
 	#var earned_points = 0 # TODO 
 	
 	#current_contestant_score += max(point_gain, temp_point_gain)
-	#temp_point_gain = 0
 
 
 func on_failure() -> void:
@@ -77,7 +78,8 @@ func on_failure() -> void:
 
 func _get_trivia_value() -> int:
 	var base_value = CategoryStatics.get_party_value(current_category)
-	return base_value
+	
+	return base_value * temp_point_gain
 
 
 func _set_use_cached(_use_cached) -> void: 
@@ -98,3 +100,12 @@ func _get_current_contestant_name() -> String:
 
 func _get_current_contestant_score() -> int:
 	return players[active_player]["score"]
+
+
+func _get_leaderboard() -> Dictionary:
+	# {"JIMBO": {"score": 0, "devil_state": false, "reigon_vector": Vector2(1, 2)},
+	var _leaderboard = {}
+	for player_enum in playing_players:
+		var player_data = players[player_enum]
+		_leaderboard[player_data["name"]] = {"score": player_data["score"], "devil_state": false, "reigon_vector": player_data["reigon_vector"]}
+	return _leaderboard

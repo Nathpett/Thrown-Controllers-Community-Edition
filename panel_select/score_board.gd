@@ -1,6 +1,6 @@
 extends GameScene
 
-# TODO REFACTOR THING ABOUT GAME STATE SO THE BOARD UPDATES WHENEVER YOU RETURN TO THIS  SCENE NOT JSUT PANEL SELECT
+
 
 @export var is_highlight_active_player: bool = true
 
