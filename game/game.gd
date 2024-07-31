@@ -7,7 +7,7 @@ var black_fade_transition = preload("res://screen_transitions/black_fade.tscn")
 
 var main: Main
 var avatar: Avatar
-
+var mode: String = ""
 
 
 func _ready() -> void:

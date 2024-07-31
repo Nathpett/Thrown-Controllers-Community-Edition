@@ -22,11 +22,10 @@ var numbered_panels: Array = []
 
 func _ready() -> void:
 	super._ready()
-	
-	var val = 0
-	if game:
-		val = min(6.0, game.game_state.current_contestant_score)
-	$Music.play(val * 125.0/7.0)
+	#var val = 0
+	#if game:
+		#val = min(6.0, game.game_state.current_contestant_score)
+	#$Music.play(val * 125.0/7.0)
 
 
 func _input(event: InputEvent) -> void:

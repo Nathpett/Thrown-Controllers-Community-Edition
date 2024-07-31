@@ -31,7 +31,8 @@ func _input(event):
 
 func new_game(_game_mode: String, _trivia_path: String, _initial_mode: int, _fast_mode: bool, _shuffle_trivia: bool) -> void:
 	game = load("res://game/%s_game.tscn" % [_game_mode.to_lower()]).instantiate()
-		
+	game.mode = _game_mode
+	
 	add_child(game)
 	game.initiate(_trivia_path, _initial_mode, _fast_mode, _shuffle_trivia)
 	editor_mode = false

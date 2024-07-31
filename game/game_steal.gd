@@ -18,12 +18,17 @@ func _input(event):
 	if event.is_action_pressed("ui_select"):
 		disable()
 		main.play_category(game.game_state.current_category)
-
+	if event.is_action_pressed("registration_complete"):
+		disable()
+		game.game_state.use_cached = false
+		game.return_to_panel_select()
+	
 
 func enable() -> void:
 	await get_tree().create_timer(0.1).timeout
 	game.game_state.iterate_player(1)
 	_update_spotlight()
+	$Control/ScoreBoard.update_scores()
 	super.enable()
 
 

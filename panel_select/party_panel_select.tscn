@@ -60,6 +60,7 @@ bus = &"sfx"
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_14n8r")
 volume_db = -2.569
+autoplay = true
 bus = &"music"
 
 [editable path="Control/ScoreBoard"]

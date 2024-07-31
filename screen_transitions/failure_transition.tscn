@@ -41,7 +41,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_dyviw")
 theme_override_font_sizes/font_size = 30
-text = "GAME OVER"
+text = "INCORRECT"
 horizontal_alignment = 1
 vertical_alignment = 1
 

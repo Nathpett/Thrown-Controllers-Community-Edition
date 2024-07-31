@@ -16,22 +16,22 @@ enum {
 	} 
 
 const CATEGORIES: Dictionary = {
-						"easy_question": {PARTY_VALUE: 5, NO_DEVIL: true}, 
-						"solo_video_game_challenge": {PARTY_VALUE: 5, VIDEO_GAME_CHALLENGE: true}, 
-						"brutal_question": {PARTY_VALUE: 5, DESTINY_VALUE: 2, DEPENDANTS:["devils_deal"]}, 
-						"TheRunawayGuys_video_game_challenge": {PARTY_VALUE: 5, DESTINY_VALUE: 2, VIDEO_GAME_CHALLENGE: true}, 
-						"audience_video_game_challenge": {PARTY_VALUE: 5, VIDEO_GAME_CHALLENGE: true},
-						"leap_of_faith": {PARTY_VALUE: 5, VIDEO_GAME_CHALLENGE: true},
-						"audio": {PARTY_VALUE: 5, YES_CONTENT: true},
-						"dialogue": {PARTY_VALUE: 5, YES_CONTENT: true},
-						"who_the_heck_is_that": {PARTY_VALUE: 5, YES_CONTENT: true},
-						"screenshot": {PARTY_VALUE: 5, YES_CONTENT: true},
-						"lightning_round": {NO_STEAL: true, PARTY_VALUE: 5},
-						"multiple_choice": {NO_STEAL: true, PARTY_VALUE: 5, NO_DEVIL: true},
-						"devils_deal": {PARTY_VALUE: 5, NO_DEVIL: true, NO_DESTINY: true, NO_TRIVIA: true, NOT_SUBSTANTIVE: true},
-						"choose_your_destiny": {PARTY_VALUE: 5, NO_DESTINY: true, NO_TRIVIA: true, NOT_SUBSTANTIVE: true, NO_DEVIL: true},
-						"pick_your_poison": {PARTY_VALUE: 5, NO_DESTINY: true, VIDEO_GAME_CHALLENGE: true},
-						"ericas_game": {NO_STEAL: true, PARTY_VALUE: 5},
+						"easy_question": {PARTY_VALUE: 10, NO_DEVIL: true}, 
+						"solo_video_game_challenge": {PARTY_VALUE: 10, VIDEO_GAME_CHALLENGE: true}, 
+						"brutal_question": {PARTY_VALUE: 25, DESTINY_VALUE: 2, DEPENDANTS:["devils_deal"]}, 
+						"TheRunawayGuys_video_game_challenge": {PARTY_VALUE: 10, DESTINY_VALUE: 2, VIDEO_GAME_CHALLENGE: true}, 
+						"audience_video_game_challenge": {PARTY_VALUE: 10, VIDEO_GAME_CHALLENGE: true},
+						"leap_of_faith": {PARTY_VALUE: 10, VIDEO_GAME_CHALLENGE: true},
+						"audio": {PARTY_VALUE: 10, YES_CONTENT: true},
+						"dialogue": {PARTY_VALUE: 10, YES_CONTENT: true},
+						"who_the_heck_is_that": {PARTY_VALUE: 10, YES_CONTENT: true},
+						"screenshot": {PARTY_VALUE: 10, YES_CONTENT: true},
+						"lightning_round": {NO_STEAL: true, PARTY_VALUE: 10},
+						"multiple_choice": {NO_STEAL: true, PARTY_VALUE: 10, NO_DEVIL: true},
+						"devils_deal": {PARTY_VALUE: 10, NO_DEVIL: true, NO_DESTINY: true, NO_TRIVIA: true, NOT_SUBSTANTIVE: true},
+						"choose_your_destiny": {PARTY_VALUE: 10, NO_DESTINY: true, NO_TRIVIA: true, NOT_SUBSTANTIVE: true, NO_DEVIL: true},
+						"pick_your_poison": {PARTY_VALUE: 10, NO_DESTINY: true, VIDEO_GAME_CHALLENGE: true},
+						"ericas_game": {NO_STEAL: true, PARTY_VALUE: 10},
 						}
 
 

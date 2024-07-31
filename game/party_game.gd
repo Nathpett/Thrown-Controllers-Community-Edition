@@ -31,15 +31,15 @@ func _on_success() -> void:
 	return_to_panel_select(success_transition)
 
 
-# TODO CAche the question, allow other player to answer
 func _on_failure() -> void:
 	var transition = load("res://screen_transitions/failure_transition.tscn").instantiate()
 	if CategoryStatics.can_steal(game_state.current_category):
+		game_state.on_failure() # put this right here so that the first player wrong in the steal cycle doesn't lose points
 		game_state.use_cached = true
 		main.change_scene_to_file(load("res://game/game_steal.tscn").instantiate(), transition)
 		return
 	
-	super._on_failure() # TODO STILL HAVE TO DO THIS ALL
+	super._on_failure() #TODO THIS DOESN'T GET CALLED WHEN LEAVING STEAL MODE!!
 	return_to_panel_select(transition)
 
 

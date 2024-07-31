@@ -1,7 +1,6 @@
 extends HBoxContainer
 
 var REGION_SIZE = Vector2(9, 14)
-
 var score: int = 0: set = _set_score
 var shown_score: float = 0
 var children: Array
@@ -27,7 +26,7 @@ func _process(delta):
 	var dir = sign(score - shown_score)
 	
 	_tic(dir)
-	shown_score += 0.25 * dir # TODO REFACTOR SO IT CAN PICK UP FROM ANYWHERE
+	shown_score += 0.25 * dir
 	
 	var r_score = 0
 	if dir == 1:
@@ -54,7 +53,13 @@ func fast_set_score(_score: int) -> void:
 
 
 func _tic(dir: int) -> void:
-	var cur_value: String = '%03d' % floor(shown_score) # TODO possible to insert variable instead of 3?
+	var rounded_score
+	if dir == 1:
+		rounded_score = floor(shown_score)
+	else:
+		rounded_score = ceil(shown_score)
+	
+	var cur_value: String = '%03d' % rounded_score # TODO possible to insert variable instead of 3?
 	cur_value = cur_value.reverse()
 	
 	if shown_score == 9:

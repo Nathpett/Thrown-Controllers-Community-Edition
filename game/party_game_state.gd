@@ -15,7 +15,8 @@ enum Players{DAD, SAV, SHEN, ALEX, NATE}
 @export var playing_players: Array = []
 @export var active_player_idx: int = -1
 @export var active_player: int
-@export var pre_game_steal_active_player_idx: int = -1 # TODO NEXT ME
+@export var pre_game_steal_active_player_idx: int = -1
+@export var steal_penalty: bool = false
 
 
 func initiate(trivia_path: String, initial_mode: int, _fast_mode: bool = false, shuffle_trivia: bool = false) -> void:
@@ -61,9 +62,7 @@ func add_player(player_enum: int, player_name: String, reigon_vector: Vector2i):
 
 
 func on_success() -> void:
-	var base_value = CategoryStatics.get_party_value(current_category)
-	players[active_player]["score"] += base_value
-	
+	players[active_player]["score"] += _get_trivia_value()
 	#var earned_points = 0 # TODO 
 	
 	#current_contestant_score += max(point_gain, temp_point_gain)
@@ -71,16 +70,31 @@ func on_success() -> void:
 
 
 func on_failure() -> void:
-	pass
-	#push_current_to_leaderboard()
-	#refresh_cats()
-	#current_contestant_score = 0
+	if steal_penalty:
+		players[active_player]["score"] -= _get_trivia_value()
+		players[active_player]["score"] = max(players[active_player]["score"], 0)
 
 
-func _set_use_cached(_use_cached) -> void: # TODO NEXT HERE
+func _get_trivia_value() -> int:
+	var base_value = CategoryStatics.get_party_value(current_category)
+	return base_value
+
+
+func _set_use_cached(_use_cached) -> void: 
 	if _use_cached and !use_cached: # False to True
+		# players that try to steal and fail lose points
+		steal_penalty = true
 		pre_game_steal_active_player_idx = active_player_idx
 	if use_cached and !_use_cached: # True to False
+		steal_penalty = false
 		active_player_idx = pre_game_steal_active_player_idx
 		active_player = playing_players[active_player_idx]
 	use_cached = _use_cached
+
+
+func _get_current_contestant_name() -> String:
+	return players[active_player]["name"]
+
+
+func _get_current_contestant_score() -> int:
+	return players[active_player]["score"]

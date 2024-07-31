@@ -36,7 +36,6 @@ func _ready() -> void:
 	await tween.finished
 	
 	emit_signal("screen_covered")
-	emit_signal("finished")
 	
 	tween = create_tween()
 	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)

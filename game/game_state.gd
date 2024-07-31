@@ -9,8 +9,8 @@ enum Mode {RANDOM, DEBUG, JUST_ONE}
 
 @export var panels: Dictionary = {}
 @export var category_queue: Array = []
-@export var current_contestant_name: String = ""
-@export var current_contestant_score: int = 0
+@export var current_contestant_name: String = "": get = _get_current_contestant_name
+@export var current_contestant_score: int = 0: get = _get_current_contestant_score
 @export var current_contestant_avatar_reigon: Vector2
 @export var devil_state = false
 @export var fast_mode = false
@@ -24,7 +24,7 @@ enum Mode {RANDOM, DEBUG, JUST_ONE}
 @export var time_string: String = ""
 @export var trivia: Dictionary
 @export var current_category: String = ""
-@export var use_cached: bool :set = _set_use_cached
+@export var use_cached: bool = false :set = _set_use_cached
 @export var cached_trivia_data: Dictionary
 
 func initiate(trivia_path: String, initial_mode: int, _fast_mode: bool = false, shuffle_trivia: bool = false) -> void:
@@ -233,3 +233,11 @@ func _is_auto_save(file_string: String) -> bool:
 
 func _set_use_cached(_use_cached: bool) -> void:
 	use_cached = _use_cached
+
+
+func _get_current_contestant_name() -> String:
+	return current_contestant_name
+
+
+func _get_current_contestant_score() -> int:
+	return current_contestant_score
