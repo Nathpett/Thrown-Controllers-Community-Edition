@@ -12,8 +12,7 @@ var path: String
 
 func _ready() -> void:
 	super._ready()
-	if game:
-		ready_trivia()
+	ready_trivia()
 
 
 func _input(event: InputEvent) -> void:

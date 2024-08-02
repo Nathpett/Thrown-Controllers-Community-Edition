@@ -10,6 +10,7 @@ var current_file_name: String: set = _set_current_file_name
 
 
 func _ready():
+	super._ready()
 	var editiable_categories = CategoryStatics.CATEGORIES.keys()
 	editiable_categories = editiable_categories.filter(Callable(CategoryStatics, "is_substantive"))
 	for cat in editiable_categories:
@@ -17,20 +18,20 @@ func _ready():
 	
 	_populate_trivia_json_button()
 	
-	if game.editor_category:
-		current_category = game.editor_category
-		options_button.select(editiable_categories.find(game.editor_category))
+	if main.editor_category:
+		current_category = main.editor_category
+		options_button.select(editiable_categories.find(main.editor_category))
 	else:
 		current_category = options_button.text
 	
-	if game.editor_trivia_file_name:
-		current_file_name = game.editor_trivia_file_name
+	if main.editor_trivia_file_name:
+		current_file_name = main.editor_trivia_file_name
 		var files = DirAccess.open("user://trivia").get_files()
-		trivia_json_button.select(files.find(game.editor_trivia_file_name + ".json"))
+		trivia_json_button.select(files.find(main.editor_trivia_file_name + ".json"))
 	else:
 		current_file_name = trivia_json_button.text
 	
-	game.editor_mode = true
+	main.editor_mode = true
 
 
 func _exit_tree():
@@ -93,13 +94,13 @@ func _on_add_item_button_pressed():
 
 func _set_current_category(new_value: String) -> void:
 	current_category = new_value
-	game.editor_category = new_value
+	main.editor_category = new_value
 	_load_category()
 
 
 func _set_current_file_name(new_value: String) -> void:
 	current_file_name = new_value
-	game.editor_trivia_file_name = new_value
+	main.editor_trivia_file_name = new_value
 	var file = FileAccess.open("user://trivia/" + current_file_name + ".json", FileAccess.READ)
 	trivia_data = JSON.parse_string(file.get_as_text())
 	

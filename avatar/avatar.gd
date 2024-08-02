@@ -28,6 +28,8 @@ func _ready() -> void:
 		parent = parent.get_parent()
 	if is_instance_valid(parent):
 		game = parent.game
+	
+	sprite.region_rect = Rect2(reigon_vector * SPRITE_STEP, SPRITE_STEP)
 
 
 func randomize_character() -> void: #_fruits[randi() % _fruits.size()]
@@ -36,7 +38,8 @@ func randomize_character() -> void: #_fruits[randi() % _fruits.size()]
 
 func _set_reigon_vector(new_reigon_vector) -> void:
 	reigon_vector = new_reigon_vector
-	sprite.region_rect = Rect2(reigon_vector * SPRITE_STEP, SPRITE_STEP)
+	if is_instance_valid(get_parent()):
+		sprite.region_rect = Rect2(reigon_vector * SPRITE_STEP, SPRITE_STEP)
 
 
 # actually remove the reigon vector from available_reigon_vectors

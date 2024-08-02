@@ -45,7 +45,7 @@ func _on_failure() -> void:
 
 
 func return_to_panel_select(transition = null, _will_auto_save: bool = true) -> void:
-	game_state.check_exhaust(main.current_scene.get_category_type())
+	game_state.check_exhaust(game_state.current_category)
 	
 	var cat_queue: Array = game_state.new_category_queue()
 	if cat_queue.all(Callable(CategoryStatics, "is_not_substantive")):
@@ -59,3 +59,8 @@ func return_to_panel_select(transition = null, _will_auto_save: bool = true) -> 
 func all_trivia_exhausted(transition = null) -> void:
 	main.change_scene_to_file(load("res://game/leader_board.tscn").instantiate(), transition)
 
+
+func new_avatar():
+	var _avatar = load("res://avatar/avatar.tscn").instantiate()
+	_avatar.reigon_vector = game_state.players[game_state.active_player]["reigon_vector"]
+	return _avatar

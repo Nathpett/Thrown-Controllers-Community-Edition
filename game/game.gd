@@ -6,7 +6,7 @@ var game_state: GameState
 var black_fade_transition = preload("res://screen_transitions/black_fade.tscn")
 
 var main: Main
-var avatar: Avatar
+var avatar: Node
 var mode: String = ""
 
 
@@ -116,3 +116,7 @@ func connect_game_scene(gs):
 		gs.connect("success", Callable(self, "_on_success"))
 		gs.connect("failure", Callable(self, "_on_failure"))
 		gs.connect("devil_deal", Callable(self, "_on_devil_deal"))
+
+
+func new_avatar():
+	return avatar.duplicate()

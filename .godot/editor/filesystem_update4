@@ -1,10 +1,5 @@
 res://default_env.tres
 res://game/game_steal.tscn
-res://game/game_steal.gd
-res://game/party_game.gd
 res://screen_transitions/failure_transition.tscn
-res://game/game_state.gd
-res://game/game.gd
-res://game/leader_board.gd
-res://game/party_game_state.gd
-res://trivia_editor/trivia_editor.gd
+res://avatar/avatar.gd
+res://game/party_game.gd

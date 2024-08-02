@@ -19,7 +19,7 @@ func ready_trivia() -> void:
 	answer_indx = trivia_data["answer"]
 	question = trivia_data["question"]
 	
-	avatar = game.avatar.duplicate()
+	avatar = game.new_avatar()
 	avatar.visible = true
 	add_child(avatar)
 	

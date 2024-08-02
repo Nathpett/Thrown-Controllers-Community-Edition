@@ -4,7 +4,7 @@ var avatar: Avatar
 var selected_element
 
 func initiate_questions() -> void:
-	avatar = game.avatar.duplicate()
+	avatar = game.new_avatar()
 	avatar.apply_scale(3 * Vector2.ONE)
 	avatar.position = Vector2(-50,$Control.size.y/2)
 	avatar.visible = true
