@@ -88,3 +88,7 @@ func queue_user_message(message: String) -> void:
 func _show_message() -> void:
 	if is_instance_valid(msgbox):
 		msgbox.visible = true
+
+
+func _return_editor() -> void:
+	change_scene_to_file(load("res://trivia_editor/trivia_editor.tscn").instantiate())

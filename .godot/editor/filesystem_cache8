@@ -1,7 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1722562792
+::res://::1722880352
 default_bus_layout.tres::AudioBusLayout::5830074746750912054::1684948742::0::1::::<><>::
-default_env.tres::Environment::6807410154984247636::1722564962::0::1::::<><>::
+default_env.tres::Environment::6807410154984247636::1722564980::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1690514259::0::1::::<><>::
 global.gd::GDScript::-1::1685541261::0::1::::<>Node<>::
 icon.png::CompressedTexture2D::8870739503399637242::1678584902::1682347311::1::::<><>::
@@ -143,7 +143,7 @@ vertical_curson_movement.wav::AudioStreamWAV::1669495562414386480::1685026401::1
 A4 - Childishly fresh eyes (8-BIT) [E189KUOWNWs].mp3::AudioStreamMP3::1876334300884539480::1722207205::1722351565::1::::<><>::
 codec.mp3::AudioStreamMP3::3934927900806584012::1685376151::1685376168::1::::<><>::
 Saturn Bomberman - Battle Menu.mp3::AudioStreamMP3::9102350750740560196::1685376070::1685376168::1::::<><>::
-::res://assets/sprite_sheets/::1722563259
+::res://assets/sprite_sheets/::1722564965
 earthbound_numbers.png::CompressedTexture2D::234137399921025754::1721878451::1721878453::1::::<><>::
 SNES - EarthBound Mother 2 - Jeff.png::CompressedTexture2D::7368395649349340748::1722563235::1722564965::1::::<><>::
 SNES - EarthBound Mother 2 - Ness.png::CompressedTexture2D::2705746151635575155::1722564957::1722564965::1::::<><>::
@@ -206,7 +206,7 @@ Streaming#417 (PAT_BONUS_SOLVE_3.wav).wav::AudioStreamWAV::8707054182236588164::
 vanna.gd::GDScript::-1::1688241214::0::1::::<>Sprite2D<>::
 vanna.tscn::PackedScene::7978929404173943741::1704606252::0::1::::<><>::uid://bgrw3hahw2qg2::::res://assets/sprite_sheets/vanna_sheet.png<>res://category/concrete_categories/ericas_game/vanna.gd
 Wheel_of_Fortune_Round_1_template_Season_31.png::CompressedTexture2D::8992296074406357196::1688835347::1688835350::1::::<><>::
-::res://game/::1722564961
+::res://game/::1722564980
 credits.gd::GDScript::-1::1721264559::0::1::::Credtis<>GameScene<>::
 credits.tscn::PackedScene::5727446992075694833::1704606252::0::1::::<><>::res://game/credits.gd<>uid://c2gd8hkr74cwe::::res://assets/fonts/megaman_font.tres<>uid://7p1rqbwhhs2j::::res://assets/sound/music/29 - Casino Slot (Dragon Quest).mp3
 crowd_game.gd::GDScript::-1::1722128791::0::1::::CrowdGame<>Game<>::
@@ -216,7 +216,7 @@ game.gd::GDScript::-1::1722562438::0::1::::Game<>Node<>::
 game_scene.gd::GDScript::-1::1721265388::0::1::::GameScene<>Node<>::
 game_state.gd::GDScript::-1::1722449128::0::1::::GameState<>Resource<>::
 game_steal.gd::GDScript::-1::1722448609::0::1::::<>GameScene<>::
-game_steal.tscn::PackedScene::8374101533563932712::1722564961::0::1::::<><>::res://game/game_steal.gd<>uid://ctb3qqhe3qjv0::::res://panel_select/score_board.tscn
+game_steal.tscn::PackedScene::8374101533563932712::1722564980::0::1::::<><>::res://game/game_steal.gd<>uid://ctb3qqhe3qjv0::::res://panel_select/score_board.tscn
 high_score.png::CompressedTexture2D::7697932672357198440::1687406748::1687406754::1::::<><>::
 leader_board.gd::GDScript::-1::1722450793::0::1::::LeaderBoard<>GameScene<>::
 leader_board.tscn::PackedScene::7614768076014479747::1704606252::0::1::::<><>::res://game/leader_board.gd<>res://game/leader_board_background.gdshader<>uid://dhw63dmcn8kx1::::res://game/high_score.png<>uid://c2gd8hkr74cwe::::res://assets/fonts/megaman_font.tres<>uid://d1mrbiropavp0::::res://assets/sound/music/18 Scenario Mode Clear.mp3<>res://assets/fonts/earthbound_font.tres
@@ -284,7 +284,7 @@ black.tres::ShaderMaterial::4587632179637169169::1688839324::0::1::::<><>::res:/
 hwave.gd::GDScript::-1::1682354365::0::1::::Hwave<>RichTextEffect<>::
 hwave.tres::RichTextEffect/RichTextEffect::4979315585663644395::1682354579::0::1::::<><>::res://resources/hwave.gd
 string_tools.gd::GDScript::-1::1687021447::0::1::::StringTools<>Node<>::
-::res://screen_transitions/::1722564962
+::res://screen_transitions/::1722564980
 140953.png::CompressedTexture2D::8082071571768113664::1689873892::1689911483::1::::<><>::
 ashely_door.png::CompressedTexture2D::7262057978922278265::1689569501::1689569506::1::::<><>::
 ashely_door_transition.gd::GDScript::-1::1689571876::0::1::::<>ScreenTransition<>::
@@ -306,7 +306,7 @@ earthbound_boss_transition.tscn::PackedScene::4101509341576312831::1690063560::0
 earthbound_transition.gd::GDScript::-1::1693707785::0::1::::<>ScreenTransition<>::
 earthbound_transition.tscn::PackedScene::8481073165796104608::1690063560::0::1::::<><>::res://screen_transitions/earthbound_transition.gd<>uid://bkkdapha3rc3::::res://assets/sound/music/39 Oncoming Foe.mp3<>uid://dnfasj53fqods::::res://screen_transitions/140953.png
 failure_transition.gd::GDScript::-1::1722388511::0::1::::<>ScreenTransition<>::
-failure_transition.tscn::PackedScene::2379470265561261583::1722564962::0::1::::<><>::res://screen_transitions/failure_transition.gd<>uid://b4mg0q2h3523a::::res://assets/sound/music/39 Blown Up!.mp3<>uid://dngaukife7elg::::res://assets/fonts/mmrock9/MMRock9.ttf
+failure_transition.tscn::PackedScene::2379470265561261583::1722564980::0::1::::<><>::res://screen_transitions/failure_transition.gd<>uid://b4mg0q2h3523a::::res://assets/sound/music/39 Blown Up!.mp3<>uid://dngaukife7elg::::res://assets/fonts/mmrock9/MMRock9.ttf
 fog_noise_texture.tres::NoiseTexture2D::5213541559661003145::1689439880::0::1::::<><>::
 fog_transition.gd::GDScript::-1::1689443652::0::1::::<>ScreenTransition<>::
 fog_transition.gdshader::Shader::-1::1689444887::0::1::::<><>::

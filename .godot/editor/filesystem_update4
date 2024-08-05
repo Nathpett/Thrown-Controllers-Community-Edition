@@ -1,5 +1,11 @@
 res://default_env.tres
 res://game/game_steal.tscn
 res://screen_transitions/failure_transition.tscn
-res://avatar/avatar.gd
-res://game/party_game.gd
+res://category/concrete_categories/ericas_game.tscn
+res://screen_transitions/wheel_transition.gdshader
+res://category/concrete_categories/ericas_game/ericas_game.gd
+res://game/party_game_state.gd
+res://category/concrete_categories/ericas_game/fortune_letter.gd
+res://main.gd
+res://trivia_editor/trivia_editor.gd
+res://screen_transitions/lightning_transition.gd

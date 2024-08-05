@@ -65,9 +65,6 @@ func add_player(player_enum: int, player_name: String, reigon_vector: Vector2i):
 func on_success() -> void:
 	players[active_player]["score"] += _get_trivia_value()
 	temp_point_gain = 1
-	#var earned_points = 0 # TODO 
-	
-	#current_contestant_score += max(point_gain, temp_point_gain)
 
 
 func on_failure() -> void:

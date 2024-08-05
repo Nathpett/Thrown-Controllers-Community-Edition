@@ -113,6 +113,9 @@ func _on_test_trivia(question: Dictionary) -> void:
 		category.override_trivia_data = trivia_data["TheRunawayGuys_video_game_challenge"]
 	else:
 		category.override_trivia_data = question
+	category.connect("failure", Callable(main, "_return_editor"))
+	category.connect("success", Callable(main, "_return_editor"))
+	disable()
 	main.change_scene_to_file(category)
 
 

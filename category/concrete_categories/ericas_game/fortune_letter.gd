@@ -5,7 +5,7 @@ var is_blue: bool = false: set = _set_is_blue
 
 
 func reveal() -> void:
-	$TextureRect.visible = true # TODO MAYBE, CAN ANIMATE BLUE TO MAKE SMOOTHER?
+	$TextureRect.visible = true 
 	self.is_blue = false
 
 

@@ -1,9 +1,11 @@
 extends ScreenTransition
 
 var ship_progress: float = 0
-
+var soft_y: float = 0
 
 func _ready() -> void:
+	soft_y = $LinksShip.position.y
+	
 	var tween = create_tween()
 	tween.tween_property($ColorRect, "color", Color(0, 0, 0, 0), 1.0)
 	await tween.finished
@@ -40,7 +42,8 @@ func _ready() -> void:
 
 func _process(delta):
 	ship_progress += delta * 3
-	$LinksShip.position.y += 0.1 * sin(ship_progress) # haha this is fine I swear, but I imagine the ship would drift after enough time
+	soft_y += 0.1 * sin(ship_progress)
+	$LinksShip.position.y = round(soft_y) # haha this is fine I swear, but I imagine the ship would drift after enough time
 
 
 func lightning_bolt(l_sprite: Sprite2D, obscure: bool = false) -> void:

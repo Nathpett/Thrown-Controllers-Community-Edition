@@ -21,6 +21,9 @@ func _ready():
 
 
 func _input(event):
+	if scene_disabled:
+		return
+	
 	if !(complex_index == INPUT or complex_index == COUNT_DOWN):
 		super._input(event)
 		return
@@ -42,6 +45,7 @@ func _input(event):
 				player_letters.text = player_letters.text.left(len(player_letters.text) - 3)
 			
 			if event.keycode == KEY_ENTER and just_pressed and len(player_letters.text) == 12:
+				disable()
 				var letters_to_push = player_letters.text
 				letters_to_push = letters_to_push.replace(" ", "").to_lower()
 				_push_letters(letters_to_push)
@@ -54,6 +58,7 @@ func _input(event):
 				$Music.play()
 				
 				complex_index = TIME_TO_ANSWER
+				enable()
 				complx_progress()
 		COUNT_DOWN:
 			super._input(event)
@@ -184,4 +189,4 @@ func _on_vanna_touch_letter(letter_vector: Vector2) -> void:
 
 
 func _on_timer_timeout() -> void:
-	pass # TODO TIMES UP VANNA SOUND
+	pass
