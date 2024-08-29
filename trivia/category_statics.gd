@@ -18,7 +18,7 @@ enum {
 const CATEGORIES: Dictionary = {
 						"easy_question": {PARTY_VALUE: 10, NO_DEVIL: true}, 
 						"solo_video_game_challenge": {PARTY_VALUE: 10, VIDEO_GAME_CHALLENGE: true}, 
-						"brutal_question": {PARTY_VALUE: 25, DESTINY_VALUE: 2, DEPENDANTS:["devils_deal"]}, 
+						"brutal_question": {PARTY_VALUE: 15, DESTINY_VALUE: 2, DEPENDANTS:["devils_deal"]}, 
 						"TheRunawayGuys_video_game_challenge": {PARTY_VALUE: 10, DESTINY_VALUE: 2, VIDEO_GAME_CHALLENGE: true}, 
 						"audience_video_game_challenge": {PARTY_VALUE: 10, VIDEO_GAME_CHALLENGE: true},
 						"leap_of_faith": {PARTY_VALUE: 10, VIDEO_GAME_CHALLENGE: true},
@@ -31,7 +31,7 @@ const CATEGORIES: Dictionary = {
 						"devils_deal": {PARTY_VALUE: 10, NO_DEVIL: true, NO_DESTINY: true, NO_TRIVIA: true, NOT_SUBSTANTIVE: true},
 						"choose_your_destiny": {PARTY_VALUE: 10, NO_DESTINY: true, NO_TRIVIA: true, NOT_SUBSTANTIVE: true, NO_DEVIL: true},
 						"pick_your_poison": {PARTY_VALUE: 10, NO_DESTINY: true, VIDEO_GAME_CHALLENGE: true},
-						"ericas_game": {NO_STEAL: true, PARTY_VALUE: 20},
+						"ericas_game": {NO_STEAL: true, PARTY_VALUE: 15},
 						}
 
 
