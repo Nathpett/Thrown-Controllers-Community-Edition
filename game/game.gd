@@ -16,15 +16,6 @@ func _ready() -> void:
 	avatar = load("res://avatar/avatar.tscn").instantiate()
 	avatar.game = self
 	add_child(avatar)
-	
-	var dir = DirAccess.open("user://")
-	if !dir.dir_exists("trivia"):
-		dir.make_dir("trivia")
-	if !dir.dir_exists("saves"):
-		dir.make_dir("saves")
-	# copy trivia.json, push it to this dir as 'default_trivia.json
-	#if !dir.file_exists("user://trivia/default_trivia.json"):
-	dir.copy("res://trivia/default_trivia.json", "user://trivia/default_trivia.json") # REMINDER ABOUT RELOADING GAME WHEN TRIVIA HAS BEEN CHANGED!
 
 
 func initiate(_trivia_path: String, _initial_mode: int, _fast_mode: bool, _shuffle_trivia: bool):
